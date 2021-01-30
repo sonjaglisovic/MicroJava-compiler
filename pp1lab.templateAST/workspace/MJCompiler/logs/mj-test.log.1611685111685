@@ -1,0 +1,110 @@
+INFO  19:17:42,673 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\pp.txt
+ERROR 19:17:43,015 - 
+Sintaksna greska na liniji 11
+INFO  19:17:43,028 - Program(
+  ProgramName(
+   MJprog
+  ) [ProgramName]
+  VarDeclarations(
+    VarDeclarations(
+      NoVarDecl(
+      ) [NoVarDecl]
+      VariableDeclaration(
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          FirstDeclaration(
+            SingleVarDecl(
+             m
+              NotArray(
+              ) [NotArray]
+            ) [SingleVarDecl]
+          ) [FirstDeclaration]
+        ) [VarDecl]
+      ) [VariableDeclaration]
+    ) [VarDeclarations]
+    ClassDeclaration(
+      ClassDecl(
+        ClassName(
+         A
+        ) [ClassName]
+        ParentSpecification(
+         B
+        ) [ParentSpecification]
+        NoVars(
+        ) [NoVars]
+        NoMethodInClass(
+        ) [NoMethodInClass]
+      ) [ClassDecl]
+    ) [ClassDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      RegularType(
+        Type(
+         int
+        ) [Type]
+      ) [RegularType]
+      MethodName(
+       f
+      ) [MethodName]
+      NoParams(
+      ) [NoParams]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        Statements(
+          NoStmt(
+          ) [NoStmt]
+          MatchedStmt(
+            DesStatement(
+              Design(
+                DesignatorDecl(
+                 x
+                  NoAdditional(
+                  ) [NoAdditional]
+                ) [DesignatorDecl]
+                AssignStatementSt(
+                  AssignError(
+                  ) [AssignError]
+                ) [AssignStatementSt]
+              ) [Design]
+            ) [DesStatement]
+          ) [MatchedStmt]
+        ) [Statements]
+        MatchedStmt(
+          DesStatement(
+            Design(
+              DesignatorDecl(
+               c
+                NoAdditional(
+                ) [NoAdditional]
+              ) [DesignatorDecl]
+              AssignStatementSt(
+                AssignStm(
+                  Assignop(
+                  ) [Assignop]
+                  SimpleExpr(
+                    NOMinusExpr(
+                      FirstTerm(
+                        SingleTermDecl(
+                          NumberDecl(
+                           0
+                          ) [NumberDecl]
+                        ) [SingleTermDecl]
+                      ) [FirstTerm]
+                    ) [NOMinusExpr]
+                  ) [SimpleExpr]
+                ) [AssignStm]
+              ) [AssignStatementSt]
+            ) [Design]
+          ) [DesStatement]
+        ) [MatchedStmt]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  19:17:43,031 - ===================================

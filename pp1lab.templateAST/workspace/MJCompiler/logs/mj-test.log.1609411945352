@@ -1,0 +1,388 @@
+INFO  11:38:36,087 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  11:38:36,351 - #24 MJProgram
+INFO  11:38:36,353 - #24 int
+INFO  11:38:36,355 - #24 x
+INFO  11:38:36,363 - #24 int
+INFO  11:38:36,365 - #24 y
+INFO  11:38:36,365 - #24 int
+INFO  11:38:36,369 - #24 k
+INFO  11:38:36,372 - #24 int
+INFO  11:38:36,375 - #24 c
+INFO  11:38:36,376 - #24 c
+INFO  11:38:36,381 - #23 1
+INFO  11:38:36,385 - #24 c
+INFO  11:38:36,385 - #23 2
+INFO  11:38:36,390 - #24 int
+INFO  11:38:36,391 - #24 main
+INFO  11:38:36,392 - #24 y
+INFO  11:38:36,392 - #23 2
+INFO  11:38:36,393 - #24 y
+INFO  11:38:36,393 - #23 2
+INFO  11:38:36,398 - #24 y
+INFO  11:38:36,400 - #23 0
+INFO  11:38:36,427 - #24 x
+INFO  11:38:36,428 - #24 y
+INFO  11:38:36,429 - #23 2
+INFO  11:38:36,429 - #24 y
+INFO  11:38:36,429 - #24 k
+INFO  11:38:36,431 - #23 3
+INFO  11:38:36,432 - #24 y
+INFO  11:38:36,434 - #23 0
+INFO  11:38:36,441 - Program(
+ MJProgram
+  VarDeclarations(
+    VarDeclarations(
+      NoVarDecl(
+      ) [NoVarDecl]
+      VariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        FirstDeclaration(
+          VarDecl(
+           x
+            NotArray(
+            ) [NotArray]
+          ) [VarDecl]
+        ) [FirstDeclaration]
+      ) [VariableDeclaration]
+    ) [VarDeclarations]
+    VariableDeclaration(
+      Type(
+       int
+      ) [Type]
+      FirstDeclaration(
+        VarDecl(
+         y
+          NotArray(
+          ) [NotArray]
+        ) [VarDecl]
+      ) [FirstDeclaration]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarations(
+    MethodDeclarations(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDeclaration(
+        RegularType(
+          Type(
+           int
+          ) [Type]
+        ) [RegularType]
+       k
+        NoParams(
+        ) [NoParams]
+        JustVars(
+          NoVars(
+          ) [NoVars]
+          Type(
+           int
+          ) [Type]
+          FirstDeclaration(
+            VarDecl(
+             c
+              NotArray(
+              ) [NotArray]
+            ) [VarDecl]
+          ) [FirstDeclaration]
+        ) [JustVars]
+        Statements(
+          Statements(
+            NoStmt(
+            ) [NoStmt]
+            MatchedStmt(
+              DesStatement(
+                Design(
+                  DesignatorDecl(
+                   c
+                    NoAdditional(
+                    ) [NoAdditional]
+                  ) [DesignatorDecl]
+                  AssignStatementSt(
+                    SimpleExpr(
+                      NOMinusExpr(
+                        FirstTerm(
+                          SingleTermDecl(
+                            NumberDecl(
+                             1
+                            ) [NumberDecl]
+                          ) [SingleTermDecl]
+                        ) [FirstTerm]
+                      ) [NOMinusExpr]
+                    ) [SimpleExpr]
+                  ) [AssignStatementSt]
+                ) [Design]
+              ) [DesStatement]
+            ) [MatchedStmt]
+          ) [Statements]
+          MatchedStmt(
+            ReturnStatement(
+              ExprAfterReturn(
+                SimpleExpr(
+                  NOMinusExpr(
+                    Terms(
+                      FirstTerm(
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                             c
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [FirstTerm]
+                      Addition(
+                      ) [Addition]
+                      SingleTermDecl(
+                        NumberDecl(
+                         2
+                        ) [NumberDecl]
+                      ) [SingleTermDecl]
+                    ) [Terms]
+                  ) [NOMinusExpr]
+                ) [SimpleExpr]
+              ) [ExprAfterReturn]
+            ) [ReturnStatement]
+          ) [MatchedStmt]
+        ) [Statements]
+      ) [MethodDeclaration]
+    ) [MethodDeclarations]
+    MethodDeclaration(
+      RegularType(
+        Type(
+         int
+        ) [Type]
+      ) [RegularType]
+     main
+      NoParams(
+      ) [NoParams]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  NoStmt(
+                  ) [NoStmt]
+                  MatchedStmt(
+                    DesStatement(
+                      Design(
+                        DesignatorDecl(
+                         y
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                        AssignStatementSt(
+                          SimpleExpr(
+                            NOMinusExpr(
+                              FirstTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   2
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [NOMinusExpr]
+                          ) [SimpleExpr]
+                        ) [AssignStatementSt]
+                      ) [Design]
+                    ) [DesStatement]
+                  ) [MatchedStmt]
+                ) [Statements]
+                UnmatchedStmt(
+                  UnmatchedIf(
+                    ConditionExpr(
+                      SingleTerm(
+                        SingleFact(
+                          OptionalOperator(
+                            NOMinusExpr(
+                              FirstTerm(
+                                SingleTermDecl(
+                                  SimpleDesignator(
+                                    DesignatorDecl(
+                                     y
+                                      NoAdditional(
+                                      ) [NoAdditional]
+                                    ) [DesignatorDecl]
+                                  ) [SimpleDesignator]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [NOMinusExpr]
+                            ComparisonEqual(
+                            ) [ComparisonEqual]
+                            NOMinusExpr(
+                              FirstTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   2
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [NOMinusExpr]
+                          ) [OptionalOperator]
+                        ) [SingleFact]
+                      ) [SingleTerm]
+                      SingleFact(
+                        OptionalOperator(
+                          NOMinusExpr(
+                            FirstTerm(
+                              SingleTermDecl(
+                                SimpleDesignator(
+                                  DesignatorDecl(
+                                   y
+                                    NoAdditional(
+                                    ) [NoAdditional]
+                                  ) [DesignatorDecl]
+                                ) [SimpleDesignator]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                          ) [NOMinusExpr]
+                          ComparisonEqual(
+                          ) [ComparisonEqual]
+                          NOMinusExpr(
+                            FirstTerm(
+                              SingleTermDecl(
+                                NumberDecl(
+                                 0
+                                ) [NumberDecl]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                          ) [NOMinusExpr]
+                        ) [OptionalOperator]
+                      ) [SingleFact]
+                    ) [ConditionExpr]
+                    MatchedStmt(
+                      ReturnStatement(
+                        NoAfterRet(
+                        ) [NoAfterRet]
+                      ) [ReturnStatement]
+                    ) [MatchedStmt]
+                  ) [UnmatchedIf]
+                ) [UnmatchedStmt]
+              ) [Statements]
+              MatchedStmt(
+                DesStatement(
+                  Design(
+                    DesignatorDecl(
+                     x
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                    AssignStatementSt(
+                      SimpleExpr(
+                        NOMinusExpr(
+                          Terms(
+                            FirstTerm(
+                              SingleTermDecl(
+                                SimpleDesignator(
+                                  DesignatorDecl(
+                                   y
+                                    NoAdditional(
+                                    ) [NoAdditional]
+                                  ) [DesignatorDecl]
+                                ) [SimpleDesignator]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                            Addition(
+                            ) [Addition]
+                            SingleTermDecl(
+                              NumberDecl(
+                               2
+                              ) [NumberDecl]
+                            ) [SingleTermDecl]
+                          ) [Terms]
+                        ) [NOMinusExpr]
+                      ) [SimpleExpr]
+                    ) [AssignStatementSt]
+                  ) [Design]
+                ) [DesStatement]
+              ) [MatchedStmt]
+            ) [Statements]
+            MatchedStmt(
+              DesStatement(
+                Design(
+                  DesignatorDecl(
+                   y
+                    NoAdditional(
+                    ) [NoAdditional]
+                  ) [DesignatorDecl]
+                  AssignStatementSt(
+                    SimpleExpr(
+                      NOMinusExpr(
+                        Terms(
+                          FirstTerm(
+                            SingleTermDecl(
+                              AdditionalParams(
+                                DesignatorDecl(
+                                 k
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                                NoActualParams(
+                                ) [NoActualParams]
+                              ) [AdditionalParams]
+                            ) [SingleTermDecl]
+                          ) [FirstTerm]
+                          Addition(
+                          ) [Addition]
+                          SingleTermDecl(
+                            NumberDecl(
+                             3
+                            ) [NumberDecl]
+                          ) [SingleTermDecl]
+                        ) [Terms]
+                      ) [NOMinusExpr]
+                    ) [SimpleExpr]
+                  ) [AssignStatementSt]
+                ) [Design]
+              ) [DesStatement]
+            ) [MatchedStmt]
+          ) [Statements]
+          MatchedStmt(
+            PrintFunctionCall(
+              SimpleExpr(
+                NOMinusExpr(
+                  FirstTerm(
+                    SingleTermDecl(
+                      SimpleDesignator(
+                        DesignatorDecl(
+                         y
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                      ) [SimpleDesignator]
+                    ) [SingleTermDecl]
+                  ) [FirstTerm]
+                ) [NOMinusExpr]
+              ) [SimpleExpr]
+              NoSecondParam(
+              ) [NoSecondParam]
+            ) [PrintFunctionCall]
+          ) [MatchedStmt]
+        ) [Statements]
+        MatchedStmt(
+          ReturnStatement(
+            ExprAfterReturn(
+              SimpleExpr(
+                NOMinusExpr(
+                  FirstTerm(
+                    SingleTermDecl(
+                      NumberDecl(
+                       0
+                      ) [NumberDecl]
+                    ) [SingleTermDecl]
+                  ) [FirstTerm]
+                ) [NOMinusExpr]
+              ) [SimpleExpr]
+            ) [ExprAfterReturn]
+          ) [ReturnStatement]
+        ) [MatchedStmt]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarations]
+) [Program]
+INFO  11:38:36,570 - ===================================

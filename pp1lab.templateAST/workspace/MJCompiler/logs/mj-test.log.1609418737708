@@ -1,0 +1,40 @@
+INFO  13:38:53,603 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\statements.mj
+INFO  13:38:53,873 - #24 MJProgram
+INFO  13:38:53,873 - #24 int
+INFO  13:38:53,875 - #24 number1
+INFO  13:38:53,889 - #24 number2
+INFO  13:38:53,890 - #24 int
+INFO  13:38:53,891 - #24 array
+INFO  13:38:53,898 - #24 int
+INFO  13:38:53,900 - #24 max
+INFO  13:38:53,902 - #24 int
+INFO  13:38:53,902 - #24 array
+INFO  13:38:53,906 - #24 int
+INFO  13:38:53,909 - #24 i
+INFO  13:38:53,909 - #24 max
+INFO  13:38:53,910 - #24 value
+INFO  13:38:53,910 - #24 i
+INFO  13:38:53,915 - #23 0
+INFO  13:38:53,917 - #24 max
+INFO  13:38:53,919 - #23 0
+INFO  13:38:53,919 - #24 array
+INFO  13:38:53,920 - #23 0
+INFO  13:38:53,922 - #23 0
+INFO  13:38:53,926 - #23 0
+INFO  13:38:53,929 - #24 array
+INFO  13:38:53,929 - #23 0
+INFO  13:38:53,929 - #23 1
+INFO  13:38:53,930 - #23 2
+INFO  13:38:53,930 - #24 array
+INFO  13:38:53,930 - #23 0
+INFO  13:38:53,931 - #23 2
+INFO  13:38:53,933 - #24 array
+INFO  13:38:53,934 - #24 i
+INFO  13:38:53,934 - #24 max
+INFO  13:38:53,936 - #24 max
+INFO  13:38:53,937 - #24 array
+INFO  13:38:53,937 - #24 i
+INFO  13:38:53,938 - #24 i
+ERROR 13:38:53,938 - 
+Sintaksna greska na liniji 28
+ERROR 13:38:53,939 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 28

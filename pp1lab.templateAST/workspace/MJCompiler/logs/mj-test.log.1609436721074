@@ -1,0 +1,10 @@
+INFO  18:41:38,263 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\statements.mj
+ERROR 18:41:38,575 - 
+Sintaksna greska na liniji 10
+ERROR 18:41:38,615 - Izvrsen oporavak do prvog narednog ; ili , na liniji, 8
+ERROR 18:41:38,620 - 
+Sintaksna greska na liniji 58
+ERROR 18:41:38,621 - Izvrsen oporavak do prvog narednog ; ili , na liniji, 58
+ERROR 18:41:38,624 - 
+Sintaksna greska na liniji 60
+ERROR 18:41:38,626 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 60

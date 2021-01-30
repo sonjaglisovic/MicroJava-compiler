@@ -1,0 +1,379 @@
+INFO  15:57:05,235 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\designators_and_vars.mj
+INFO  15:57:05,635 - Program(
+  ProgramName(
+   MJProgram
+  ) [ProgramName]
+  VarDeclarations(
+    VarDeclarations(
+      VarDeclarations(
+        VarDeclarations(
+          VarDeclarations(
+            VarDeclarations(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VariableDeclaration(
+                VarDecl1(
+                  Type(
+                   int
+                  ) [Type]
+                  VariableList(
+                    VariableList(
+                      FirstDeclaration(
+                        SingleVarDecl(
+                         a
+                          NotArray(
+                          ) [NotArray]
+                        ) [SingleVarDecl]
+                      ) [FirstDeclaration]
+                      SingleVarDecl(
+                       b
+                        NotArray(
+                        ) [NotArray]
+                      ) [SingleVarDecl]
+                    ) [VariableList]
+                    SingleVarDecl(
+                     c
+                      NotArray(
+                      ) [NotArray]
+                    ) [SingleVarDecl]
+                  ) [VariableList]
+                ) [VarDecl1]
+              ) [VariableDeclaration]
+            ) [VarDeclarations]
+            ConstantDeclaration(
+              ConstDecl(
+                Type(
+                 int
+                ) [Type]
+                ConstList(
+                  FisrtConstInList(
+                    SingleConstDeclaration(
+                     a
+                      IntInit(
+                       1
+                      ) [IntInit]
+                    ) [SingleConstDeclaration]
+                  ) [FisrtConstInList]
+                  SingleConstDeclaration(
+                   b
+                    IntInit(
+                     2
+                    ) [IntInit]
+                  ) [SingleConstDeclaration]
+                ) [ConstList]
+              ) [ConstDecl]
+            ) [ConstantDeclaration]
+          ) [VarDeclarations]
+          VariableDeclaration(
+            VarDecl1(
+              Type(
+               int
+              ) [Type]
+              FirstDeclaration(
+                SingleVarDecl(
+                 f
+                  NotArray(
+                  ) [NotArray]
+                ) [SingleVarDecl]
+              ) [FirstDeclaration]
+            ) [VarDecl1]
+          ) [VariableDeclaration]
+        ) [VarDeclarations]
+        ConstantDeclaration(
+          ConstDecl(
+            Type(
+             bool
+            ) [Type]
+            FisrtConstInList(
+              SingleConstDeclaration(
+               y
+                BoolInit(
+                  FalseValue(
+                  ) [FalseValue]
+                ) [BoolInit]
+              ) [SingleConstDeclaration]
+            ) [FisrtConstInList]
+          ) [ConstDecl]
+        ) [ConstantDeclaration]
+      ) [VarDeclarations]
+      ClassDeclaration(
+        ClassDecl(
+          ClassName(
+           A
+            NoSuperclass(
+            ) [NoSuperclass]
+          ) [ClassName]
+          JustVars(
+            JustVars(
+              NoVars(
+              ) [NoVars]
+              VarDecl1(
+                Type(
+                 int
+                ) [Type]
+                FirstDeclaration(
+                  SingleVarDecl(
+                   bField
+                    NotArray(
+                    ) [NotArray]
+                  ) [SingleVarDecl]
+                ) [FirstDeclaration]
+              ) [VarDecl1]
+            ) [JustVars]
+            VarDecl1(
+              Type(
+               int
+              ) [Type]
+              FirstDeclaration(
+                SingleVarDecl(
+                 cField
+                  NotArray(
+                  ) [NotArray]
+                ) [SingleVarDecl]
+              ) [FirstDeclaration]
+            ) [VarDecl1]
+          ) [JustVars]
+          NoMethodInClass(
+          ) [NoMethodInClass]
+        ) [ClassDecl]
+      ) [ClassDeclaration]
+    ) [VarDeclarations]
+    VariableDeclaration(
+      VarDecl1(
+        Type(
+         A
+        ) [Type]
+        FirstDeclaration(
+          SingleVarDecl(
+           object
+            NotArray(
+            ) [NotArray]
+          ) [SingleVarDecl]
+        ) [FirstDeclaration]
+      ) [VarDecl1]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    MethodDeclarationList(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDeclaration(
+        MethodSign(
+          MethodName(
+            VoidType(
+            ) [VoidType]
+           function
+          ) [MethodName]
+          ParamLists(
+            FormParams(
+              FormParams(
+                FirstParam(
+                  MethodParamDecl(
+                    Type(
+                     int
+                    ) [Type]
+                    FormParDecl(
+                     a
+                      NotArray(
+                      ) [NotArray]
+                    ) [FormParDecl]
+                  ) [MethodParamDecl]
+                ) [FirstParam]
+                MethodParamDecl(
+                  Type(
+                   int
+                  ) [Type]
+                  FormParDecl(
+                   b
+                    NotArray(
+                    ) [NotArray]
+                  ) [FormParDecl]
+                ) [MethodParamDecl]
+              ) [FormParams]
+              MethodParamDecl(
+                Type(
+                 int
+                ) [Type]
+                FormParDecl(
+                 c
+                  NotArray(
+                  ) [NotArray]
+                ) [FormParDecl]
+              ) [MethodParamDecl]
+            ) [FormParams]
+          ) [ParamLists]
+        ) [MethodSign]
+        NoVars(
+        ) [NoVars]
+        NoStmt(
+        ) [NoStmt]
+      ) [MethodDeclaration]
+    ) [MethodDeclarationList]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         main
+        ) [MethodName]
+        NoParams(
+        ) [NoParams]
+      ) [MethodSign]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        Statements(
+          NoStmt(
+          ) [NoStmt]
+          MatchedStmt(
+            DesStatement(
+              FuncCallSt(
+                DesignatorDecl(
+                 function
+                  NoAdditional(
+                  ) [NoAdditional]
+                ) [DesignatorDecl]
+                AcParamList(
+                  ParameterList(
+                    FirstParamExpr(
+                      SingleParameter(
+                        SimpleExpr(
+                          NOMinusExpr(
+                            FirstTerm(
+                              SingleTermDecl(
+                                SimpleDesignator(
+                                  DesignatorDecl(
+                                   a
+                                    NoAdditional(
+                                    ) [NoAdditional]
+                                  ) [DesignatorDecl]
+                                ) [SimpleDesignator]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                          ) [NOMinusExpr]
+                        ) [SimpleExpr]
+                      ) [SingleParameter]
+                    ) [FirstParamExpr]
+                    SingleParameter(
+                      SimpleExpr(
+                        NOMinusExpr(
+                          FirstTerm(
+                            SingleTermDecl(
+                              NumberDecl(
+                               1
+                              ) [NumberDecl]
+                            ) [SingleTermDecl]
+                          ) [FirstTerm]
+                        ) [NOMinusExpr]
+                      ) [SimpleExpr]
+                    ) [SingleParameter]
+                  ) [ParameterList]
+                ) [AcParamList]
+              ) [FuncCallSt]
+            ) [DesStatement]
+          ) [MatchedStmt]
+        ) [Statements]
+        MatchedStmt(
+          DesStatement(
+            AssignStatementSt(
+              DesignatorDecl(
+               f
+                NoAdditional(
+                ) [NoAdditional]
+              ) [DesignatorDecl]
+              AssignStm(
+                Assignop(
+                ) [Assignop]
+                SimpleExpr(
+                  NOMinusExpr(
+                    Terms(
+                      Terms(
+                        Terms(
+                          Terms(
+                            FirstTerm(
+                              SingleTermDecl(
+                                SimpleDesignator(
+                                  DesignatorDecl(
+                                   b
+                                    NoAdditional(
+                                    ) [NoAdditional]
+                                  ) [DesignatorDecl]
+                                ) [SimpleDesignator]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                            Addition(
+                            ) [Addition]
+                            SingleTermDecl(
+                              SimpleDesignator(
+                                DesignatorDecl(
+                                 f
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                              ) [SimpleDesignator]
+                            ) [SingleTermDecl]
+                          ) [Terms]
+                          Addition(
+                          ) [Addition]
+                          SingleTermDecl(
+                            SimpleDesignator(
+                              DesignatorDecl(
+                               x
+                                NoAdditional(
+                                ) [NoAdditional]
+                              ) [DesignatorDecl]
+                            ) [SimpleDesignator]
+                          ) [SingleTermDecl]
+                        ) [Terms]
+                        Addition(
+                        ) [Addition]
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                             object
+                              AdditionalPart(
+                                NoAdditional(
+                                ) [NoAdditional]
+                                AccessField(
+                                 cField
+                                ) [AccessField]
+                              ) [AdditionalPart]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [Terms]
+                      Addition(
+                      ) [Addition]
+                      SingleTermDecl(
+                        SimpleDesignator(
+                          DesignatorDecl(
+                           cField
+                            NoAdditional(
+                            ) [NoAdditional]
+                          ) [DesignatorDecl]
+                        ) [SimpleDesignator]
+                      ) [SingleTermDecl]
+                    ) [Terms]
+                  ) [NOMinusExpr]
+                ) [SimpleExpr]
+              ) [AssignStm]
+            ) [AssignStatementSt]
+          ) [DesStatement]
+        ) [MatchedStmt]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  15:57:06,564 - ===================================
+INFO  15:57:06,603 - Prisput promenljivoj: function na liniji 20
+INFO  15:57:06,604 - Prisput promenljivoj: a na liniji 20
+ERROR 15:57:06,604 - Semanticka Greska! prilikom poziva funkcije, prosledjen broj argumenata se razlikuje od ocekivanog na liniji 20
+INFO  15:57:06,605 - Prisput promenljivoj: f na liniji 22
+INFO  15:57:06,605 - Prisput promenljivoj: b na liniji 22
+INFO  15:57:06,605 - Prisput promenljivoj: f na liniji 22
+ERROR 15:57:06,606 - Semanticka Greska! Promenljiva x ne postoji u tabeli simbola na liniji 22
+INFO  15:57:06,606 - Prisput promenljivoj: objectNjenom polju: cField na liniji 22
+ERROR 15:57:06,607 - Semanticka Greska! Promenljiva cField ne postoji u tabeli simbola na liniji 22

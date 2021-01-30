@@ -1,0 +1,7 @@
+INFO  19:39:09,689 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\pp.txt
+ERROR 19:39:09,935 - 
+Sintaksna greska na liniji 7
+ERROR 19:39:09,937 - Izvrsen oporavak do znaka ')' na liniji, 7
+ERROR 19:39:09,941 - 
+Sintaksna greska na liniji 14
+ERROR 19:39:09,941 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 14

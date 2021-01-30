@@ -1,0 +1,4 @@
+INFO  19:20:45,553 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\pp.txt
+ERROR 19:20:45,860 - 
+Sintaksna greska na liniji 12
+ERROR 19:20:45,864 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 18

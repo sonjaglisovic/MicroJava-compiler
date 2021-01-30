@@ -1,0 +1,164 @@
+INFO  15:23:39,734 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\designators_and_vars.mj
+INFO  15:23:40,140 - Program(
+  ProgramName(
+   MJProgram
+  ) [ProgramName]
+  VarDeclarations(
+    VarDeclarations(
+      VarDeclarations(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VariableDeclaration(
+          VarDecl1(
+            Type(
+             int
+            ) [Type]
+            VariableList(
+              VariableList(
+                FirstDeclaration(
+                  SingleVarDecl(
+                   a
+                    NotArray(
+                    ) [NotArray]
+                  ) [SingleVarDecl]
+                ) [FirstDeclaration]
+                SingleVarDecl(
+                 b
+                  NotArray(
+                  ) [NotArray]
+                ) [SingleVarDecl]
+              ) [VariableList]
+              SingleVarDecl(
+               c
+                NotArray(
+                ) [NotArray]
+              ) [SingleVarDecl]
+            ) [VariableList]
+          ) [VarDecl1]
+        ) [VariableDeclaration]
+      ) [VarDeclarations]
+      ConstantDeclaration(
+        ConstDecl(
+          Type(
+           int
+          ) [Type]
+          ConstList(
+            FisrtConstInList(
+              SingleConstDeclaration(
+               a
+                IntInit(
+                 1
+                ) [IntInit]
+              ) [SingleConstDeclaration]
+            ) [FisrtConstInList]
+            SingleConstDeclaration(
+             b
+              IntInit(
+               2
+              ) [IntInit]
+            ) [SingleConstDeclaration]
+          ) [ConstList]
+        ) [ConstDecl]
+      ) [ConstantDeclaration]
+    ) [VarDeclarations]
+    VariableDeclaration(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        FirstDeclaration(
+          SingleVarDecl(
+           f
+            NotArray(
+            ) [NotArray]
+          ) [SingleVarDecl]
+        ) [FirstDeclaration]
+      ) [VarDecl1]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         main
+        ) [MethodName]
+        NoParams(
+        ) [NoParams]
+      ) [MethodSign]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        NoStmt(
+        ) [NoStmt]
+        MatchedStmt(
+          DesStatement(
+            AssignStatementSt(
+              DesignatorDecl(
+               a
+                NoAdditional(
+                ) [NoAdditional]
+              ) [DesignatorDecl]
+              AssignStm(
+                Assignop(
+                ) [Assignop]
+                SimpleExpr(
+                  NOMinusExpr(
+                    Terms(
+                      Terms(
+                        FirstTerm(
+                          SingleTermDecl(
+                            SimpleDesignator(
+                              DesignatorDecl(
+                               b
+                                NoAdditional(
+                                ) [NoAdditional]
+                              ) [DesignatorDecl]
+                            ) [SimpleDesignator]
+                          ) [SingleTermDecl]
+                        ) [FirstTerm]
+                        Addition(
+                        ) [Addition]
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                             f
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [Terms]
+                      Addition(
+                      ) [Addition]
+                      SingleTermDecl(
+                        SimpleDesignator(
+                          DesignatorDecl(
+                           x
+                            NoAdditional(
+                            ) [NoAdditional]
+                          ) [DesignatorDecl]
+                        ) [SimpleDesignator]
+                      ) [SingleTermDecl]
+                    ) [Terms]
+                  ) [NOMinusExpr]
+                ) [SimpleExpr]
+              ) [AssignStm]
+            ) [AssignStatementSt]
+          ) [DesStatement]
+        ) [MatchedStmt]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  15:23:40,639 - ===================================
+INFO  15:23:40,695 - Prisput promenljivoj: a na liniji 9
+INFO  15:23:40,695 - Prisput promenljivoj: b na liniji 9
+INFO  15:23:40,696 - Prisput promenljivoj: f na liniji 9
+ERROR 15:23:40,696 - Semanticka Greska! Promenljivaxne postoji u tabeli simbola na liniji 9

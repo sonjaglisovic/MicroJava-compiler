@@ -1,0 +1,17 @@
+program MJprog
+
+int m, s, k;
+
+class A extends B{
+int a;
+int b;
+
+{
+   int c(){}
+}
+
+}
+{
+  int main(){}
+}
+

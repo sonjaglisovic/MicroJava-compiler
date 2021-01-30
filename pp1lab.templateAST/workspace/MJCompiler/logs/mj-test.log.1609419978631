@@ -1,0 +1,4 @@
+INFO  14:04:23,611 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\ifelse.mj
+ERROR 14:04:23,893 - 
+Sintaksna greska na liniji 35
+ERROR 14:04:23,894 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 35

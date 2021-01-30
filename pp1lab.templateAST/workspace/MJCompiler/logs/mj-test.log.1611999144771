@@ -1,0 +1,11 @@
+INFO  10:31:55,977 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\designators_and_vars.mj
+ERROR 10:31:56,333 - 
+Sintaksna greska na liniji 24
+ERROR 10:31:56,343 - 
+Sintaksna greska na liniji 38
+ERROR 10:31:56,345 - 
+Sintaksna greska na liniji 38
+ERROR 10:31:56,355 - 
+Sintaksna greska na liniji 66
+ERROR 10:31:56,356 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 69
+INFO  10:31:56,356 - ===================================

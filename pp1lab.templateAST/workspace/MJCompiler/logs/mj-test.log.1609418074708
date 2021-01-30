@@ -1,0 +1,45 @@
+INFO  13:32:21,595 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\statements.mj
+INFO  13:32:21,816 - #24 MJProgram
+INFO  13:32:21,817 - #24 int
+INFO  13:32:21,819 - #24 number1
+INFO  13:32:21,828 - #24 number2
+INFO  13:32:21,828 - #24 int
+INFO  13:32:21,829 - #24 array
+INFO  13:32:21,832 - #24 int
+INFO  13:32:21,834 - #24 max
+INFO  13:32:21,835 - #24 int
+INFO  13:32:21,836 - #24 array
+INFO  13:32:21,837 - #24 int
+INFO  13:32:21,840 - #24 i
+INFO  13:32:21,840 - #24 max
+INFO  13:32:21,841 - #24 value
+INFO  13:32:21,841 - #24 i
+INFO  13:32:21,846 - #23 0
+INFO  13:32:21,848 - #24 max
+INFO  13:32:21,849 - #23 0
+INFO  13:32:21,850 - #24 array
+INFO  13:32:21,850 - #23 0
+INFO  13:32:21,855 - #23 0
+INFO  13:32:21,860 - #23 0
+INFO  13:32:21,862 - #24 array
+INFO  13:32:21,863 - #23 0
+INFO  13:32:21,863 - #23 1
+INFO  13:32:21,863 - #23 2
+INFO  13:32:21,864 - #24 array
+INFO  13:32:21,864 - #23 0
+INFO  13:32:21,864 - #23 2
+INFO  13:32:21,866 - #24 array
+INFO  13:32:21,867 - #24 i
+INFO  13:32:21,867 - #24 max
+INFO  13:32:21,869 - #24 max
+INFO  13:32:21,870 - #24 array
+INFO  13:32:21,870 - #24 i
+INFO  13:32:21,871 - #24 i
+INFO  13:32:21,872 - #24 i
+INFO  13:32:21,872 - #23 4
+INFO  13:32:21,873 - #24 i
+INFO  13:32:21,875 - #24 i
+INFO  13:32:21,876 - #23 5
+ERROR 13:32:21,878 - 
+Sintaksna greska na liniji 38
+ERROR 13:32:21,879 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 38

@@ -1,0 +1,52 @@
+INFO  10:45:35,804 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\test301.mj
+INFO  10:45:36,137 - ===================================
+INFO  10:45:36,182 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 17
+INFO  10:45:36,183 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 18
+INFO  10:45:36,184 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 19
+INFO  10:45:36,185 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 19
+INFO  10:45:36,186 - Prisput simbolu:  Con jedan: int 0 0  na liniji 19
+INFO  10:45:36,188 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 20
+INFO  10:45:36,189 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 20
+INFO  10:45:36,189 - Prisput simbolu:  Con pet: int 0 0  na liniji 20
+INFO  10:45:36,191 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 21
+INFO  10:45:36,192 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 22
+INFO  10:45:36,192 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 25
+ERROR 10:45:36,193 - Pokusaj dinamickog alociranja objekta ne klasnog tipa na liniji 25
+INFO  10:45:36,193 - Prisput simbolu:  Con nula: int 0 0  na liniji 26
+INFO  10:45:36,194 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 26
+INFO  10:45:36,194 - Prisput simbolu:  Con jedan: int 0 0  na liniji 26
+INFO  10:45:36,195 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 27
+INFO  10:45:36,195 - Prisput simbolu:  Con jedan: int 0 0  na liniji 28
+INFO  10:45:36,195 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 28
+INFO  10:45:36,196 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 28
+INFO  10:45:36,196 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 28
+INFO  10:45:36,197 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 28
+INFO  10:45:36,199 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 29
+INFO  10:45:36,200 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 29
+INFO  10:45:36,203 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 29
+INFO  10:45:36,203 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 30
+INFO  10:45:36,204 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 31
+INFO  10:45:36,204 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 34
+ERROR 10:45:36,204 - Pokusaj dinamickog alociranja objekta ne klasnog tipa na liniji 34
+INFO  10:45:36,205 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 35
+INFO  10:45:36,206 - Prisput simbolu:  Con jedan: int 0 0  na liniji 36
+INFO  10:45:36,207 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 36
+INFO  10:45:36,208 - Prisput simbolu:  Con pet: int 0 0  na liniji 37
+INFO  10:45:36,208 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 37
+INFO  10:45:36,209 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 38
+INFO  10:45:36,209 - Prisput simbolu:  Con jedan: int 0 0  na liniji 39
+INFO  10:45:36,209 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 39
+INFO  10:45:36,210 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 42
+INFO  10:45:36,210 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 42
+INFO  10:45:36,210 - Prisput simbolu:  Con pet: int 0 0  na liniji 42
+INFO  10:45:36,211 - Prisput simbolu:  Con jedan: int 0 0  na liniji 42
+INFO  10:45:36,211 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 42
+INFO  10:45:36,214 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 43
+INFO  10:45:36,215 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 45
+INFO  10:45:36,216 - Prisput simbolu:  Var bt: bool 1 1  na liniji 46
+INFO  10:45:36,216 - Prisput simbolu:  Var bt: bool 1 1  na liniji 48
+INFO  10:45:36,217 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 48
+INFO  10:45:36,217 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 48
+INFO  10:45:36,218 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 49
+INFO  10:45:36,218 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 49
+INFO  10:45:36,218 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 50

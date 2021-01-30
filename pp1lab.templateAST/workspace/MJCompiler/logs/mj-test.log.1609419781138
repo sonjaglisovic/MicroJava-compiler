@@ -1,0 +1,42 @@
+INFO  13:59:51,638 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\ifelse.mj
+INFO  13:59:51,857 - #24 MJProgram
+INFO  13:59:51,857 - #24 int
+INFO  13:59:51,859 - #24 m
+INFO  13:59:51,868 - #24 l
+INFO  13:59:51,869 - #24 k
+INFO  13:59:51,869 - #24 b
+INFO  13:59:51,871 - #24 int
+INFO  13:59:51,873 - #24 main
+INFO  13:59:51,879 - #24 l
+INFO  13:59:51,882 - #23 2
+INFO  13:59:51,887 - #23 0
+INFO  13:59:51,891 - #24 m
+INFO  13:59:51,892 - #23 2
+INFO  13:59:51,892 - #23 1
+INFO  13:59:51,893 - #24 k
+INFO  13:59:51,894 - #23 3
+INFO  13:59:51,894 - #23 0
+INFO  13:59:51,897 - #24 l
+INFO  13:59:51,900 - #24 l
+INFO  13:59:51,901 - #24 m
+INFO  13:59:51,902 - #24 m
+INFO  13:59:51,903 - #24 l
+INFO  13:59:51,909 - #24 l
+INFO  13:59:51,909 - #24 m
+INFO  13:59:51,910 - #23 8
+INFO  13:59:51,912 - #24 k
+INFO  13:59:51,913 - #24 k
+INFO  13:59:51,913 - #24 l
+INFO  13:59:51,914 - #24 m
+INFO  13:59:51,914 - #23 4
+INFO  13:59:51,915 - #24 l
+INFO  13:59:51,915 - #23 4
+INFO  13:59:51,915 - #24 k
+INFO  13:59:51,916 - #24 b
+INFO  13:59:51,916 - #24 m
+INFO  13:59:51,916 - #23 5
+INFO  13:59:51,917 - #24 k
+INFO  13:59:51,917 - #24 b
+ERROR 13:59:51,918 - 
+Sintaksna greska na liniji 35
+ERROR 13:59:51,919 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 35

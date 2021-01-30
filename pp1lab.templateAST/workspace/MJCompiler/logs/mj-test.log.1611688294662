@@ -1,0 +1,49 @@
+INFO  20:06:57,889 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\pp.txt
+ERROR 20:06:58,137 - 
+Sintaksna greska na liniji 5
+INFO  20:06:58,160 - Program(
+  ProgramName(
+   MJprog
+  ) [ProgramName]
+  VarDeclarations(
+    NoVarDecl(
+    ) [NoVarDecl]
+    VariableDeclaration(
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        VariableList(
+          ErrorVarDcl(
+          ) [ErrorVarDcl]
+          SingleVarDecl(
+           m
+            NotArray(
+            ) [NotArray]
+          ) [SingleVarDecl]
+        ) [VariableList]
+      ) [VarDecl]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      RegularType(
+        Type(
+         int
+        ) [Type]
+      ) [RegularType]
+      MethodName(
+       f
+      ) [MethodName]
+      NoParams(
+      ) [NoParams]
+      NoVars(
+      ) [NoVars]
+      NoStmt(
+      ) [NoStmt]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  20:06:58,162 - ===================================

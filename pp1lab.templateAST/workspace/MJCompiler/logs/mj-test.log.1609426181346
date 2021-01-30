@@ -1,0 +1,4 @@
+INFO  15:48:37,515 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\statements.mj
+ERROR 15:48:37,775 - 
+Sintaksna greska na liniji 22
+ERROR 15:48:37,781 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 80

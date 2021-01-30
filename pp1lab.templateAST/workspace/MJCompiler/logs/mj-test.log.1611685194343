@@ -1,0 +1,80 @@
+INFO  19:18:31,696 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\pp.txt
+ERROR 19:18:31,970 - 
+Sintaksna greska na liniji 12
+INFO  19:18:31,981 - Program(
+  ProgramName(
+   MJprog
+  ) [ProgramName]
+  VarDeclarations(
+    VarDeclarations(
+      NoVarDecl(
+      ) [NoVarDecl]
+      VariableDeclaration(
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          FirstDeclaration(
+            SingleVarDecl(
+             m
+              NotArray(
+              ) [NotArray]
+            ) [SingleVarDecl]
+          ) [FirstDeclaration]
+        ) [VarDecl]
+      ) [VariableDeclaration]
+    ) [VarDeclarations]
+    ClassDeclaration(
+      ClassDecl(
+        ClassName(
+         A
+        ) [ClassName]
+        ParentSpecification(
+         B
+        ) [ParentSpecification]
+        NoVars(
+        ) [NoVars]
+        NoMethodInClass(
+        ) [NoMethodInClass]
+      ) [ClassDecl]
+    ) [ClassDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      RegularType(
+        Type(
+         int
+        ) [Type]
+      ) [RegularType]
+      MethodName(
+       f
+      ) [MethodName]
+      NoParams(
+      ) [NoParams]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        NoStmt(
+        ) [NoStmt]
+        MatchedStmt(
+          DesStatement(
+            Design(
+              DesignatorDecl(
+               x
+                NoAdditional(
+                ) [NoAdditional]
+              ) [DesignatorDecl]
+              AssignStatementSt(
+                AssignError(
+                ) [AssignError]
+              ) [AssignStatementSt]
+            ) [Design]
+          ) [DesStatement]
+        ) [MatchedStmt]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  19:18:31,986 - ===================================

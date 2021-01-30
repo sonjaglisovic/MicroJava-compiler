@@ -1,0 +1,345 @@
+
+
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+import rs.etf.pp1.symboltable.concepts.*;
+
+parser code {:
+
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+
+
+:}
+
+
+
+terminal PROG, LBRACE, TIMES, MINUS, RBRACE,EXTENDS, TRUE, FALSE, CLASS, SEMI,LBRACKET, RBRACKET, LPAREN, RPAREN, EQUAL, RETURN, PLUS, COMMA, PRINT, VOID, CONST;
+terminal Integer NUMBER;
+terminal String IDENT, LETTER, PLUSPLUS, MINUSMINUS;
+terminal IF, ELSE, GREATEREQUAL, LESSEQUAL;
+terminal OR, AND, EXCL, NEW, LESS, POINT, GREATER, COL, QUEST, DIV, MOD, BREAK, CONTINUE, READ;
+terminal DO, WHILE,CASE, SWITCH, SAME, DIFFERENT;
+nonterminal Program, DeclList, DeclPart, JustVarDecl, VarDeclList, SingleVarDecl, ConstDeclList;
+nonterminal OptionalMethodDecl, MethodDecl, SingleMethodDecl, FormPars;
+nonterminal ParamDecl, ParamList, OptionalArraySpec, StatementList, Statement, Matched, Unmatched;
+nonterminal DesignatorStatement, DesignParam, AdditionalList, AdditionalElement;
+nonterminal ActPars, ActualParamList, SimpleRel, ClassRel, DesignatorName;
+nonterminal OptionalOp, OptionalMinus, Mulop, Addop, Assignop, Relop, SingleParameter;
+nonterminal OptionalSecondParam, ExpressionType, CaseList, CaseDecl;
+nonterminal MatchedList, AdditionForCall, FormParDecl, MethodSign, Do, Switch;
+nonterminal DesignatorList, ConditionPart, ClassFieldDecList, VarDecl, ClassDecl, SingleConstDecl, ConstDecl;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, ClassName, MethodName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Initializer, OptionalParent, RetType, BoolInitializer, Factor; 
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr1, Expr, OptionalExpression, OptionalAfterReturn, Term;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct TermList, Condition, CondTerm, CondFact, AssignStatement;
+
+
+Program ::= (Program) PROG ProgramName:prog DeclList LBRACE MethodDecl RBRACE;
+
+ProgramName ::= (ProgramName) IDENT:progName;
+
+DeclList ::= (VarDeclarations) DeclList DeclPart
+			|
+			(NoVarDecl) /*epsilon*/
+			;
+DeclPart ::= (VariableDeclaration) VarDecl
+            |
+			(ConstantDeclaration) ConstDecl
+			|
+			(ClassDeclaration) ClassDecl;
+
+VarDecl::= (VarDecl1) Type:varType VarDeclList SEMI
+           |
+           (ErrorDecl) error;
+			
+
+VarDeclList ::= (VariableList) VarDeclList COMMA SingleVarDecl
+				|
+				(FirstDeclaration) SingleVarDecl
+				|
+				(ErrorVarDcl) error
+                ;		 
+				
+SingleVarDecl ::= (SingleVarDecl) IDENT:varName OptionalArraySpec;
+
+OptionalArraySpec ::= (ArraySpecifier) LBRACKET RBRACKET
+					  |
+					  (NotArray)/*epsilon*/;	 
+
+ConstDecl::=(ConstDecl) CONST Type:typeName ConstDeclList SEMI;
+
+ConstDeclList ::= (ConstList) ConstDeclList COMMA SingleConstDecl
+				  |
+				  (FisrtConstInList) SingleConstDecl;
+				  
+SingleConstDecl ::= (SingleConstDeclaration) IDENT:constName EQUAL Initializer:type;
+
+Initializer::= (BoolInit) BoolInitializer:value
+			   |
+			   (IntInit) NUMBER:value
+			   |
+			   (CharInit) LETTER:value;  
+
+BoolInitializer ::= (FalseValue) FALSE
+                    |
+                    (TrueValue) TRUE;
+
+Type ::= (Type) IDENT:typeName;
+
+
+
+ClassDecl::= (ClassDecl)  CLASS ClassName:className LBRACE JustVarDecl OptionalMethodDecl RBRACE; 
+
+ClassName::= (ClassName) IDENT:className OptionalParent:superClass;
+
+OptionalParent ::=  (ParentSpecification) EXTENDS Type:superClassName
+					|
+					(ExtendError) error
+					|
+					(NoSuperclass) /*epsilon*/;
+					
+MethodDecl ::= (MethodDeclarationList) MethodDecl SingleMethodDecl
+			   |
+			   (NoMethodDecl) /*epsilon*/
+			   ;
+SingleMethodDecl ::= (MethodDeclaration) MethodSign:methName JustVarDecl LBRACE StatementList RBRACE;					
+
+MethodSign::= (MethodSign) MethodName:methName LPAREN FormPars RPAREN;
+
+MethodName::= (MethodName) RetType:retT IDENT:methName;
+
+RetType ::= (RegularType) Type:retT
+			|
+			(VoidType) VOID;
+			
+JustVarDecl::=(JustVars) JustVarDecl VarDecl
+			  |
+			  (NoVars) /*epsilon*/; 				
+
+
+OptionalMethodDecl ::= (ClassMethodList) LBRACE MethodDecl RBRACE
+					   |
+					   (NoMethodInClass)/*epsilon*/;
+					   
+FormPars ::= (ParamLists) ParamList 
+             |
+			 (NoParams) /*epsilon*/; 
+
+ParamList ::= (FormParams) ParamList COMMA ParamDecl 
+			  |
+			  (FirstParam) ParamDecl
+			  |
+			  (ParamError) error 
+              ; 
+               		 
+ParamDecl ::= (MethodParamDecl) Type:paramType FormParDecl;
+
+             
+
+FormParDecl::= (FormParDecl) IDENT:paramName OptionalArraySpec;
+
+StatementList ::= (Statements) StatementList Statement
+				  |
+				  (NoStmt) /*epsilon*/
+				  ;				  
+				  
+Statement ::= (MatchedStmt) Matched
+		      |
+		      (UnmatchedStmt) Unmatched
+		      ; 
+		                
+Unmatched ::= (UnmatchedIf) IF ConditionPart:type2 Statement
+		 	  |
+		 	  (UnmatchedIfElse) IF ConditionPart:type1 Matched ELSE Unmatched
+		 	  ;
+
+ConditionPart::= (RightCondition) LPAREN Condition:condType RPAREN
+			     |
+			     (ErrorCondition) LPAREN error RPAREN:l
+			     {:parser.report_error("Izvrsen oporavak do znaka ')' na liniji, " + lleft, null);:}
+			     ;
+			
+Matched ::= (DesStatement) DesignatorStatement
+		    |
+		    (MatchedStatement) IF ConditionPart:type Matched ELSE Matched
+		    |
+		    (ContinueStatement) CONTINUE SEMI
+		    |
+		    (DoWhileLoop) Do Statement WHILE LPAREN Condition:type RPAREN SEMI
+		    |
+		    (BreakStatement) BREAK SEMI
+		    |
+		    (ReturnStatement) RETURN OptionalAfterReturn:type SEMI
+		    |
+		    (ReadFunctionCall) READ LPAREN Designator:des RPAREN SEMI
+		    |
+		    (PrintFunctionCall) PRINT LPAREN Expr:type OptionalSecondParam:type1 RPAREN SEMI
+		    |
+		    (SwitchStatement) Switch LPAREN Expr:type RPAREN LBRACE CaseList RBRACE
+		    |
+		    (MatchedListSt) LBRACE StatementList RBRACE
+		    ;
+		    
+Do ::= (DoWhileStart) DO;
+
+Switch ::= (SwitchStart) SWITCH;
+	
+CaseList ::= (CaseListDecl) CaseList CaseDecl
+             |
+             (NoCaseList) /*epsilon*/; 
+               		    
+CaseDecl ::= (CaseStatement) CASE NUMBER COL StatementList;		    
+		    
+		   
+OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER
+                        |
+                        (NoSecondParam) /*epsilon*/;
+                                              
+DesignatorStatement ::=  (AssignStatementSt) Designator:des  AssignStatement SEMI
+                		 |
+                         (FuncCallSt) Designator:des LPAREN ActPars RPAREN SEMI
+				         |
+				         (IncrementSt) Designator:des PLUSPLUS SEMI
+				         |
+				         (DecrementSt) Designator:des MINUSMINUS SEMI;
+										
+AssignStatement::= (AssignStm) Assignop Expr:exType
+				   |
+				   (AssignError) error;
+				
+ActPars ::= (AcParamList) ActualParamList
+		    |
+			(NoActPars) /*epsilon*/;
+ 
+ActualParamList ::= (ParameterList) ActualParamList COMMA SingleParameter
+ 			        |
+ 			        (FirstParamExpr) SingleParameter;
+ 			        
+SingleParameter::=(SingleParameter) Expr:t;
+
+Designator ::= (DesignatorDecl) DesignatorName AdditionalList;
+
+DesignatorName ::= (DesignatorName) IDENT:varName;
+
+AdditionalList ::= (AdditionalPart) AdditionalList AdditionalElement
+				   |
+				   (NoAdditional) /*epsilon*/;
+					
+AdditionalElement ::=(AccessField) POINT IDENT:varName 
+					 |
+					 (AccessElement) LBRACKET Expr:exType RBRACKET;
+
+Condition ::= (ConditionExpr)  Condition:type1 OR CondTerm:type2
+			  |
+			  (SingleCondTerm) CondTerm:type2;
+			  
+CondTerm ::= (ConditionTerm) CondTerm:type1 AND CondFact:type2
+		     |
+		     (SingleFact) CondFact:type2;	
+
+
+CondFact ::= (LogicalExpr) Expr1:type
+			 |
+			 (OptionalOperator) Expr1:type1 Relop Expr1:type2;
+
+
+Expr  ::= (CondExpr) Condition:type QUEST Expr:type1 COL Expr:type2
+          |
+          (SimpleExpr) Expr1:type
+          ;
+                    
+Expr1 ::= (MinusExpr) MINUS TermList:t
+          |
+          (NOMinusExpr) TermList:t1;	
+                     	      
+TermList ::= (Terms) TermList:type1 Addop Term:type2
+             |
+             (FirstTerm) Term:type;
+
+          
+Term ::= (CompositeTerm) Term:type1 Mulop Factor:type2
+		 |
+		 (SingleTermDecl) Factor:type;
+		 
+
+Factor ::= (SimpleDesignator) Designator:desType
+           |
+           (FunctionCallDesign) Designator:desType LPAREN ActPars RPAREN 
+           |
+           (NumberDecl) NUMBER:constType
+           |
+           (Letter) LETTER:constType
+           |
+           (BoolValue) BoolInitializer:constType
+           |
+           (ExpressionFactor) LPAREN Expr:exprType RPAREN
+           |
+           (MemoryAllocation) NEW Type:varType OptionalExpression:type;
+				
+
+
+OptionalExpression ::= (SingleExpressionDecl) LBRACKET Expr:exType RBRACKET
+					   |
+					   (NoOptExpr) /*epsilon*/;	
+
+OptionalAfterReturn ::= (ExprAfterReturn) Expr:type
+                        |
+                        (NoAfterRet) /*epsilon*/;
+
+Addop ::= (Addition) PLUS
+          |
+          (Subtraction) MINUS;
+                                 
+Mulop ::= (Multiplication) TIMES
+          |
+          (Division) DIV
+          |
+          (Remaining) MOD;
+          
+Assignop::= (Assignop) EQUAL;
+
+Relop ::= (ClassComp) ClassRel
+		  |
+		  (SimpleComp) SimpleRel;
+     			 				    			  
+
+ClassRel ::= (ComparisonEqual) SAME
+			 |
+			 (ComparionDiffernet) DIFFERENT;
+
+SimpleRel ::= (ComparisonGrater) GREATER
+		  	  |
+		      (CompGraterEqual) GREATEREQUAL
+		      |
+		      (ComparisonLess) LESS
+		      |  			  	     	
+		      (ComparisonLessEqual) LESSEQUAL;
+		
+
