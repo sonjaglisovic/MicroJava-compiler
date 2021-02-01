@@ -44,12 +44,18 @@ public class Compiler {
 		// log.info(prog.toString(""));
 		log.info("===================================");
 
+		
 		// ispis prepoznatih programskih konstrukcija
-		SymbolTable.initialize();
+		SyntaxAnalysis syntax_analyzer = new SyntaxAnalysis();
+		
+		if(SyntaxAnalysis.passedSyntaxCheck()) {
+		prog.traverseBottomUp(syntax_analyzer);
 		SemanticAnalyzer analyzer = new SemanticAnalyzer();
+		SymbolTable.initialize();
 		prog.traverseBottomUp(analyzer);
 		if (analyzer.passed()) {
 		    tsdump();
+		}
 		}
 	    } catch (ClassCastException e) {
 		System.out.println("Fatalna greska");

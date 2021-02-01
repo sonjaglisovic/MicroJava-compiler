@@ -1,78 +1,13 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.Stack;
+
 import org.apache.log4j.Logger;
 
-import rs.ac.bg.etf.pp1.ast.AccessElement;
-import rs.ac.bg.etf.pp1.ast.AccessField;
-import rs.ac.bg.etf.pp1.ast.ArraySpecifier;
-import rs.ac.bg.etf.pp1.ast.AssignStatementSt;
-import rs.ac.bg.etf.pp1.ast.AssignStm;
-import rs.ac.bg.etf.pp1.ast.BoolInit;
-import rs.ac.bg.etf.pp1.ast.BoolValue;
-import rs.ac.bg.etf.pp1.ast.BreakStatement;
-import rs.ac.bg.etf.pp1.ast.CharInit;
-import rs.ac.bg.etf.pp1.ast.ClassComp;
-import rs.ac.bg.etf.pp1.ast.ClassDecl;
-import rs.ac.bg.etf.pp1.ast.ClassName;
-import rs.ac.bg.etf.pp1.ast.CompositeTerm;
-import rs.ac.bg.etf.pp1.ast.CondExpr;
-import rs.ac.bg.etf.pp1.ast.ConditionExpr;
-import rs.ac.bg.etf.pp1.ast.ConditionTerm;
-import rs.ac.bg.etf.pp1.ast.ConstDecl;
-import rs.ac.bg.etf.pp1.ast.ContinueStatement;
-import rs.ac.bg.etf.pp1.ast.DecrementSt;
-import rs.ac.bg.etf.pp1.ast.DesignatorDecl;
-import rs.ac.bg.etf.pp1.ast.DesignatorName;
-import rs.ac.bg.etf.pp1.ast.DoWhileLoop;
-import rs.ac.bg.etf.pp1.ast.DoWhileStart;
-import rs.ac.bg.etf.pp1.ast.ExprAfterReturn;
-import rs.ac.bg.etf.pp1.ast.ExpressionFactor;
-import rs.ac.bg.etf.pp1.ast.FirstTerm;
-import rs.ac.bg.etf.pp1.ast.FormParDecl;
-import rs.ac.bg.etf.pp1.ast.FuncCallSt;
-import rs.ac.bg.etf.pp1.ast.FunctionCallDesign;
-import rs.ac.bg.etf.pp1.ast.IncrementSt;
-import rs.ac.bg.etf.pp1.ast.IntInit;
-import rs.ac.bg.etf.pp1.ast.Letter;
-import rs.ac.bg.etf.pp1.ast.LogicalExpr;
-import rs.ac.bg.etf.pp1.ast.MemoryAllocation;
-import rs.ac.bg.etf.pp1.ast.MethodDeclaration;
-import rs.ac.bg.etf.pp1.ast.MethodName;
-import rs.ac.bg.etf.pp1.ast.MethodParamDecl;
-import rs.ac.bg.etf.pp1.ast.MethodSign;
-import rs.ac.bg.etf.pp1.ast.MinusExpr;
-import rs.ac.bg.etf.pp1.ast.NOMinusExpr;
-import rs.ac.bg.etf.pp1.ast.NoAfterRet;
-import rs.ac.bg.etf.pp1.ast.NoSuperclass;
-import rs.ac.bg.etf.pp1.ast.NumberDecl;
-import rs.ac.bg.etf.pp1.ast.OptionalOperator;
-import rs.ac.bg.etf.pp1.ast.ParentSpecification;
-import rs.ac.bg.etf.pp1.ast.PrintFunctionCall;
-import rs.ac.bg.etf.pp1.ast.Program;
-import rs.ac.bg.etf.pp1.ast.ProgramName;
-import rs.ac.bg.etf.pp1.ast.ReadFunctionCall;
-import rs.ac.bg.etf.pp1.ast.RegularType;
-import rs.ac.bg.etf.pp1.ast.ReturnStatement;
-import rs.ac.bg.etf.pp1.ast.RightCondition;
-import rs.ac.bg.etf.pp1.ast.SimpleDesignator;
-import rs.ac.bg.etf.pp1.ast.SimpleExpr;
-import rs.ac.bg.etf.pp1.ast.SingleCondTerm;
-import rs.ac.bg.etf.pp1.ast.SingleConstDeclaration;
-import rs.ac.bg.etf.pp1.ast.SingleExpressionDecl;
-import rs.ac.bg.etf.pp1.ast.SingleFact;
-import rs.ac.bg.etf.pp1.ast.SingleParameter;
-import rs.ac.bg.etf.pp1.ast.SingleTermDecl;
-import rs.ac.bg.etf.pp1.ast.SingleVarDecl;
-import rs.ac.bg.etf.pp1.ast.SwitchStart;
-import rs.ac.bg.etf.pp1.ast.SwitchStatement;
-import rs.ac.bg.etf.pp1.ast.SyntaxNode;
-import rs.ac.bg.etf.pp1.ast.Terms;
-import rs.ac.bg.etf.pp1.ast.Type;
-import rs.ac.bg.etf.pp1.ast.VarDecl1;
-import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
-import rs.ac.bg.etf.pp1.ast.VoidType;
+import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
+import rs.etf.pp1.symboltable.structure.SymbolDataStructure;
 
 public class SemanticAnalyzer extends VisitorAdaptor {
 
@@ -83,7 +18,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     boolean errorDetected = false;
 
     Logger log = Logger.getLogger(getClass());
-
+    Stack<Obj> designator_stack = new Stack<>();
+    
+    private int nVars;
+    
+    private int getNVars() {
+    	return nVars;
+    }
+    
     public void report_error(String message, SyntaxNode info) {
 	errorDetected = true;
 	StringBuilder msg = new StringBuilder(message);
@@ -106,7 +48,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	if (numOfGlobalVars > MAX_NUM_VARS) {
 	    report_error("Deklarisano je vise globalnih promenljivih nego sto je dozvoljeno", null);
 	}
-	System.out.println("Broj promenljivih u programu je" + SymbolTable.currentScope.getnVars());
+	nVars = SymbolTable.currentScope.getnVars();
+	System.out.println("Broj promenljivih u programu je " + nVars);
 	Obj mainMethod = SymbolTable.find("main");
 	if (mainMethod == SymbolTable.noObj || mainMethod.getKind() != MyObject.Meth)
 	    report_error("Semanticka Greska! Metoda main nije deklarisana u programu ", null);
@@ -123,7 +66,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	if (SymbolTable.find(className.getClassName()) != SymbolTable.noObj) {
 	    report_error("Vec postoji definisan simbol imena: " + className.getClassName(), className);
 	}
-	Struct newType = new MyStruct(MyStruct.Class, className.getOptionalParent().struct);
+	Struct newType = new MyStruct(MyStruct.Class, className.getOptionalParent().obj.getType());
 	ObjectFormatter.setDescription(newType, className.getClassName());
 	className.obj = SymbolTable.insert(MyObject.Type, className.getClassName(), newType);
 	SemanticAnalysisHelper.setClassDeclStart(className.obj);
@@ -131,7 +74,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(NoSuperclass noSuperClass) {
-	noSuperClass.struct = SymbolTable.noType;
+	noSuperClass.obj = SymbolTable.noObj;
     }
 
     public void visit(ClassDecl classDecl) {
@@ -140,6 +83,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	    report_error("Semanticka Greska! Deklarisano je vise polja nego sto je dozvoljeno u klasi: "
 		    + classDecl.getClassName().getClassName(), null);
 	}
+	System.out.println("Broj polja u klasi je: "+ numOfFields +"\n");
 	SemanticAnalysisHelper.classDeclarationEnd();
 	SymbolTable.chainLocalSymbols(classDecl.getClassName().obj.getType());
 	SymbolTable.closeScope();
@@ -149,9 +93,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	if (parentSpec.getType().struct.getKind() != MyStruct.Class
 		&& parentSpec.getType().struct != SymbolTable.noType) {
 	    report_error("Semanticka Greska! Izvodi se iz tipa koji nije klasa", parentSpec);
-	    parentSpec.struct = SymbolTable.noType;
-	} else
-	    parentSpec.struct = parentSpec.getType().struct;
+	    parentSpec.obj = SymbolTable.noObj;
+	}else
+	    parentSpec.obj = SymbolTable.find(parentSpec.getType().getTypeName());
     }
 
     public void visit(Type type) {
@@ -187,10 +131,20 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     public void visit(IntInit intInit) {
 	intInit.struct = SymbolTable.intType;
+	SemanticAnalysisHelper.makeNewConstant(intInit.getValue());
     }
 
     public void visit(CharInit charInit) {
 	charInit.struct = SymbolTable.charType;
+	SemanticAnalysisHelper.makeNewConstant(charInit.getValue().charAt(1));
+    }
+    
+    public void visit(TrueValue trueValue) {
+    	SemanticAnalysisHelper.makeNewConstant(1);
+    }
+    
+    public void visit(FalseValue falseValue) {
+       SemanticAnalysisHelper.makeNewConstant(0);
     }
 
     public void visit(SingleConstDeclaration singleConstDecl) {
@@ -243,8 +197,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(MethodDeclaration methodDecl) {
-
-	Obj method = SymbolTable.find(methodDecl.getMethodSign().getMethodName().getMethName());
+    Obj method = SymbolTable.find(methodDecl.getMethodSign().getMethodName().getMethName());
 	SemanticAnalysisHelper.setMethod_declaration_in_progress(false);
 	int countThis = 0;
 	if (SemanticAnalysisHelper.classDeclInProgress())
@@ -254,7 +207,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	System.out.println("Broj lokalnih promenljivih u metodi je: " + SymbolTable.currentScope.getnVars());
 	SymbolTable.chainLocalSymbols(method);
 	SymbolTable.closeScope();
-
     }
 
     public void visit(MethodSign methodSign) {
@@ -267,54 +219,111 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(AccessField accessField) {
-	SemanticAnalysisHelper.buildDesigntor(accessField.getVarName());
+    	Obj designator = SymbolTable.noObj;
+    	Obj my_object = designator_stack.pop();
+    	if(my_object.getType().getKind() == MyStruct.Array)
+    		report_error(" Semanticka Greska! Simbol nizovnog tipa " + my_object.getName() + " nije indeksiran ", accessField);
+    	else if(my_object.getType().getKind() != MyStruct.Class)
+    		report_error(" Semanticka Greska! Pokusaj prisputa polju promenljive " + my_object.getName()
+			+ " koja nije klasnog tipa \n" + my_object.getType().getKind() + "", accessField);
+    	else {
+    			SymbolDataStructure members;
+    		    Struct type = my_object.getType();
+    		    if (SemanticAnalysisHelper.classDeclInProgress() && type.equals(SemanticAnalysisHelper.getCurrentClassType()))
+    			members = SymbolTable.currentScope.getOuter().getLocals();
+    		    else
+    			members = type.getMembers();
+
+    		    designator = members != null ? members.searchKey(accessField.getVarName()) : SymbolTable.noObj;
+
+    		    while (designator == null && type.getElemType() != null && type.getElemType() != SymbolTable.noType) {
+    		    type = type.getElemType();
+    		    members = type.getMembers();
+    		    designator = members != null ? members.searchKey(accessField.getVarName()) : SymbolTable.noObj;
+    		    }
+    		    
+    		    if (designator == null || designator == SymbolTable.noObj) 
+    				report_error(" Semanticka Greska! Prisput polju " + accessField.getVarName()
+    					+ " koje ne postoji u specificiranoj klasi niti u roditeljskim klasama", accessField);
+    		    else
+    		    	report_info("Prisput njegovom polju: " + ObjectFormatter.getObjectDescription(designator) + "", accessField);
+    	}
+    	
+    	designator_stack.push(designator);
+    	accessField.obj = designator;
     }
 
     public void visit(AccessElement accessElement) {
-	SemanticAnalysisHelper.setArraySpecToDesignator();
+    Obj my_array = designator_stack.pop();
+    Obj designator = SymbolTable.noObj;
 	if (!accessElement.getExpr().struct.equals(SymbolTable.intType)) {
 	    report_error("Semanticka Greska! Tip izraza za indeksiranje elementa nije int kako je ocekivano",
 		    accessElement.getExpr());
 	}
+	if(my_array.getType().getKind() != MyStruct.Array) 
+		report_error(" Semanticka greska! Indeksiran je simbol " + my_array.getName() + " koji nije nizovnog tipa ", accessElement);
+	else
+		designator = new MyObject(MyObject.Elem, "array_element", my_array.getType().getElemType());
+	 	
+	designator_stack.push(designator);
     }
 
     public void visit(DesignatorName designName) {
-	SemanticAnalysisHelper.startDesignatorBuilding(designName.getVarName());
+    	String firstVar = designName.getVarName();
+    	Obj designator = SymbolTable.find(firstVar);
+    	SymbolDataStructure class_members;
+    	if (designator == SymbolTable.noObj && SemanticAnalysisHelper.classDeclInProgress()) {
+    	    Struct designator_type = SemanticAnalysisHelper.getCurrentClassType();
+    	    while ((designator == SymbolTable.noObj || designator == null) && designator_type.getElemType() != null
+    		    && designator_type.getElemType() != SymbolTable.noType) {
+    		designator_type = designator_type.getElemType();
+    		class_members = designator_type.getMembers();
+    		designator = class_members != null ? class_members.searchKey(firstVar) : SymbolTable.noObj;
+    	    }
+    	}
+    	if (designator == SymbolTable.noObj || designator == null) {
+    	    report_error("Semanticka Greska! Promenljiva " + firstVar + " ne postoji u tabeli simbola", designName);
+    	    designator = SymbolTable.noObj;
+    	}else
+    		report_info("Prisput simbolu: " + ObjectFormatter.getObjectDescription(designator) + "", designName);
+    	designator_stack.push(designator);
+    	designName.obj = designator;
     }
 
     public void visit(DesignatorDecl designDecl) {
-	designDecl.obj = SemanticAnalysisHelper.processDesignator();
-	if (designDecl.obj == null || designDecl.obj == SymbolTable.noObj
-		|| SemanticAnalysisHelper.getNotArrayIndexingError()
-		|| SemanticAnalysisHelper.getArrayNotIndexedError()) {
-	    report_error(SemanticAnalysisHelper.getErrorInfo(), designDecl);
-	    designDecl.obj = SymbolTable.noObj;
-	} else
-	    report_info(SemanticAnalysisHelper.getErrorInfo(), designDecl);
+    	designDecl.obj = designator_stack.pop();
+		if(designDecl.obj.getKind() == MyObject.Meth) 
+			SemanticAnalysisHelper.pushNewParamList();
     }
 
     public void visit(SimpleDesignator simpleDes) {
 	int designatorKind = simpleDes.getDesignator().obj.getKind();
-	if (designatorKind != Obj.Fld && designatorKind != Obj.Var && designatorKind != Obj.Con) {
+	if(designatorKind == Obj.Meth)
+		SemanticAnalysisHelper.popParamList();
+	if (designatorKind != Obj.Fld && designatorKind != Obj.Var && designatorKind != Obj.Con && designatorKind != Obj.Elem ) {
 	    report_error("Semanticka Greska! pogresna upotreba simbola", simpleDes);
 	    simpleDes.struct = SymbolTable.noType;
-	} else if (simpleDes.getDesignator().obj.getType().getKind() == MyStruct.Array
-		&& !SemanticAnalysisHelper.shouldLeaveArray())
-	    simpleDes.struct = simpleDes.getDesignator().obj.getType().getElemType();
-	else
+	} else
 	    simpleDes.struct = simpleDes.getDesignator().obj.getType();
     }
 
     public void visit(MemoryAllocation memAllocation) {
-	if (memAllocation.getType().struct == SymbolTable.noType) {
-	    report_error("Semanticka Greska! Klasa: " + memAllocation.getType().getTypeName() + "nije definisana",
-		    memAllocation);
-	}
-
-	if (SemanticAnalysisHelper.isArray_allocation()) {
-	    memAllocation.struct = SemanticAnalysisHelper.arrayType(memAllocation.getType().struct);
+    boolean isArray = SemanticAnalysisHelper.isArray_allocation();
+    Obj memoryAllocType = memAllocation.getAllocationType().obj;
+    
+	if(!isArray && memoryAllocType.getType().getKind() != MyStruct.Class)
+		report_error("Semanticka Greska! Pokusaj dinamicke alokacije promenljive standardnog tipa", memAllocation);
+	if (isArray) {
+	    memAllocation.struct = SemanticAnalysisHelper.arrayType(memoryAllocType.getType());
 	} else
-	    memAllocation.struct = memAllocation.getType().struct;
+	    memAllocation.struct = memoryAllocType.getType();
+    }
+    
+    public void visit(AllocationType typeToAlloc) {
+    	typeToAlloc.obj = SymbolTable.find(typeToAlloc.getType().getTypeName());
+    	if (typeToAlloc.obj == SymbolTable.noObj)
+    	    report_error("Semanticka Greska! Klasa: " + typeToAlloc.getType().getTypeName() + "nije definisana",
+    		    typeToAlloc);
     }
 
     public void visit(SingleExpressionDecl singleExprDecl) {
@@ -447,12 +456,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(AssignStatementSt assignStmt) {
+    if(assignStmt.getDesignator().obj.getKind() == MyObject.Meth)
+    	SemanticAnalysisHelper.popParamList();
 	Struct type = assignStmt.getDesignator().obj.getType();
-	if (assignStmt.getDesignator().obj.getType().getKind() == Struct.Array
-		&& !SemanticAnalysisHelper.shouldLeaveArray())
-	    type = type.getElemType();
 	if (assignStmt.getDesignator().obj.getKind() != MyObject.Fld
-		&& assignStmt.getDesignator().obj.getKind() != MyObject.Var)
+		&& assignStmt.getDesignator().obj.getKind() != MyObject.Var && assignStmt.getDesignator().obj.getKind() != MyObject.Elem)
 	    report_error(
 		    "Semanticka Greska! Simbol sa leve strane operatora dodele mora biti promenljiva, element niza ili polje unutar objekta",
 		    assignStmt);
@@ -469,13 +477,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(IncrementSt increment) {
+    if(increment.getDesignator().obj.getKind() == MyObject.Meth)
+        SemanticAnalysisHelper.popParamList();
 	Struct type = increment.getDesignator().obj.getType();
-	if (increment.getDesignator().obj.getType().getKind() == Struct.Array
-		&& !SemanticAnalysisHelper.shouldLeaveArray())
-	    type = type.getElemType();
-
 	if (increment.getDesignator().obj.getKind() != MyObject.Fld
-		&& increment.getDesignator().obj.getKind() != MyObject.Var)
+		&& increment.getDesignator().obj.getKind() != MyObject.Var && increment.getDesignator().obj.getKind() != MyObject.Elem)
 	    report_error(
 		    "Semanticka Greska! Operand kod inkrementa mora biti promenljiva, element niza ili polje objekta unutrasnje klase",
 		    increment);
@@ -487,12 +493,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(DecrementSt decrement) {
+    if(decrement.getDesignator().obj.getKind() == MyObject.Meth)
+        SemanticAnalysisHelper.popParamList();
 	Struct type = decrement.getDesignator().obj.getType();
-	if (decrement.getDesignator().obj.getType().getKind() == Struct.Array
-		&& !SemanticAnalysisHelper.shouldLeaveArray())
-	    type = type.getElemType();
 	if (decrement.getDesignator().obj.getKind() != MyObject.Fld
-		&& decrement.getDesignator().obj.getKind() != MyObject.Var)
+		&& decrement.getDesignator().obj.getKind() != MyObject.Var && decrement.getDesignator().obj.getKind() != MyObject.Elem)
 	    report_error(
 		    "Semanticka Greska! Operand kod dekrementa mora biti promenljiva, element niza ili polje objekta unutrasnje klase",
 		    decrement);
@@ -533,11 +538,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(ReadFunctionCall readFunc) {
-	Struct desType = (readFunc.getDesignator().obj.getType().getKind() == MyStruct.Array
-		&& !SemanticAnalysisHelper.shouldLeaveArray()) ? readFunc.getDesignator().obj.getType().getElemType()
-			: readFunc.getDesignator().obj.getType();
+    if(readFunc.getDesignator().obj.getKind() == MyObject.Meth)
+        SemanticAnalysisHelper.popParamList();
+	Struct desType = readFunc.getDesignator().obj.getType();
 	if (readFunc.getDesignator().obj.getKind() != MyObject.Fld
-		&& readFunc.getDesignator().obj.getKind() != MyObject.Var)
+		&& readFunc.getDesignator().obj.getKind() != MyObject.Var && readFunc.getDesignator().obj.getKind() != MyObject.Elem)
 	    report_error(
 		    "Semanticka Greska! Argument funkcije read mora oznacavati promenljivu, polje unutar objekta ili element niza",
 		    readFunc);
