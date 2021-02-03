@@ -22,7 +22,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     private int nVars;
     
-    private int getNVars() {
+    public int getNVars() {
     	return nVars;
     }
     

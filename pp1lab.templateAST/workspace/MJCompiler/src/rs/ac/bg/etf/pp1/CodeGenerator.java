@@ -1,12 +1,11 @@
 package rs.ac.bg.etf.pp1;
 
-import java.util.Collection;
-import java.util.Stack;
-
+import java.util.*;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.concepts.Obj;
+import rs.etf.pp1.symboltable.concepts.Struct;
 import rs.etf.pp1.symboltable.structure.SymbolDataStructure;
 
 public class CodeGenerator extends VisitorAdaptor {
@@ -15,29 +14,72 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Stack<Integer> operation_code_stack = new Stack<>();
 	private Stack<Integer> break_jump_address = new Stack<>();
 	private Stack<Integer> continue_jump_address = new Stack<>();
-	private Stack<Integer> else_jump_address = new Stack<>();
+	private Stack<Integer> jump_true = new Stack<>();
+	private Stack<Integer> jump_false = new Stack<>();
+	private Stack<Integer> do_while_stack = new Stack<>();
 	boolean class_decl_in_progress = false;
 	boolean method_decl_in_progress = false;
-	private int current_method_start_adr = 0;
-	private Stack<Obj> designator_stack = new Stack<>();
 	private Stack<Integer> jump_to_trap_addresses = new Stack<>();
+	private int static_memory_free;
+	private Obj this_object_for_current_method = null;
+	private Obj currentClass;
+	private Stack<Boolean> invokevirtual = new Stack<>();
+	private Map<Struct, Integer> class_to_vmt_addresses = new HashMap<>(); 
+	private int nested_if = 0;
+	private boolean return_statement_occurred = false;
+	private Stack<Obj> designtor_stack = new Stack<>();
+	
+	public CodeGenerator(int numOfStatics) {
+		static_memory_free = numOfStatics;
+		len_code();
+		ch_code();
+		ord_code();
+	}
+	
+	public void visit(Program program) {
+		while(!jump_to_trap_addresses.empty()) {
+			Code.fixup(jump_to_trap_addresses.pop());
+		}
+		Code.put(Code.trap);
+		Code.put('g');
+	}
 	
 	public void visit(MethodName methodName) {
-		current_method_start_adr = Code.pc;
 		methodName.obj.setAdr(Code.pc);
+		if(methodName.getMethName().compareTo("main") == 0)
+			main_pc = Code.pc;
 		method_decl_in_progress = true;
-		int var_count = 0;
 		Collection<Obj> locals = methodName.obj.getLocalSymbols();
-		var_count = locals.size();
 		Code.put(Code.enter);
 		Code.put(methodName.obj.getLevel());
-		int var_num = var_count - methodName.obj.getLevel();
-		Code.put(var_num);
+		Code.put(methodName.obj.getLocalSymbols().size());
+		for(Obj current_obj : locals) {
+			if(current_obj.getName().compareTo("this") == 0) {
+				Code.store(current_obj);
+				this_object_for_current_method = current_obj;
+				break;
+			}
+		}
+	}
+	
+	public void visit(MethodDeclaration methodDecl) {
+		this_object_for_current_method = null;
+		method_decl_in_progress = false;
+		if(!return_statement_occurred && methodDecl.getMethodSign().getMethodName().obj.getType() != SymbolTable.voidType) {
+			Code.put(Code.jmp);
+			jump_to_trap_addresses.push(Code.pc);
+			Code.put2(0);
+		}
+		Code.put(Code.exit);
+		Code.put(Code.return_);
 	}
 	
 	public void visit(ClassName className) {
 		Obj parent = className.getOptionalParent().obj;
-		int start_address = parent.getLevel();
+		//default 1 u slucaju da nema roditelja, na poziciju 0 se nalazi referenca na tabelu virtuelnih fja
+		int start_address = 1;
+		if(parent != SymbolTable.noObj)
+			start_address = parent.getLevel();
 		SymbolDataStructure members = parent.getType().getMembers();
 		Collection<Obj> locals = members.symbols();
 		int field_num = 0;
@@ -47,7 +89,51 @@ public class CodeGenerator extends VisitorAdaptor {
 				class_member.setAdr(class_member.getAdr() + start_address);
 			}
 		}
+		currentClass = className.obj;
+		class_decl_in_progress = true;
 		className.obj.setLevel(start_address + field_num);
+	}
+	
+	private void fillVMT(Map<String, Integer> method_names_to_addresses) {
+		Iterator<Map.Entry<String, Integer>> iterator = method_names_to_addresses.entrySet().iterator();
+		while(iterator.hasNext()) {
+			Map.Entry<String, Integer> method = iterator.next();
+			String methodName = method.getKey();
+			int address = method.getValue();
+			for(int i = 0; i < methodName.length(); i++) {
+				Code.loadConst(methodName.charAt(i));
+				Code.put(Code.putstatic);
+				Code.put(static_memory_free++);
+			}
+			Code.loadConst(address);
+			Code.put(Code.putstatic);
+			Code.put(static_memory_free++);
+			Code.loadConst(-1);
+			Code.put(Code.putstatic);
+			Code.put(static_memory_free++);			
+		}
+		Code.loadConst(-2);
+		Code.put(Code.putstatic);
+		Code.put(static_memory_free++);
+	}
+	
+	public void visit(ClassDecl classDecl) {
+		class_decl_in_progress = false;
+		Map<String, Integer> methods_mapped_to_addresses = new HashMap<>();
+		Struct current_type = currentClass.getType();
+		while(current_type != SymbolTable.noType && current_type != null) {
+			SymbolDataStructure members = current_type.getMembers();
+			Collection<Obj>local_symbols = members.symbols();
+			for(Obj current_obj : local_symbols) {
+				if(current_obj.getKind() == MyObject.Meth) {
+					if(!methods_mapped_to_addresses.containsKey(current_obj.getName()))
+						methods_mapped_to_addresses.put(current_obj.getName(), current_obj.getAdr());
+				}
+			}
+			current_type = current_type.getElemType();
+		}
+		class_to_vmt_addresses.put(classDecl.getClassName().obj.getType(), static_memory_free);
+		fillVMT(methods_mapped_to_addresses);
 	}
 	
 	public void visit(NumberDecl numberDecl) {
@@ -69,27 +155,44 @@ public class CodeGenerator extends VisitorAdaptor {
 	   Code.load(bool_constant);
 	}
 	
+	//alocira se prostor za novi objekat i postavlja se pokazivac na tableu virtuelnih metoda na onu vrednost koja odgovara alociranom tipu
 	public void visit(MemoryAllocation memAllocation) {
 		if(memAllocation.struct.getKind() != MyStruct.Array) {
+			Obj type_obj = memAllocation.getAllocationType().obj;	
 			Code.put(Code.new_);
-			//jedna rec vise zbog pokazivaca na tabelu virtuelnih funkcija
-			Code.put2(memAllocation.getAllocationType().obj.getLevel() + 1);
+			Code.put2(type_obj.getLevel());
+			Code.put(Code.dup);
+			Code.loadConst(class_to_vmt_addresses.get(type_obj.getType()));
+			Code.put(Code.putfield);
+			Code.put(0);
 		}
 	}
 	
-	public void visit(OptionalExpression optExpr) {
+	public void visit(SingleExpressionDecl optExpr) {
 		Code.put(Code.newarray);
 		MemoryAllocation memAlloc = (MemoryAllocation) optExpr.getParent();
 		int array_dimensions = memAlloc.getAllocationType().getType().struct == SymbolTable.charType ? 0:1;
 		Code.put(array_dimensions);
 	}
 	
-	//potrebno jos doraditi
 	public void visit(FunctionCallDesign funcCallDesign) {
-		Code.put(Code.call);
-		//ako se ne poziva za objekat klase
-		int jump_address = funcCallDesign.getDesignator().obj.getAdr();
-		Code.put2(jump_address - Code.pc);
+		if(invokevirtual.pop() == false) {
+			Code.put(Code.call);
+			int jump_address = funcCallDesign.getDesignator().obj.getAdr();
+			Code.put2(jump_address - Code.pc);
+		}else {
+			//skinuti parametre i adresu this-a sa steka
+			//vratiti parametre na stek
+			Code.put(Code.dup);
+			Code.put(Code.getfield);
+			//polje 0 pokazivac na tableu viruelnih funkcija 
+			Code.put(0);
+			Code.put(Code.invokevirtual);
+			String methodName = funcCallDesign.getDesignator().obj.getName();
+			for(int i = 0; i < methodName.length(); i++) {
+				Code.put(methodName.charAt(i));
+			}
+		}
 	}
 	
 	public void visit(Addition addition) {
@@ -152,21 +255,21 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(operation_code_stack.pop());
 		int address_to_fill = Code.pc;
 		Code.put2(0);
-		Code.put(Code.const_);
+		Code.put(Code.const_n);
 		Code.put(Code.jmp);
 		int jump_address = Code.pc;
 		Code.put2(0);
-		Code.put2(address_to_fill, address_to_fill - Code.pc);
+		Code.fixup(address_to_fill);
 		Code.put(Code.const_1);
-		Code.put2(jump_address, jump_address - Code.pc);
+		Code.fixup(jump_address);
 	}
 	
 	public void visit(ConditionTerm condTerm) {
-		Code.put(Code.const_);
+		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.eq);
 		int address_to_fill = Code.pc;
 		Code.put2(0);
-		Code.put(Code.const_);
+		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.eq);
 		int address_to_fill_2 = Code.pc;
 		Code.put2(0);
@@ -176,20 +279,20 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put2(0);
 		Code.put2(address_to_fill, address_to_fill - Code.pc);
 		Code.put2(address_to_fill_2, address_to_fill_2 - Code.pc);
-		Code.put(Code.const_);
+		Code.put(Code.const_n);
 		Code.put2(jump_address, jump_address - Code.pc);
 	}
 	
 	public void visit(ConditionExpr condExpr) {
-		Code.put(Code.const_);
+		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.ne);
 		int address_to_fill = Code.pc;
 		Code.put2(0);
-		Code.put(Code.const_);
+		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.ne);
 		int address_to_fill_2 = Code.pc;
 		Code.put2(0);
-		Code.put(Code.const_);
+		Code.put(Code.const_n);
 		Code.put(Code.jmp);
 		int jump_address = Code.pc;
 		Code.put2(0);
@@ -199,61 +302,290 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put2(jump_address, jump_address - Code.pc);
 	}
 	
-	
-	public void condExpr(CondExpr condExpr) {
+	/**
+	 * Ternary expression, stanje na steku u trenutku obrade cond, expr1, expr2 nama je potreban cond pa expr1 i expr2 cuvamo kao
+	 * lokalne promenljive, u zavisnosti od toga da li je cond true ili false ucitavamo neku od njih
+	 * @param condExpr
+	 */
+	public void visit(CondExpr condExpr) {
 		Code.put(Code.enter);
 		//prave se 2 lokalne promenljive gde se cuvaju vrednosti izraza u slucaju true i u slucaju false
 		Code.put(0);
 		Code.put(2);
-		Code.put(Code.store);
-		Code.put(0);
-		Code.put(Code.store);
-		Code.put(1);
-		Code.put(Code.const_);
+		Code.put(Code.store_n);
+		Code.put(Code.store_1);
+		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.ne);
 		int address_to_fill = Code.pc;
 		Code.put2(0);
-		Code.put(Code.load);
-		Code.put(0);
+		Code.put(Code.load_n);
 		Code.put(Code.jmp);
 		int jump_address = Code.pc;
 		Code.put2(0);
-		Code.put2(address_to_fill, address_to_fill - Code.pc);
-		Code.put(Code.load);
-		Code.put(1);
-		Code.put2(jump_address, jump_address - Code.pc);
+		Code.fixup(address_to_fill);
+		Code.put(Code.load_1);
+		Code.fixup(jump_address);
 		Code.put(Code.exit);
 	}
 	
+	private boolean methodExistsInCurrentClass(Struct class_type, String methodName) {
+		SymbolDataStructure members = class_type.getMembers();
+		Struct current_type = class_type;
+		while(current_type != null && current_type != SymbolTable.noType) {
+			if(members.searchKey(methodName) != null)
+				return true;
+			current_type.getElemType();
+		}
+		return false;
+	}
+	
+	
 	public void visit(DesignatorName desName) {
-		Code.load(desName.obj);
-		designator_stack.push(desName.obj);
+		if(this_object_for_current_method != null && desName.obj.getKind() == MyObject.Fld) {
+			Code.load(this_object_for_current_method);
+		}
+		if(this_object_for_current_method != null && desName.obj.getKind() == MyObject.Meth) {
+			if(methodExistsInCurrentClass(currentClass.getType(), desName.obj.getName())) {
+				invokevirtual.push(true);
+				Code.load(this_object_for_current_method);
+			}else
+				invokevirtual.push(false);
+		}else if(desName.obj.getKind() == MyObject.Meth)
+			invokevirtual.push(false);
+		else {
+			designtor_stack.push(desName.obj);
+		}
 	}
 	
 	public void visit(AccessField accessField) {
-		designator_stack.pop();
-		Code.put(Code.const_);
-		Code.put(Code.jmp);
+		Obj my_object = designtor_stack.pop();
+		Code.load(my_object);
+		Code.put(Code.const_n);
+		Code.put(Code.jcc + Code.eq);
 		jump_to_trap_addresses.push(Code.pc);
 		Code.put2(0);
 		if(accessField.obj.getKind() == MyObject.Meth) {
-			Code.put(Code.dup);
+			invokevirtual.push(true);
+		}else {
+			designtor_stack.push(accessField.obj);
 		}
-		Code.load(accessField.obj);
-		designator_stack.push(accessField.obj);
 	}
 	
 	public void visit(AccessElement accessElement) {
-		Obj my_array = designator_stack.peek();
-		if(my_array.getType().getElemType() == SymbolTable.charType)
-			Code.put(Code.baload);
-		else
-			Code.put(Code.aload);
+		Obj my_array = designtor_stack.pop();
+		Code.put(Code.enter);
+		Code.put(0);
+		Code.put(1);
+		Code.put(Code.store_n);
+		Code.load(my_array);
+		Code.put(Code.load_n);
+		Code.put(Code.exit);
+		designtor_stack.push(accessElement.obj);
 	}
+	
+	public void visit(SimpleDesignator simpleDes) {
+		designtor_stack.pop();
+		Code.load(simpleDes.getDesignator().obj);
+	}
+	
+	public void visit(AssignStatementSt assignStmt) {
+		Code.store(assignStmt.getDesignator().obj);
+	}
+	
+	public void visit(FuncCallSt funcCall) {
+		//sacuvati parametre funcije na steku pa ih opet load-ovati
+		if(invokevirtual.pop() == false) {
+			Code.put(Code.call);
+			int jump_address = funcCall.getDesignator().obj.getAdr();
+			Code.put2(jump_address - Code.pc + 1);
+		}else {
+			Code.put(Code.dup);
+			Code.put(Code.getfield);
+			//polje 0 pokazivac na tableu viruelnih funkcija 
+			Code.put(0);
+			Code.put(Code.invokevirtual);
+			String methodName = funcCall.getDesignator().obj.getName();
+			for(int i = 0; i < methodName.length(); i++) {
+				Code.put(methodName.charAt(i));
+			}
+		}
+		//load-ovati parametre sa steka
+	}
+	
+	/**
+	 * Ukoliko je designator niz ili polje klase na stacku imamo sledeca stanja: 
+	 * Za niz adr, index te da bi se element loadovao sa aload ili baload bila izvresena operacija nad njim i kasnije store ovao na isto mesto
+	 * moramo duplirati sadrzaj na stacku adr, index, adr, index -> nakon load-a adr, index, elem -> adr, index, elem+1 -> kao sto vidimo stanje steka
+	 * je upravo onakvo kakvo se ocekuje za instrukcije bastore i astore, za polje klase slicno objasnjenje
+	 * Za dekreentiranje uradjena slicna stvar, sto se tice pop-a sa designator stacka u prvoj liniji, objasnjenje kod read-a
+	 */
+	public void visit(IncrementSt increment) {
+		designtor_stack.pop();
+		if(increment.getDesignator().obj.getKind() == MyObject.Elem || increment.getDesignator().obj.getKind() == MyObject.Fld) 
+			Code.put(Code.dup2);
+		Code.load(increment.getDesignator().obj);
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(increment.getDesignator().obj);
+	}
+	
+	
+	public void visit(DecrementSt decrement) {
+		designtor_stack.pop();
+		if(decrement.getDesignator().obj.getKind() == MyObject.Elem || decrement.getDesignator().obj.getKind() == MyObject.Fld) 
+			Code.put(Code.dup2);
+		Code.load(decrement.getDesignator().obj);
+		Code.loadConst(1);
+		Code.put(Code.sub);
+		Code.store(decrement.getDesignator().obj);
+	}
+	
+   /**
+    * Kad god se detektuje designator skida se jedna vrednost koja je stavljena na designator stack koja bi bila sledeca za load da se
+    * pristupalo njenom polju, zato je prva instrukcija u svim smenama koje sadrze designator najpre radi pop sa ovom stack-a - pogledati
+    * implementaciju designatorName, accessField i accessElement za dalja pojasnjenja
+    */
+	public void visit(ReadFunctionCall readFuncCall) {
+		designtor_stack.pop();
+		if(readFuncCall.getDesignator().obj.getType() == SymbolTable.charType) {
+			Code.put(Code.bread);
+		}else {
+			Code.put(Code.read);
+		}
+		Code.store(readFuncCall.getDesignator().obj);
+	}
+	
+	public void visit(PrintFunctionCall printFuncCall) {
+		if(printFuncCall.getExpr().struct == SymbolTable.charType) {
+			if(printFuncCall.getOptionalSecondParam().getClass() == NoSecondParam.class) {
+				Code.loadConst(5);
+			}
+			Code.put(Code.bprint);
+		} else {
+			if(printFuncCall.getOptionalSecondParam().getClass() == NoSecondParam.class) {
+				Code.loadConst(5);
+			}
+			Code.put(Code.print);
+		}
+			
+	}
+	public void visit(PrintSecondParam secondParam) {
+		Code.loadConst(secondParam.getValue());
+	}
+	public void visit(RightCondition rightCond) {
+		nested_if++;
+		Code.put(Code.const_n);
+		Code.put(Code.jcc + Code.eq);
+		jump_false.push(Code.pc);
+		Code.put2(0);
+	}
+	
+	public void visit(Else else_) {
+		Code.put(Code.jmp);
+		jump_true.push(Code.pc);
+		Code.put2(0);
+		Code.fixup(jump_false.pop());
+	}
+	
+	/**
+	 * nested_if se dekrementira jer u slucaju da se return nadje u okviru if-a ne treba smatrati da je return detektovan jer se ne nalazi 
+	 * u default grani 
+	 */
+	public void visit(UnmatchedIf unmatchedIf) {
+		nested_if--;
+		Code.fixup(jump_false.pop());
+	}
+	
+	public void visit(MatchedStatement matchedIf) {
+		nested_if--;
+		Code.fixup(jump_true.pop());
+	}
+	
+	public void visit(Do do_) {
+		do_while_stack.push(Code.pc);
+		break_jump_address.push(-1);
+		continue_jump_address.push(-1);
+	}
+	
+	public void visit(DoWhileLoop doWhile) {
+		int continue_address = continue_jump_address.empty() ? -1 : continue_jump_address.pop();
+		while(continue_address != -1) {
+			Code.fixup(continue_address);
+			continue_address = continue_jump_address.pop();
+		}
+		Code.loadConst(0);
+		Code.put(Code.jcc + Code.ne);
+		Code.put2(do_while_stack.pop() - Code.pc + 1);
+		int break_address = break_jump_address.empty() ? -1 : break_jump_address.pop();
+		while(break_address != -1) {
+			Code.fixup(break_address);
+			break_address = break_jump_address.pop();
+		}
+	}
+	
+	public void visit(BreakStatement breakStatement) {
+		Code.put(Code.jmp);
+		break_jump_address.push(Code.pc);
+		Code.put2(0);
+	}
+	
+	public void visit(ContinueStatement continueStatement) {
+		Code.put(Code.jmp);
+		continue_jump_address.push(Code.pc);
+		Code.put2(0);
+	}
+	
+	public void visit(ReturnStatement returnStmt) {
+		if(nested_if == 0)
+			return_statement_occurred = true;
+	}
+	
+	
+	//ord len i ch implementation
+	
+	private void ord_code() {
+		Obj ord_obj = SymbolTable.find("ord");
+		ord_obj.setAdr(Code.pc);
+		Code.put(Code.enter);
+		Code.put(1);
+		Code.put(1);
+		Code.put(Code.load_n);
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	private void ch_code() {
+		Obj chr_obj = SymbolTable.find("chr");
+		chr_obj.setAdr(Code.pc);
+		Code.put(Code.enter);
+		Code.put(1);
+		Code.put(1);
+		Code.put(Code.load_n);
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	private void len_code() {
+		Obj len_obj = SymbolTable.find("len");
+		len_obj.setAdr(Code.pc);
+		Code.put(Code.enter);
+		Code.put(1);
+		Code.put(1);
+		Code.put(Code.load_n);
+		Code.put(Code.arraylength);
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
 	
 	public int getMainPC() {
 		return main_pc;
 	}
 	
+	//switch implementation
+	
+	// test plan first for A level, simple designator and simple operations also print function that shows result, operator priority checking
+	//conditions rel operators, static functions ternary expressions, testing arrays
+	// 
 	
 }

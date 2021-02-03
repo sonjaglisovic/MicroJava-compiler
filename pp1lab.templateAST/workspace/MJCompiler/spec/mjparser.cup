@@ -221,7 +221,7 @@ CaseList ::= (CaseListDecl) CaseList CaseDecl
 CaseDecl ::= (CaseStatement) CASE NUMBER COL StatementList;		    
 		    
 		   
-OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER
+OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER:value
                         |
                         (NoSecondParam) /*epsilon*/;
                                               
