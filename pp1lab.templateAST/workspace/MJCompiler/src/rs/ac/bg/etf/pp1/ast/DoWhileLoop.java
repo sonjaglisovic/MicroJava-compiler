@@ -1,21 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:52
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DoWhileLoop extends Matched {
+public class DoWhileLoop extends Statement {
 
     private Do Do;
     private Statement Statement;
+    private DoWhileConditionLoad DoWhileConditionLoad;
     private Condition Condition;
 
-    public DoWhileLoop (Do Do, Statement Statement, Condition Condition) {
+    public DoWhileLoop (Do Do, Statement Statement, DoWhileConditionLoad DoWhileConditionLoad, Condition Condition) {
         this.Do=Do;
         if(Do!=null) Do.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
+        this.DoWhileConditionLoad=DoWhileConditionLoad;
+        if(DoWhileConditionLoad!=null) DoWhileConditionLoad.setParent(this);
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
     }
@@ -36,6 +39,14 @@ public class DoWhileLoop extends Matched {
         this.Statement=Statement;
     }
 
+    public DoWhileConditionLoad getDoWhileConditionLoad() {
+        return DoWhileConditionLoad;
+    }
+
+    public void setDoWhileConditionLoad(DoWhileConditionLoad DoWhileConditionLoad) {
+        this.DoWhileConditionLoad=DoWhileConditionLoad;
+    }
+
     public Condition getCondition() {
         return Condition;
     }
@@ -51,6 +62,7 @@ public class DoWhileLoop extends Matched {
     public void childrenAccept(Visitor visitor) {
         if(Do!=null) Do.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
+        if(DoWhileConditionLoad!=null) DoWhileConditionLoad.accept(visitor);
         if(Condition!=null) Condition.accept(visitor);
     }
 
@@ -58,12 +70,14 @@ public class DoWhileLoop extends Matched {
         accept(visitor);
         if(Do!=null) Do.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
+        if(DoWhileConditionLoad!=null) DoWhileConditionLoad.traverseTopDown(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Do!=null) Do.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
+        if(DoWhileConditionLoad!=null) DoWhileConditionLoad.traverseBottomUp(visitor);
         if(Condition!=null) Condition.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -81,6 +95,12 @@ public class DoWhileLoop extends Matched {
 
         if(Statement!=null)
             buffer.append(Statement.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(DoWhileConditionLoad!=null)
+            buffer.append(DoWhileConditionLoad.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

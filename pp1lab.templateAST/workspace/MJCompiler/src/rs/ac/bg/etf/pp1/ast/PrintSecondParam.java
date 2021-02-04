@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:52
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class PrintSecondParam extends OptionalSecondParam {
 
-    private Integer N1;
+    private Integer value;
 
-    public PrintSecondParam (Integer N1) {
-        this.N1=N1;
+    public PrintSecondParam (Integer value) {
+        this.value=value;
     }
 
-    public Integer getN1() {
-        return N1;
+    public Integer getValue() {
+        return value;
     }
 
-    public void setN1(Integer N1) {
-        this.N1=N1;
+    public void setValue(Integer value) {
+        this.value=value;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class PrintSecondParam extends OptionalSecondParam {
         buffer.append(tab);
         buffer.append("PrintSecondParam(\n");
 
-        buffer.append(" "+tab+N1);
+        buffer.append(" "+tab+value);
         buffer.append("\n");
 
         buffer.append(tab);

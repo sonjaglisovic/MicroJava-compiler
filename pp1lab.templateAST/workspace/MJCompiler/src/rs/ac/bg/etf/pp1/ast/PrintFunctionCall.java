@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:52
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class PrintFunctionCall extends Matched {
+public class PrintFunctionCall extends Statement {
 
     private Expr Expr;
     private OptionalSecondParam OptionalSecondParam;

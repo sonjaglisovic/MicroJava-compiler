@@ -1,0 +1,4 @@
+INFO  16:13:59,883 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\designators_and_vars.mj
+INFO  16:14:00,329 - ===================================
+ERROR 16:14:00,401 -  Semanticka Greska! Simbol nizovnog tipa object nije indeksiran  na liniji 75
+ERROR 16:14:00,402 - Semanticka Greska! Izraz argument print funkcije mora biti tipa int bool ili char na liniji 75

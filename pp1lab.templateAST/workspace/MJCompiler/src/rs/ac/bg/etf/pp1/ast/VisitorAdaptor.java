@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:53
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -83,6 +83,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ExprAfterReturn ExprAfterReturn) { visit(); }
     public void visit(NoOptExpr NoOptExpr) { visit(); }
     public void visit(SingleExpressionDecl SingleExpressionDecl) { visit(); }
+    public void visit(AllocationType AllocationType) { visit(); }
     public void visit(MemoryAllocation MemoryAllocation) { visit(); }
     public void visit(ExpressionFactor ExpressionFactor) { visit(); }
     public void visit(BoolValue BoolValue) { visit(); }
@@ -128,6 +129,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CaseListDecl CaseListDecl) { visit(); }
     public void visit(SwitchStart SwitchStart) { visit(); }
     public void visit(DoWhileStart DoWhileStart) { visit(); }
+    public void visit(Else Else) { visit(); }
+    public void visit(DoWhileConditionLoad DoWhileConditionLoad) { visit(); }
     public void visit(MatchedListSt MatchedListSt) { visit(); }
     public void visit(SwitchStatement SwitchStatement) { visit(); }
     public void visit(PrintFunctionCall PrintFunctionCall) { visit(); }
@@ -136,14 +139,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(BreakStatement BreakStatement) { visit(); }
     public void visit(DoWhileLoop DoWhileLoop) { visit(); }
     public void visit(ContinueStatement ContinueStatement) { visit(); }
+    public void visit(UnmatchedIf UnmatchedIf) { visit(); }
     public void visit(MatchedStatement MatchedStatement) { visit(); }
     public void visit(DesStatement DesStatement) { visit(); }
     public void visit(ErrorCondition ErrorCondition) { visit(); }
     public void visit(RightCondition RightCondition) { visit(); }
-    public void visit(UnmatchedIfElse UnmatchedIfElse) { visit(); }
-    public void visit(UnmatchedIf UnmatchedIf) { visit(); }
-    public void visit(UnmatchedStmt UnmatchedStmt) { visit(); }
-    public void visit(MatchedStmt MatchedStmt) { visit(); }
     public void visit(NoStmt NoStmt) { visit(); }
     public void visit(Statements Statements) { visit(); }
     public void visit(FormParDecl FormParDecl) { visit(); }

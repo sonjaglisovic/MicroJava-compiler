@@ -6,6 +6,7 @@ import java_cup.runtime.*;
 import org.apache.log4j.*;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.concepts.*;
+import rs.ac.bg.etf.pp1.SyntaxAnalysis;
 
 parser code {:
 
@@ -21,16 +22,23 @@ parser code {:
   
     public void syntax_error(Symbol cur_token) {
         report_error("\nSintaksna greska", cur_token);
+        SyntaxAnalysis.errorDetected();
     }
   
     public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
         report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+        SyntaxAnalysis.errorDetected();
     }
 
     public void report_error(String message, Object info) {
     	StringBuilder msg = new StringBuilder(message); 
-    	if (info instanceof Symbol)
+    	if (info instanceof Symbol){
             msg.append (" na liniji ").append(((Symbol)info).left);
+            if (((Symbol) info).value != null) {
+				msg.append(" prilikom obrade simbola ").append(((Symbol) info).value.toString());
+			}
+          } 
+          SyntaxAnalysis.errorDetected();
         log.error(msg.toString());
     }
 
@@ -48,18 +56,19 @@ terminal DO, WHILE,CASE, SWITCH, SAME, DIFFERENT;
 nonterminal Program, DeclList, DeclPart, JustVarDecl, VarDeclList, SingleVarDecl, ConstDeclList;
 nonterminal OptionalMethodDecl, MethodDecl, SingleMethodDecl, FormPars;
 nonterminal ParamDecl, ParamList, OptionalArraySpec, StatementList, Statement, Matched, Unmatched;
-nonterminal DesignatorStatement, DesignParam, AdditionalList, AdditionalElement;
-nonterminal ActPars, ActualParamList, SimpleRel, ClassRel, DesignatorName;
+nonterminal DesignatorStatement, DesignParam, AdditionalList;
+nonterminal ActPars, ActualParamList, SimpleRel, ClassRel;
 nonterminal OptionalOp, OptionalMinus, Mulop, Addop, Assignop, Relop, SingleParameter;
-nonterminal OptionalSecondParam, ExpressionType, CaseList, CaseDecl;
+nonterminal OptionalSecondParam, ExpressionType, CaseList, CaseDecl, Else, DoWhileConditionLoad;
 nonterminal MatchedList, AdditionForCall, FormParDecl, MethodSign, Do, Switch;
 nonterminal DesignatorList, ConditionPart, ClassFieldDecList, VarDecl, ClassDecl, SingleConstDecl, ConstDecl;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, ClassName, MethodName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Initializer, OptionalParent, RetType, BoolInitializer, Factor; 
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, DesignatorName, AdditionalElement, ClassName, AllocationType, MethodName, Designator, OptionalParent;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Initializer, RetType, BoolInitializer, Factor; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr1, Expr, OptionalExpression, OptionalAfterReturn, Term;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct TermList, Condition, CondTerm, CondFact, AssignStatement;
 
+precedence left ELSE;
 
 Program ::= (Program) PROG ProgramName:prog DeclList LBRACE MethodDecl RBRACE;
 
@@ -169,16 +178,6 @@ StatementList ::= (Statements) StatementList Statement
 				  |
 				  (NoStmt) /*epsilon*/
 				  ;				  
-				  
-Statement ::= (MatchedStmt) Matched
-		      |
-		      (UnmatchedStmt) Unmatched
-		      ; 
-		                
-Unmatched ::= (UnmatchedIf) IF ConditionPart:type2 Statement
-		 	  |
-		 	  (UnmatchedIfElse) IF ConditionPart:type1 Matched ELSE Unmatched
-		 	  ;
 
 ConditionPart::= (RightCondition) LPAREN Condition:condType RPAREN
 			     |
@@ -186,13 +185,15 @@ ConditionPart::= (RightCondition) LPAREN Condition:condType RPAREN
 			     {:parser.report_error("Izvrsen oporavak do znaka ')' na liniji, " + lleft, null);:}
 			     ;
 			
-Matched ::= (DesStatement) DesignatorStatement
+Statement ::= (DesStatement) DesignatorStatement
 		    |
-		    (MatchedStatement) IF ConditionPart:type Matched ELSE Matched
+		    (MatchedStatement) IF ConditionPart:type Statement Else Statement
+		    |
+		    (UnmatchedIf) IF ConditionPart:type Statement 
 		    |
 		    (ContinueStatement) CONTINUE SEMI
 		    |
-		    (DoWhileLoop) Do Statement WHILE LPAREN Condition:type RPAREN SEMI
+		    (DoWhileLoop) Do Statement WHILE DoWhileConditionLoad Condition RPAREN SEMI
 		    |
 		    (BreakStatement) BREAK SEMI
 		    |
@@ -206,7 +207,11 @@ Matched ::= (DesStatement) DesignatorStatement
 		    |
 		    (MatchedListSt) LBRACE StatementList RBRACE
 		    ;
-		    
+
+DoWhileConditionLoad ::= (DoWhileConditionLoad) LPAREN;
+
+Else ::= (Else) ELSE;
+
 Do ::= (DoWhileStart) DO;
 
 Switch ::= (SwitchStart) SWITCH;
@@ -218,7 +223,7 @@ CaseList ::= (CaseListDecl) CaseList CaseDecl
 CaseDecl ::= (CaseStatement) CASE NUMBER COL StatementList;		    
 		    
 		   
-OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER
+OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER:value
                         |
                         (NoSecondParam) /*epsilon*/;
                                               
@@ -293,17 +298,17 @@ Factor ::= (SimpleDesignator) Designator:desType
            |
            (FunctionCallDesign) Designator:desType LPAREN ActPars RPAREN 
            |
-           (NumberDecl) NUMBER:constType
+           (NumberDecl) NUMBER:constValue
            |
-           (Letter) LETTER:constType
+           (Letter) LETTER:constValue
            |
-           (BoolValue) BoolInitializer:constType
+           (BoolValue) BoolInitializer:constValue
            |
            (ExpressionFactor) LPAREN Expr:exprType RPAREN
            |
-           (MemoryAllocation) NEW Type:varType OptionalExpression:type;
+           (MemoryAllocation) NEW AllocationType OptionalExpression:type;
 				
-
+AllocationType::=(AllocationType) Type:varType; 
 
 OptionalExpression ::= (SingleExpressionDecl) LBRACKET Expr:exType RBRACKET
 					   |

@@ -1,0 +1,11 @@
+INFO  15:49:26,594 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\designators_and_vars.mj
+ERROR 15:49:27,029 - 
+Sintaksna greska na liniji 57
+INFO  15:49:27,096 - ===================================
+INFO  15:49:27,134 - Prisput simbolu:  Var this: A 1 1 , pristup njegovom polju:  Field field: A 2 1 , pristup njegovom polju:  Field bField: int 0 1  na liniji 33
+INFO  15:49:27,134 - Prisput simbolu:  Var b: int 2 1  na liniji 33
+INFO  15:49:27,135 - Prisput simbolu:  Meth method1: int 0 1  na liniji 34
+INFO  15:49:27,136 - Prisput simbolu:  Field array: Array of int 1 1  na liniji 34
+INFO  15:49:27,137 - Prisput simbolu:  Var f: int 4 0  na liniji 55
+INFO  15:49:27,138 - Prisput simbolu:  Con b1: int 0 0  na liniji 55
+INFO  15:49:27,139 - Prisput simbolu:  Var bool_var: bool 3 0  na liniji 56

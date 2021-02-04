@@ -6,6 +6,7 @@ import java_cup.runtime.*;
 import org.apache.log4j.*;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.concepts.*;
+import rs.ac.bg.etf.pp1.SyntaxAnalysis;
 
 parser code {:
 
@@ -21,16 +22,23 @@ parser code {:
   
     public void syntax_error(Symbol cur_token) {
         report_error("\nSintaksna greska", cur_token);
+        SyntaxAnalysis.errorDetected();
     }
   
     public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
         report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+        SyntaxAnalysis.errorDetected();
     }
 
     public void report_error(String message, Object info) {
     	StringBuilder msg = new StringBuilder(message); 
-    	if (info instanceof Symbol)
+    	if (info instanceof Symbol){
             msg.append (" na liniji ").append(((Symbol)info).left);
+            if (((Symbol) info).value != null) {
+				msg.append(" prilikom obrade simbola ").append(((Symbol) info).value.toString());
+			}
+          } 
+          SyntaxAnalysis.errorDetected();
         log.error(msg.toString());
     }
 
@@ -66,12 +74,10 @@ nonterminal Unmatched Unmatched;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal DesignParam DesignParam;
 nonterminal AdditionalList AdditionalList;
-nonterminal AdditionalElement AdditionalElement;
 nonterminal ActPars ActPars;
 nonterminal ActualParamList ActualParamList;
 nonterminal SimpleRel SimpleRel;
 nonterminal ClassRel ClassRel;
-nonterminal DesignatorName DesignatorName;
 nonterminal OptionalOp OptionalOp;
 nonterminal OptionalMinus OptionalMinus;
 nonterminal Mulop Mulop;
@@ -83,6 +89,8 @@ nonterminal OptionalSecondParam OptionalSecondParam;
 nonterminal ExpressionType ExpressionType;
 nonterminal CaseList CaseList;
 nonterminal CaseDecl CaseDecl;
+nonterminal Else Else;
+nonterminal DoWhileConditionLoad DoWhileConditionLoad;
 nonterminal MatchedList MatchedList;
 nonterminal AdditionForCall AdditionForCall;
 nonterminal FormParDecl FormParDecl;
@@ -97,11 +105,12 @@ nonterminal ClassDecl ClassDecl;
 nonterminal SingleConstDecl SingleConstDecl;
 nonterminal ConstDecl ConstDecl;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, ClassName, MethodName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Initializer, OptionalParent, RetType, BoolInitializer, Factor; 
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, DesignatorName, AdditionalElement, ClassName, AllocationType, MethodName, Designator, OptionalParent;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Initializer, RetType, BoolInitializer, Factor; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr1, Expr, OptionalExpression, OptionalAfterReturn, Term;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct TermList, Condition, CondTerm, CondFact, AssignStatement;
 
+precedence left ELSE;
 
 Program ::= (Program) PROG ProgramName:prog DeclList:D1 LBRACE MethodDecl:M2 RBRACE {: RESULT=new Program(prog, D1, M2); RESULT.setLine(progleft); :};
 
@@ -211,16 +220,6 @@ StatementList ::= (Statements) StatementList:S1 Statement:S2 {: RESULT=new State
 				  |
 				  (NoStmt) {: RESULT=new NoStmt(); :} /*epsilon*/
 				  ;				  
-				  
-Statement ::= (MatchedStmt) Matched:M1 {: RESULT=new MatchedStmt(M1); RESULT.setLine(M1left); :}
-		      |
-		      (UnmatchedStmt) Unmatched:U1 {: RESULT=new UnmatchedStmt(U1); RESULT.setLine(U1left); :}
-		      ; 
-		                
-Unmatched ::= (UnmatchedIf) IF ConditionPart:type2 Statement:S1 {: RESULT=new UnmatchedIf(type2, S1); RESULT.setLine(type2left); :}
-		 	  |
-		 	  (UnmatchedIfElse) IF ConditionPart:type1 Matched:M1 ELSE Unmatched:U2 {: RESULT=new UnmatchedIfElse(type1, M1, U2); RESULT.setLine(type1left); :}
-		 	  ;
 
 ConditionPart::= (RightCondition) LPAREN Condition:condType RPAREN {: RESULT=new RightCondition(condType); RESULT.setLine(condTypeleft); :}
 			     |
@@ -228,13 +227,15 @@ ConditionPart::= (RightCondition) LPAREN Condition:condType RPAREN {: RESULT=new
 			     {:parser.report_error("Izvrsen oporavak do znaka ')' na liniji, " + lleft, null);:} {: RESULT=new ErrorCondition(); :}
 			     ;
 			
-Matched ::= (DesStatement) DesignatorStatement:D1 {: RESULT=new DesStatement(D1); RESULT.setLine(D1left); :}
+Statement ::= (DesStatement) DesignatorStatement:D1 {: RESULT=new DesStatement(D1); RESULT.setLine(D1left); :}
 		    |
-		    (MatchedStatement) IF ConditionPart:type Matched:M1 ELSE Matched:M2 {: RESULT=new MatchedStatement(type, M1, M2); RESULT.setLine(typeleft); :}
+		    (MatchedStatement) IF ConditionPart:type Statement:S1 Else:E2 Statement:S3 {: RESULT=new MatchedStatement(type, S1, E2, S3); RESULT.setLine(typeleft); :}
+		    |
+		    (UnmatchedIf) IF ConditionPart:type Statement:S1 {: RESULT=new UnmatchedIf(type, S1); RESULT.setLine(typeleft); :} 
 		    |
 		    (ContinueStatement) CONTINUE SEMI {: RESULT=new ContinueStatement(); :}
 		    |
-		    (DoWhileLoop) Do:D1 Statement:S2 WHILE LPAREN Condition:type RPAREN SEMI {: RESULT=new DoWhileLoop(D1, S2, type); RESULT.setLine(D1left); :}
+		    (DoWhileLoop) Do:D1 Statement:S2 WHILE DoWhileConditionLoad:D3 Condition:C4 RPAREN SEMI {: RESULT=new DoWhileLoop(D1, S2, D3, C4); RESULT.setLine(D1left); :}
 		    |
 		    (BreakStatement) BREAK SEMI {: RESULT=new BreakStatement(); :}
 		    |
@@ -248,7 +249,11 @@ Matched ::= (DesStatement) DesignatorStatement:D1 {: RESULT=new DesStatement(D1)
 		    |
 		    (MatchedListSt) LBRACE StatementList:S1 RBRACE {: RESULT=new MatchedListSt(S1); RESULT.setLine(S1left); :}
 		    ;
-		    
+
+DoWhileConditionLoad ::= (DoWhileConditionLoad) LPAREN {: RESULT=new DoWhileConditionLoad(); :};
+
+Else ::= (Else) ELSE {: RESULT=new Else(); :};
+
 Do ::= (DoWhileStart) DO {: RESULT=new DoWhileStart(); :};
 
 Switch ::= (SwitchStart) SWITCH {: RESULT=new SwitchStart(); :};
@@ -260,7 +265,7 @@ CaseList ::= (CaseListDecl) CaseList:C1 CaseDecl:C2 {: RESULT=new CaseListDecl(C
 CaseDecl ::= (CaseStatement) CASE NUMBER:N1 COL StatementList:S2 {: RESULT=new CaseStatement(N1, S2); RESULT.setLine(N1left); :};		    
 		    
 		   
-OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER:N1 {: RESULT=new PrintSecondParam(N1); RESULT.setLine(N1left); :}
+OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER:value {: RESULT=new PrintSecondParam(value); RESULT.setLine(valueleft); :}
                         |
                         (NoSecondParam) {: RESULT=new NoSecondParam(); :} /*epsilon*/;
                                               
@@ -335,17 +340,17 @@ Factor ::= (SimpleDesignator) Designator:desType {: RESULT=new SimpleDesignator(
            |
            (FunctionCallDesign) Designator:desType LPAREN ActPars:A1 RPAREN {: RESULT=new FunctionCallDesign(desType, A1); RESULT.setLine(desTypeleft); :} 
            |
-           (NumberDecl) NUMBER:constType {: RESULT=new NumberDecl(constType); RESULT.setLine(constTypeleft); :}
+           (NumberDecl) NUMBER:constValue {: RESULT=new NumberDecl(constValue); RESULT.setLine(constValueleft); :}
            |
-           (Letter) LETTER:constType {: RESULT=new Letter(constType); RESULT.setLine(constTypeleft); :}
+           (Letter) LETTER:constValue {: RESULT=new Letter(constValue); RESULT.setLine(constValueleft); :}
            |
-           (BoolValue) BoolInitializer:constType {: RESULT=new BoolValue(constType); RESULT.setLine(constTypeleft); :}
+           (BoolValue) BoolInitializer:constValue {: RESULT=new BoolValue(constValue); RESULT.setLine(constValueleft); :}
            |
            (ExpressionFactor) LPAREN Expr:exprType RPAREN {: RESULT=new ExpressionFactor(exprType); RESULT.setLine(exprTypeleft); :}
            |
-           (MemoryAllocation) NEW Type:varType OptionalExpression:type {: RESULT=new MemoryAllocation(varType, type); RESULT.setLine(varTypeleft); :};
+           (MemoryAllocation) NEW AllocationType:A1 OptionalExpression:type {: RESULT=new MemoryAllocation(A1, type); RESULT.setLine(A1left); :};
 				
-
+AllocationType::=(AllocationType) Type:varType {: RESULT=new AllocationType(varType); RESULT.setLine(varTypeleft); :}; 
 
 OptionalExpression ::= (SingleExpressionDecl) LBRACKET Expr:exType RBRACKET {: RESULT=new SingleExpressionDecl(exType); RESULT.setLine(exTypeleft); :}
 					   |

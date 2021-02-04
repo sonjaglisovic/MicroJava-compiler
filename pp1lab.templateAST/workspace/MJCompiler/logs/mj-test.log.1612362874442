@@ -1,0 +1,24 @@
+INFO  15:33:42,415 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\code_generation_test1.mj
+INFO  15:33:42,642 - ===================================
+ERROR 15:33:42,679 - Semanticka Greska! Simbol: d je vec deklarisan u tekucem opsegu  na liniji 8
+INFO  15:33:42,680 - Prisput simbolu:  Var a: int 0 0  na liniji 12
+INFO  15:33:42,681 - Prisput simbolu:  Var b: int 1 0  na liniji 13
+INFO  15:33:42,681 - Prisput simbolu:  Var d: int 3 0  na liniji 14
+INFO  15:33:42,683 - Prisput simbolu:  Var c: int 2 0  na liniji 15
+INFO  15:33:42,684 - Prisput simbolu:  Var a: int 0 0  na liniji 15
+INFO  15:33:42,685 - Prisput simbolu:  Var b: int 1 0  na liniji 15
+INFO  15:33:42,685 - Prisput simbolu:  Var d: int 3 0  na liniji 15
+INFO  15:33:42,690 - Prisput simbolu:  Var b: int 1 0  na liniji 15
+INFO  15:33:42,690 - Prisput simbolu:  Var a: int 0 0  na liniji 15
+INFO  15:33:42,690 - Prisput simbolu:  Var c: int 2 0  na liniji 16
+INFO  15:33:42,691 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  15:33:42,691 - Prisput simbolu:  Var a: int 0 0  na liniji 18
+INFO  15:33:42,692 - Prisput simbolu:  Var b: int 1 0  na liniji 19
+INFO  15:33:42,692 - Prisput simbolu:  Var b: int 1 0  na liniji 20
+INFO  15:33:42,692 - Prisput simbolu:  Var e: char 4 0  na liniji 21
+INFO  15:33:42,692 - Prisput simbolu:  Var e: char 4 0  na liniji 22
+INFO  15:33:42,693 - Prisput simbolu:  Var d: int 3 0  na liniji 23
+ERROR 15:33:42,694 - Semanticka Greska! Tipovi nisu kompatibilni pri dodeli na liniji 23
+INFO  15:33:42,695 - Prisput simbolu:  Var d: int 3 0  na liniji 24
+INFO  15:33:42,695 - Prisput simbolu:  Var c: int 2 0  na liniji 28
+INFO  15:33:42,695 - Prisput simbolu:  Var c: int 2 0  na liniji 29

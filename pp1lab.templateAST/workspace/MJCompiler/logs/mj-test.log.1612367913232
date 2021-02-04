@@ -1,0 +1,48 @@
+INFO  16:53:02,536 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\test301.mj
+INFO  16:53:03,009 - ===================================
+INFO  16:53:03,080 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 17
+INFO  16:53:03,080 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 18
+INFO  16:53:03,081 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 19
+INFO  16:53:03,082 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 19
+INFO  16:53:03,083 - Prisput simbolu:  Con jedan: int 1 0  na liniji 19
+INFO  16:53:03,085 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 20
+INFO  16:53:03,086 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 20
+INFO  16:53:03,087 - Prisput simbolu:  Con pet: int 5 0  na liniji 20
+INFO  16:53:03,088 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 21
+INFO  16:53:03,089 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 22
+INFO  16:53:03,089 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 25
+INFO  16:53:03,090 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 26
+INFO  16:53:03,090 - Prisput simbolu:  Con nula: int 0 0  na liniji 26
+INFO  16:53:03,091 - Prisput simbolu:  Con jedan: int 1 0  na liniji 26
+INFO  16:53:03,091 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 27
+INFO  16:53:03,092 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 28
+INFO  16:53:03,092 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 28
+INFO  16:53:03,092 - Prisput simbolu:  Con jedan: int 1 0  na liniji 28
+INFO  16:53:03,093 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 28
+INFO  16:53:03,093 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 28
+INFO  16:53:03,094 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 29
+INFO  16:53:03,094 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 29
+INFO  16:53:03,095 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 29
+INFO  16:53:03,095 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 30
+INFO  16:53:03,096 - Prisput simbolu:  Var niz: Array of int 0 0  na liniji 31
+INFO  16:53:03,103 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 34
+INFO  16:53:03,103 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 35
+INFO  16:53:03,107 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 36
+INFO  16:53:03,111 - Prisput simbolu:  Con jedan: int 1 0  na liniji 36
+INFO  16:53:03,111 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 37
+INFO  16:53:03,112 - Prisput simbolu:  Con pet: int 5 0  na liniji 37
+INFO  16:53:03,114 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 38
+INFO  16:53:03,114 - Prisput simbolu:  Var nizch: Array of char 1 0  na liniji 39
+INFO  16:53:03,119 - Prisput simbolu:  Con jedan: int 1 0  na liniji 39
+INFO  16:53:03,120 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 42
+INFO  16:53:03,120 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 42
+INFO  16:53:03,124 - Prisput simbolu:  Con pet: int 5 0  na liniji 42
+INFO  16:53:03,124 - Prisput simbolu:  Con jedan: int 1 0  na liniji 42
+INFO  16:53:03,125 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 42
+INFO  16:53:03,129 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 43
+INFO  16:53:03,130 - Prisput simbolu:  Var bt: bool 1 1  na liniji 46
+INFO  16:53:03,134 - Prisput simbolu:  Var bt: bool 1 1  na liniji 48
+INFO  16:53:03,136 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 48
+INFO  16:53:03,137 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 48
+INFO  16:53:03,138 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 49
+INFO  16:53:03,139 - Prisput simbolu:  Var bodovi: int 0 1  na liniji 49

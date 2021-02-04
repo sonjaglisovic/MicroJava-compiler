@@ -1,0 +1,96 @@
+program MJprogram
+
+int a;
+int b;
+int c;
+
+int d;
+bool f;
+char e;
+int i;
+int array[];
+int arr2[];
+{
+//lokalni podaci
+
+	int func(int a, int arr[], int b)int array1[];{
+		print(ord('a'));
+		arr[1] = 1500;
+		print(arr[1]);
+		array1 = new int[4];
+		print(array1[0]);
+                a = a*b;
+		return a+b;
+
+	}
+
+	void main(){
+		a = 4;
+		b = 8;
+		d = 2;
+		array = new int[3];
+		c = a%3 + b*d + 2 + b/a;
+		print(c);
+		a--;
+		print(a);
+		b--;
+		print(b);
+		e = 'a';
+		print(e, 2);
+		f = false;
+		print(f);
+		array[1] = 54;
+		print(array[1]);
+		array[2]++;
+		print(array[2]);
+		array[0]--;
+		print(array[0]);
+		array[0] = array[1];
+		print(array[0]);
+		f = false;
+		a = f  ? array[0] : 5; 
+		print(a);
+		if(a > 0 && f){
+			if(a == 5){
+			print('i');
+			print(a);
+			}
+			else{
+				print('e');
+				print('e');
+			}
+		}else{ if(b > 2){
+			print('e');
+			print(1000);
+			}
+			print('c');
+		}
+		print('f');
+		i = 0;
+		do{
+			i++;
+			if(i < 3)
+			continue;
+			do{
+				a--;
+				if(a == 3)
+				continue;
+				if(a == 3)
+				break;
+			}while(a > 1);
+			print(a);
+			if(i == 3)
+			break;
+			
+		}while(i < 5);
+		print(i);
+		func(2, array, 3);
+		arr2 = array;
+		//print(func(2, array, 5));
+		arr2[1] = array == arr2 ? 5 : 10;
+		print(arr2[1]);
+		
+	}
+	
+	
+}

@@ -1,0 +1,29 @@
+INFO  15:53:40,516 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\code_generation_test1.mj
+INFO  15:53:40,953 - ===================================
+INFO  15:53:41,082 - Prisput simbolu:  Var a: int 0 0  na liniji 14
+INFO  15:53:41,097 - Prisput simbolu:  Var b: int 1 0  na liniji 15
+INFO  15:53:41,116 - Prisput simbolu:  Var d: int 3 0  na liniji 16
+INFO  15:53:41,117 - Prisput simbolu:  Var array: Array of int 6 0  na liniji 17
+INFO  15:53:41,119 - Prisput simbolu:  Var c: int 2 0  na liniji 18
+INFO  15:53:41,120 - Prisput simbolu:  Var a: int 0 0  na liniji 18
+INFO  15:53:41,122 - Prisput simbolu:  Var b: int 1 0  na liniji 18
+INFO  15:53:41,122 - Prisput simbolu:  Var d: int 3 0  na liniji 18
+INFO  15:53:41,124 - Prisput simbolu:  Var b: int 1 0  na liniji 18
+INFO  15:53:41,125 - Prisput simbolu:  Var a: int 0 0  na liniji 18
+INFO  15:53:41,125 - Prisput simbolu:  Var c: int 2 0  na liniji 19
+INFO  15:53:41,125 - Prisput simbolu:  Var a: int 0 0  na liniji 20
+INFO  15:53:41,126 - Prisput simbolu:  Var a: int 0 0  na liniji 21
+INFO  15:53:41,126 - Prisput simbolu:  Var b: int 1 0  na liniji 22
+INFO  15:53:41,126 - Prisput simbolu:  Var b: int 1 0  na liniji 23
+INFO  15:53:41,127 - Prisput simbolu:  Var e: char 5 0  na liniji 24
+INFO  15:53:41,127 - Prisput simbolu:  Var e: char 5 0  na liniji 25
+INFO  15:53:41,127 - Prisput simbolu:  Var f: bool 4 0  na liniji 26
+INFO  15:53:41,129 - Prisput simbolu:  Var f: bool 4 0  na liniji 27
+INFO  15:53:41,130 - Prisput simbolu:  Var array: Array of int 6 0  na liniji 28
+INFO  15:53:41,130 - Prisput simbolu:  Var array: Array of int 6 0  na liniji 29
+INFO  15:53:41,131 - Prisput simbolu:  Var array: Array of int 6 0  na liniji 30
+INFO  15:53:41,131 - Prisput simbolu:  Var array: Array of int 6 0  na liniji 31
+INFO  15:53:41,132 - Prisput simbolu:  Var array: Array of int 6 0  na liniji 32
+INFO  15:53:41,134 - Prisput simbolu:  Var array: Array of int 6 0  na liniji 33
+INFO  15:53:41,135 - Prisput simbolu:  Var c: int 2 0  na liniji 37
+INFO  15:53:41,136 - Prisput simbolu:  Var c: int 2 0  na liniji 38

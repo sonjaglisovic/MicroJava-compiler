@@ -6,7 +6,7 @@ const char c1 = 'a';
 char c2;
 bool bool_var;
 int f;
-const bool y = false;
+const bool y = false, y1 = true;
 
 class Parent{
 int grand_parent_field;
@@ -62,7 +62,8 @@ int bArray[];
 		object[1].parent_field = object1.method(2); 
 		object[0] = object1;
 		object[2] = null;
-		object[1] = object2[2];
+		object[3] = object2[2];
+		object1.method(object1.method(object1.method(3)));
 		object[object1.method(2) + object2[1].method(object[1].parent_field - object1.method(object2[2].parent_field * object1.cField[1] + b1))] = object1;
 		object[object1.method(2) + object2[1].method(object[1].parent_field - object1.method(object2[2].parent_field * object1.cField[1] + b1))].parent_field = 1; 
 		do{
@@ -71,13 +72,13 @@ int bArray[];
 		
 		object2[1].cField[1]++;
 		read(object2[0].cField[0]);
-		print(object[1].parent_field, 1);
+		print(object[0].parent_field, 1);
 		if(c || b1){
 			switch(c * (object[2].parent_field % 2) + b1*3 + (b1 + (2*object[1].parent_field))){
 				case 2: break; 
 			}
 		}
-		object1.cField[0]--;
+		object1.cField[0]++;
 		function(f,1, bArray, object1, object2);
 		object1.grand_parent_field = 2;
 		object[0] = c > 0 && c < 255 || bool_var ? object[1] : null;

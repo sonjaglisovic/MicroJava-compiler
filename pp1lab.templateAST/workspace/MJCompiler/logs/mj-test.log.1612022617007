@@ -1,0 +1,5 @@
+INFO  17:01:03,750 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\designators_and_vars.mj
+ERROR 17:01:04,370 - 
+Sintaksna greska na liniji 60, koloni 2 prilikom prilikom obrade simbola object
+INFO  17:01:04,454 - ===================================
+INFO  17:01:04,454 - ================SINTAKSNA ANALIZA================

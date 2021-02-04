@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:52
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class NumberDecl extends Factor {
 
-    private Integer constType;
+    private Integer constValue;
 
-    public NumberDecl (Integer constType) {
-        this.constType=constType;
+    public NumberDecl (Integer constValue) {
+        this.constValue=constValue;
     }
 
-    public Integer getConstType() {
-        return constType;
+    public Integer getConstValue() {
+        return constValue;
     }
 
-    public void setConstType(Integer constType) {
-        this.constType=constType;
+    public void setConstValue(Integer constValue) {
+        this.constValue=constValue;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class NumberDecl extends Factor {
         buffer.append(tab);
         buffer.append("NumberDecl(\n");
 
-        buffer.append(" "+tab+constType);
+        buffer.append(" "+tab+constValue);
         buffer.append("\n");
 
         buffer.append(tab);

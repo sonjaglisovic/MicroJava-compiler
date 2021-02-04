@@ -1,0 +1,71 @@
+INFO  15:52:49,123 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\designators_and_vars.mj
+INFO  15:52:49,831 - ===================================
+INFO  15:52:49,933 - Prisput simbolu:  Var this: A 1 1 , pristup njegovom polju:  Field field: A 2 1 , pristup njegovom polju:  Field bField: int 0 1  na liniji 33
+INFO  15:52:49,934 - Prisput simbolu:  Var b: int 2 1  na liniji 33
+INFO  15:52:49,934 - Prisput simbolu:  Meth method1: int 0 1  na liniji 34
+INFO  15:52:49,935 - Prisput simbolu:  Field array: Array of int 1 1  na liniji 34
+INFO  15:52:49,937 - Prisput simbolu:  Var f: int 4 0  na liniji 55
+INFO  15:52:49,938 - Prisput simbolu:  Con b1: int 0 0  na liniji 55
+INFO  15:52:49,939 - Prisput simbolu:  Var bool_var: bool 3 0  na liniji 56
+INFO  15:52:49,940 - Prisput simbolu:  Var c2: char 2 0  na liniji 57
+INFO  15:52:49,941 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 58
+INFO  15:52:49,941 - Prisput simbolu:  Var f: int 4 0  na liniji 59
+INFO  15:52:49,942 - Prisput simbolu:  Var object2: Array of A 7 0 , pristup njegovom polju:  Field cField: Array of int 1 1  na liniji 59
+INFO  15:52:49,943 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 60
+INFO  15:52:49,962 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 61
+INFO  15:52:49,963 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 62
+INFO  15:52:49,964 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Meth method: int 0 1  na liniji 62
+INFO  15:52:49,966 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 63
+INFO  15:52:49,966 - Prisput simbolu:  Var object1: A 6 0  na liniji 63
+INFO  15:52:49,967 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 64
+INFO  15:52:49,968 - Prisput simbolu:  Con null: null 0 0  na liniji 64
+INFO  15:52:49,971 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 65
+INFO  15:52:49,972 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 65
+INFO  15:52:49,973 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Meth method: int 0 1  na liniji 66
+INFO  15:52:49,975 - Prisput simbolu:  Var object2: Array of A 7 0 , pristup njegovom polju:  Meth method: int 0 1  na liniji 66
+INFO  15:52:49,975 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 66
+INFO  15:52:49,977 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Meth method: int 0 1  na liniji 66
+INFO  15:52:49,977 - Prisput simbolu:  Var object2: Array of A 7 0 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 66
+INFO  15:52:49,978 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Field cField: Array of int 1 1  na liniji 66
+INFO  15:52:49,980 - Prisput simbolu:  Con b1: int 0 0  na liniji 66
+INFO  15:52:49,981 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 66
+INFO  15:52:49,981 - Prisput simbolu:  Var object1: A 6 0  na liniji 66
+INFO  15:52:49,982 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Meth method: int 0 1  na liniji 67
+INFO  15:52:49,983 - Prisput simbolu:  Var object2: Array of A 7 0 , pristup njegovom polju:  Meth method: int 0 1  na liniji 67
+INFO  15:52:49,984 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 67
+INFO  15:52:49,985 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Meth method: int 0 1  na liniji 67
+INFO  15:52:49,985 - Prisput simbolu:  Var object2: Array of A 7 0 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 67
+INFO  15:52:49,986 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Field cField: Array of int 1 1  na liniji 67
+INFO  15:52:49,988 - Prisput simbolu:  Con b1: int 0 0  na liniji 67
+INFO  15:52:49,989 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 67
+INFO  15:52:49,992 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 70
+INFO  15:52:49,993 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 70
+INFO  15:52:49,994 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 70
+INFO  15:52:49,998 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 70
+INFO  15:52:49,999 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 70
+INFO  15:52:50,000 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 70
+INFO  15:52:50,001 - Prisput simbolu:  Var object2: Array of A 7 0 , pristup njegovom polju:  Field cField: Array of int 1 1  na liniji 72
+INFO  15:52:50,002 - Prisput simbolu:  Var object2: Array of A 7 0 , pristup njegovom polju:  Field cField: Array of int 1 1  na liniji 73
+INFO  15:52:50,004 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 74
+INFO  15:52:50,005 - Prisput simbolu:  Var c: int 1 0  na liniji 75
+INFO  15:52:50,006 - Prisput simbolu:  Con b1: int 0 0  na liniji 75
+INFO  15:52:50,006 - Prisput simbolu:  Var c: int 1 0  na liniji 76
+INFO  15:52:50,007 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 76
+INFO  15:52:50,007 - Prisput simbolu:  Con b1: int 0 0  na liniji 76
+INFO  15:52:50,007 - Prisput simbolu:  Con b1: int 0 0  na liniji 76
+INFO  15:52:50,008 - Prisput simbolu:  Var object: Array of B 0 1 , pristup njegovom polju:  Field parent_field: int 0 1  na liniji 76
+INFO  15:52:50,010 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Field cField: Array of int 1 1  na liniji 80
+INFO  15:52:50,011 - Prisput simbolu:  Meth function: int 0 5  na liniji 81
+INFO  15:52:50,011 - Prisput simbolu:  Var f: int 4 0  na liniji 81
+INFO  15:52:50,012 - Prisput simbolu:  Var bArray: Array of int 9 0  na liniji 81
+INFO  15:52:50,013 - Prisput simbolu:  Var object1: A 6 0  na liniji 81
+INFO  15:52:50,013 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 81
+INFO  15:52:50,015 - Prisput simbolu:  Var object1: A 6 0 , pristup njegovom polju:  Field grand_parent_field: int 0 1  na liniji 82
+INFO  15:52:50,016 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 83
+INFO  15:52:50,051 - Prisput simbolu:  Var c: int 1 0  na liniji 83
+INFO  15:52:50,055 - Prisput simbolu:  Var c: int 1 0  na liniji 83
+INFO  15:52:50,056 - Prisput simbolu:  Var bool_var: bool 3 0  na liniji 83
+INFO  15:52:50,060 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 83
+INFO  15:52:50,061 - Prisput simbolu:  Con null: null 0 0  na liniji 83
+INFO  15:52:50,062 - Prisput simbolu:  Var test_object: B 1 1  na liniji 84
+INFO  15:52:50,062 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 84

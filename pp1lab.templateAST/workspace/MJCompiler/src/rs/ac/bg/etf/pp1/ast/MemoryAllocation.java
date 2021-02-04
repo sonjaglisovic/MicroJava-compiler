@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:52
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class MemoryAllocation extends Factor {
 
-    private Type Type;
+    private AllocationType AllocationType;
     private OptionalExpression OptionalExpression;
 
-    public MemoryAllocation (Type Type, OptionalExpression OptionalExpression) {
-        this.Type=Type;
-        if(Type!=null) Type.setParent(this);
+    public MemoryAllocation (AllocationType AllocationType, OptionalExpression OptionalExpression) {
+        this.AllocationType=AllocationType;
+        if(AllocationType!=null) AllocationType.setParent(this);
         this.OptionalExpression=OptionalExpression;
         if(OptionalExpression!=null) OptionalExpression.setParent(this);
     }
 
-    public Type getType() {
-        return Type;
+    public AllocationType getAllocationType() {
+        return AllocationType;
     }
 
-    public void setType(Type Type) {
-        this.Type=Type;
+    public void setAllocationType(AllocationType AllocationType) {
+        this.AllocationType=AllocationType;
     }
 
     public OptionalExpression getOptionalExpression() {
@@ -38,18 +38,18 @@ public class MemoryAllocation extends Factor {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Type!=null) Type.accept(visitor);
+        if(AllocationType!=null) AllocationType.accept(visitor);
         if(OptionalExpression!=null) OptionalExpression.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Type!=null) Type.traverseTopDown(visitor);
+        if(AllocationType!=null) AllocationType.traverseTopDown(visitor);
         if(OptionalExpression!=null) OptionalExpression.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Type!=null) Type.traverseBottomUp(visitor);
+        if(AllocationType!=null) AllocationType.traverseBottomUp(visitor);
         if(OptionalExpression!=null) OptionalExpression.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class MemoryAllocation extends Factor {
         buffer.append(tab);
         buffer.append("MemoryAllocation(\n");
 
-        if(Type!=null)
-            buffer.append(Type.toString("  "+tab));
+        if(AllocationType!=null)
+            buffer.append(AllocationType.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

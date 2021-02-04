@@ -1,0 +1,58 @@
+INFO  20:28:13,175 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\code_generation_test1.mj
+INFO  20:28:13,433 - ===================================
+INFO  20:28:13,469 - Prisput simbolu:  Var a: int 0 1  na liniji 17
+INFO  20:28:13,470 - Prisput simbolu:  Var b: int 2 1  na liniji 17
+INFO  20:28:13,471 - Prisput simbolu:  Var a: int 0 0  na liniji 21
+INFO  20:28:13,472 - Prisput simbolu:  Var b: int 1 0  na liniji 22
+INFO  20:28:13,472 - Prisput simbolu:  Var d: int 3 0  na liniji 23
+INFO  20:28:13,473 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 24
+INFO  20:28:13,473 - Prisput simbolu:  Var c: int 2 0  na liniji 25
+INFO  20:28:13,474 - Prisput simbolu:  Var a: int 0 0  na liniji 25
+INFO  20:28:13,479 - Prisput simbolu:  Var b: int 1 0  na liniji 25
+INFO  20:28:13,479 - Prisput simbolu:  Var d: int 3 0  na liniji 25
+INFO  20:28:13,479 - Prisput simbolu:  Var b: int 1 0  na liniji 25
+INFO  20:28:13,480 - Prisput simbolu:  Var a: int 0 0  na liniji 25
+INFO  20:28:13,480 - Prisput simbolu:  Var c: int 2 0  na liniji 26
+INFO  20:28:13,480 - Prisput simbolu:  Var a: int 0 0  na liniji 27
+INFO  20:28:13,481 - Prisput simbolu:  Var a: int 0 0  na liniji 28
+INFO  20:28:13,481 - Prisput simbolu:  Var b: int 1 0  na liniji 29
+INFO  20:28:13,481 - Prisput simbolu:  Var b: int 1 0  na liniji 30
+INFO  20:28:13,482 - Prisput simbolu:  Var e: char 5 0  na liniji 31
+INFO  20:28:13,482 - Prisput simbolu:  Var e: char 5 0  na liniji 32
+INFO  20:28:13,482 - Prisput simbolu:  Var f: bool 4 0  na liniji 33
+INFO  20:28:13,484 - Prisput simbolu:  Var f: bool 4 0  na liniji 34
+INFO  20:28:13,484 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 35
+INFO  20:28:13,484 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 36
+INFO  20:28:13,485 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 37
+INFO  20:28:13,485 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 38
+INFO  20:28:13,486 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 39
+INFO  20:28:13,486 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 40
+INFO  20:28:13,486 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 41
+INFO  20:28:13,487 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 41
+INFO  20:28:13,487 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 42
+INFO  20:28:13,488 - Prisput simbolu:  Var f: bool 4 0  na liniji 43
+INFO  20:28:13,488 - Prisput simbolu:  Var a: int 0 0  na liniji 44
+INFO  20:28:13,488 - Prisput simbolu:  Var f: bool 4 0  na liniji 44
+INFO  20:28:13,489 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 44
+INFO  20:28:13,489 - Prisput simbolu:  Var a: int 0 0  na liniji 45
+INFO  20:28:13,490 - Prisput simbolu:  Var a: int 0 0  na liniji 46
+INFO  20:28:13,490 - Prisput simbolu:  Var f: bool 4 0  na liniji 46
+INFO  20:28:13,491 - Prisput simbolu:  Var a: int 0 0  na liniji 47
+INFO  20:28:13,492 - Prisput simbolu:  Var a: int 0 0  na liniji 49
+INFO  20:28:13,492 - Prisput simbolu:  Var b: int 1 0  na liniji 55
+INFO  20:28:13,492 - Prisput simbolu:  Var i: int 6 0  na liniji 62
+INFO  20:28:13,493 - Prisput simbolu:  Var i: int 6 0  na liniji 64
+INFO  20:28:13,494 - Prisput simbolu:  Var i: int 6 0  na liniji 65
+INFO  20:28:13,495 - Prisput simbolu:  Var a: int 0 0  na liniji 68
+INFO  20:28:13,495 - Prisput simbolu:  Var a: int 0 0  na liniji 69
+INFO  20:28:13,496 - Prisput simbolu:  Var a: int 0 0  na liniji 71
+INFO  20:28:13,497 - Prisput simbolu:  Var a: int 0 0  na liniji 73
+INFO  20:28:13,499 - Prisput simbolu:  Var a: int 0 0  na liniji 74
+INFO  20:28:13,499 - Prisput simbolu:  Var i: int 6 0  na liniji 75
+INFO  20:28:13,500 - Prisput simbolu:  Var i: int 6 0  na liniji 78
+INFO  20:28:13,500 - Prisput simbolu:  Var i: int 6 0  na liniji 79
+INFO  20:28:13,501 - Prisput simbolu:  Meth func: int 0 3  na liniji 80
+INFO  20:28:13,501 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 80
+INFO  20:28:13,502 - Prisput simbolu:  Var arr2: Array of int 8 0  na liniji 81
+INFO  20:28:13,503 - Prisput simbolu:  Var array: Array of int 7 0  na liniji 81
+INFO  20:28:13,504 - Prisput simbolu:  Var arr2: Array of int 8 0  na liniji 83

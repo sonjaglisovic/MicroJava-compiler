@@ -19,7 +19,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Stack<Integer> do_while_stack = new Stack<>();
 	boolean class_decl_in_progress = false;
 	boolean method_decl_in_progress = false;
-	private Stack<Integer> jump_to_trap_addresses = new Stack<>();
 	private int static_memory_free;
 	private Obj this_object_for_current_method = null;
 	private Obj currentClass;
@@ -36,13 +35,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		ord_code();
 	}
 	
-	public void visit(Program program) {
-		while(!jump_to_trap_addresses.empty()) {
-			Code.fixup(jump_to_trap_addresses.pop());
-		}
-		Code.put(Code.trap);
-		Code.put('g');
-	}
 	
 	public void visit(MethodName methodName) {
 		methodName.obj.setAdr(Code.pc);
@@ -66,12 +58,14 @@ public class CodeGenerator extends VisitorAdaptor {
 		this_object_for_current_method = null;
 		method_decl_in_progress = false;
 		if(!return_statement_occurred && methodDecl.getMethodSign().getMethodName().obj.getType() != SymbolTable.voidType) {
-			Code.put(Code.jmp);
-			jump_to_trap_addresses.push(Code.pc);
-			Code.put2(0);
+			Code.put(Code.trap);
+			Code.put('g');
 		}
 		Code.put(Code.exit);
 		Code.put(Code.return_);
+		
+		return_statement_occurred = false;
+		
 	}
 	
 	public void visit(ClassName className) {
@@ -179,7 +173,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(invokevirtual.pop() == false) {
 			Code.put(Code.call);
 			int jump_address = funcCallDesign.getDesignator().obj.getAdr();
-			Code.put2(jump_address - Code.pc);
+			Code.put2(jump_address - Code.pc + 1);
 		}else {
 			//skinuti parametre i adresu this-a sa steka
 			//vratiti parametre na stek
@@ -263,7 +257,11 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.const_1);
 		Code.fixup(jump_address);
 	}
-	
+	/**
+	 * Poredi se prvi operand sa 0 ako je jednak rezultat je 0 i vrsi se skok
+	 * Zatim se poredi drugi operand sa 0 ako je jedna rezultat je 0 i skace se u suprotnom je rezultat 1
+	 * 
+	 */
 	public void visit(ConditionTerm condTerm) {
 		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.eq);
@@ -277,12 +275,15 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.jmp);
 		int jump_address = Code.pc;
 		Code.put2(0);
-		Code.put2(address_to_fill, address_to_fill - Code.pc);
-		Code.put2(address_to_fill_2, address_to_fill_2 - Code.pc);
+		Code.fixup(address_to_fill);
+		Code.fixup(address_to_fill_2);
 		Code.put(Code.const_n);
-		Code.put2(jump_address, jump_address - Code.pc);
+		Code.fixup(jump_address);
 	}
-	
+	/**
+	 * Ako je prvi operand razlicit od 0 odmah se skace i upisuje se 1, ako je drugi operand razlicit od 0 skace se i upisuje 1
+	 * u suprotnom se na expression stack upisuje 0 kao rezultat
+	 */
 	public void visit(ConditionExpr condExpr) {
 		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.ne);
@@ -296,10 +297,10 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.jmp);
 		int jump_address = Code.pc;
 		Code.put2(0);
-		Code.put2(address_to_fill, address_to_fill - Code.pc);
-		Code.put2(address_to_fill_2, address_to_fill_2 - Code.pc);
+		Code.fixup(address_to_fill);
+		Code.fixup(address_to_fill_2);
 		Code.put(Code.const_1);
-		Code.put2(jump_address, jump_address - Code.pc);
+		Code.fixup(jump_address);
 	}
 	
 	/**
@@ -308,24 +309,24 @@ public class CodeGenerator extends VisitorAdaptor {
 	 * @param condExpr
 	 */
 	public void visit(CondExpr condExpr) {
-		Code.put(Code.enter);
-		//prave se 2 lokalne promenljive gde se cuvaju vrednosti izraza u slucaju true i u slucaju false
-		Code.put(0);
-		Code.put(2);
-		Code.put(Code.store_n);
-		Code.put(Code.store_1);
-		Code.put(Code.const_n);
+		Code.put(Code.store);
+		Code.put(static_memory_free++);
+		Code.put(Code.store);
+		Code.put(static_memory_free);
+		Code.loadConst(0);
 		Code.put(Code.jcc + Code.ne);
 		int address_to_fill = Code.pc;
 		Code.put2(0);
-		Code.put(Code.load_n);
+		Code.put(Code.load);
+		Code.put(static_memory_free - 1);
 		Code.put(Code.jmp);
 		int jump_address = Code.pc;
 		Code.put2(0);
 		Code.fixup(address_to_fill);
-		Code.put(Code.load_1);
+		Code.put(Code.load);
+		Code.put(static_memory_free);
 		Code.fixup(jump_address);
-		Code.put(Code.exit);
+		static_memory_free-=2;
 	}
 	
 	private boolean methodExistsInCurrentClass(Struct class_type, String methodName) {
@@ -361,9 +362,12 @@ public class CodeGenerator extends VisitorAdaptor {
 		Obj my_object = designtor_stack.pop();
 		Code.load(my_object);
 		Code.put(Code.const_n);
-		Code.put(Code.jcc + Code.eq);
-		jump_to_trap_addresses.push(Code.pc);
+		Code.put(Code.jcc + Code.ne);
+		int jump_address = Code.pc;
 		Code.put2(0);
+		Code.put(Code.trap);
+		Code.put('g');
+		Code.fixup(jump_address);
 		if(accessField.obj.getKind() == MyObject.Meth) {
 			invokevirtual.push(true);
 		}else {
@@ -373,13 +377,11 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(AccessElement accessElement) {
 		Obj my_array = designtor_stack.pop();
-		Code.put(Code.enter);
-		Code.put(0);
-		Code.put(1);
-		Code.put(Code.store_n);
+		Code.put(Code.store);
+		Code.put(static_memory_free);
 		Code.load(my_array);
-		Code.put(Code.load_n);
-		Code.put(Code.exit);
+		Code.put(Code.load);
+		Code.put(static_memory_free);
 		designtor_stack.push(accessElement.obj);
 	}
 	
@@ -501,25 +503,28 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.fixup(jump_true.pop());
 	}
 	
-	public void visit(Do do_) {
+	public void visit(DoWhileStart doWhileStart) {
 		do_while_stack.push(Code.pc);
 		break_jump_address.push(-1);
 		continue_jump_address.push(-1);
 	}
 	
 	public void visit(DoWhileLoop doWhile) {
-		int continue_address = continue_jump_address.empty() ? -1 : continue_jump_address.pop();
-		while(continue_address != -1) {
-			Code.fixup(continue_address);
-			continue_address = continue_jump_address.pop();
-		}
 		Code.loadConst(0);
 		Code.put(Code.jcc + Code.ne);
-		Code.put2(do_while_stack.pop() - Code.pc + 1);
+		Code.put2(do_while_stack.pop() - Code.pc + 1);		
 		int break_address = break_jump_address.empty() ? -1 : break_jump_address.pop();
 		while(break_address != -1) {
 			Code.fixup(break_address);
 			break_address = break_jump_address.pop();
+		}
+	}
+	
+	public void visit(DoWhileConditionLoad doWhileCondition) {
+		int continue_address = continue_jump_address.empty() ? -1 : continue_jump_address.pop();
+		while(continue_address != -1) {
+			Code.fixup(continue_address);
+			continue_address = continue_jump_address.pop();
 		}
 	}
 	

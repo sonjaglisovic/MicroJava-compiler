@@ -1,23 +1,26 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:52
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MatchedStatement extends Matched {
+public class MatchedStatement extends Statement {
 
     private ConditionPart ConditionPart;
-    private Matched Matched;
-    private Matched Matched1;
+    private Statement Statement;
+    private Else Else;
+    private Statement Statement1;
 
-    public MatchedStatement (ConditionPart ConditionPart, Matched Matched, Matched Matched1) {
+    public MatchedStatement (ConditionPart ConditionPart, Statement Statement, Else Else, Statement Statement1) {
         this.ConditionPart=ConditionPart;
         if(ConditionPart!=null) ConditionPart.setParent(this);
-        this.Matched=Matched;
-        if(Matched!=null) Matched.setParent(this);
-        this.Matched1=Matched1;
-        if(Matched1!=null) Matched1.setParent(this);
+        this.Statement=Statement;
+        if(Statement!=null) Statement.setParent(this);
+        this.Else=Else;
+        if(Else!=null) Else.setParent(this);
+        this.Statement1=Statement1;
+        if(Statement1!=null) Statement1.setParent(this);
     }
 
     public ConditionPart getConditionPart() {
@@ -28,20 +31,28 @@ public class MatchedStatement extends Matched {
         this.ConditionPart=ConditionPart;
     }
 
-    public Matched getMatched() {
-        return Matched;
+    public Statement getStatement() {
+        return Statement;
     }
 
-    public void setMatched(Matched Matched) {
-        this.Matched=Matched;
+    public void setStatement(Statement Statement) {
+        this.Statement=Statement;
     }
 
-    public Matched getMatched1() {
-        return Matched1;
+    public Else getElse() {
+        return Else;
     }
 
-    public void setMatched1(Matched Matched1) {
-        this.Matched1=Matched1;
+    public void setElse(Else Else) {
+        this.Else=Else;
+    }
+
+    public Statement getStatement1() {
+        return Statement1;
+    }
+
+    public void setStatement1(Statement Statement1) {
+        this.Statement1=Statement1;
     }
 
     public void accept(Visitor visitor) {
@@ -50,21 +61,24 @@ public class MatchedStatement extends Matched {
 
     public void childrenAccept(Visitor visitor) {
         if(ConditionPart!=null) ConditionPart.accept(visitor);
-        if(Matched!=null) Matched.accept(visitor);
-        if(Matched1!=null) Matched1.accept(visitor);
+        if(Statement!=null) Statement.accept(visitor);
+        if(Else!=null) Else.accept(visitor);
+        if(Statement1!=null) Statement1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(ConditionPart!=null) ConditionPart.traverseTopDown(visitor);
-        if(Matched!=null) Matched.traverseTopDown(visitor);
-        if(Matched1!=null) Matched1.traverseTopDown(visitor);
+        if(Statement!=null) Statement.traverseTopDown(visitor);
+        if(Else!=null) Else.traverseTopDown(visitor);
+        if(Statement1!=null) Statement1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(ConditionPart!=null) ConditionPart.traverseBottomUp(visitor);
-        if(Matched!=null) Matched.traverseBottomUp(visitor);
-        if(Matched1!=null) Matched1.traverseBottomUp(visitor);
+        if(Statement!=null) Statement.traverseBottomUp(visitor);
+        if(Else!=null) Else.traverseBottomUp(visitor);
+        if(Statement1!=null) Statement1.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -79,14 +93,20 @@ public class MatchedStatement extends Matched {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Matched!=null)
-            buffer.append(Matched.toString("  "+tab));
+        if(Statement!=null)
+            buffer.append(Statement.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Matched1!=null)
-            buffer.append(Matched1.toString("  "+tab));
+        if(Else!=null)
+            buffer.append(Else.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(Statement1!=null)
+            buffer.append(Statement1.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

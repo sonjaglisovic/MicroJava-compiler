@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:53
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -83,6 +83,7 @@ public interface Visitor {
     public void visit(ExprAfterReturn ExprAfterReturn);
     public void visit(NoOptExpr NoOptExpr);
     public void visit(SingleExpressionDecl SingleExpressionDecl);
+    public void visit(AllocationType AllocationType);
     public void visit(MemoryAllocation MemoryAllocation);
     public void visit(ExpressionFactor ExpressionFactor);
     public void visit(BoolValue BoolValue);
@@ -128,6 +129,8 @@ public interface Visitor {
     public void visit(CaseListDecl CaseListDecl);
     public void visit(SwitchStart SwitchStart);
     public void visit(DoWhileStart DoWhileStart);
+    public void visit(Else Else);
+    public void visit(DoWhileConditionLoad DoWhileConditionLoad);
     public void visit(MatchedListSt MatchedListSt);
     public void visit(SwitchStatement SwitchStatement);
     public void visit(PrintFunctionCall PrintFunctionCall);
@@ -136,14 +139,11 @@ public interface Visitor {
     public void visit(BreakStatement BreakStatement);
     public void visit(DoWhileLoop DoWhileLoop);
     public void visit(ContinueStatement ContinueStatement);
+    public void visit(UnmatchedIf UnmatchedIf);
     public void visit(MatchedStatement MatchedStatement);
     public void visit(DesStatement DesStatement);
     public void visit(ErrorCondition ErrorCondition);
     public void visit(RightCondition RightCondition);
-    public void visit(UnmatchedIfElse UnmatchedIfElse);
-    public void visit(UnmatchedIf UnmatchedIf);
-    public void visit(UnmatchedStmt UnmatchedStmt);
-    public void visit(MatchedStmt MatchedStmt);
     public void visit(NoStmt NoStmt);
     public void visit(Statements Statements);
     public void visit(FormParDecl FormParDecl);

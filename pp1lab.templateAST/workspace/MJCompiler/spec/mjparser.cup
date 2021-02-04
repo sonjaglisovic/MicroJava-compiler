@@ -59,7 +59,7 @@ nonterminal ParamDecl, ParamList, OptionalArraySpec, StatementList, Statement, M
 nonterminal DesignatorStatement, DesignParam, AdditionalList;
 nonterminal ActPars, ActualParamList, SimpleRel, ClassRel;
 nonterminal OptionalOp, OptionalMinus, Mulop, Addop, Assignop, Relop, SingleParameter;
-nonterminal OptionalSecondParam, ExpressionType, CaseList, CaseDecl, Else;
+nonterminal OptionalSecondParam, ExpressionType, CaseList, CaseDecl, Else, DoWhileConditionLoad;
 nonterminal MatchedList, AdditionForCall, FormParDecl, MethodSign, Do, Switch;
 nonterminal DesignatorList, ConditionPart, ClassFieldDecList, VarDecl, ClassDecl, SingleConstDecl, ConstDecl;
 
@@ -193,7 +193,7 @@ Statement ::= (DesStatement) DesignatorStatement
 		    |
 		    (ContinueStatement) CONTINUE SEMI
 		    |
-		    (DoWhileLoop) Do Statement WHILE LPAREN Condition:type RPAREN SEMI
+		    (DoWhileLoop) Do Statement WHILE DoWhileConditionLoad Condition RPAREN SEMI
 		    |
 		    (BreakStatement) BREAK SEMI
 		    |
@@ -207,6 +207,8 @@ Statement ::= (DesStatement) DesignatorStatement
 		    |
 		    (MatchedListSt) LBRACE StatementList RBRACE
 		    ;
+
+DoWhileConditionLoad ::= (DoWhileConditionLoad) LPAREN;
 
 Else ::= (Else) ELSE;
 

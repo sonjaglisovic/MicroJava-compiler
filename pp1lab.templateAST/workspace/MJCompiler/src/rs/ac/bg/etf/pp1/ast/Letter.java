@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 30/0/2021 12:32:52
+// 3/1/2021 19:30:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class Letter extends Factor {
 
-    private String constType;
+    private String constValue;
 
-    public Letter (String constType) {
-        this.constType=constType;
+    public Letter (String constValue) {
+        this.constValue=constValue;
     }
 
-    public String getConstType() {
-        return constType;
+    public String getConstValue() {
+        return constValue;
     }
 
-    public void setConstType(String constType) {
-        this.constType=constType;
+    public void setConstValue(String constValue) {
+        this.constValue=constValue;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class Letter extends Factor {
         buffer.append(tab);
         buffer.append("Letter(\n");
 
-        buffer.append(" "+tab+constType);
+        buffer.append(" "+tab+constValue);
         buffer.append("\n");
 
         buffer.append(tab);
