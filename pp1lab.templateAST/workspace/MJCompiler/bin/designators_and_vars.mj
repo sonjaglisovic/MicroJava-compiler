@@ -81,7 +81,7 @@ int bArray[];
 		object1.cField[0]++;
 		function(f,1, bArray, object1, object2);
 		object1.grand_parent_field = 2;
-		object[0] = c > 0 && c < 255 || bool_var ? object[1] : null;
+		object[0] = c  ? object[1] : null;
 		test_object = object[0];
 		return; 
 	}	

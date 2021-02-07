@@ -78,6 +78,8 @@ nonterminal ActPars ActPars;
 nonterminal ActualParamList ActualParamList;
 nonterminal SimpleRel SimpleRel;
 nonterminal ClassRel ClassRel;
+nonterminal TernaryCondition TernaryCondition;
+nonterminal Col Col;
 nonterminal OptionalOp OptionalOp;
 nonterminal OptionalMinus OptionalMinus;
 nonterminal Mulop Mulop;
@@ -97,6 +99,8 @@ nonterminal FormParDecl FormParDecl;
 nonterminal MethodSign MethodSign;
 nonterminal Do Do;
 nonterminal Switch Switch;
+nonterminal CaseStart CaseStart;
+nonterminal Case Case;
 nonterminal DesignatorList DesignatorList;
 nonterminal ConditionPart ConditionPart;
 nonterminal ClassFieldDecList ClassFieldDecList;
@@ -108,7 +112,7 @@ nonterminal ConstDecl ConstDecl;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, DesignatorName, AdditionalElement, ClassName, AllocationType, MethodName, Designator, OptionalParent;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Initializer, RetType, BoolInitializer, Factor; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr1, Expr, OptionalExpression, OptionalAfterReturn, Term;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct TermList, Condition, CondTerm, CondFact, AssignStatement;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Condition, CondTerm, CondFact, AssignStatement;
 
 precedence left ELSE;
 
@@ -245,7 +249,7 @@ Statement ::= (DesStatement) DesignatorStatement:D1 {: RESULT=new DesStatement(D
 		    |
 		    (PrintFunctionCall) PRINT LPAREN Expr:type OptionalSecondParam:type1 RPAREN SEMI {: RESULT=new PrintFunctionCall(type, type1); RESULT.setLine(typeleft); :}
 		    |
-		    (SwitchStatement) Switch:S1 LPAREN Expr:type RPAREN LBRACE CaseList:C2 RBRACE {: RESULT=new SwitchStatement(S1, type, C2); RESULT.setLine(S1left); :}
+		    (SwitchStatement) Switch:S1 LBRACE CaseList:C2 RBRACE {: RESULT=new SwitchStatement(S1, C2); RESULT.setLine(S1left); :}
 		    |
 		    (MatchedListSt) LBRACE StatementList:S1 RBRACE {: RESULT=new MatchedListSt(S1); RESULT.setLine(S1left); :}
 		    ;
@@ -256,14 +260,15 @@ Else ::= (Else) ELSE {: RESULT=new Else(); :};
 
 Do ::= (DoWhileStart) DO {: RESULT=new DoWhileStart(); :};
 
-Switch ::= (SwitchStart) SWITCH {: RESULT=new SwitchStart(); :};
+Switch ::= (SwitchStart) SWITCH  LPAREN Expr:type RPAREN {: RESULT=new SwitchStart(type); RESULT.setLine(typeleft); :};
 	
 CaseList ::= (CaseListDecl) CaseList:C1 CaseDecl:C2 {: RESULT=new CaseListDecl(C1, C2); RESULT.setLine(C1left); :}
              |
              (NoCaseList) {: RESULT=new NoCaseList(); :} /*epsilon*/; 
                		    
-CaseDecl ::= (CaseStatement) CASE NUMBER:N1 COL StatementList:S2 {: RESULT=new CaseStatement(N1, S2); RESULT.setLine(N1left); :};		    
+CaseDecl ::= (CaseStatement) CaseStart:C1 COL StatementList:S2 {: RESULT=new CaseStatement(C1, S2); RESULT.setLine(C1left); :};		    
 		    
+CaseStart ::= (CaseStart) CASE NUMBER:value {: RESULT=new CaseStart(value); RESULT.setLine(valueleft); :};
 		   
 OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER:value {: RESULT=new PrintSecondParam(value); RESULT.setLine(valueleft); :}
                         |
@@ -312,23 +317,26 @@ CondTerm ::= (ConditionTerm) CondTerm:type1 AND CondFact:type2 {: RESULT=new Con
 		     (SingleFact) CondFact:type2 {: RESULT=new SingleFact(type2); RESULT.setLine(type2left); :};	
 
 
-CondFact ::= (LogicalExpr) Expr1:type {: RESULT=new LogicalExpr(type); RESULT.setLine(typeleft); :}
+CondFact ::= (LogicalExpr) Expr:type {: RESULT=new LogicalExpr(type); RESULT.setLine(typeleft); :}
 			 |
-			 (OptionalOperator) Expr1:type1 Relop:R1 Expr1:type2 {: RESULT=new OptionalOperator(type1, R1, type2); RESULT.setLine(type1left); :};
+			 (OptionalOperator) Expr:type1 Relop:R1 Expr:type2 {: RESULT=new OptionalOperator(type1, R1, type2); RESULT.setLine(type1left); :};
 
 
-Expr  ::= (CondExpr) Condition:type QUEST Expr:type1 COL Expr:type2 {: RESULT=new CondExpr(type, type1, type2); RESULT.setLine(typeleft); :}
+Expr  ::= (CondExpr) TernaryCondition:T1 QUEST Expr1:type1 Col:C2 Expr1:type2 {: RESULT=new CondExpr(T1, type1, C2, type2); RESULT.setLine(T1left); :}
           |
           (SimpleExpr) Expr1:type {: RESULT=new SimpleExpr(type); RESULT.setLine(typeleft); :}
           ;
+ 
+TernaryCondition ::= (TernaryCondition) Expr1:E1 {: RESULT=new TernaryCondition(E1); RESULT.setLine(E1left); :};
+
+Col ::= (Col) COL {: RESULT=new Col(); :};
+ 
                     
-Expr1 ::= (MinusExpr) MINUS TermList:t {: RESULT=new MinusExpr(t); RESULT.setLine(tleft); :}
+Expr1 ::= (MinusExpr) MINUS Term:tt {: RESULT=new MinusExpr(tt); RESULT.setLine(ttleft); :}
+		  |
+		  (FirstTerm) Term:tt1 {: RESULT=new FirstTerm(tt1); RESULT.setLine(tt1left); :}
           |
-          (NOMinusExpr) TermList:t1 {: RESULT=new NOMinusExpr(t1); RESULT.setLine(t1left); :};	
-                     	      
-TermList ::= (Terms) TermList:type1 Addop:A1 Term:type2 {: RESULT=new Terms(type1, A1, type2); RESULT.setLine(type1left); :}
-             |
-             (FirstTerm) Term:type {: RESULT=new FirstTerm(type); RESULT.setLine(typeleft); :};
+          (NOMinusExpr) Expr1:type2 Addop:A1 Term:tt2 {: RESULT=new NOMinusExpr(type2, A1, tt2); RESULT.setLine(type2left); :};	
 
           
 Term ::= (CompositeTerm) Term:type1 Mulop:M1 Factor:type2 {: RESULT=new CompositeTerm(type1, M1, type2); RESULT.setLine(type1left); :}

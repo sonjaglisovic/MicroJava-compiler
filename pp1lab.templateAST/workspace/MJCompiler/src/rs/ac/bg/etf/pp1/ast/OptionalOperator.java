@@ -1,31 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2021 19:30:44
+// 7/1/2021 8:21:21
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class OptionalOperator extends CondFact {
 
-    private Expr1 Expr1;
+    private Expr Expr;
     private Relop Relop;
-    private Expr1 Expr11;
+    private Expr Expr1;
 
-    public OptionalOperator (Expr1 Expr1, Relop Relop, Expr1 Expr11) {
-        this.Expr1=Expr1;
-        if(Expr1!=null) Expr1.setParent(this);
+    public OptionalOperator (Expr Expr, Relop Relop, Expr Expr1) {
+        this.Expr=Expr;
+        if(Expr!=null) Expr.setParent(this);
         this.Relop=Relop;
         if(Relop!=null) Relop.setParent(this);
-        this.Expr11=Expr11;
-        if(Expr11!=null) Expr11.setParent(this);
-    }
-
-    public Expr1 getExpr1() {
-        return Expr1;
-    }
-
-    public void setExpr1(Expr1 Expr1) {
         this.Expr1=Expr1;
+        if(Expr1!=null) Expr1.setParent(this);
+    }
+
+    public Expr getExpr() {
+        return Expr;
+    }
+
+    public void setExpr(Expr Expr) {
+        this.Expr=Expr;
     }
 
     public Relop getRelop() {
@@ -36,12 +36,12 @@ public class OptionalOperator extends CondFact {
         this.Relop=Relop;
     }
 
-    public Expr1 getExpr11() {
-        return Expr11;
+    public Expr getExpr1() {
+        return Expr1;
     }
 
-    public void setExpr11(Expr1 Expr11) {
-        this.Expr11=Expr11;
+    public void setExpr1(Expr Expr1) {
+        this.Expr1=Expr1;
     }
 
     public void accept(Visitor visitor) {
@@ -49,22 +49,22 @@ public class OptionalOperator extends CondFact {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Expr1!=null) Expr1.accept(visitor);
+        if(Expr!=null) Expr.accept(visitor);
         if(Relop!=null) Relop.accept(visitor);
-        if(Expr11!=null) Expr11.accept(visitor);
+        if(Expr1!=null) Expr1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Expr1!=null) Expr1.traverseTopDown(visitor);
+        if(Expr!=null) Expr.traverseTopDown(visitor);
         if(Relop!=null) Relop.traverseTopDown(visitor);
-        if(Expr11!=null) Expr11.traverseTopDown(visitor);
+        if(Expr1!=null) Expr1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Expr1!=null) Expr1.traverseBottomUp(visitor);
+        if(Expr!=null) Expr.traverseBottomUp(visitor);
         if(Relop!=null) Relop.traverseBottomUp(visitor);
-        if(Expr11!=null) Expr11.traverseBottomUp(visitor);
+        if(Expr1!=null) Expr1.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -73,8 +73,8 @@ public class OptionalOperator extends CondFact {
         buffer.append(tab);
         buffer.append("OptionalOperator(\n");
 
-        if(Expr1!=null)
-            buffer.append(Expr1.toString("  "+tab));
+        if(Expr!=null)
+            buffer.append(Expr.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
@@ -85,8 +85,8 @@ public class OptionalOperator extends CondFact {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Expr11!=null)
-            buffer.append(Expr11.toString("  "+tab));
+        if(Expr1!=null)
+            buffer.append(Expr1.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

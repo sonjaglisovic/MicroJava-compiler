@@ -57,16 +57,16 @@ nonterminal Program, DeclList, DeclPart, JustVarDecl, VarDeclList, SingleVarDecl
 nonterminal OptionalMethodDecl, MethodDecl, SingleMethodDecl, FormPars;
 nonterminal ParamDecl, ParamList, OptionalArraySpec, StatementList, Statement, Matched, Unmatched;
 nonterminal DesignatorStatement, DesignParam, AdditionalList;
-nonterminal ActPars, ActualParamList, SimpleRel, ClassRel;
+nonterminal ActPars, ActualParamList, SimpleRel, ClassRel, TernaryCondition, Col;
 nonterminal OptionalOp, OptionalMinus, Mulop, Addop, Assignop, Relop, SingleParameter;
 nonterminal OptionalSecondParam, ExpressionType, CaseList, CaseDecl, Else, DoWhileConditionLoad;
-nonterminal MatchedList, AdditionForCall, FormParDecl, MethodSign, Do, Switch;
+nonterminal MatchedList, AdditionForCall, FormParDecl, MethodSign, Do, Switch, CaseStart, Case;
 nonterminal DesignatorList, ConditionPart, ClassFieldDecList, VarDecl, ClassDecl, SingleConstDecl, ConstDecl;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, DesignatorName, AdditionalElement, ClassName, AllocationType, MethodName, Designator, OptionalParent;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Initializer, RetType, BoolInitializer, Factor; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr1, Expr, OptionalExpression, OptionalAfterReturn, Term;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct TermList, Condition, CondTerm, CondFact, AssignStatement;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Condition, CondTerm, CondFact, AssignStatement;
 
 precedence left ELSE;
 
@@ -203,7 +203,7 @@ Statement ::= (DesStatement) DesignatorStatement
 		    |
 		    (PrintFunctionCall) PRINT LPAREN Expr:type OptionalSecondParam:type1 RPAREN SEMI
 		    |
-		    (SwitchStatement) Switch LPAREN Expr:type RPAREN LBRACE CaseList RBRACE
+		    (SwitchStatement) Switch LBRACE CaseList RBRACE
 		    |
 		    (MatchedListSt) LBRACE StatementList RBRACE
 		    ;
@@ -214,14 +214,15 @@ Else ::= (Else) ELSE;
 
 Do ::= (DoWhileStart) DO;
 
-Switch ::= (SwitchStart) SWITCH;
+Switch ::= (SwitchStart) SWITCH  LPAREN Expr:type RPAREN;
 	
 CaseList ::= (CaseListDecl) CaseList CaseDecl
              |
              (NoCaseList) /*epsilon*/; 
                		    
-CaseDecl ::= (CaseStatement) CASE NUMBER COL StatementList;		    
+CaseDecl ::= (CaseStatement) CaseStart COL StatementList;		    
 		    
+CaseStart ::= (CaseStart) CASE NUMBER:value;
 		   
 OptionalSecondParam ::= (PrintSecondParam) COMMA NUMBER:value
                         |
@@ -270,23 +271,26 @@ CondTerm ::= (ConditionTerm) CondTerm:type1 AND CondFact:type2
 		     (SingleFact) CondFact:type2;	
 
 
-CondFact ::= (LogicalExpr) Expr1:type
+CondFact ::= (LogicalExpr) Expr:type
 			 |
-			 (OptionalOperator) Expr1:type1 Relop Expr1:type2;
+			 (OptionalOperator) Expr:type1 Relop Expr:type2;
 
 
-Expr  ::= (CondExpr) Condition:type QUEST Expr:type1 COL Expr:type2
+Expr  ::= (CondExpr) TernaryCondition QUEST Expr1:type1 Col Expr1:type2
           |
           (SimpleExpr) Expr1:type
           ;
+ 
+TernaryCondition ::= (TernaryCondition) Expr1;
+
+Col ::= (Col) COL;
+ 
                     
-Expr1 ::= (MinusExpr) MINUS TermList:t
+Expr1 ::= (MinusExpr) MINUS Term:tt
+		  |
+		  (FirstTerm) Term:tt1
           |
-          (NOMinusExpr) TermList:t1;	
-                     	      
-TermList ::= (Terms) TermList:type1 Addop Term:type2
-             |
-             (FirstTerm) Term:type;
+          (NOMinusExpr) Expr1:type2 Addop Term:tt2;	
 
           
 Term ::= (CompositeTerm) Term:type1 Mulop Factor:type2

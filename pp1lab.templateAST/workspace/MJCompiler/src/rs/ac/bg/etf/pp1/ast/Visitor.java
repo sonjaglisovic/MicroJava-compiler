@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2021 19:30:44
+// 7/1/2021 8:21:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -34,6 +34,7 @@ public interface Visitor {
     public void visit(ActualParamList ActualParamList);
     public void visit(ParamList ParamList);
     public void visit(DesignParam DesignParam);
+    public void visit(Case Case);
     public void visit(DesignatorList DesignatorList);
     public void visit(Condition Condition);
     public void visit(Mulop Mulop);
@@ -52,7 +53,6 @@ public interface Visitor {
     public void visit(CondTerm CondTerm);
     public void visit(CaseDecl CaseDecl);
     public void visit(ExpressionType ExpressionType);
-    public void visit(TermList TermList);
     public void visit(Expr1 Expr1);
     public void visit(ActPars ActPars);
     public void visit(OptionalMinus OptionalMinus);
@@ -93,10 +93,11 @@ public interface Visitor {
     public void visit(SimpleDesignator SimpleDesignator);
     public void visit(SingleTermDecl SingleTermDecl);
     public void visit(CompositeTerm CompositeTerm);
-    public void visit(FirstTerm FirstTerm);
-    public void visit(Terms Terms);
     public void visit(NOMinusExpr NOMinusExpr);
+    public void visit(FirstTerm FirstTerm);
     public void visit(MinusExpr MinusExpr);
+    public void visit(Col Col);
+    public void visit(TernaryCondition TernaryCondition);
     public void visit(SimpleExpr SimpleExpr);
     public void visit(CondExpr CondExpr);
     public void visit(OptionalOperator OptionalOperator);
@@ -124,6 +125,7 @@ public interface Visitor {
     public void visit(AssignStatementSt AssignStatementSt);
     public void visit(NoSecondParam NoSecondParam);
     public void visit(PrintSecondParam PrintSecondParam);
+    public void visit(CaseStart CaseStart);
     public void visit(CaseStatement CaseStatement);
     public void visit(NoCaseList NoCaseList);
     public void visit(CaseListDecl CaseListDecl);

@@ -1,47 +1,58 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2021 19:30:44
+// 7/1/2021 8:21:21
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class CondExpr extends Expr {
 
-    private Condition Condition;
-    private Expr Expr;
-    private Expr Expr1;
+    private TernaryCondition TernaryCondition;
+    private Expr1 Expr1;
+    private Col Col;
+    private Expr1 Expr11;
 
-    public CondExpr (Condition Condition, Expr Expr, Expr Expr1) {
-        this.Condition=Condition;
-        if(Condition!=null) Condition.setParent(this);
-        this.Expr=Expr;
-        if(Expr!=null) Expr.setParent(this);
+    public CondExpr (TernaryCondition TernaryCondition, Expr1 Expr1, Col Col, Expr1 Expr11) {
+        this.TernaryCondition=TernaryCondition;
+        if(TernaryCondition!=null) TernaryCondition.setParent(this);
         this.Expr1=Expr1;
         if(Expr1!=null) Expr1.setParent(this);
+        this.Col=Col;
+        if(Col!=null) Col.setParent(this);
+        this.Expr11=Expr11;
+        if(Expr11!=null) Expr11.setParent(this);
     }
 
-    public Condition getCondition() {
-        return Condition;
+    public TernaryCondition getTernaryCondition() {
+        return TernaryCondition;
     }
 
-    public void setCondition(Condition Condition) {
-        this.Condition=Condition;
+    public void setTernaryCondition(TernaryCondition TernaryCondition) {
+        this.TernaryCondition=TernaryCondition;
     }
 
-    public Expr getExpr() {
-        return Expr;
-    }
-
-    public void setExpr(Expr Expr) {
-        this.Expr=Expr;
-    }
-
-    public Expr getExpr1() {
+    public Expr1 getExpr1() {
         return Expr1;
     }
 
-    public void setExpr1(Expr Expr1) {
+    public void setExpr1(Expr1 Expr1) {
         this.Expr1=Expr1;
+    }
+
+    public Col getCol() {
+        return Col;
+    }
+
+    public void setCol(Col Col) {
+        this.Col=Col;
+    }
+
+    public Expr1 getExpr11() {
+        return Expr11;
+    }
+
+    public void setExpr11(Expr1 Expr11) {
+        this.Expr11=Expr11;
     }
 
     public void accept(Visitor visitor) {
@@ -49,22 +60,25 @@ public class CondExpr extends Expr {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Condition!=null) Condition.accept(visitor);
-        if(Expr!=null) Expr.accept(visitor);
+        if(TernaryCondition!=null) TernaryCondition.accept(visitor);
         if(Expr1!=null) Expr1.accept(visitor);
+        if(Col!=null) Col.accept(visitor);
+        if(Expr11!=null) Expr11.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Condition!=null) Condition.traverseTopDown(visitor);
-        if(Expr!=null) Expr.traverseTopDown(visitor);
+        if(TernaryCondition!=null) TernaryCondition.traverseTopDown(visitor);
         if(Expr1!=null) Expr1.traverseTopDown(visitor);
+        if(Col!=null) Col.traverseTopDown(visitor);
+        if(Expr11!=null) Expr11.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Condition!=null) Condition.traverseBottomUp(visitor);
-        if(Expr!=null) Expr.traverseBottomUp(visitor);
+        if(TernaryCondition!=null) TernaryCondition.traverseBottomUp(visitor);
         if(Expr1!=null) Expr1.traverseBottomUp(visitor);
+        if(Col!=null) Col.traverseBottomUp(visitor);
+        if(Expr11!=null) Expr11.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -73,20 +87,26 @@ public class CondExpr extends Expr {
         buffer.append(tab);
         buffer.append("CondExpr(\n");
 
-        if(Condition!=null)
-            buffer.append(Condition.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(Expr!=null)
-            buffer.append(Expr.toString("  "+tab));
+        if(TernaryCondition!=null)
+            buffer.append(TernaryCondition.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Expr1!=null)
             buffer.append(Expr1.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(Col!=null)
+            buffer.append(Col.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(Expr11!=null)
+            buffer.append(Expr11.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

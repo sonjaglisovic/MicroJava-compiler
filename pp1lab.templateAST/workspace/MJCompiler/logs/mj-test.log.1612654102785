@@ -1,0 +1,4 @@
+INFO  00:27:55,649 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\semantic_errors.mj
+ERROR 00:27:56,043 - 
+Sintaksna greska na liniji 55
+ERROR 00:27:56,049 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 73

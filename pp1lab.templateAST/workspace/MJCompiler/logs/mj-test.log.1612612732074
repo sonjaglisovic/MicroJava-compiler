@@ -1,0 +1,56 @@
+INFO  12:49:49,581 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\test302.mj
+INFO  12:49:50,288 - ===================================
+INFO  12:49:50,403 - Prisput simbolu:  Var z: int 0 1  na liniji 16
+INFO  12:49:50,403 - Prisput simbolu:  Var d: int 1 1  na liniji 16
+INFO  12:49:50,405 - Prisput simbolu:  Var inc: int 1 1  na liniji 22
+INFO  12:49:50,406 - Prisput simbolu:  Con jedan: int 1 0  na liniji 22
+INFO  12:49:50,406 - Prisput simbolu:  Var pom: int 2 1  na liniji 22
+INFO  12:49:50,411 - Prisput simbolu:  Var inc: int 1 1  na liniji 23
+INFO  12:49:50,413 - Prisput simbolu:  Var pom: int 2 1  na liniji 23
+INFO  12:49:50,414 - Prisput simbolu:  Var a: int 0 1  na liniji 23
+INFO  12:49:50,416 - Prisput simbolu:  Meth sum: int 0 2  na liniji 25
+INFO  12:49:50,416 - Prisput simbolu:  Var a: int 0 1  na liniji 25
+INFO  12:49:50,417 - Prisput simbolu:  Var pom: int 2 1  na liniji 25
+INFO  12:49:50,420 - Prisput simbolu:  Var ibool: bool 1 0  na liniji 38
+INFO  12:49:50,420 - Prisput simbolu:  Var i: int 0 0  na liniji 39
+INFO  12:49:50,421 - Prisput simbolu:  Var i: int 0 0  na liniji 41
+INFO  12:49:50,422 - Prisput simbolu:  Var ibool: bool 1 0  na liniji 41
+INFO  12:49:50,422 - Prisput simbolu:  Var i: int 0 0  na liniji 42
+INFO  12:49:50,423 - Prisput simbolu:  Var i: int 0 0  na liniji 43
+INFO  12:49:50,424 - Prisput simbolu:  Var ibool: bool 1 0  na liniji 45
+INFO  12:49:50,425 - Prisput simbolu:  Var i: int 0 0  na liniji 46
+INFO  12:49:50,426 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 49
+INFO  12:49:50,429 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 50
+INFO  12:49:50,430 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 51
+INFO  12:49:50,431 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 52
+INFO  12:49:50,488 - Prisput simbolu:  Meth sum: int 0 2  na liniji 52
+INFO  12:49:50,489 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 52
+INFO  12:49:50,489 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 52
+INFO  12:49:50,490 - Prisput simbolu:  Meth verify: bool 0 0  na liniji 53
+INFO  12:49:50,495 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 53
+INFO  12:49:50,497 - Prisput simbolu:  Meth ord: int 0 1  na liniji 53
+INFO  12:49:50,497 - Prisput simbolu:  Meth ord: int 0 1  na liniji 54
+INFO  12:49:50,499 - Prisput simbolu:  Con eol: char 10 0  na liniji 56
+INFO  12:49:50,502 - Prisput simbolu:  Var i: int 0 0  na liniji 57
+INFO  12:49:50,515 - Prisput simbolu:  Var i: int 0 0  na liniji 59
+INFO  12:49:50,516 - Prisput simbolu:  Var i: int 0 0  na liniji 61
+INFO  12:49:50,526 - Prisput simbolu:  Var i: int 0 0  na liniji 64
+INFO  12:49:50,527 - Prisput simbolu:  Var i: int 0 0  na liniji 65
+INFO  12:49:50,530 - Prisput simbolu:  Meth inkrement: int 0 2  na liniji 65
+INFO  12:49:50,530 - Prisput simbolu:  Var i: int 0 0  na liniji 65
+INFO  12:49:50,530 - Prisput simbolu:  Var i: int 0 0  na liniji 66
+INFO  12:49:50,532 - Prisput simbolu:  Var i: int 0 0  na liniji 68
+INFO  12:49:50,535 - Prisput simbolu:  Meth verify: bool 0 0  na liniji 68
+INFO  12:49:50,539 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 71
+INFO  12:49:50,541 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 72
+INFO  12:49:50,545 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 73
+INFO  12:49:50,546 - Prisput simbolu:  Con eol: char 10 0  na liniji 74
+INFO  12:49:50,547 - Prisput simbolu:  Meth sum: int 0 2  na liniji 76
+INFO  12:49:50,550 - Prisput simbolu:  Meth sum: int 0 2  na liniji 76
+INFO  12:49:50,551 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 76
+INFO  12:49:50,551 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 76
+INFO  12:49:50,553 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 76
+INFO  12:49:50,554 - Prisput simbolu:  Con eol: char 10 0  na liniji 78
+INFO  12:49:50,555 - Prisput simbolu:  Meth inkrement: int 0 2  na liniji 79
+INFO  12:49:50,556 - Prisput simbolu:  Var niz: Array of int 2 0  na liniji 79
+INFO  12:49:50,556 - Prisput simbolu:  Meth verify: bool 0 0  na liniji 81

@@ -1,0 +1,4 @@
+INFO  12:45:07,590 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\test301.mj
+ERROR 12:45:07,890 - 
+Sintaksna greska na liniji 51
+ERROR 12:45:07,893 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 56

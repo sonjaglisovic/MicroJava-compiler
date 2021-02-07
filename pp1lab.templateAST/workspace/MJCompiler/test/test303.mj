@@ -90,9 +90,10 @@ int tezinaK, tezinaS;
 		predmeti[5] = k3;
 
 		read(t);
+		t = 20;
 		i=0;
 		do{
-			predmeti[i].postaviTezinu(t);	
+			predmeti[i].postaviTezinu(20);	
 			i++;
 		}while(i<6);
 		
@@ -119,8 +120,8 @@ int tezinaK, tezinaS;
 				i++;
 				continue; 
 			}
-			zapreminaS = zapreminaS + predmeti[i - 1].zapremina();
-			tezinaS = tezinaS + predmeti[i - 1].Q();
+			zapreminaK = zapreminaK + predmeti[i - 1].zapremina();
+			tezinaK = tezinaK + predmeti[i - 1].Q();
 			ispis(predmeti[i - 1]);
 			i++;
 		}while(i<=6);

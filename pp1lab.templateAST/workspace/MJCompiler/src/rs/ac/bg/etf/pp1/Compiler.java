@@ -26,7 +26,8 @@ public class Compiler {
 	MyDumpSymbolTableVisitor dstv = new MyDumpSymbolTableVisitor();
 	SymbolTable.dump(dstv);
     }
-
+    public static final int MAX_NUM_VARS = 33;
+    
     public static void main(String[] args) throws IOException {
 	Logger log = Logger.getLogger(Compiler.class);
 
@@ -42,12 +43,11 @@ public class Compiler {
 	    try {
 		Symbol s = p.parse(); // pocetak parsiranja
 		Program prog = (Program) (s.value);
-		// ispis sintaksnog stabla
-		// log.info(prog.toString(""));
+		//ispis sintaksnog stabla
+		log.info(prog.toString(""));
 		log.info("===================================");
 
 		
-		// ispis prepoznatih programskih konstrukcija
 		SyntaxAnalysis syntax_analyzer = new SyntaxAnalysis();
 		
 		if(SyntaxAnalysis.passedSyntaxCheck()) {
@@ -62,7 +62,7 @@ public class Compiler {
 
 		    CodeGenerator codeGenerator = new CodeGenerator(analyzer.getNVars());
 		    prog.traverseBottomUp(codeGenerator);
-		    Code.dataSize = analyzer.getNVars();
+		    Code.dataSize = codeGenerator.getStaticMemoryFree();
 		    Code.mainPc = codeGenerator.getMainPC();
 			Code.write(new FileOutputStream(objFile));
 

@@ -1,27 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2021 19:30:44
+// 7/1/2021 8:21:21
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class CaseStatement extends CaseDecl {
 
-    private Integer N1;
+    private CaseStart CaseStart;
     private StatementList StatementList;
 
-    public CaseStatement (Integer N1, StatementList StatementList) {
-        this.N1=N1;
+    public CaseStatement (CaseStart CaseStart, StatementList StatementList) {
+        this.CaseStart=CaseStart;
+        if(CaseStart!=null) CaseStart.setParent(this);
         this.StatementList=StatementList;
         if(StatementList!=null) StatementList.setParent(this);
     }
 
-    public Integer getN1() {
-        return N1;
+    public CaseStart getCaseStart() {
+        return CaseStart;
     }
 
-    public void setN1(Integer N1) {
-        this.N1=N1;
+    public void setCaseStart(CaseStart CaseStart) {
+        this.CaseStart=CaseStart;
     }
 
     public StatementList getStatementList() {
@@ -37,15 +38,18 @@ public class CaseStatement extends CaseDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(CaseStart!=null) CaseStart.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(CaseStart!=null) CaseStart.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(CaseStart!=null) CaseStart.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -55,7 +59,10 @@ public class CaseStatement extends CaseDecl {
         buffer.append(tab);
         buffer.append("CaseStatement(\n");
 
-        buffer.append(" "+tab+N1);
+        if(CaseStart!=null)
+            buffer.append(CaseStart.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(StatementList!=null)

@@ -1,0 +1,11 @@
+INFO  18:09:28,151 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\semantic_errors.mj
+ERROR 18:09:28,530 - 
+Sintaksna greska na liniji 8 prilikom obrade simbola extents
+ERROR 18:09:28,564 - 
+Sintaksna greska na liniji 29 prilikom obrade simbola func
+ERROR 18:09:28,569 - 
+Sintaksna greska na liniji 33
+ERROR 18:09:28,580 - 
+Sintaksna greska na liniji 72
+ERROR 18:09:28,580 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 72
+INFO  18:09:28,581 - ===================================

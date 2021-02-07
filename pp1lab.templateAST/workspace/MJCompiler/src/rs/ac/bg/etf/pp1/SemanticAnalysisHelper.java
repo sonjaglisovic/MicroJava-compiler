@@ -41,6 +41,8 @@ public class SemanticAnalysisHelper {
 	public String constantName;
     public int constValue;
 	
+    
+    
 	public Constant(int value) {
 	    this.constValue = value;
 	 }
@@ -192,6 +194,9 @@ public class SemanticAnalysisHelper {
     private static int specified_num_of_params;
 
     public static int checkParams(Obj method) {
+    if(actualParamList.empty()) {
+    	return DIFFERENT_PARAM_NUMBER;
+    }
     List<Struct> actualParams = actualParamList.pop();
 	if (method.getLevel() != actualParams.size()) {
 	    specified_num_of_params = actualParams.size();
@@ -298,5 +303,40 @@ public class SemanticAnalysisHelper {
     public static void setCurrent_method_type(Struct current_method_type) {
 	SemanticAnalysisHelper.current_method_type = current_method_type;
     }
-
+    private static int global_offset = 0;
+	private static Map<Struct, Integer> classes_to_offsets = new HashMap<>();
+    
+    public static Map<Struct, Integer> getOffsets(){ 	
+		return classes_to_offsets;
+    }
+    
+    public static int getOffset(Obj my_class) {
+    	return classes_to_offsets.get(my_class.getType());
+    }
+    
+ 
+    
+    public static void insertClassOffset(Obj class_to_insert) {
+    	Map<String, Boolean> method_overriden = new HashMap<>();
+    	
+        classes_to_offsets.put(class_to_insert.getType(), global_offset);
+        Struct current_type = class_to_insert.getType();
+        while(current_type != SymbolTable.noType && current_type != null) {
+			Collection<Obj>local_symbols = current_type.getMembers();
+			for(Obj current_obj : local_symbols) {
+				if(current_obj.getKind() == MyObject.Meth) {
+					if(!method_overriden.containsKey(current_obj.getName())) {
+					global_offset+=current_obj.getName().length() + 2;
+					method_overriden.put(current_obj.getName(), true);
+					}
+				}
+			}
+			current_type = current_type.getElemType();
+		}
+        global_offset++;
+    }
+    
+    public static int getGlobalOffset() {
+    	return global_offset;
+    }
 }

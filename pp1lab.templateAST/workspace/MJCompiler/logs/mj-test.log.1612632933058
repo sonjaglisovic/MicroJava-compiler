@@ -1,0 +1,10 @@
+INFO  18:35:19,280 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\syntax_errors_and_recovery.mj
+ERROR 18:35:19,747 - 
+Sintaksna greska na liniji 4 prilikom obrade simbola b
+ERROR 18:35:19,763 - 
+Sintaksna greska na liniji 6 prilikom obrade simbola int
+ERROR 18:35:19,770 - 
+Sintaksna greska na liniji 8
+ERROR 18:35:19,779 - 
+Sintaksna greska na liniji 10 prilikom obrade simbola b
+ERROR 18:35:19,783 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 25

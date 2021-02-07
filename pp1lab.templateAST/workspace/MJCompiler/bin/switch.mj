@@ -1,0 +1,26 @@
+program MJProgram
+
+int a;
+
+{
+
+	int main(){
+	switch(1){
+		case 1: print(1);
+		case 2: print(2);
+		case 3: print(3);
+	}
+
+	a = -2 + 2*5 + 5%2;
+	print(a);
+	a = 2 + 5 + 4*5;
+	print(a);
+	a = -2*3 + 5;
+	print(a);
+	a = -50;
+	print(a);
+	a = 50;
+	print(a);
+	return 2;
+	}
+}

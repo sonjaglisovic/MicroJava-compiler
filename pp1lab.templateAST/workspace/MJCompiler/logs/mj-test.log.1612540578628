@@ -1,0 +1,1605 @@
+INFO  16:52:40,303 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\c_level_test.mj
+INFO  16:52:40,656 - Program(
+  ProgramName(
+   MJ
+  ) [ProgramName]
+  VarDeclarations(
+    VarDeclarations(
+      VarDeclarations(
+        VarDeclarations(
+          VarDeclarations(
+            VarDeclarations(
+              NoVarDecl(
+              ) [NoVarDecl]
+              ClassDeclaration(
+                ClassDecl(
+                  ClassName(
+                   A
+                    NoSuperclass(
+                    ) [NoSuperclass]
+                  ) [ClassName]
+                  JustVars(
+                    JustVars(
+                      JustVars(
+                        NoVars(
+                        ) [NoVars]
+                        VarDecl1(
+                          Type(
+                           int
+                          ) [Type]
+                          FirstDeclaration(
+                            SingleVarDecl(
+                             parent_field
+                              NotArray(
+                              ) [NotArray]
+                            ) [SingleVarDecl]
+                          ) [FirstDeclaration]
+                        ) [VarDecl1]
+                      ) [JustVars]
+                      VarDecl1(
+                        Type(
+                         int
+                        ) [Type]
+                        FirstDeclaration(
+                          SingleVarDecl(
+                           field2
+                            NotArray(
+                            ) [NotArray]
+                          ) [SingleVarDecl]
+                        ) [FirstDeclaration]
+                      ) [VarDecl1]
+                    ) [JustVars]
+                    VarDecl1(
+                      Type(
+                       A
+                      ) [Type]
+                      FirstDeclaration(
+                        SingleVarDecl(
+                         objectArr
+                          ArraySpecifier(
+                          ) [ArraySpecifier]
+                        ) [SingleVarDecl]
+                      ) [FirstDeclaration]
+                    ) [VarDecl1]
+                  ) [JustVars]
+                  NoMethodInClass(
+                  ) [NoMethodInClass]
+                ) [ClassDecl]
+              ) [ClassDeclaration]
+            ) [VarDeclarations]
+            ClassDeclaration(
+              ClassDecl(
+                ClassName(
+                 B
+                  ParentSpecification(
+                    Type(
+                     A
+                    ) [Type]
+                  ) [ParentSpecification]
+                ) [ClassName]
+                JustVars(
+                  JustVars(
+                    JustVars(
+                      JustVars(
+                        NoVars(
+                        ) [NoVars]
+                        VarDecl1(
+                          Type(
+                           A
+                          ) [Type]
+                          FirstDeclaration(
+                            SingleVarDecl(
+                             objectArr
+                              ArraySpecifier(
+                              ) [ArraySpecifier]
+                            ) [SingleVarDecl]
+                          ) [FirstDeclaration]
+                        ) [VarDecl1]
+                      ) [JustVars]
+                      VarDecl1(
+                        Type(
+                         int
+                        ) [Type]
+                        FirstDeclaration(
+                          SingleVarDecl(
+                           field3
+                            NotArray(
+                            ) [NotArray]
+                          ) [SingleVarDecl]
+                        ) [FirstDeclaration]
+                      ) [VarDecl1]
+                    ) [JustVars]
+                    VarDecl1(
+                      Type(
+                       int
+                      ) [Type]
+                      FirstDeclaration(
+                        SingleVarDecl(
+                         field4
+                          NotArray(
+                          ) [NotArray]
+                        ) [SingleVarDecl]
+                      ) [FirstDeclaration]
+                    ) [VarDecl1]
+                  ) [JustVars]
+                  VarDecl1(
+                    Type(
+                     int
+                    ) [Type]
+                    FirstDeclaration(
+                      SingleVarDecl(
+                       field5
+                        NotArray(
+                        ) [NotArray]
+                      ) [SingleVarDecl]
+                    ) [FirstDeclaration]
+                  ) [VarDecl1]
+                ) [JustVars]
+                ClassMethodList(
+                  MethodDeclarationList(
+                    NoMethodDecl(
+                    ) [NoMethodDecl]
+                    MethodDeclaration(
+                      MethodSign(
+                        MethodName(
+                          RegularType(
+                            Type(
+                             int
+                            ) [Type]
+                          ) [RegularType]
+                         method
+                        ) [MethodName]
+                        NoParams(
+                        ) [NoParams]
+                      ) [MethodSign]
+                      NoVars(
+                      ) [NoVars]
+                      Statements(
+                        NoStmt(
+                        ) [NoStmt]
+                        ReturnStatement(
+                          ExprAfterReturn(
+                            SimpleExpr(
+                              NOMinusExpr(
+                                SingleTermDecl(
+                                  SimpleDesignator(
+                                    DesignatorDecl(
+                                      DesignatorName(
+                                       field2
+                                      ) [DesignatorName]
+                                      NoAdditional(
+                                      ) [NoAdditional]
+                                    ) [DesignatorDecl]
+                                  ) [SimpleDesignator]
+                                ) [SingleTermDecl]
+                                Addition(
+                                ) [Addition]
+                                FirstTerm(
+                                  SingleTermDecl(
+                                    SimpleDesignator(
+                                      DesignatorDecl(
+                                        DesignatorName(
+                                         field3
+                                        ) [DesignatorName]
+                                        NoAdditional(
+                                        ) [NoAdditional]
+                                      ) [DesignatorDecl]
+                                    ) [SimpleDesignator]
+                                  ) [SingleTermDecl]
+                                ) [FirstTerm]
+                              ) [NOMinusExpr]
+                            ) [SimpleExpr]
+                          ) [ExprAfterReturn]
+                        ) [ReturnStatement]
+                      ) [Statements]
+                    ) [MethodDeclaration]
+                  ) [MethodDeclarationList]
+                ) [ClassMethodList]
+              ) [ClassDecl]
+            ) [ClassDeclaration]
+          ) [VarDeclarations]
+          VariableDeclaration(
+            VarDecl1(
+              Type(
+               A
+              ) [Type]
+              FirstDeclaration(
+                SingleVarDecl(
+                 a_object
+                  NotArray(
+                  ) [NotArray]
+                ) [SingleVarDecl]
+              ) [FirstDeclaration]
+            ) [VarDecl1]
+          ) [VariableDeclaration]
+        ) [VarDeclarations]
+        VariableDeclaration(
+          VarDecl1(
+            Type(
+             B
+            ) [Type]
+            FirstDeclaration(
+              SingleVarDecl(
+               b_object
+                NotArray(
+                ) [NotArray]
+              ) [SingleVarDecl]
+            ) [FirstDeclaration]
+          ) [VarDecl1]
+        ) [VariableDeclaration]
+      ) [VarDeclarations]
+      VariableDeclaration(
+        VarDecl1(
+          Type(
+           B
+          ) [Type]
+          FirstDeclaration(
+            SingleVarDecl(
+             bObjectArr
+              ArraySpecifier(
+              ) [ArraySpecifier]
+            ) [SingleVarDecl]
+          ) [FirstDeclaration]
+        ) [VarDecl1]
+      ) [VariableDeclaration]
+    ) [VarDeclarations]
+    VariableDeclaration(
+      VarDecl1(
+        Type(
+         A
+        ) [Type]
+        FirstDeclaration(
+          SingleVarDecl(
+           arr
+            ArraySpecifier(
+            ) [ArraySpecifier]
+          ) [SingleVarDecl]
+        ) [FirstDeclaration]
+      ) [VarDecl1]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         main
+        ) [MethodName]
+        NoParams(
+        ) [NoParams]
+      ) [MethodSign]
+      JustVars(
+        NoVars(
+        ) [NoVars]
+        VarDecl1(
+          Type(
+           B
+          ) [Type]
+          FirstDeclaration(
+            SingleVarDecl(
+             b
+              NotArray(
+              ) [NotArray]
+            ) [SingleVarDecl]
+          ) [FirstDeclaration]
+        ) [VarDecl1]
+      ) [JustVars]
+      Statements(
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          Statements(
+                            Statements(
+                              Statements(
+                                Statements(
+                                  Statements(
+                                    Statements(
+                                      Statements(
+                                        Statements(
+                                          Statements(
+                                            Statements(
+                                              Statements(
+                                                Statements(
+                                                  Statements(
+                                                    Statements(
+                                                      Statements(
+                                                        Statements(
+                                                          Statements(
+                                                            Statements(
+                                                              Statements(
+                                                                Statements(
+                                                                  Statements(
+                                                                    NoStmt(
+                                                                    ) [NoStmt]
+                                                                    DesStatement(
+                                                                      AssignStatementSt(
+                                                                        DesignatorDecl(
+                                                                          DesignatorName(
+                                                                           a_object
+                                                                          ) [DesignatorName]
+                                                                          NoAdditional(
+                                                                          ) [NoAdditional]
+                                                                        ) [DesignatorDecl]
+                                                                        AssignStm(
+                                                                          Assignop(
+                                                                          ) [Assignop]
+                                                                          SimpleExpr(
+                                                                            JustNoMinusExpr(
+                                                                              SingleTermDecl(
+                                                                                MemoryAllocation(
+                                                                                  AllocationType(
+                                                                                    Type(
+                                                                                     A
+                                                                                    ) [Type]
+                                                                                  ) [AllocationType]
+                                                                                  NoOptExpr(
+                                                                                  ) [NoOptExpr]
+                                                                                ) [MemoryAllocation]
+                                                                              ) [SingleTermDecl]
+                                                                            ) [JustNoMinusExpr]
+                                                                          ) [SimpleExpr]
+                                                                        ) [AssignStm]
+                                                                      ) [AssignStatementSt]
+                                                                    ) [DesStatement]
+                                                                  ) [Statements]
+                                                                  DesStatement(
+                                                                    AssignStatementSt(
+                                                                      DesignatorDecl(
+                                                                        DesignatorName(
+                                                                         bObjectArr
+                                                                        ) [DesignatorName]
+                                                                        NoAdditional(
+                                                                        ) [NoAdditional]
+                                                                      ) [DesignatorDecl]
+                                                                      AssignStm(
+                                                                        Assignop(
+                                                                        ) [Assignop]
+                                                                        SimpleExpr(
+                                                                          JustNoMinusExpr(
+                                                                            SingleTermDecl(
+                                                                              MemoryAllocation(
+                                                                                AllocationType(
+                                                                                  Type(
+                                                                                   B
+                                                                                  ) [Type]
+                                                                                ) [AllocationType]
+                                                                                SingleExpressionDecl(
+                                                                                  SimpleExpr(
+                                                                                    JustNoMinusExpr(
+                                                                                      SingleTermDecl(
+                                                                                        NumberDecl(
+                                                                                         4
+                                                                                        ) [NumberDecl]
+                                                                                      ) [SingleTermDecl]
+                                                                                    ) [JustNoMinusExpr]
+                                                                                  ) [SimpleExpr]
+                                                                                ) [SingleExpressionDecl]
+                                                                              ) [MemoryAllocation]
+                                                                            ) [SingleTermDecl]
+                                                                          ) [JustNoMinusExpr]
+                                                                        ) [SimpleExpr]
+                                                                      ) [AssignStm]
+                                                                    ) [AssignStatementSt]
+                                                                  ) [DesStatement]
+                                                                ) [Statements]
+                                                                DesStatement(
+                                                                  AssignStatementSt(
+                                                                    DesignatorDecl(
+                                                                      DesignatorName(
+                                                                       bObjectArr
+                                                                      ) [DesignatorName]
+                                                                      AdditionalPart(
+                                                                        NoAdditional(
+                                                                        ) [NoAdditional]
+                                                                        AccessElement(
+                                                                          SimpleExpr(
+                                                                            JustNoMinusExpr(
+                                                                              SingleTermDecl(
+                                                                                NumberDecl(
+                                                                                 0
+                                                                                ) [NumberDecl]
+                                                                              ) [SingleTermDecl]
+                                                                            ) [JustNoMinusExpr]
+                                                                          ) [SimpleExpr]
+                                                                        ) [AccessElement]
+                                                                      ) [AdditionalPart]
+                                                                    ) [DesignatorDecl]
+                                                                    AssignStm(
+                                                                      Assignop(
+                                                                      ) [Assignop]
+                                                                      SimpleExpr(
+                                                                        JustNoMinusExpr(
+                                                                          SingleTermDecl(
+                                                                            MemoryAllocation(
+                                                                              AllocationType(
+                                                                                Type(
+                                                                                 B
+                                                                                ) [Type]
+                                                                              ) [AllocationType]
+                                                                              NoOptExpr(
+                                                                              ) [NoOptExpr]
+                                                                            ) [MemoryAllocation]
+                                                                          ) [SingleTermDecl]
+                                                                        ) [JustNoMinusExpr]
+                                                                      ) [SimpleExpr]
+                                                                    ) [AssignStm]
+                                                                  ) [AssignStatementSt]
+                                                                ) [DesStatement]
+                                                              ) [Statements]
+                                                              DesStatement(
+                                                                AssignStatementSt(
+                                                                  DesignatorDecl(
+                                                                    DesignatorName(
+                                                                     bObjectArr
+                                                                    ) [DesignatorName]
+                                                                    AdditionalPart(
+                                                                      AdditionalPart(
+                                                                        NoAdditional(
+                                                                        ) [NoAdditional]
+                                                                        AccessElement(
+                                                                          SimpleExpr(
+                                                                            JustNoMinusExpr(
+                                                                              SingleTermDecl(
+                                                                                NumberDecl(
+                                                                                 0
+                                                                                ) [NumberDecl]
+                                                                              ) [SingleTermDecl]
+                                                                            ) [JustNoMinusExpr]
+                                                                          ) [SimpleExpr]
+                                                                        ) [AccessElement]
+                                                                      ) [AdditionalPart]
+                                                                      AccessField(
+                                                                       field2
+                                                                      ) [AccessField]
+                                                                    ) [AdditionalPart]
+                                                                  ) [DesignatorDecl]
+                                                                  AssignStm(
+                                                                    Assignop(
+                                                                    ) [Assignop]
+                                                                    SimpleExpr(
+                                                                      JustNoMinusExpr(
+                                                                        SingleTermDecl(
+                                                                          NumberDecl(
+                                                                           55
+                                                                          ) [NumberDecl]
+                                                                        ) [SingleTermDecl]
+                                                                      ) [JustNoMinusExpr]
+                                                                    ) [SimpleExpr]
+                                                                  ) [AssignStm]
+                                                                ) [AssignStatementSt]
+                                                              ) [DesStatement]
+                                                            ) [Statements]
+                                                            PrintFunctionCall(
+                                                              SimpleExpr(
+                                                                JustNoMinusExpr(
+                                                                  SingleTermDecl(
+                                                                    SimpleDesignator(
+                                                                      DesignatorDecl(
+                                                                        DesignatorName(
+                                                                         bObjectArr
+                                                                        ) [DesignatorName]
+                                                                        AdditionalPart(
+                                                                          AdditionalPart(
+                                                                            NoAdditional(
+                                                                            ) [NoAdditional]
+                                                                            AccessElement(
+                                                                              SimpleExpr(
+                                                                                JustNoMinusExpr(
+                                                                                  SingleTermDecl(
+                                                                                    NumberDecl(
+                                                                                     0
+                                                                                    ) [NumberDecl]
+                                                                                  ) [SingleTermDecl]
+                                                                                ) [JustNoMinusExpr]
+                                                                              ) [SimpleExpr]
+                                                                            ) [AccessElement]
+                                                                          ) [AdditionalPart]
+                                                                          AccessField(
+                                                                           field2
+                                                                          ) [AccessField]
+                                                                        ) [AdditionalPart]
+                                                                      ) [DesignatorDecl]
+                                                                    ) [SimpleDesignator]
+                                                                  ) [SingleTermDecl]
+                                                                ) [JustNoMinusExpr]
+                                                              ) [SimpleExpr]
+                                                              NoSecondParam(
+                                                              ) [NoSecondParam]
+                                                            ) [PrintFunctionCall]
+                                                          ) [Statements]
+                                                          DesStatement(
+                                                            AssignStatementSt(
+                                                              DesignatorDecl(
+                                                                DesignatorName(
+                                                                 a_object
+                                                                ) [DesignatorName]
+                                                                AdditionalPart(
+                                                                  NoAdditional(
+                                                                  ) [NoAdditional]
+                                                                  AccessField(
+                                                                   field2
+                                                                  ) [AccessField]
+                                                                ) [AdditionalPart]
+                                                              ) [DesignatorDecl]
+                                                              AssignStm(
+                                                                Assignop(
+                                                                ) [Assignop]
+                                                                SimpleExpr(
+                                                                  MinusExpr(
+                                                                    SingleTermDecl(
+                                                                      NumberDecl(
+                                                                       5
+                                                                      ) [NumberDecl]
+                                                                    ) [SingleTermDecl]
+                                                                    Addition(
+                                                                    ) [Addition]
+                                                                    FirstTerm(
+                                                                      CompositeTerm(
+                                                                        SingleTermDecl(
+                                                                          NumberDecl(
+                                                                           4
+                                                                          ) [NumberDecl]
+                                                                        ) [SingleTermDecl]
+                                                                        Multiplication(
+                                                                        ) [Multiplication]
+                                                                        NumberDecl(
+                                                                         3
+                                                                        ) [NumberDecl]
+                                                                      ) [CompositeTerm]
+                                                                    ) [FirstTerm]
+                                                                  ) [MinusExpr]
+                                                                ) [SimpleExpr]
+                                                              ) [AssignStm]
+                                                            ) [AssignStatementSt]
+                                                          ) [DesStatement]
+                                                        ) [Statements]
+                                                        DesStatement(
+                                                          AssignStatementSt(
+                                                            DesignatorDecl(
+                                                              DesignatorName(
+                                                               b_object
+                                                              ) [DesignatorName]
+                                                              NoAdditional(
+                                                              ) [NoAdditional]
+                                                            ) [DesignatorDecl]
+                                                            AssignStm(
+                                                              Assignop(
+                                                              ) [Assignop]
+                                                              SimpleExpr(
+                                                                JustNoMinusExpr(
+                                                                  SingleTermDecl(
+                                                                    MemoryAllocation(
+                                                                      AllocationType(
+                                                                        Type(
+                                                                         B
+                                                                        ) [Type]
+                                                                      ) [AllocationType]
+                                                                      NoOptExpr(
+                                                                      ) [NoOptExpr]
+                                                                    ) [MemoryAllocation]
+                                                                  ) [SingleTermDecl]
+                                                                ) [JustNoMinusExpr]
+                                                              ) [SimpleExpr]
+                                                            ) [AssignStm]
+                                                          ) [AssignStatementSt]
+                                                        ) [DesStatement]
+                                                      ) [Statements]
+                                                      DesStatement(
+                                                        AssignStatementSt(
+                                                          DesignatorDecl(
+                                                            DesignatorName(
+                                                             b_object
+                                                            ) [DesignatorName]
+                                                            AdditionalPart(
+                                                              NoAdditional(
+                                                              ) [NoAdditional]
+                                                              AccessField(
+                                                               field2
+                                                              ) [AccessField]
+                                                            ) [AdditionalPart]
+                                                          ) [DesignatorDecl]
+                                                          AssignStm(
+                                                            Assignop(
+                                                            ) [Assignop]
+                                                            SimpleExpr(
+                                                              JustNoMinusExpr(
+                                                                SingleTermDecl(
+                                                                  NumberDecl(
+                                                                   120
+                                                                  ) [NumberDecl]
+                                                                ) [SingleTermDecl]
+                                                              ) [JustNoMinusExpr]
+                                                            ) [SimpleExpr]
+                                                          ) [AssignStm]
+                                                        ) [AssignStatementSt]
+                                                      ) [DesStatement]
+                                                    ) [Statements]
+                                                    PrintFunctionCall(
+                                                      SimpleExpr(
+                                                        JustNoMinusExpr(
+                                                          SingleTermDecl(
+                                                            SimpleDesignator(
+                                                              DesignatorDecl(
+                                                                DesignatorName(
+                                                                 b_object
+                                                                ) [DesignatorName]
+                                                                AdditionalPart(
+                                                                  NoAdditional(
+                                                                  ) [NoAdditional]
+                                                                  AccessField(
+                                                                   field2
+                                                                  ) [AccessField]
+                                                                ) [AdditionalPart]
+                                                              ) [DesignatorDecl]
+                                                            ) [SimpleDesignator]
+                                                          ) [SingleTermDecl]
+                                                        ) [JustNoMinusExpr]
+                                                      ) [SimpleExpr]
+                                                      NoSecondParam(
+                                                      ) [NoSecondParam]
+                                                    ) [PrintFunctionCall]
+                                                  ) [Statements]
+                                                  DesStatement(
+                                                    AssignStatementSt(
+                                                      DesignatorDecl(
+                                                        DesignatorName(
+                                                         b_object
+                                                        ) [DesignatorName]
+                                                        AdditionalPart(
+                                                          NoAdditional(
+                                                          ) [NoAdditional]
+                                                          AccessField(
+                                                           field4
+                                                          ) [AccessField]
+                                                        ) [AdditionalPart]
+                                                      ) [DesignatorDecl]
+                                                      AssignStm(
+                                                        Assignop(
+                                                        ) [Assignop]
+                                                        SimpleExpr(
+                                                          JustNoMinusExpr(
+                                                            SingleTermDecl(
+                                                              NumberDecl(
+                                                               5
+                                                              ) [NumberDecl]
+                                                            ) [SingleTermDecl]
+                                                          ) [JustNoMinusExpr]
+                                                        ) [SimpleExpr]
+                                                      ) [AssignStm]
+                                                    ) [AssignStatementSt]
+                                                  ) [DesStatement]
+                                                ) [Statements]
+                                                PrintFunctionCall(
+                                                  SimpleExpr(
+                                                    JustNoMinusExpr(
+                                                      SingleTermDecl(
+                                                        SimpleDesignator(
+                                                          DesignatorDecl(
+                                                            DesignatorName(
+                                                             b_object
+                                                            ) [DesignatorName]
+                                                            AdditionalPart(
+                                                              NoAdditional(
+                                                              ) [NoAdditional]
+                                                              AccessField(
+                                                               field4
+                                                              ) [AccessField]
+                                                            ) [AdditionalPart]
+                                                          ) [DesignatorDecl]
+                                                        ) [SimpleDesignator]
+                                                      ) [SingleTermDecl]
+                                                    ) [JustNoMinusExpr]
+                                                  ) [SimpleExpr]
+                                                  NoSecondParam(
+                                                  ) [NoSecondParam]
+                                                ) [PrintFunctionCall]
+                                              ) [Statements]
+                                              DesStatement(
+                                                AssignStatementSt(
+                                                  DesignatorDecl(
+                                                    DesignatorName(
+                                                     a_object
+                                                    ) [DesignatorName]
+                                                    NoAdditional(
+                                                    ) [NoAdditional]
+                                                  ) [DesignatorDecl]
+                                                  AssignStm(
+                                                    Assignop(
+                                                    ) [Assignop]
+                                                    SimpleExpr(
+                                                      JustNoMinusExpr(
+                                                        SingleTermDecl(
+                                                          MemoryAllocation(
+                                                            AllocationType(
+                                                              Type(
+                                                               B
+                                                              ) [Type]
+                                                            ) [AllocationType]
+                                                            NoOptExpr(
+                                                            ) [NoOptExpr]
+                                                          ) [MemoryAllocation]
+                                                        ) [SingleTermDecl]
+                                                      ) [JustNoMinusExpr]
+                                                    ) [SimpleExpr]
+                                                  ) [AssignStm]
+                                                ) [AssignStatementSt]
+                                              ) [DesStatement]
+                                            ) [Statements]
+                                            DesStatement(
+                                              AssignStatementSt(
+                                                DesignatorDecl(
+                                                  DesignatorName(
+                                                   a_object
+                                                  ) [DesignatorName]
+                                                  AdditionalPart(
+                                                    NoAdditional(
+                                                    ) [NoAdditional]
+                                                    AccessField(
+                                                     field2
+                                                    ) [AccessField]
+                                                  ) [AdditionalPart]
+                                                ) [DesignatorDecl]
+                                                AssignStm(
+                                                  Assignop(
+                                                  ) [Assignop]
+                                                  SimpleExpr(
+                                                    JustNoMinusExpr(
+                                                      SingleTermDecl(
+                                                        NumberDecl(
+                                                         12
+                                                        ) [NumberDecl]
+                                                      ) [SingleTermDecl]
+                                                    ) [JustNoMinusExpr]
+                                                  ) [SimpleExpr]
+                                                ) [AssignStm]
+                                              ) [AssignStatementSt]
+                                            ) [DesStatement]
+                                          ) [Statements]
+                                          PrintFunctionCall(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  SimpleDesignator(
+                                                    DesignatorDecl(
+                                                      DesignatorName(
+                                                       a_object
+                                                      ) [DesignatorName]
+                                                      AdditionalPart(
+                                                        NoAdditional(
+                                                        ) [NoAdditional]
+                                                        AccessField(
+                                                         field2
+                                                        ) [AccessField]
+                                                      ) [AdditionalPart]
+                                                    ) [DesignatorDecl]
+                                                  ) [SimpleDesignator]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                            NoSecondParam(
+                                            ) [NoSecondParam]
+                                          ) [PrintFunctionCall]
+                                        ) [Statements]
+                                        DesStatement(
+                                          AssignStatementSt(
+                                            DesignatorDecl(
+                                              DesignatorName(
+                                               arr
+                                              ) [DesignatorName]
+                                              NoAdditional(
+                                              ) [NoAdditional]
+                                            ) [DesignatorDecl]
+                                            AssignStm(
+                                              Assignop(
+                                              ) [Assignop]
+                                              SimpleExpr(
+                                                JustNoMinusExpr(
+                                                  SingleTermDecl(
+                                                    MemoryAllocation(
+                                                      AllocationType(
+                                                        Type(
+                                                         B
+                                                        ) [Type]
+                                                      ) [AllocationType]
+                                                      SingleExpressionDecl(
+                                                        SimpleExpr(
+                                                          JustNoMinusExpr(
+                                                            SingleTermDecl(
+                                                              NumberDecl(
+                                                               25
+                                                              ) [NumberDecl]
+                                                            ) [SingleTermDecl]
+                                                          ) [JustNoMinusExpr]
+                                                        ) [SimpleExpr]
+                                                      ) [SingleExpressionDecl]
+                                                    ) [MemoryAllocation]
+                                                  ) [SingleTermDecl]
+                                                ) [JustNoMinusExpr]
+                                              ) [SimpleExpr]
+                                            ) [AssignStm]
+                                          ) [AssignStatementSt]
+                                        ) [DesStatement]
+                                      ) [Statements]
+                                      DesStatement(
+                                        AssignStatementSt(
+                                          DesignatorDecl(
+                                            DesignatorName(
+                                             arr
+                                            ) [DesignatorName]
+                                            AdditionalPart(
+                                              NoAdditional(
+                                              ) [NoAdditional]
+                                              AccessElement(
+                                                SimpleExpr(
+                                                  JustNoMinusExpr(
+                                                    SingleTermDecl(
+                                                      NumberDecl(
+                                                       0
+                                                      ) [NumberDecl]
+                                                    ) [SingleTermDecl]
+                                                  ) [JustNoMinusExpr]
+                                                ) [SimpleExpr]
+                                              ) [AccessElement]
+                                            ) [AdditionalPart]
+                                          ) [DesignatorDecl]
+                                          AssignStm(
+                                            Assignop(
+                                            ) [Assignop]
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  MemoryAllocation(
+                                                    AllocationType(
+                                                      Type(
+                                                       B
+                                                      ) [Type]
+                                                    ) [AllocationType]
+                                                    NoOptExpr(
+                                                    ) [NoOptExpr]
+                                                  ) [MemoryAllocation]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                          ) [AssignStm]
+                                        ) [AssignStatementSt]
+                                      ) [DesStatement]
+                                    ) [Statements]
+                                    DesStatement(
+                                      AssignStatementSt(
+                                        DesignatorDecl(
+                                          DesignatorName(
+                                           arr
+                                          ) [DesignatorName]
+                                          AdditionalPart(
+                                            AdditionalPart(
+                                              NoAdditional(
+                                              ) [NoAdditional]
+                                              AccessElement(
+                                                SimpleExpr(
+                                                  JustNoMinusExpr(
+                                                    SingleTermDecl(
+                                                      NumberDecl(
+                                                       0
+                                                      ) [NumberDecl]
+                                                    ) [SingleTermDecl]
+                                                  ) [JustNoMinusExpr]
+                                                ) [SimpleExpr]
+                                              ) [AccessElement]
+                                            ) [AdditionalPart]
+                                            AccessField(
+                                             field2
+                                            ) [AccessField]
+                                          ) [AdditionalPart]
+                                        ) [DesignatorDecl]
+                                        AssignStm(
+                                          Assignop(
+                                          ) [Assignop]
+                                          SimpleExpr(
+                                            JustNoMinusExpr(
+                                              SingleTermDecl(
+                                                NumberDecl(
+                                                 5
+                                                ) [NumberDecl]
+                                              ) [SingleTermDecl]
+                                            ) [JustNoMinusExpr]
+                                          ) [SimpleExpr]
+                                        ) [AssignStm]
+                                      ) [AssignStatementSt]
+                                    ) [DesStatement]
+                                  ) [Statements]
+                                  PrintFunctionCall(
+                                    SimpleExpr(
+                                      JustNoMinusExpr(
+                                        SingleTermDecl(
+                                          SimpleDesignator(
+                                            DesignatorDecl(
+                                              DesignatorName(
+                                               arr
+                                              ) [DesignatorName]
+                                              AdditionalPart(
+                                                AdditionalPart(
+                                                  NoAdditional(
+                                                  ) [NoAdditional]
+                                                  AccessElement(
+                                                    SimpleExpr(
+                                                      JustNoMinusExpr(
+                                                        SingleTermDecl(
+                                                          NumberDecl(
+                                                           0
+                                                          ) [NumberDecl]
+                                                        ) [SingleTermDecl]
+                                                      ) [JustNoMinusExpr]
+                                                    ) [SimpleExpr]
+                                                  ) [AccessElement]
+                                                ) [AdditionalPart]
+                                                AccessField(
+                                                 field2
+                                                ) [AccessField]
+                                              ) [AdditionalPart]
+                                            ) [DesignatorDecl]
+                                          ) [SimpleDesignator]
+                                        ) [SingleTermDecl]
+                                      ) [JustNoMinusExpr]
+                                    ) [SimpleExpr]
+                                    NoSecondParam(
+                                    ) [NoSecondParam]
+                                  ) [PrintFunctionCall]
+                                ) [Statements]
+                                DesStatement(
+                                  AssignStatementSt(
+                                    DesignatorDecl(
+                                      DesignatorName(
+                                       arr
+                                      ) [DesignatorName]
+                                      AdditionalPart(
+                                        AdditionalPart(
+                                          NoAdditional(
+                                          ) [NoAdditional]
+                                          AccessElement(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  NumberDecl(
+                                                   0
+                                                  ) [NumberDecl]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                          ) [AccessElement]
+                                        ) [AdditionalPart]
+                                        AccessField(
+                                         objectArr
+                                        ) [AccessField]
+                                      ) [AdditionalPart]
+                                    ) [DesignatorDecl]
+                                    AssignStm(
+                                      Assignop(
+                                      ) [Assignop]
+                                      SimpleExpr(
+                                        JustNoMinusExpr(
+                                          SingleTermDecl(
+                                            MemoryAllocation(
+                                              AllocationType(
+                                                Type(
+                                                 B
+                                                ) [Type]
+                                              ) [AllocationType]
+                                              SingleExpressionDecl(
+                                                SimpleExpr(
+                                                  JustNoMinusExpr(
+                                                    SingleTermDecl(
+                                                      NumberDecl(
+                                                       2
+                                                      ) [NumberDecl]
+                                                    ) [SingleTermDecl]
+                                                  ) [JustNoMinusExpr]
+                                                ) [SimpleExpr]
+                                              ) [SingleExpressionDecl]
+                                            ) [MemoryAllocation]
+                                          ) [SingleTermDecl]
+                                        ) [JustNoMinusExpr]
+                                      ) [SimpleExpr]
+                                    ) [AssignStm]
+                                  ) [AssignStatementSt]
+                                ) [DesStatement]
+                              ) [Statements]
+                              DesStatement(
+                                AssignStatementSt(
+                                  DesignatorDecl(
+                                    DesignatorName(
+                                     arr
+                                    ) [DesignatorName]
+                                    AdditionalPart(
+                                      AdditionalPart(
+                                        AdditionalPart(
+                                          NoAdditional(
+                                          ) [NoAdditional]
+                                          AccessElement(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  NumberDecl(
+                                                   0
+                                                  ) [NumberDecl]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                          ) [AccessElement]
+                                        ) [AdditionalPart]
+                                        AccessField(
+                                         objectArr
+                                        ) [AccessField]
+                                      ) [AdditionalPart]
+                                      AccessElement(
+                                        SimpleExpr(
+                                          JustNoMinusExpr(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               0
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [JustNoMinusExpr]
+                                        ) [SimpleExpr]
+                                      ) [AccessElement]
+                                    ) [AdditionalPart]
+                                  ) [DesignatorDecl]
+                                  AssignStm(
+                                    Assignop(
+                                    ) [Assignop]
+                                    SimpleExpr(
+                                      JustNoMinusExpr(
+                                        SingleTermDecl(
+                                          MemoryAllocation(
+                                            AllocationType(
+                                              Type(
+                                               B
+                                              ) [Type]
+                                            ) [AllocationType]
+                                            NoOptExpr(
+                                            ) [NoOptExpr]
+                                          ) [MemoryAllocation]
+                                        ) [SingleTermDecl]
+                                      ) [JustNoMinusExpr]
+                                    ) [SimpleExpr]
+                                  ) [AssignStm]
+                                ) [AssignStatementSt]
+                              ) [DesStatement]
+                            ) [Statements]
+                            DesStatement(
+                              AssignStatementSt(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   arr
+                                  ) [DesignatorName]
+                                  AdditionalPart(
+                                    AdditionalPart(
+                                      AdditionalPart(
+                                        AdditionalPart(
+                                          NoAdditional(
+                                          ) [NoAdditional]
+                                          AccessElement(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  NumberDecl(
+                                                   0
+                                                  ) [NumberDecl]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                          ) [AccessElement]
+                                        ) [AdditionalPart]
+                                        AccessField(
+                                         objectArr
+                                        ) [AccessField]
+                                      ) [AdditionalPart]
+                                      AccessElement(
+                                        SimpleExpr(
+                                          JustNoMinusExpr(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               0
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [JustNoMinusExpr]
+                                        ) [SimpleExpr]
+                                      ) [AccessElement]
+                                    ) [AdditionalPart]
+                                    AccessField(
+                                     field2
+                                    ) [AccessField]
+                                  ) [AdditionalPart]
+                                ) [DesignatorDecl]
+                                AssignStm(
+                                  Assignop(
+                                  ) [Assignop]
+                                  SimpleExpr(
+                                    JustNoMinusExpr(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         5555
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [JustNoMinusExpr]
+                                  ) [SimpleExpr]
+                                ) [AssignStm]
+                              ) [AssignStatementSt]
+                            ) [DesStatement]
+                          ) [Statements]
+                          PrintFunctionCall(
+                            SimpleExpr(
+                              JustNoMinusExpr(
+                                SingleTermDecl(
+                                  SimpleDesignator(
+                                    DesignatorDecl(
+                                      DesignatorName(
+                                       arr
+                                      ) [DesignatorName]
+                                      AdditionalPart(
+                                        AdditionalPart(
+                                          AdditionalPart(
+                                            AdditionalPart(
+                                              NoAdditional(
+                                              ) [NoAdditional]
+                                              AccessElement(
+                                                SimpleExpr(
+                                                  JustNoMinusExpr(
+                                                    SingleTermDecl(
+                                                      NumberDecl(
+                                                       0
+                                                      ) [NumberDecl]
+                                                    ) [SingleTermDecl]
+                                                  ) [JustNoMinusExpr]
+                                                ) [SimpleExpr]
+                                              ) [AccessElement]
+                                            ) [AdditionalPart]
+                                            AccessField(
+                                             objectArr
+                                            ) [AccessField]
+                                          ) [AdditionalPart]
+                                          AccessElement(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  NumberDecl(
+                                                   0
+                                                  ) [NumberDecl]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                          ) [AccessElement]
+                                        ) [AdditionalPart]
+                                        AccessField(
+                                         field2
+                                        ) [AccessField]
+                                      ) [AdditionalPart]
+                                    ) [DesignatorDecl]
+                                  ) [SimpleDesignator]
+                                ) [SingleTermDecl]
+                              ) [JustNoMinusExpr]
+                            ) [SimpleExpr]
+                            NoSecondParam(
+                            ) [NoSecondParam]
+                          ) [PrintFunctionCall]
+                        ) [Statements]
+                        PrintFunctionCall(
+                          SimpleExpr(
+                            NOMinusExpr(
+                              SingleTermDecl(
+                                SimpleDesignator(
+                                  DesignatorDecl(
+                                    DesignatorName(
+                                     arr
+                                    ) [DesignatorName]
+                                    AdditionalPart(
+                                      AdditionalPart(
+                                        AdditionalPart(
+                                          AdditionalPart(
+                                            NoAdditional(
+                                            ) [NoAdditional]
+                                            AccessElement(
+                                              SimpleExpr(
+                                                JustNoMinusExpr(
+                                                  SingleTermDecl(
+                                                    NumberDecl(
+                                                     0
+                                                    ) [NumberDecl]
+                                                  ) [SingleTermDecl]
+                                                ) [JustNoMinusExpr]
+                                              ) [SimpleExpr]
+                                            ) [AccessElement]
+                                          ) [AdditionalPart]
+                                          AccessField(
+                                           objectArr
+                                          ) [AccessField]
+                                        ) [AdditionalPart]
+                                        AccessElement(
+                                          SimpleExpr(
+                                            JustNoMinusExpr(
+                                              SingleTermDecl(
+                                                NumberDecl(
+                                                 0
+                                                ) [NumberDecl]
+                                              ) [SingleTermDecl]
+                                            ) [JustNoMinusExpr]
+                                          ) [SimpleExpr]
+                                        ) [AccessElement]
+                                      ) [AdditionalPart]
+                                      AccessField(
+                                       field2
+                                      ) [AccessField]
+                                    ) [AdditionalPart]
+                                  ) [DesignatorDecl]
+                                ) [SimpleDesignator]
+                              ) [SingleTermDecl]
+                              Addition(
+                              ) [Addition]
+                              FirstTerm(
+                                SingleTermDecl(
+                                  SimpleDesignator(
+                                    DesignatorDecl(
+                                      DesignatorName(
+                                       arr
+                                      ) [DesignatorName]
+                                      AdditionalPart(
+                                        AdditionalPart(
+                                          NoAdditional(
+                                          ) [NoAdditional]
+                                          AccessElement(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  NumberDecl(
+                                                   0
+                                                  ) [NumberDecl]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                          ) [AccessElement]
+                                        ) [AdditionalPart]
+                                        AccessField(
+                                         field2
+                                        ) [AccessField]
+                                      ) [AdditionalPart]
+                                    ) [DesignatorDecl]
+                                  ) [SimpleDesignator]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [NOMinusExpr]
+                          ) [SimpleExpr]
+                          NoSecondParam(
+                          ) [NoSecondParam]
+                        ) [PrintFunctionCall]
+                      ) [Statements]
+                      DesStatement(
+                        AssignStatementSt(
+                          DesignatorDecl(
+                            DesignatorName(
+                             arr
+                            ) [DesignatorName]
+                            NoAdditional(
+                            ) [NoAdditional]
+                          ) [DesignatorDecl]
+                          AssignStm(
+                            Assignop(
+                            ) [Assignop]
+                            SimpleExpr(
+                              JustNoMinusExpr(
+                                SingleTermDecl(
+                                  MemoryAllocation(
+                                    AllocationType(
+                                      Type(
+                                       A
+                                      ) [Type]
+                                    ) [AllocationType]
+                                    SingleExpressionDecl(
+                                      SimpleExpr(
+                                        JustNoMinusExpr(
+                                          SingleTermDecl(
+                                            NumberDecl(
+                                             2
+                                            ) [NumberDecl]
+                                          ) [SingleTermDecl]
+                                        ) [JustNoMinusExpr]
+                                      ) [SimpleExpr]
+                                    ) [SingleExpressionDecl]
+                                  ) [MemoryAllocation]
+                                ) [SingleTermDecl]
+                              ) [JustNoMinusExpr]
+                            ) [SimpleExpr]
+                          ) [AssignStm]
+                        ) [AssignStatementSt]
+                      ) [DesStatement]
+                    ) [Statements]
+                    DesStatement(
+                      AssignStatementSt(
+                        DesignatorDecl(
+                          DesignatorName(
+                           arr
+                          ) [DesignatorName]
+                          AdditionalPart(
+                            NoAdditional(
+                            ) [NoAdditional]
+                            AccessElement(
+                              SimpleExpr(
+                                JustNoMinusExpr(
+                                  SingleTermDecl(
+                                    NumberDecl(
+                                     0
+                                    ) [NumberDecl]
+                                  ) [SingleTermDecl]
+                                ) [JustNoMinusExpr]
+                              ) [SimpleExpr]
+                            ) [AccessElement]
+                          ) [AdditionalPart]
+                        ) [DesignatorDecl]
+                        AssignStm(
+                          Assignop(
+                          ) [Assignop]
+                          SimpleExpr(
+                            JustNoMinusExpr(
+                              SingleTermDecl(
+                                MemoryAllocation(
+                                  AllocationType(
+                                    Type(
+                                     B
+                                    ) [Type]
+                                  ) [AllocationType]
+                                  NoOptExpr(
+                                  ) [NoOptExpr]
+                                ) [MemoryAllocation]
+                              ) [SingleTermDecl]
+                            ) [JustNoMinusExpr]
+                          ) [SimpleExpr]
+                        ) [AssignStm]
+                      ) [AssignStatementSt]
+                    ) [DesStatement]
+                  ) [Statements]
+                  DesStatement(
+                    AssignStatementSt(
+                      DesignatorDecl(
+                        DesignatorName(
+                         arr
+                        ) [DesignatorName]
+                        AdditionalPart(
+                          AdditionalPart(
+                            NoAdditional(
+                            ) [NoAdditional]
+                            AccessElement(
+                              SimpleExpr(
+                                JustNoMinusExpr(
+                                  SingleTermDecl(
+                                    NumberDecl(
+                                     0
+                                    ) [NumberDecl]
+                                  ) [SingleTermDecl]
+                                ) [JustNoMinusExpr]
+                              ) [SimpleExpr]
+                            ) [AccessElement]
+                          ) [AdditionalPart]
+                          AccessField(
+                           field2
+                          ) [AccessField]
+                        ) [AdditionalPart]
+                      ) [DesignatorDecl]
+                      AssignStm(
+                        Assignop(
+                        ) [Assignop]
+                        SimpleExpr(
+                          JustNoMinusExpr(
+                            SingleTermDecl(
+                              NumberDecl(
+                               220
+                              ) [NumberDecl]
+                            ) [SingleTermDecl]
+                          ) [JustNoMinusExpr]
+                        ) [SimpleExpr]
+                      ) [AssignStm]
+                    ) [AssignStatementSt]
+                  ) [DesStatement]
+                ) [Statements]
+                DesStatement(
+                  AssignStatementSt(
+                    DesignatorDecl(
+                      DesignatorName(
+                       b
+                      ) [DesignatorName]
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                    AssignStm(
+                      Assignop(
+                      ) [Assignop]
+                      SimpleExpr(
+                        JustNoMinusExpr(
+                          SingleTermDecl(
+                            MemoryAllocation(
+                              AllocationType(
+                                Type(
+                                 B
+                                ) [Type]
+                              ) [AllocationType]
+                              NoOptExpr(
+                              ) [NoOptExpr]
+                            ) [MemoryAllocation]
+                          ) [SingleTermDecl]
+                        ) [JustNoMinusExpr]
+                      ) [SimpleExpr]
+                    ) [AssignStm]
+                  ) [AssignStatementSt]
+                ) [DesStatement]
+              ) [Statements]
+              DesStatement(
+                AssignStatementSt(
+                  DesignatorDecl(
+                    DesignatorName(
+                     b
+                    ) [DesignatorName]
+                    AdditionalPart(
+                      NoAdditional(
+                      ) [NoAdditional]
+                      AccessField(
+                       field2
+                      ) [AccessField]
+                    ) [AdditionalPart]
+                  ) [DesignatorDecl]
+                  AssignStm(
+                    Assignop(
+                    ) [Assignop]
+                    SimpleExpr(
+                      JustNoMinusExpr(
+                        SingleTermDecl(
+                          NumberDecl(
+                           15
+                          ) [NumberDecl]
+                        ) [SingleTermDecl]
+                      ) [JustNoMinusExpr]
+                    ) [SimpleExpr]
+                  ) [AssignStm]
+                ) [AssignStatementSt]
+              ) [DesStatement]
+            ) [Statements]
+            DesStatement(
+              AssignStatementSt(
+                DesignatorDecl(
+                  DesignatorName(
+                   b
+                  ) [DesignatorName]
+                  AdditionalPart(
+                    NoAdditional(
+                    ) [NoAdditional]
+                    AccessField(
+                     field3
+                    ) [AccessField]
+                  ) [AdditionalPart]
+                ) [DesignatorDecl]
+                AssignStm(
+                  Assignop(
+                  ) [Assignop]
+                  SimpleExpr(
+                    JustNoMinusExpr(
+                      SingleTermDecl(
+                        NumberDecl(
+                         5
+                        ) [NumberDecl]
+                      ) [SingleTermDecl]
+                    ) [JustNoMinusExpr]
+                  ) [SimpleExpr]
+                ) [AssignStm]
+              ) [AssignStatementSt]
+            ) [DesStatement]
+          ) [Statements]
+          PrintFunctionCall(
+            SimpleExpr(
+              JustNoMinusExpr(
+                SingleTermDecl(
+                  FunctionCallDesign(
+                    DesignatorDecl(
+                      DesignatorName(
+                       b
+                      ) [DesignatorName]
+                      AdditionalPart(
+                        NoAdditional(
+                        ) [NoAdditional]
+                        AccessField(
+                         method
+                        ) [AccessField]
+                      ) [AdditionalPart]
+                    ) [DesignatorDecl]
+                    NoActPars(
+                    ) [NoActPars]
+                  ) [FunctionCallDesign]
+                ) [SingleTermDecl]
+              ) [JustNoMinusExpr]
+            ) [SimpleExpr]
+            NoSecondParam(
+            ) [NoSecondParam]
+          ) [PrintFunctionCall]
+        ) [Statements]
+        ReturnStatement(
+          ExprAfterReturn(
+            SimpleExpr(
+              JustNoMinusExpr(
+                SingleTermDecl(
+                  NumberDecl(
+                   0
+                  ) [NumberDecl]
+                ) [SingleTermDecl]
+              ) [JustNoMinusExpr]
+            ) [SimpleExpr]
+          ) [ExprAfterReturn]
+        ) [ReturnStatement]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  16:52:41,442 - ===================================
+INFO  16:52:41,496 - Prisput simbolu:  Field field2: int 1 1  na liniji 18
+INFO  16:52:41,497 - Prisput simbolu:  Field field3: int 1 1  na liniji 18
+INFO  16:52:41,499 - Prisput simbolu:  Var a_object: A 0 0  na liniji 34
+INFO  16:52:41,499 - Prisput simbolu:  Var bObjectArr: Array of B 2 0  na liniji 35
+INFO  16:52:41,500 - Prisput simbolu:  Var bObjectArr: Array of B 2 0  na liniji 36
+INFO  16:52:41,501 - Prisput simbolu:  Var bObjectArr: Array of B 2 0  na liniji 37
+INFO  16:52:41,501 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 37
+INFO  16:52:41,502 - Prisput simbolu:  Var bObjectArr: Array of B 2 0  na liniji 38
+INFO  16:52:41,502 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 38
+INFO  16:52:41,503 - Prisput simbolu:  Var a_object: A 0 0  na liniji 39
+INFO  16:52:41,503 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 39
+INFO  16:52:41,503 - Prisput simbolu:  Var b_object: B 1 0  na liniji 40
+INFO  16:52:41,504 - Prisput simbolu:  Var b_object: B 1 0  na liniji 41
+INFO  16:52:41,504 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 41
+INFO  16:52:41,506 - Prisput simbolu:  Var b_object: B 1 0  na liniji 42
+INFO  16:52:41,506 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 42
+INFO  16:52:41,507 - Prisput simbolu:  Var b_object: B 1 0  na liniji 43
+INFO  16:52:41,507 - Prisput njegovom polju:  Field field4: int 2 1  na liniji 43
+INFO  16:52:41,508 - Prisput simbolu:  Var b_object: B 1 0  na liniji 44
+INFO  16:52:41,508 - Prisput njegovom polju:  Field field4: int 2 1  na liniji 44
+INFO  16:52:41,509 - Prisput simbolu:  Var a_object: A 0 0  na liniji 47
+INFO  16:52:41,509 - Prisput simbolu:  Var a_object: A 0 0  na liniji 48
+INFO  16:52:41,510 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 48
+INFO  16:52:41,510 - Prisput simbolu:  Var a_object: A 0 0  na liniji 49
+INFO  16:52:41,510 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 49
+INFO  16:52:41,510 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 51
+INFO  16:52:41,511 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 52
+INFO  16:52:41,511 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 53
+INFO  16:52:41,511 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 53
+INFO  16:52:41,512 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 54
+INFO  16:52:41,515 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 54
+INFO  16:52:41,515 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 55
+INFO  16:52:41,516 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 55
+INFO  16:52:41,518 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 56
+INFO  16:52:41,518 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 56
+INFO  16:52:41,524 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 57
+INFO  16:52:41,528 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 57
+INFO  16:52:41,528 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 57
+INFO  16:52:41,530 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 58
+INFO  16:52:41,534 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 58
+INFO  16:52:41,539 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 58
+INFO  16:52:41,541 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 59
+INFO  16:52:41,541 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 59
+INFO  16:52:41,542 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 59
+INFO  16:52:41,544 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 59
+INFO  16:52:41,544 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 59
+INFO  16:52:41,545 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 60
+INFO  16:52:41,545 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 61
+INFO  16:52:41,546 - Prisput simbolu:  Var arr: Array of A 3 0  na liniji 62
+INFO  16:52:41,546 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 62
+INFO  16:52:41,547 - Prisput simbolu:  Var b: B 0 1  na liniji 66
+INFO  16:52:41,547 - Prisput simbolu:  Var b: B 0 1  na liniji 67
+INFO  16:52:41,548 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 67
+INFO  16:52:41,548 - Prisput simbolu:  Var b: B 0 1  na liniji 68
+INFO  16:52:41,548 - Prisput njegovom polju:  Field field3: int 1 1  na liniji 68
+INFO  16:52:41,550 - Prisput simbolu:  Var b: B 0 1  na liniji 69
+INFO  16:52:41,555 - Prisput njegovom polju:  Meth method: int 0 0  na liniji 69

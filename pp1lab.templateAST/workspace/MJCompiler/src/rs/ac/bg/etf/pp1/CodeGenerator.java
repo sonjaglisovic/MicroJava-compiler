@@ -3,10 +3,11 @@ package rs.ac.bg.etf.pp1;
 import java.util.*;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
-import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
 import rs.etf.pp1.symboltable.structure.SymbolDataStructure;
+
+import rs.etf.pp1.mj.runtime.*;
 
 public class CodeGenerator extends VisitorAdaptor {
 
@@ -22,11 +23,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	private int static_memory_free;
 	private Obj this_object_for_current_method = null;
 	private Obj currentClass;
-	private Stack<Boolean> invokevirtual = new Stack<>();
-	private Map<Struct, Integer> class_to_vmt_addresses = new HashMap<>(); 
+	private Stack<Boolean> invokevirtual = new Stack<>(); 
 	private int nested_if = 0;
 	private boolean return_statement_occurred = false;
 	private Stack<Obj> designtor_stack = new Stack<>();
+	private Stack<Integer> case_stack = new Stack<>();
+	
 	
 	public CodeGenerator(int numOfStatics) {
 		static_memory_free = numOfStatics;
@@ -35,11 +37,42 @@ public class CodeGenerator extends VisitorAdaptor {
 		ord_code();
 	}
 	
-	
+	public int getStaticMemoryFree() {
+		return SemanticAnalysisHelper.getGlobalOffset() + static_memory_free;
+	}
+
 	public void visit(MethodName methodName) {
 		methodName.obj.setAdr(Code.pc);
-		if(methodName.getMethName().compareTo("main") == 0)
+		if(methodName.getMethName().compareTo("main") == 0) {
 			main_pc = Code.pc;
+			int last_address = 0;
+			Map<Struct, Integer> classes_to_vmt_offsets = SemanticAnalysisHelper.getOffsets();
+			Iterator<Map.Entry<Struct, Integer>> iterator = classes_to_vmt_offsets.entrySet().iterator();
+			while(iterator.hasNext()) {
+				
+			Map.Entry<Struct, Integer> class_to_offset = iterator.next();
+			Struct currentCls = class_to_offset.getKey();
+			int offset = class_to_offset.getValue();
+			Map<String, Integer> methods_mapped_to_addresses = new HashMap<>();
+			Struct current_type = currentCls;
+			while(current_type != SymbolTable.noType && current_type != null) {
+				Collection<Obj>local_symbols = current_type.getMembers();
+				for(Obj current_obj : local_symbols) {
+					if(current_obj.getKind() == MyObject.Meth) {
+						if(!methods_mapped_to_addresses.containsKey(current_obj.getName()))
+							methods_mapped_to_addresses.put(current_obj.getName(), current_obj.getAdr());
+					}
+				}
+				current_type = current_type.getElemType();
+			}
+			
+			last_address = fillVMT(methods_mapped_to_addresses, static_memory_free + offset);
+			}
+			Code.loadConst(2);
+			Code.put(Code.neg);
+			Code.put(Code.putstatic);
+			Code.put2(last_address);
+		}
 		method_decl_in_progress = true;
 		Collection<Obj> locals = methodName.obj.getLocalSymbols();
 		Code.put(Code.enter);
@@ -70,12 +103,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(ClassName className) {
 		Obj parent = className.getOptionalParent().obj;
-		//default 1 u slucaju da nema roditelja, na poziciju 0 se nalazi referenca na tabelu virtuelnih fja
 		int start_address = 1;
+		int parent_level = 0;
 		if(parent != SymbolTable.noObj)
-			start_address = parent.getLevel();
-		SymbolDataStructure members = parent.getType().getMembers();
-		Collection<Obj> locals = members.symbols();
+			parent_level = parent.getLevel();
+		start_address += parent_level;
+		Collection<Obj> locals = className.obj.getType().getMembers();
 		int field_num = 0;
 		for(Obj class_member: locals) {
 			if(class_member.getKind() == MyObject.Fld) {
@@ -85,10 +118,10 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 		currentClass = className.obj;
 		class_decl_in_progress = true;
-		className.obj.setLevel(start_address + field_num);
+		className.obj.setLevel(parent_level + field_num);
 	}
 	
-	private void fillVMT(Map<String, Integer> method_names_to_addresses) {
+	private int fillVMT(Map<String, Integer> method_names_to_addresses, int startAddress) {
 		Iterator<Map.Entry<String, Integer>> iterator = method_names_to_addresses.entrySet().iterator();
 		while(iterator.hasNext()) {
 			Map.Entry<String, Integer> method = iterator.next();
@@ -97,39 +130,26 @@ public class CodeGenerator extends VisitorAdaptor {
 			for(int i = 0; i < methodName.length(); i++) {
 				Code.loadConst(methodName.charAt(i));
 				Code.put(Code.putstatic);
-				Code.put(static_memory_free++);
+				Code.put2(startAddress++);
 			}
-			Code.loadConst(address);
-			Code.put(Code.putstatic);
-			Code.put(static_memory_free++);
 			Code.loadConst(-1);
 			Code.put(Code.putstatic);
-			Code.put(static_memory_free++);			
+			Code.put2(startAddress++);
+			Code.loadConst(address);
+			Code.put(Code.putstatic);
+			Code.put2(startAddress++);			
 		}
-		Code.loadConst(-2);
-		Code.put(Code.putstatic);
-		Code.put(static_memory_free++);
+		return startAddress;
+		
 	}
 	
 	public void visit(ClassDecl classDecl) {
-		class_decl_in_progress = false;
-		Map<String, Integer> methods_mapped_to_addresses = new HashMap<>();
-		Struct current_type = currentClass.getType();
-		while(current_type != SymbolTable.noType && current_type != null) {
-			SymbolDataStructure members = current_type.getMembers();
-			Collection<Obj>local_symbols = members.symbols();
-			for(Obj current_obj : local_symbols) {
-				if(current_obj.getKind() == MyObject.Meth) {
-					if(!methods_mapped_to_addresses.containsKey(current_obj.getName()))
-						methods_mapped_to_addresses.put(current_obj.getName(), current_obj.getAdr());
-				}
-			}
-			current_type = current_type.getElemType();
-		}
-		class_to_vmt_addresses.put(classDecl.getClassName().obj.getType(), static_memory_free);
-		fillVMT(methods_mapped_to_addresses);
+		class_decl_in_progress = false;	
+		currentClass = null;
 	}
-	
+	/**
+	 * Za 3 tipa konstatni kada se detektuju load-uje se vrednost na expression stack
+	 */
 	public void visit(NumberDecl numberDecl) {
 		Obj numeric_constant = new Obj(MyObject.Con, "numeric_const", SymbolTable.intType);
 		numeric_constant.setAdr(numberDecl.getConstValue());
@@ -151,17 +171,20 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	//alocira se prostor za novi objekat i postavlja se pokazivac na tableu virtuelnih metoda na onu vrednost koja odgovara alociranom tipu
 	public void visit(MemoryAllocation memAllocation) {
-		if(memAllocation.struct.getKind() != MyStruct.Array) {
+		if(memAllocation.getOptionalExpression().getClass() == NoOptExpr.class) {
 			Obj type_obj = memAllocation.getAllocationType().obj;	
 			Code.put(Code.new_);
-			Code.put2(type_obj.getLevel());
+			//+1 je za pokazivac na tabelu virtuelnih funkcija
+			Code.put2(4*type_obj.getLevel() + 4);
 			Code.put(Code.dup);
-			Code.loadConst(class_to_vmt_addresses.get(type_obj.getType()));
+			Code.loadConst(SemanticAnalysisHelper.getOffset(type_obj) + static_memory_free);
 			Code.put(Code.putfield);
-			Code.put(0);
+			Code.put2(0);
 		}
 	}
-	
+	/**
+	 * U slucaju da alociramo niz, ako je tipa char postavljamo vrednost parametra instrukcije newarray na 1
+	 */
 	public void visit(SingleExpressionDecl optExpr) {
 		Code.put(Code.newarray);
 		MemoryAllocation memAlloc = (MemoryAllocation) optExpr.getParent();
@@ -175,20 +198,24 @@ public class CodeGenerator extends VisitorAdaptor {
 			int jump_address = funcCallDesign.getDesignator().obj.getAdr();
 			Code.put2(jump_address - Code.pc + 1);
 		}else {
-			//skinuti parametre i adresu this-a sa steka
-			//vratiti parametre na stek
-			Code.put(Code.dup);
-			Code.put(Code.getfield);
-			//polje 0 pokazivac na tableu viruelnih funkcija 
-			Code.put(0);
-			Code.put(Code.invokevirtual);
-			String methodName = funcCallDesign.getDesignator().obj.getName();
-			for(int i = 0; i < methodName.length(); i++) {
-				Code.put(methodName.charAt(i));
+				Code.put(Code.getfield); 
+				Code.put2(0);
+				
+				Code.put(Code.invokevirtual);
+				String methodName = funcCallDesign.getDesignator().obj.getName();
+				for(int i = 0; i < methodName.length(); i++) {
+					Code.put4(methodName.charAt(i));
+				}
+				Code.put4(-1);
 			}
 		}
-	}
 	
+	/**
+	 * Sto se tice aritmetickih operacija kada se prepozna neka od njih kod instrukcije se stavlja na operation_stack, da bi se 
+	 * kada budu prepoznata oba operanda skinuo sa steka i primenila odredjena operacija, 
+	 * Na primer najjednostavniji slucaj imamo a*b, najpre ce se detektovati a i staviti na expr stack, kada se detektuje * jos uvek nemamo
+	 * oba operanda na expr stack-u pa ce se Code.add staviti na stack , kada se i b detektuje i stavi na expr stack, na vrhu
+	 */
 	public void visit(Addition addition) {
 		operation_code_stack.push(Code.add);
 	}
@@ -237,12 +264,12 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(operation_code_stack.pop());
 	}
 	
-	public void visit(Terms terms) {
-		Code.put(operation_code_stack.pop());
-	}
-	
 	public void visit(MinusExpr minusExpr) {
 		Code.put(Code.neg);
+	}
+	
+	public void visit(NOMinusExpr noMinusExpr) {
+		Code.put(operation_code_stack.pop());
 	}
 	
 	public void visit(OptionalOperator optionalOp) {
@@ -258,8 +285,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.fixup(jump_address);
 	}
 	/**
-	 * Poredi se prvi operand sa 0 ako je jednak rezultat je 0 i vrsi se skok
-	 * Zatim se poredi drugi operand sa 0 ako je jedna rezultat je 0 i skace se u suprotnom je rezultat 1
+	 * Najpre se prvi operand poredi sa 0 ako je jednako skace, skida drugi operand sa steka jer on u tom slucaju nije potreban i ucitava se 0
+	 * Ako ne, poredi se drugi operand sa nulom i ako je jednako skace se s tim sto nema pop vec se samo ucitava vrednost 0, ako su obe vrednosti razlicite od 0 ucitava se 1
 	 * 
 	 */
 	public void visit(ConditionTerm condTerm) {
@@ -276,14 +303,13 @@ public class CodeGenerator extends VisitorAdaptor {
 		int jump_address = Code.pc;
 		Code.put2(0);
 		Code.fixup(address_to_fill);
+		Code.put(Code.pop);
 		Code.fixup(address_to_fill_2);
 		Code.put(Code.const_n);
 		Code.fixup(jump_address);
 	}
-	/**
-	 * Ako je prvi operand razlicit od 0 odmah se skace i upisuje se 1, ako je drugi operand razlicit od 0 skace se i upisuje 1
-	 * u suprotnom se na expression stack upisuje 0 kao rezultat
-	 */
+	
+	
 	public void visit(ConditionExpr condExpr) {
 		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.ne);
@@ -298,57 +324,39 @@ public class CodeGenerator extends VisitorAdaptor {
 		int jump_address = Code.pc;
 		Code.put2(0);
 		Code.fixup(address_to_fill);
+		Code.put(Code.pop);
 		Code.fixup(address_to_fill_2);
 		Code.put(Code.const_1);
 		Code.fixup(jump_address);
 	}
 	
-	/**
-	 * Ternary expression, stanje na steku u trenutku obrade cond, expr1, expr2 nama je potreban cond pa expr1 i expr2 cuvamo kao
-	 * lokalne promenljive, u zavisnosti od toga da li je cond true ili false ucitavamo neku od njih
-	 * @param condExpr
-	 */
-	public void visit(CondExpr condExpr) {
-		Code.put(Code.store);
-		Code.put(static_memory_free++);
-		Code.put(Code.store);
-		Code.put(static_memory_free);
+	public void visit(TernaryCondition ternaryCond) {
 		Code.loadConst(0);
-		Code.put(Code.jcc + Code.ne);
-		int address_to_fill = Code.pc;
+		Code.put(Code.jcc + Code.eq);
+		jump_false.push(Code.pc);
 		Code.put2(0);
-		Code.put(Code.load);
-		Code.put(static_memory_free - 1);
+	}
+	
+	public void visit(Col col) {
 		Code.put(Code.jmp);
-		int jump_address = Code.pc;
+		jump_true.push(Code.pc);
 		Code.put2(0);
-		Code.fixup(address_to_fill);
-		Code.put(Code.load);
-		Code.put(static_memory_free);
-		Code.fixup(jump_address);
-		static_memory_free-=2;
-	}
+		Code.fixup(jump_false.pop());
+	}	
 	
-	private boolean methodExistsInCurrentClass(Struct class_type, String methodName) {
-		SymbolDataStructure members = class_type.getMembers();
-		Struct current_type = class_type;
-		while(current_type != null && current_type != SymbolTable.noType) {
-			if(members.searchKey(methodName) != null)
-				return true;
-			current_type.getElemType();
-		}
-		return false;
-	}
-	
+	public void visit(CondExpr condExpr) {
+		Code.fixup(jump_true.pop());
+	}	
 	
 	public void visit(DesignatorName desName) {
 		if(this_object_for_current_method != null && desName.obj.getKind() == MyObject.Fld) {
 			Code.load(this_object_for_current_method);
 		}
 		if(this_object_for_current_method != null && desName.obj.getKind() == MyObject.Meth) {
-			if(methodExistsInCurrentClass(currentClass.getType(), desName.obj.getName())) {
+			if(class_decl_in_progress) {
 				invokevirtual.push(true);
 				Code.load(this_object_for_current_method);
+				Code.put(Code.dup);
 			}else
 				invokevirtual.push(false);
 		}else if(desName.obj.getKind() == MyObject.Meth)
@@ -361,6 +369,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(AccessField accessField) {
 		Obj my_object = designtor_stack.pop();
 		Code.load(my_object);
+		Code.put(Code.dup);
 		Code.put(Code.const_n);
 		Code.put(Code.jcc + Code.ne);
 		int jump_address = Code.pc;
@@ -370,6 +379,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.fixup(jump_address);
 		if(accessField.obj.getKind() == MyObject.Meth) {
 			invokevirtual.push(true);
+			Code.put(Code.dup);
 		}else {
 			designtor_stack.push(accessField.obj);
 		}
@@ -377,11 +387,13 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(AccessElement accessElement) {
 		Obj my_array = designtor_stack.pop();
-		Code.put(Code.store);
-		Code.put(static_memory_free);
+		if(my_array.getKind() == MyObject.Fld) {
+		Code.put(Code.dup_x1);
+		Code.put(Code.pop);
+		}
 		Code.load(my_array);
-		Code.put(Code.load);
-		Code.put(static_memory_free);
+		Code.put(Code.dup_x1);
+		Code.put(Code.pop);
 		designtor_stack.push(accessElement.obj);
 	}
 	
@@ -392,26 +404,27 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(AssignStatementSt assignStmt) {
 		Code.store(assignStmt.getDesignator().obj);
+		designtor_stack.pop();
 	}
 	
 	public void visit(FuncCallSt funcCall) {
-		//sacuvati parametre funcije na steku pa ih opet load-ovati
 		if(invokevirtual.pop() == false) {
 			Code.put(Code.call);
 			int jump_address = funcCall.getDesignator().obj.getAdr();
 			Code.put2(jump_address - Code.pc + 1);
 		}else {
-			Code.put(Code.dup);
-			Code.put(Code.getfield);
-			//polje 0 pokazivac na tableu viruelnih funkcija 
-			Code.put(0);
+			Code.put(Code.getfield); 
+			Code.put2(0);
 			Code.put(Code.invokevirtual);
 			String methodName = funcCall.getDesignator().obj.getName();
 			for(int i = 0; i < methodName.length(); i++) {
-				Code.put(methodName.charAt(i));
+				Code.put4(methodName.charAt(i));
 			}
+			Code.put4(-1);
+			
+			if(funcCall.getDesignator().obj.getType() != SymbolTable.voidType)
+				Code.put(Code.pop);
 		}
-		//load-ovati parametre sa steka
 	}
 	
 	/**
@@ -458,22 +471,19 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(PrintFunctionCall printFuncCall) {
+		if(printFuncCall.getOptionalSecondParam().getClass() == NoSecondParam.class) {
+			Code.loadConst(5);
+		}
 		if(printFuncCall.getExpr().struct == SymbolTable.charType) {
-			if(printFuncCall.getOptionalSecondParam().getClass() == NoSecondParam.class) {
-				Code.loadConst(5);
-			}
 			Code.put(Code.bprint);
-		} else {
-			if(printFuncCall.getOptionalSecondParam().getClass() == NoSecondParam.class) {
-				Code.loadConst(5);
-			}
+		} else 
 			Code.put(Code.print);
 		}
-			
-	}
+	
 	public void visit(PrintSecondParam secondParam) {
 		Code.loadConst(secondParam.getValue());
 	}
+	
 	public void visit(RightCondition rightCond) {
 		nested_if++;
 		Code.put(Code.const_n);
@@ -582,15 +592,80 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.return_);
 	}
 	
+	public void visit(SwitchStart switchStart) {
+		break_jump_address.push(-1);
+		case_stack.push(-1);
+		//stavljanje na stek lokalne promenljive koja je inicijalno 0 jer nije bio ispunjen za ulazak u case granu
+		Code.loadConst(0);
+	}
+	/**
+	 * Ukoliko postoji prethodni case postaviti njegovu adresu skoka na adresu tekceg pc-a, sledeci korak uvedena je (videti SwitchStart)
+	 * lokalna promenljiva koja govori da li je vec bio ispunjen uslov za ulazak u case granu, ukoliko jeste izvrsava se kod u tekucoj case grani
+	 * Ukoliko promenljiva ima vrednost 0 proverava se da je je expr jednak vrednosti za tekucu case granu ako jeste kao pomocna promenljiva se ucitava 1
+	 * i prelazi se na izvrsavanje u suprtnom, se uzitava kao pomocna promenljiva i skace se na naredni case
+	 */
+	public void visit(CaseStart caseStart) {
+		int previous_case = case_stack.pop();
+		if(previous_case != -1)
+			Code.fixup(previous_case);
+		Code.loadConst(0);
+		Code.put(Code.jcc + Code.ne);
+		int address_to_fill_1 = Code.pc;
+		Code.put2(0);
+		Code.put(Code.dup);
+		Code.loadConst(caseStart.getValue());
+		Code.put(Code.jcc + Code.ne);
+		int address_to_fill = Code.pc;
+		Code.put2(0);
+		Code.put(Code.jmp);
+		int jump_address = Code.pc;
+		Code.put2(0);
+		Code.fixup(address_to_fill);
+		Code.loadConst(0);
+		Code.put(Code.jmp);
+		case_stack.push(Code.pc);
+		Code.put2(0);
+		Code.fixup(address_to_fill_1);
+		Code.fixup(jump_address);
+		Code.loadConst(1);	
+		
+	}
+	
+	public void visit(SwitchStatement switchStatement) {
+		int break_address = break_jump_address.empty() ? -1 : break_jump_address.pop();
+		while(break_address != -1) {
+			Code.fixup(break_address);
+			break_address = break_jump_address.pop();
+		}
+		
+		int previous_case = case_stack.pop();
+		if(previous_case != -1)
+			Code.fixup(previous_case);
+		
+		//Skidaju se sa expression stacka promenljiva i expr koji je su bili tu radi provere u case-ovima
+		Code.put(Code.pop);
+		Code.put(Code.pop);
+		
+		
+	}
+	
+	public void visit(FirstParamExpr firstActPar) {
+		if(invokevirtual.peek()) {
+			Code.put(Code.dup_x1);
+			Code.put(Code.pop);
+		}
+	}
+	
+	public void visit(ParameterList paramList) {
+		if(invokevirtual.peek()) {
+			Code.put(Code.dup_x1);
+			Code.put(Code.pop);
+		}
+	}
 	
 	public int getMainPC() {
 		return main_pc;
 	}
-	
-	//switch implementation
-	
-	// test plan first for A level, simple designator and simple operations also print function that shows result, operator priority checking
-	//conditions rel operators, static functions ternary expressions, testing arrays
-	// 
-	
+
 }
+

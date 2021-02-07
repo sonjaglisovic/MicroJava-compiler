@@ -1,0 +1,8 @@
+INFO  17:46:02,142 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\code_generation_test1.mj
+ERROR 17:46:02,779 - 
+Sintaksna greska na liniji 177
+ERROR 17:46:02,790 - 
+Sintaksna greska na liniji 250
+ERROR 17:46:02,798 - 
+Sintaksna greska na liniji 325
+ERROR 17:46:02,799 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 327

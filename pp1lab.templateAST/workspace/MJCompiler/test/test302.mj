@@ -68,9 +68,9 @@ int niz[];
 		if(i == 3 && verify()) print(-4);
 		else print(4);  
 		
-		niz[0] = 2;
-		niz[1] = 55;
-		niz[2] = 5;
+		read(niz[0]);
+		read(niz[1]);
+		read(niz[2]);
 		print(eol);
 		
 		print(sum (sum(niz[0], niz[1]), niz[2])); 

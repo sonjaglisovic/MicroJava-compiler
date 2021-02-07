@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2021 19:30:44
+// 7/1/2021 8:21:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -34,6 +34,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ActualParamList ActualParamList) { }
     public void visit(ParamList ParamList) { }
     public void visit(DesignParam DesignParam) { }
+    public void visit(Case Case) { }
     public void visit(DesignatorList DesignatorList) { }
     public void visit(Condition Condition) { }
     public void visit(Mulop Mulop) { }
@@ -52,7 +53,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondTerm CondTerm) { }
     public void visit(CaseDecl CaseDecl) { }
     public void visit(ExpressionType ExpressionType) { }
-    public void visit(TermList TermList) { }
     public void visit(Expr1 Expr1) { }
     public void visit(ActPars ActPars) { }
     public void visit(OptionalMinus OptionalMinus) { }
@@ -93,10 +93,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(SimpleDesignator SimpleDesignator) { visit(); }
     public void visit(SingleTermDecl SingleTermDecl) { visit(); }
     public void visit(CompositeTerm CompositeTerm) { visit(); }
-    public void visit(FirstTerm FirstTerm) { visit(); }
-    public void visit(Terms Terms) { visit(); }
     public void visit(NOMinusExpr NOMinusExpr) { visit(); }
+    public void visit(FirstTerm FirstTerm) { visit(); }
     public void visit(MinusExpr MinusExpr) { visit(); }
+    public void visit(Col Col) { visit(); }
+    public void visit(TernaryCondition TernaryCondition) { visit(); }
     public void visit(SimpleExpr SimpleExpr) { visit(); }
     public void visit(CondExpr CondExpr) { visit(); }
     public void visit(OptionalOperator OptionalOperator) { visit(); }
@@ -124,6 +125,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(AssignStatementSt AssignStatementSt) { visit(); }
     public void visit(NoSecondParam NoSecondParam) { visit(); }
     public void visit(PrintSecondParam PrintSecondParam) { visit(); }
+    public void visit(CaseStart CaseStart) { visit(); }
     public void visit(CaseStatement CaseStatement) { visit(); }
     public void visit(NoCaseList NoCaseList) { visit(); }
     public void visit(CaseListDecl CaseListDecl) { visit(); }

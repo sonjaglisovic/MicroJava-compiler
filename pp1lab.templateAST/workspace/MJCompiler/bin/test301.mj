@@ -42,13 +42,13 @@ program test301
 		bodovi = bodovi + (pet * jedan - 1) * bodovi - (3 % 2 + 3 * 2 - 3); 
 		print(bodovi);
 			
-		//read(bodovi);
+		read(bodovi);
 		bt = true;
 		
 		print(bt ? bodovi : bodovi + 10);
 		print(false ? bodovi + 20 : bodovi + 30);
 		bt = false;
-		print(bt || bodovi != 26  ? '+' : '-');
+		print(bt  ? '+' : '-');
 	}
 }
 

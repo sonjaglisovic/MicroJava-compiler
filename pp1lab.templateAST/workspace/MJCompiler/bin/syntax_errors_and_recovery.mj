@@ -1,0 +1,27 @@
+program MJprog
+
+int a;
+int a b, c;
+int b, c
+int a, x;
+
+class B : public A{
+
+int a  b;
+{
+  int method(){
+  }
+}
+}
+
+{
+
+	int func(int a int b, int c int d){
+		a = b
+		print(b);
+		if(a == b || && x){
+			a = b;
+		}
+
+	}
+}

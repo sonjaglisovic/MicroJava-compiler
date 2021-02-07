@@ -1,0 +1,72 @@
+program MJprogram
+
+
+class A{
+int parent_field;
+}
+
+class B extends A{
+
+
+
+int field1;
+int field2;
+
+}
+const char ch = false;
+class C extends int{
+
+}
+
+int a1;
+Z z;
+
+bool aa;
+{
+	int function(int a, B object[], int b){
+	return 0;
+	}	
+	A func(){
+	return 1;
+	}
+	int main1()A a;{
+	a = a1;
+	a = null;
+	a1 = null;
+	a.b = 3;
+	a.method();
+	a++;
+	a--;
+	break;
+	continue;
+	read(a);
+	print(a);
+	if(a1){
+		function(a1, a, a1);
+		function();
+	}
+	i = 0;
+	do{
+	i++;
+	}while(a1);
+
+	switch(aa){
+	case 1:break;
+	case 2: switch(1){
+			case 1:break;
+			case 1:break;
+		}
+	case 2: break;
+	}
+	a1 = new int;
+	print(a.field4);
+	a = aa ? null : 5;
+	a1 = a + a1;
+	a1 = a*a1;
+	a = new A[aa];
+	a[5] = a;						
+	return false;  	
+	}
+
+}
+

@@ -1,0 +1,1818 @@
+INFO  11:27:30,641 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\designators_and_vars.mj
+INFO  11:27:31,201 - ===================================
+INFO  11:27:31,387 - Prisput simbolu:  Var this: A 1 1  na liniji 33
+INFO  11:27:31,388 - Prisput njegovom polju:  Field field: A 2 1  na liniji 33
+INFO  11:27:31,389 - Prisput njegovom polju:  Field bField: int 0 1  na liniji 33
+INFO  11:27:31,389 - Prisput simbolu:  Var b: int 2 1  na liniji 33
+INFO  11:27:31,390 - Prisput simbolu:  Meth method1: int 0 1  na liniji 34
+INFO  11:27:31,391 - Prisput simbolu:  Field array: Array of int 1 1  na liniji 34
+INFO  11:27:31,397 - Prisput simbolu:  Var f: int 4 0  na liniji 55
+INFO  11:27:31,398 - Prisput simbolu:  Con b1: int 2 0  na liniji 55
+INFO  11:27:31,400 - Prisput simbolu:  Var bool_var: bool 3 0  na liniji 56
+INFO  11:27:31,400 - Prisput simbolu:  Var c2: char 2 0  na liniji 57
+INFO  11:27:31,401 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 58
+INFO  11:27:31,402 - Prisput simbolu:  Var f: int 4 0  na liniji 59
+INFO  11:27:31,402 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 59
+INFO  11:27:31,403 - Prisput njegovom polju:  Field cField: Array of int 1 1  na liniji 59
+INFO  11:27:31,404 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 60
+INFO  11:27:31,405 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 61
+INFO  11:27:31,406 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 62
+INFO  11:27:31,406 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 62
+INFO  11:27:31,407 - Prisput simbolu:  Var object1: A 6 0  na liniji 62
+INFO  11:27:31,408 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 62
+INFO  11:27:31,409 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 63
+INFO  11:27:31,411 - Prisput simbolu:  Var object1: A 6 0  na liniji 63
+INFO  11:27:31,412 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 64
+INFO  11:27:31,412 - Prisput simbolu:  Con null: null 0 0  na liniji 64
+INFO  11:27:31,413 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 65
+INFO  11:27:31,413 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 65
+INFO  11:27:31,414 - Prisput simbolu:  Var object1: A 6 0  na liniji 66
+INFO  11:27:31,414 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 66
+INFO  11:27:31,415 - Prisput simbolu:  Var object1: A 6 0  na liniji 66
+INFO  11:27:31,416 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 66
+INFO  11:27:31,416 - Prisput simbolu:  Var object1: A 6 0  na liniji 66
+INFO  11:27:31,418 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 66
+INFO  11:27:31,419 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 67
+INFO  11:27:31,419 - Prisput simbolu:  Var object1: A 6 0  na liniji 67
+INFO  11:27:31,419 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 67
+INFO  11:27:31,420 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 67
+INFO  11:27:31,420 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 67
+INFO  11:27:31,420 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 67
+INFO  11:27:31,421 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 67
+INFO  11:27:31,421 - Prisput simbolu:  Var object1: A 6 0  na liniji 67
+INFO  11:27:31,421 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 67
+INFO  11:27:31,422 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 67
+INFO  11:27:31,422 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 67
+INFO  11:27:31,422 - Prisput simbolu:  Var object1: A 6 0  na liniji 67
+INFO  11:27:31,428 - Prisput njegovom polju:  Field cField: Array of int 1 1  na liniji 67
+INFO  11:27:31,428 - Prisput simbolu:  Con b1: int 2 0  na liniji 67
+INFO  11:27:31,429 - Prisput simbolu:  Var object1: A 6 0  na liniji 67
+INFO  11:27:31,431 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 68
+INFO  11:27:31,437 - Prisput simbolu:  Var object1: A 6 0  na liniji 68
+INFO  11:27:31,437 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 68
+INFO  11:27:31,438 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 68
+INFO  11:27:31,438 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 68
+INFO  11:27:31,438 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 68
+INFO  11:27:31,438 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 68
+INFO  11:27:31,439 - Prisput simbolu:  Var object1: A 6 0  na liniji 68
+INFO  11:27:31,439 - Prisput njegovom polju:  Meth method: int 0 1  na liniji 68
+INFO  11:27:31,439 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 68
+INFO  11:27:31,440 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 68
+INFO  11:27:31,440 - Prisput simbolu:  Var object1: A 6 0  na liniji 68
+INFO  11:27:31,440 - Prisput njegovom polju:  Field cField: Array of int 1 1  na liniji 68
+INFO  11:27:31,441 - Prisput simbolu:  Con b1: int 2 0  na liniji 68
+INFO  11:27:31,441 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 68
+INFO  11:27:31,442 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 71
+INFO  11:27:31,443 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 71
+INFO  11:27:31,443 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 71
+INFO  11:27:31,444 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 71
+INFO  11:27:31,444 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 71
+INFO  11:27:31,445 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 71
+INFO  11:27:31,446 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 71
+INFO  11:27:31,447 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 71
+INFO  11:27:31,447 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 71
+INFO  11:27:31,448 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 71
+INFO  11:27:31,448 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 73
+INFO  11:27:31,448 - Prisput njegovom polju:  Field cField: Array of int 1 1  na liniji 73
+INFO  11:27:31,449 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 74
+INFO  11:27:31,449 - Prisput njegovom polju:  Field cField: Array of int 1 1  na liniji 74
+INFO  11:27:31,451 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 75
+INFO  11:27:31,451 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 75
+INFO  11:27:31,452 - Prisput simbolu:  Var c: int 1 0  na liniji 76
+INFO  11:27:31,452 - Prisput simbolu:  Con b1: int 2 0  na liniji 76
+INFO  11:27:31,453 - Prisput simbolu:  Var c: int 1 0  na liniji 77
+INFO  11:27:31,453 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 77
+INFO  11:27:31,454 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 77
+INFO  11:27:31,454 - Prisput simbolu:  Con b1: int 2 0  na liniji 77
+INFO  11:27:31,454 - Prisput simbolu:  Con b1: int 2 0  na liniji 77
+INFO  11:27:31,455 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 77
+INFO  11:27:31,455 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 77
+INFO  11:27:31,456 - Prisput simbolu:  Var object1: A 6 0  na liniji 81
+INFO  11:27:31,456 - Prisput njegovom polju:  Field cField: Array of int 1 1  na liniji 81
+INFO  11:27:31,457 - Prisput simbolu:  Meth function: int 0 5  na liniji 82
+INFO  11:27:31,457 - Prisput simbolu:  Var f: int 4 0  na liniji 82
+INFO  11:27:31,457 - Prisput simbolu:  Var bArray: Array of int 9 0  na liniji 82
+INFO  11:27:31,458 - Prisput simbolu:  Var object1: A 6 0  na liniji 82
+INFO  11:27:31,458 - Prisput simbolu:  Var object2: Array of A 7 0  na liniji 82
+INFO  11:27:31,459 - Prisput simbolu:  Var object1: A 6 0  na liniji 83
+INFO  11:27:31,459 - Prisput njegovom polju:  Field grand_parent_field: int 0 1  na liniji 83
+INFO  11:27:31,459 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 84
+INFO  11:27:31,460 - Prisput simbolu:  Var c: int 1 0  na liniji 84
+INFO  11:27:31,460 - Prisput simbolu:  Var c: int 1 0  na liniji 84
+INFO  11:27:31,467 - Prisput simbolu:  Var bool_var: bool 3 0  na liniji 84
+INFO  11:27:31,467 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 84
+INFO  11:27:31,468 - Prisput simbolu:  Con null: null 0 0  na liniji 84
+INFO  11:27:31,468 - Prisput simbolu:  Var test_object: B 1 1  na liniji 85
+INFO  11:27:31,468 - Prisput simbolu:  Var object: Array of B 0 1  na liniji 85
+INFO  11:28:06,412 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\test303.mj
+INFO  11:28:07,153 - ===================================
+INFO  11:28:07,239 - Prisput simbolu:  Var this: Predmet 1 1  na liniji 13
+INFO  11:28:07,239 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 13
+INFO  11:28:07,239 - Prisput simbolu:  Var tezina: int 0 1  na liniji 13
+INFO  11:28:07,240 - Prisput simbolu:  Field tezina: int 0 1  na liniji 14
+INFO  11:28:07,241 - Prisput simbolu:  Meth zapremina: int 0 0  na liniji 16
+INFO  11:28:07,258 - Prisput simbolu:  Field tezina: int 0 1  na liniji 16
+INFO  11:28:07,259 - Prisput simbolu:  Var this: Predmet 1 1  na liniji 17
+INFO  11:28:07,259 - Prisput njegovom polju:  Field vrsta: char 1 1  na liniji 17
+INFO  11:28:07,259 - Prisput simbolu:  Var vrsta: char 0 1  na liniji 17
+INFO  11:28:07,260 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 18
+INFO  11:28:07,261 - Prisput simbolu:  Field tezina: int 0 1  na liniji 19
+INFO  11:28:07,262 - Prisput simbolu:  Var this: Sfera 1 1  na liniji 27
+INFO  11:28:07,262 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 27
+INFO  11:28:07,262 - Prisput simbolu:  Var tezina: int 0 1  na liniji 27
+INFO  11:28:07,263 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 27
+INFO  11:28:07,265 - Prisput simbolu:  Var this: Sfera 1 1  na liniji 28
+INFO  11:28:07,267 - Prisput njegovom polju:  Field r: int 0 1  na liniji 28
+INFO  11:28:07,268 - Prisput simbolu:  Var r: int 0 1  na liniji 28
+INFO  11:28:07,269 - Prisput simbolu:  Meth postaviVrstu: void 0 1  na liniji 28
+INFO  11:28:07,271 - Prisput simbolu:  Var z: int 1 1  na liniji 32
+INFO  11:28:07,273 - Prisput simbolu:  Con cinilac: int 4 0  na liniji 32
+INFO  11:28:07,274 - Prisput simbolu:  Var z: int 1 1  na liniji 33
+INFO  11:28:07,275 - Prisput simbolu:  Field r: int 0 1  na liniji 33
+INFO  11:28:07,276 - Prisput simbolu:  Con delilac: int 3 0  na liniji 33
+INFO  11:28:07,279 - Prisput simbolu:  Var this: Kvadar 1 1  na liniji 42
+INFO  11:28:07,281 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 42
+INFO  11:28:07,283 - Prisput simbolu:  Var tezina: int 0 1  na liniji 42
+INFO  11:28:07,283 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 42
+INFO  11:28:07,284 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  11:28:07,285 - Prisput njegovom polju:  Field a: int 0 1  na liniji 43
+INFO  11:28:07,289 - Prisput simbolu:  Var a: int 0 1  na liniji 43
+INFO  11:28:07,289 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  11:28:07,290 - Prisput njegovom polju:  Field b: int 1 1  na liniji 43
+INFO  11:28:07,290 - Prisput simbolu:  Var b: int 1 1  na liniji 43
+INFO  11:28:07,291 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  11:28:07,291 - Prisput njegovom polju:  Field c: int 2 1  na liniji 43
+INFO  11:28:07,292 - Prisput simbolu:  Var c: int 2 1  na liniji 43
+INFO  11:28:07,293 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 43
+INFO  11:28:07,294 - Prisput simbolu:  Var z: int 1 1  na liniji 47
+INFO  11:28:07,295 - Prisput simbolu:  Field a: int 0 1  na liniji 47
+INFO  11:28:07,295 - Prisput simbolu:  Field b: int 1 1  na liniji 47
+INFO  11:28:07,296 - Prisput simbolu:  Field c: int 2 1  na liniji 47
+INFO  11:28:07,296 - Prisput simbolu:  Var z: int 1 1  na liniji 48
+INFO  11:28:07,297 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 59
+INFO  11:28:07,298 - Prisput njegovom polju:  Meth dohvVrstu: char 0 0  na liniji 59
+INFO  11:28:07,299 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 60
+INFO  11:28:07,299 - Prisput njegovom polju:  Meth dohvVrstu: char 0 0  na liniji 60
+INFO  11:28:07,299 - Prisput simbolu:  Con eol: char 10 0  na liniji 62
+INFO  11:28:07,300 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 63
+INFO  11:28:07,300 - Prisput njegovom polju:  Meth dohvTezinu: int 0 0  na liniji 63
+INFO  11:28:07,301 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 68
+INFO  11:28:07,302 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 69
+INFO  11:28:07,302 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 70
+INFO  11:28:07,302 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 71
+INFO  11:28:07,303 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 73
+INFO  11:28:07,303 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 74
+INFO  11:28:07,303 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 75
+INFO  11:28:07,303 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 77
+INFO  11:28:07,304 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 77
+INFO  11:28:07,304 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 78
+INFO  11:28:07,304 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 78
+INFO  11:28:07,305 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 79
+INFO  11:28:07,305 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 79
+INFO  11:28:07,345 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 81
+INFO  11:28:07,346 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 81
+INFO  11:28:07,346 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 82
+INFO  11:28:07,346 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 82
+INFO  11:28:07,347 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 83
+INFO  11:28:07,347 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 83
+INFO  11:28:07,348 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 85
+INFO  11:28:07,348 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 85
+INFO  11:28:07,350 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 86
+INFO  11:28:07,351 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 86
+INFO  11:28:07,351 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 87
+INFO  11:28:07,351 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 87
+INFO  11:28:07,352 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 88
+INFO  11:28:07,352 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 88
+INFO  11:28:07,353 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 89
+INFO  11:28:07,353 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 89
+INFO  11:28:07,353 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 90
+INFO  11:28:07,354 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 90
+INFO  11:28:07,354 - Prisput simbolu:  Var t: int 8 1  na liniji 92
+INFO  11:28:07,354 - Prisput simbolu:  Var i: int 1 1  na liniji 93
+INFO  11:28:07,354 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 95
+INFO  11:28:07,355 - Prisput simbolu:  Var i: int 1 1  na liniji 95
+INFO  11:28:07,355 - Prisput njegovom polju:  Meth postaviTezinu: void 0 1  na liniji 95
+INFO  11:28:07,355 - Prisput simbolu:  Var t: int 8 1  na liniji 95
+INFO  11:28:07,356 - Prisput simbolu:  Var i: int 1 1  na liniji 96
+INFO  11:28:07,356 - Prisput simbolu:  Var i: int 1 1  na liniji 97
+INFO  11:28:07,356 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 99
+INFO  11:28:07,357 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 100
+INFO  11:28:07,357 - Prisput simbolu:  Var i: int 1 1  na liniji 101
+INFO  11:28:07,357 - Prisput simbolu:  Var i: int 1 1  na liniji 103
+INFO  11:28:07,358 - Prisput simbolu:  Var i: int 1 1  na liniji 104
+INFO  11:28:07,358 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 107
+INFO  11:28:07,361 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 107
+INFO  11:28:07,361 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 107
+INFO  11:28:07,362 - Prisput simbolu:  Var i: int 1 1  na liniji 107
+INFO  11:28:07,364 - Prisput njegovom polju:  Meth zapremina: int 0 0  na liniji 107
+INFO  11:28:07,371 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 108
+INFO  11:28:07,373 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 108
+INFO  11:28:07,374 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 108
+INFO  11:28:07,375 - Prisput simbolu:  Var i: int 1 1  na liniji 108
+INFO  11:28:07,375 - Prisput njegovom polju:  Meth Q: int 0 0  na liniji 108
+INFO  11:28:07,375 - Prisput simbolu:  Meth ispis: void 0 1  na liniji 109
+INFO  11:28:07,376 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 109
+INFO  11:28:07,376 - Prisput simbolu:  Var i: int 1 1  na liniji 109
+INFO  11:28:07,376 - Prisput simbolu:  Var i: int 1 1  na liniji 110
+INFO  11:28:07,378 - Prisput simbolu:  Var i: int 1 1  na liniji 111
+INFO  11:28:07,379 - Prisput simbolu:  Var zapreminaK: int 0 0  na liniji 114
+INFO  11:28:07,381 - Prisput simbolu:  Var tezinaK: int 2 0  na liniji 115
+INFO  11:28:07,384 - Prisput simbolu:  Var i: int 1 1  na liniji 116
+INFO  11:28:07,386 - Prisput simbolu:  Var i: int 1 1  na liniji 118
+INFO  11:28:07,389 - Prisput simbolu:  Var i: int 1 1  na liniji 119
+INFO  11:28:07,389 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 122
+INFO  11:28:07,389 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 122
+INFO  11:28:07,390 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 122
+INFO  11:28:07,390 - Prisput simbolu:  Var i: int 1 1  na liniji 122
+INFO  11:28:07,390 - Prisput njegovom polju:  Meth zapremina: int 0 0  na liniji 122
+INFO  11:28:07,391 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 123
+INFO  11:28:07,391 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 123
+INFO  11:28:07,391 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 123
+INFO  11:28:07,391 - Prisput simbolu:  Var i: int 1 1  na liniji 123
+INFO  11:28:07,392 - Prisput njegovom polju:  Meth Q: int 0 0  na liniji 123
+INFO  11:28:07,392 - Prisput simbolu:  Meth ispis: void 0 1  na liniji 124
+INFO  11:28:07,392 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 124
+INFO  11:28:07,392 - Prisput simbolu:  Var i: int 1 1  na liniji 124
+INFO  11:28:07,393 - Prisput simbolu:  Var i: int 1 1  na liniji 125
+INFO  11:28:07,393 - Prisput simbolu:  Var i: int 1 1  na liniji 126
+INFO  11:28:07,393 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 128
+INFO  11:28:07,393 - Prisput simbolu:  Con eol: char 10 0  na liniji 128
+INFO  11:28:07,394 - Prisput simbolu:  Var zapreminaK: int 0 0  na liniji 129
+INFO  11:28:07,394 - Prisput simbolu:  Con eol: char 10 0  na liniji 129
+INFO  11:28:07,394 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 130
+INFO  11:28:07,394 - Prisput simbolu:  Con eol: char 10 0  na liniji 130
+INFO  11:28:07,394 - Prisput simbolu:  Var tezinaK: int 2 0  na liniji 131
+INFO  11:28:07,422 - Prisput simbolu:  Con eol: char 10 0  na liniji 131
+INFO  11:28:07,422 - Prisput simbolu:  Var i: int 1 1  na liniji 133
+INFO  11:28:07,423 - Prisput simbolu:  Var i: int 1 1  na liniji 135
+INFO  11:28:07,423 - Prisput simbolu:  Var i: int 1 1  na liniji 146
+INFO  11:28:07,423 - Prisput simbolu:  Var i: int 1 1  na liniji 146
+INFO  11:28:07,424 - Prisput simbolu:  Con eol: char 10 0  na liniji 153
+INFO  11:28:07,424 - Prisput simbolu:  Var i: int 1 1  na liniji 154
+INFO  11:28:07,424 - Prisput simbolu:  Var i: int 1 1  na liniji 155
+INFO  11:36:16,316 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\test303.mj
+INFO  11:36:35,042 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\test303.mj
+INFO  11:36:37,546 - ===================================
+INFO  11:36:38,254 - Prisput simbolu:  Var this: Predmet 1 1  na liniji 13
+INFO  11:36:38,255 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 13
+INFO  11:36:38,256 - Prisput simbolu:  Var tezina: int 0 1  na liniji 13
+INFO  11:36:38,259 - Prisput simbolu:  Field tezina: int 0 1  na liniji 14
+INFO  11:36:38,270 - Prisput simbolu:  Meth zapremina: int 0 0  na liniji 16
+INFO  11:36:38,273 - Prisput simbolu:  Field tezina: int 0 1  na liniji 16
+INFO  11:36:38,276 - Prisput simbolu:  Var this: Predmet 1 1  na liniji 17
+INFO  11:36:38,297 - Prisput njegovom polju:  Field vrsta: char 1 1  na liniji 17
+INFO  11:36:38,300 - Prisput simbolu:  Var vrsta: char 0 1  na liniji 17
+INFO  11:36:38,301 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 18
+INFO  11:36:38,303 - Prisput simbolu:  Field tezina: int 0 1  na liniji 19
+INFO  11:36:38,309 - Prisput simbolu:  Var this: Sfera 1 1  na liniji 27
+INFO  11:36:38,310 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 27
+INFO  11:36:38,311 - Prisput simbolu:  Var tezina: int 0 1  na liniji 27
+INFO  11:36:38,311 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 27
+INFO  11:36:38,313 - Prisput simbolu:  Var this: Sfera 1 1  na liniji 28
+INFO  11:36:38,313 - Prisput njegovom polju:  Field r: int 0 1  na liniji 28
+INFO  11:36:38,314 - Prisput simbolu:  Var r: int 0 1  na liniji 28
+INFO  11:36:38,317 - Prisput simbolu:  Meth postaviVrstu: void 0 1  na liniji 28
+INFO  11:36:38,318 - Prisput simbolu:  Var z: int 1 1  na liniji 32
+INFO  11:36:38,321 - Prisput simbolu:  Con cinilac: int 4 0  na liniji 32
+INFO  11:36:38,322 - Prisput simbolu:  Var z: int 1 1  na liniji 33
+INFO  11:36:38,322 - Prisput simbolu:  Field r: int 0 1  na liniji 33
+INFO  11:36:38,323 - Prisput simbolu:  Con delilac: int 3 0  na liniji 33
+INFO  11:36:38,327 - Prisput simbolu:  Var this: Kvadar 1 1  na liniji 42
+INFO  11:36:38,329 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 42
+INFO  11:36:38,331 - Prisput simbolu:  Var tezina: int 0 1  na liniji 42
+INFO  11:36:38,332 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 42
+INFO  11:36:38,333 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  11:36:38,335 - Prisput njegovom polju:  Field a: int 0 1  na liniji 43
+INFO  11:36:38,338 - Prisput simbolu:  Var a: int 0 1  na liniji 43
+INFO  11:36:38,338 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  11:36:38,339 - Prisput njegovom polju:  Field b: int 1 1  na liniji 43
+INFO  11:36:38,339 - Prisput simbolu:  Var b: int 1 1  na liniji 43
+INFO  11:36:38,341 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  11:36:38,341 - Prisput njegovom polju:  Field c: int 2 1  na liniji 43
+INFO  11:36:38,394 - Prisput simbolu:  Var c: int 2 1  na liniji 43
+INFO  11:36:38,394 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 43
+INFO  11:36:38,396 - Prisput simbolu:  Var z: int 1 1  na liniji 47
+INFO  11:36:38,399 - Prisput simbolu:  Field a: int 0 1  na liniji 47
+INFO  11:36:38,399 - Prisput simbolu:  Field b: int 1 1  na liniji 47
+INFO  11:36:38,404 - Prisput simbolu:  Field c: int 2 1  na liniji 47
+INFO  11:36:38,407 - Prisput simbolu:  Var z: int 1 1  na liniji 48
+INFO  11:36:38,409 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 59
+INFO  11:36:38,409 - Prisput njegovom polju:  Meth dohvVrstu: char 0 0  na liniji 59
+INFO  11:36:38,410 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 60
+INFO  11:36:38,411 - Prisput njegovom polju:  Meth dohvVrstu: char 0 0  na liniji 60
+INFO  11:36:38,411 - Prisput simbolu:  Con eol: char 10 0  na liniji 62
+INFO  11:36:38,412 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 63
+INFO  11:36:38,413 - Prisput njegovom polju:  Meth dohvTezinu: int 0 0  na liniji 63
+INFO  11:36:38,415 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 68
+INFO  11:36:38,416 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 69
+INFO  11:36:38,416 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 70
+INFO  11:36:38,417 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 71
+INFO  11:36:38,417 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 73
+INFO  11:36:38,417 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 74
+INFO  11:36:38,418 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 75
+INFO  11:36:38,418 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 77
+INFO  11:36:38,420 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 77
+INFO  11:36:38,421 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 78
+INFO  11:36:38,422 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 78
+INFO  11:36:38,423 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 79
+INFO  11:36:38,427 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 79
+INFO  11:36:38,428 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 81
+INFO  11:36:38,428 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 81
+INFO  11:36:38,429 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 82
+INFO  11:36:38,435 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 82
+INFO  11:36:38,436 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 83
+INFO  11:36:38,438 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 83
+INFO  11:36:38,439 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 85
+INFO  11:36:38,439 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 85
+INFO  11:36:38,441 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 86
+INFO  11:36:38,441 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 86
+INFO  11:36:38,442 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 87
+INFO  11:36:38,442 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 87
+INFO  11:36:38,443 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 88
+INFO  11:36:38,443 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 88
+INFO  11:36:38,444 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 89
+INFO  11:36:38,444 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 89
+INFO  11:36:38,445 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 90
+INFO  11:36:38,445 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 90
+INFO  11:36:38,446 - Prisput simbolu:  Var t: int 8 1  na liniji 92
+INFO  11:36:38,446 - Prisput simbolu:  Var i: int 1 1  na liniji 93
+INFO  11:36:38,446 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 95
+INFO  11:36:38,447 - Prisput simbolu:  Var i: int 1 1  na liniji 95
+INFO  11:36:38,449 - Prisput njegovom polju:  Meth postaviTezinu: void 0 1  na liniji 95
+INFO  11:36:38,449 - Prisput simbolu:  Var t: int 8 1  na liniji 95
+INFO  11:36:38,451 - Prisput simbolu:  Var i: int 1 1  na liniji 96
+INFO  11:36:38,452 - Prisput simbolu:  Var i: int 1 1  na liniji 97
+INFO  11:36:38,452 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 99
+INFO  11:36:38,454 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 100
+INFO  11:36:38,454 - Prisput simbolu:  Var i: int 1 1  na liniji 101
+INFO  11:36:38,454 - Prisput simbolu:  Var i: int 1 1  na liniji 103
+INFO  11:36:38,456 - Prisput simbolu:  Var i: int 1 1  na liniji 104
+INFO  11:36:38,456 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 107
+INFO  11:36:38,457 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 107
+INFO  11:36:38,457 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 107
+INFO  11:36:38,458 - Prisput simbolu:  Var i: int 1 1  na liniji 107
+INFO  11:36:38,496 - Prisput njegovom polju:  Meth zapremina: int 0 0  na liniji 107
+INFO  11:36:38,503 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 108
+INFO  11:36:38,505 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 108
+INFO  11:36:38,506 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 108
+INFO  11:36:38,509 - Prisput simbolu:  Var i: int 1 1  na liniji 108
+INFO  11:36:38,510 - Prisput njegovom polju:  Meth Q: int 0 0  na liniji 108
+INFO  11:36:38,510 - Prisput simbolu:  Meth ispis: void 0 1  na liniji 109
+INFO  11:36:38,513 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 109
+INFO  11:36:38,513 - Prisput simbolu:  Var i: int 1 1  na liniji 109
+INFO  11:36:38,516 - Prisput simbolu:  Var i: int 1 1  na liniji 110
+INFO  11:36:38,522 - Prisput simbolu:  Var i: int 1 1  na liniji 111
+INFO  11:36:38,522 - Prisput simbolu:  Var zapreminaK: int 0 0  na liniji 114
+INFO  11:36:38,524 - Prisput simbolu:  Var tezinaK: int 2 0  na liniji 115
+INFO  11:36:38,526 - Prisput simbolu:  Var i: int 1 1  na liniji 116
+INFO  11:36:38,528 - Prisput simbolu:  Var i: int 1 1  na liniji 118
+INFO  11:36:38,528 - Prisput simbolu:  Var i: int 1 1  na liniji 119
+INFO  11:36:38,532 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 122
+INFO  11:36:38,532 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 122
+INFO  11:36:38,538 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 122
+INFO  11:36:38,539 - Prisput simbolu:  Var i: int 1 1  na liniji 122
+INFO  11:36:38,540 - Prisput njegovom polju:  Meth zapremina: int 0 0  na liniji 122
+INFO  11:36:38,540 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 123
+INFO  11:36:38,541 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 123
+INFO  11:36:38,541 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 123
+INFO  11:36:38,542 - Prisput simbolu:  Var i: int 1 1  na liniji 123
+INFO  11:36:38,542 - Prisput njegovom polju:  Meth Q: int 0 0  na liniji 123
+INFO  11:36:38,543 - Prisput simbolu:  Meth ispis: void 0 1  na liniji 124
+INFO  11:36:38,544 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 124
+INFO  11:36:38,545 - Prisput simbolu:  Var i: int 1 1  na liniji 124
+INFO  11:36:38,547 - Prisput simbolu:  Var i: int 1 1  na liniji 125
+INFO  11:36:38,549 - Prisput simbolu:  Var i: int 1 1  na liniji 126
+INFO  11:36:38,549 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 128
+INFO  11:36:38,549 - Prisput simbolu:  Con eol: char 10 0  na liniji 128
+INFO  11:36:38,549 - Prisput simbolu:  Var zapreminaK: int 0 0  na liniji 129
+INFO  11:36:38,550 - Prisput simbolu:  Con eol: char 10 0  na liniji 129
+INFO  11:36:38,550 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 130
+INFO  11:36:38,550 - Prisput simbolu:  Con eol: char 10 0  na liniji 130
+INFO  11:36:38,550 - Prisput simbolu:  Var tezinaK: int 2 0  na liniji 131
+INFO  11:36:38,551 - Prisput simbolu:  Con eol: char 10 0  na liniji 131
+INFO  11:36:38,551 - Prisput simbolu:  Var i: int 1 1  na liniji 133
+INFO  11:36:38,551 - Prisput simbolu:  Var i: int 1 1  na liniji 135
+INFO  11:36:38,551 - Prisput simbolu:  Var i: int 1 1  na liniji 146
+INFO  11:36:38,552 - Prisput simbolu:  Var i: int 1 1  na liniji 146
+INFO  11:36:38,552 - Prisput simbolu:  Con eol: char 10 0  na liniji 153
+INFO  11:36:38,552 - Prisput simbolu:  Var i: int 1 1  na liniji 154
+INFO  11:36:38,552 - Prisput simbolu:  Var i: int 1 1  na liniji 155
+INFO  11:37:46,938 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\switch.mj
+INFO  11:37:50,487 - ===================================
+INFO  11:37:50,794 - Prisput simbolu:  Var a: int 0 0  na liniji 14
+INFO  11:37:50,796 - Prisput simbolu:  Var a: int 0 0  na liniji 15
+INFO  11:37:50,796 - Prisput simbolu:  Var a: int 0 0  na liniji 16
+INFO  11:37:50,798 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  11:37:50,799 - Prisput simbolu:  Var a: int 0 0  na liniji 18
+INFO  11:37:50,800 - Prisput simbolu:  Var a: int 0 0  na liniji 19
+INFO  11:37:50,801 - Prisput simbolu:  Var a: int 0 0  na liniji 20
+INFO  11:37:50,802 - Prisput simbolu:  Var a: int 0 0  na liniji 21
+INFO  11:37:50,803 - Prisput simbolu:  Var a: int 0 0  na liniji 22
+INFO  11:37:50,803 - Prisput simbolu:  Var a: int 0 0  na liniji 23
+INFO  11:39:32,810 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\switch.mj
+INFO  11:39:35,071 - Program(
+  ProgramName(
+   MJProgram
+  ) [ProgramName]
+  VarDeclarations(
+    NoVarDecl(
+    ) [NoVarDecl]
+    VariableDeclaration(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        FirstDeclaration(
+          SingleVarDecl(
+           a
+            NotArray(
+            ) [NotArray]
+          ) [SingleVarDecl]
+        ) [FirstDeclaration]
+      ) [VarDecl1]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         main
+        ) [MethodName]
+        NoParams(
+        ) [NoParams]
+      ) [MethodSign]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          Statements(
+                            Statements(
+                              NoStmt(
+                              ) [NoStmt]
+                              SwitchStatement(
+                                SwitchStart(
+                                  SimpleExpr(
+                                    JustNoMinusExpr(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         1
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [JustNoMinusExpr]
+                                  ) [SimpleExpr]
+                                ) [SwitchStart]
+                                CaseListDecl(
+                                  CaseListDecl(
+                                    CaseListDecl(
+                                      NoCaseList(
+                                      ) [NoCaseList]
+                                      CaseStatement(
+                                        CaseStart(
+                                         1
+                                        ) [CaseStart]
+                                        Statements(
+                                          NoStmt(
+                                          ) [NoStmt]
+                                          PrintFunctionCall(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  NumberDecl(
+                                                   1
+                                                  ) [NumberDecl]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                            NoSecondParam(
+                                            ) [NoSecondParam]
+                                          ) [PrintFunctionCall]
+                                        ) [Statements]
+                                      ) [CaseStatement]
+                                    ) [CaseListDecl]
+                                    CaseStatement(
+                                      CaseStart(
+                                       2
+                                      ) [CaseStart]
+                                      Statements(
+                                        NoStmt(
+                                        ) [NoStmt]
+                                        PrintFunctionCall(
+                                          SimpleExpr(
+                                            JustNoMinusExpr(
+                                              SingleTermDecl(
+                                                NumberDecl(
+                                                 2
+                                                ) [NumberDecl]
+                                              ) [SingleTermDecl]
+                                            ) [JustNoMinusExpr]
+                                          ) [SimpleExpr]
+                                          NoSecondParam(
+                                          ) [NoSecondParam]
+                                        ) [PrintFunctionCall]
+                                      ) [Statements]
+                                    ) [CaseStatement]
+                                  ) [CaseListDecl]
+                                  CaseStatement(
+                                    CaseStart(
+                                     3
+                                    ) [CaseStart]
+                                    Statements(
+                                      NoStmt(
+                                      ) [NoStmt]
+                                      PrintFunctionCall(
+                                        SimpleExpr(
+                                          JustNoMinusExpr(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               3
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [JustNoMinusExpr]
+                                        ) [SimpleExpr]
+                                        NoSecondParam(
+                                        ) [NoSecondParam]
+                                      ) [PrintFunctionCall]
+                                    ) [Statements]
+                                  ) [CaseStatement]
+                                ) [CaseListDecl]
+                              ) [SwitchStatement]
+                            ) [Statements]
+                            DesStatement(
+                              AssignStatementSt(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   a
+                                  ) [DesignatorName]
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                                AssignStm(
+                                  Assignop(
+                                  ) [Assignop]
+                                  SimpleExpr(
+                                    MinusExpr(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         2
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                      Addition(
+                                      ) [Addition]
+                                      Terms(
+                                        FirstTerm(
+                                          CompositeTerm(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               2
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                            Multiplication(
+                                            ) [Multiplication]
+                                            NumberDecl(
+                                             5
+                                            ) [NumberDecl]
+                                          ) [CompositeTerm]
+                                        ) [FirstTerm]
+                                        Addition(
+                                        ) [Addition]
+                                        CompositeTerm(
+                                          SingleTermDecl(
+                                            NumberDecl(
+                                             5
+                                            ) [NumberDecl]
+                                          ) [SingleTermDecl]
+                                          Remaining(
+                                          ) [Remaining]
+                                          NumberDecl(
+                                           2
+                                          ) [NumberDecl]
+                                        ) [CompositeTerm]
+                                      ) [Terms]
+                                    ) [MinusExpr]
+                                  ) [SimpleExpr]
+                                ) [AssignStm]
+                              ) [AssignStatementSt]
+                            ) [DesStatement]
+                          ) [Statements]
+                          PrintFunctionCall(
+                            SimpleExpr(
+                              JustNoMinusExpr(
+                                SingleTermDecl(
+                                  SimpleDesignator(
+                                    DesignatorDecl(
+                                      DesignatorName(
+                                       a
+                                      ) [DesignatorName]
+                                      NoAdditional(
+                                      ) [NoAdditional]
+                                    ) [DesignatorDecl]
+                                  ) [SimpleDesignator]
+                                ) [SingleTermDecl]
+                              ) [JustNoMinusExpr]
+                            ) [SimpleExpr]
+                            NoSecondParam(
+                            ) [NoSecondParam]
+                          ) [PrintFunctionCall]
+                        ) [Statements]
+                        DesStatement(
+                          AssignStatementSt(
+                            DesignatorDecl(
+                              DesignatorName(
+                               a
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                            AssignStm(
+                              Assignop(
+                              ) [Assignop]
+                              SimpleExpr(
+                                NOMinusExpr(
+                                  SingleTermDecl(
+                                    NumberDecl(
+                                     2
+                                    ) [NumberDecl]
+                                  ) [SingleTermDecl]
+                                  Addition(
+                                  ) [Addition]
+                                  Terms(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         5
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                    Addition(
+                                    ) [Addition]
+                                    CompositeTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         4
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                      Multiplication(
+                                      ) [Multiplication]
+                                      NumberDecl(
+                                       5
+                                      ) [NumberDecl]
+                                    ) [CompositeTerm]
+                                  ) [Terms]
+                                ) [NOMinusExpr]
+                              ) [SimpleExpr]
+                            ) [AssignStm]
+                          ) [AssignStatementSt]
+                        ) [DesStatement]
+                      ) [Statements]
+                      PrintFunctionCall(
+                        SimpleExpr(
+                          JustNoMinusExpr(
+                            SingleTermDecl(
+                              SimpleDesignator(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   a
+                                  ) [DesignatorName]
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                              ) [SimpleDesignator]
+                            ) [SingleTermDecl]
+                          ) [JustNoMinusExpr]
+                        ) [SimpleExpr]
+                        NoSecondParam(
+                        ) [NoSecondParam]
+                      ) [PrintFunctionCall]
+                    ) [Statements]
+                    DesStatement(
+                      AssignStatementSt(
+                        DesignatorDecl(
+                          DesignatorName(
+                           a
+                          ) [DesignatorName]
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                        AssignStm(
+                          Assignop(
+                          ) [Assignop]
+                          SimpleExpr(
+                            MinusExpr(
+                              CompositeTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   2
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                                Multiplication(
+                                ) [Multiplication]
+                                NumberDecl(
+                                 3
+                                ) [NumberDecl]
+                              ) [CompositeTerm]
+                              Addition(
+                              ) [Addition]
+                              FirstTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   5
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [MinusExpr]
+                          ) [SimpleExpr]
+                        ) [AssignStm]
+                      ) [AssignStatementSt]
+                    ) [DesStatement]
+                  ) [Statements]
+                  PrintFunctionCall(
+                    SimpleExpr(
+                      JustNoMinusExpr(
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                              DesignatorName(
+                               a
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [JustNoMinusExpr]
+                    ) [SimpleExpr]
+                    NoSecondParam(
+                    ) [NoSecondParam]
+                  ) [PrintFunctionCall]
+                ) [Statements]
+                DesStatement(
+                  AssignStatementSt(
+                    DesignatorDecl(
+                      DesignatorName(
+                       a
+                      ) [DesignatorName]
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                    AssignStm(
+                      Assignop(
+                      ) [Assignop]
+                      SimpleExpr(
+                        JustMinusExpr(
+                          SingleTermDecl(
+                            NumberDecl(
+                             50
+                            ) [NumberDecl]
+                          ) [SingleTermDecl]
+                        ) [JustMinusExpr]
+                      ) [SimpleExpr]
+                    ) [AssignStm]
+                  ) [AssignStatementSt]
+                ) [DesStatement]
+              ) [Statements]
+              PrintFunctionCall(
+                SimpleExpr(
+                  JustNoMinusExpr(
+                    SingleTermDecl(
+                      SimpleDesignator(
+                        DesignatorDecl(
+                          DesignatorName(
+                           a
+                          ) [DesignatorName]
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                      ) [SimpleDesignator]
+                    ) [SingleTermDecl]
+                  ) [JustNoMinusExpr]
+                ) [SimpleExpr]
+                NoSecondParam(
+                ) [NoSecondParam]
+              ) [PrintFunctionCall]
+            ) [Statements]
+            DesStatement(
+              AssignStatementSt(
+                DesignatorDecl(
+                  DesignatorName(
+                   a
+                  ) [DesignatorName]
+                  NoAdditional(
+                  ) [NoAdditional]
+                ) [DesignatorDecl]
+                AssignStm(
+                  Assignop(
+                  ) [Assignop]
+                  SimpleExpr(
+                    JustNoMinusExpr(
+                      SingleTermDecl(
+                        NumberDecl(
+                         50
+                        ) [NumberDecl]
+                      ) [SingleTermDecl]
+                    ) [JustNoMinusExpr]
+                  ) [SimpleExpr]
+                ) [AssignStm]
+              ) [AssignStatementSt]
+            ) [DesStatement]
+          ) [Statements]
+          PrintFunctionCall(
+            SimpleExpr(
+              JustNoMinusExpr(
+                SingleTermDecl(
+                  SimpleDesignator(
+                    DesignatorDecl(
+                      DesignatorName(
+                       a
+                      ) [DesignatorName]
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                  ) [SimpleDesignator]
+                ) [SingleTermDecl]
+              ) [JustNoMinusExpr]
+            ) [SimpleExpr]
+            NoSecondParam(
+            ) [NoSecondParam]
+          ) [PrintFunctionCall]
+        ) [Statements]
+        ReturnStatement(
+          ExprAfterReturn(
+            SimpleExpr(
+              JustNoMinusExpr(
+                SingleTermDecl(
+                  NumberDecl(
+                   2
+                  ) [NumberDecl]
+                ) [SingleTermDecl]
+              ) [JustNoMinusExpr]
+            ) [SimpleExpr]
+          ) [ExprAfterReturn]
+        ) [ReturnStatement]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  11:39:35,089 - ===================================
+INFO  11:39:35,435 - Prisput simbolu:  Var a: int 0 0  na liniji 14
+INFO  11:39:35,436 - Prisput simbolu:  Var a: int 0 0  na liniji 15
+INFO  11:39:35,437 - Prisput simbolu:  Var a: int 0 0  na liniji 16
+INFO  11:39:35,437 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  11:39:35,438 - Prisput simbolu:  Var a: int 0 0  na liniji 18
+INFO  11:39:35,438 - Prisput simbolu:  Var a: int 0 0  na liniji 19
+INFO  11:39:35,438 - Prisput simbolu:  Var a: int 0 0  na liniji 20
+INFO  11:39:35,439 - Prisput simbolu:  Var a: int 0 0  na liniji 21
+INFO  11:39:35,439 - Prisput simbolu:  Var a: int 0 0  na liniji 22
+INFO  11:39:35,439 - Prisput simbolu:  Var a: int 0 0  na liniji 23
+INFO  11:53:00,466 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\switch.mj
+INFO  11:53:01,329 - Program(
+  ProgramName(
+   MJProgram
+  ) [ProgramName]
+  VarDeclarations(
+    NoVarDecl(
+    ) [NoVarDecl]
+    VariableDeclaration(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        FirstDeclaration(
+          SingleVarDecl(
+           a
+            NotArray(
+            ) [NotArray]
+          ) [SingleVarDecl]
+        ) [FirstDeclaration]
+      ) [VarDecl1]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         main
+        ) [MethodName]
+        NoParams(
+        ) [NoParams]
+      ) [MethodSign]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          Statements(
+                            Statements(
+                              NoStmt(
+                              ) [NoStmt]
+                              SwitchStatement(
+                                SwitchStart(
+                                  SimpleExpr(
+                                    JustNoMinusExpr(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         1
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [JustNoMinusExpr]
+                                  ) [SimpleExpr]
+                                ) [SwitchStart]
+                                CaseListDecl(
+                                  CaseListDecl(
+                                    CaseListDecl(
+                                      NoCaseList(
+                                      ) [NoCaseList]
+                                      CaseStatement(
+                                        CaseStart(
+                                         1
+                                        ) [CaseStart]
+                                        Statements(
+                                          NoStmt(
+                                          ) [NoStmt]
+                                          PrintFunctionCall(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  NumberDecl(
+                                                   1
+                                                  ) [NumberDecl]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                            NoSecondParam(
+                                            ) [NoSecondParam]
+                                          ) [PrintFunctionCall]
+                                        ) [Statements]
+                                      ) [CaseStatement]
+                                    ) [CaseListDecl]
+                                    CaseStatement(
+                                      CaseStart(
+                                       2
+                                      ) [CaseStart]
+                                      Statements(
+                                        NoStmt(
+                                        ) [NoStmt]
+                                        PrintFunctionCall(
+                                          SimpleExpr(
+                                            JustNoMinusExpr(
+                                              SingleTermDecl(
+                                                NumberDecl(
+                                                 2
+                                                ) [NumberDecl]
+                                              ) [SingleTermDecl]
+                                            ) [JustNoMinusExpr]
+                                          ) [SimpleExpr]
+                                          NoSecondParam(
+                                          ) [NoSecondParam]
+                                        ) [PrintFunctionCall]
+                                      ) [Statements]
+                                    ) [CaseStatement]
+                                  ) [CaseListDecl]
+                                  CaseStatement(
+                                    CaseStart(
+                                     3
+                                    ) [CaseStart]
+                                    Statements(
+                                      NoStmt(
+                                      ) [NoStmt]
+                                      PrintFunctionCall(
+                                        SimpleExpr(
+                                          JustNoMinusExpr(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               3
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [JustNoMinusExpr]
+                                        ) [SimpleExpr]
+                                        NoSecondParam(
+                                        ) [NoSecondParam]
+                                      ) [PrintFunctionCall]
+                                    ) [Statements]
+                                  ) [CaseStatement]
+                                ) [CaseListDecl]
+                              ) [SwitchStatement]
+                            ) [Statements]
+                            DesStatement(
+                              AssignStatementSt(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   a
+                                  ) [DesignatorName]
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                                AssignStm(
+                                  Assignop(
+                                  ) [Assignop]
+                                  SimpleExpr(
+                                    MinusExpr(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         2
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                      Addition(
+                                      ) [Addition]
+                                      Terms(
+                                        FirstTerm(
+                                          CompositeTerm(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               2
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                            Multiplication(
+                                            ) [Multiplication]
+                                            NumberDecl(
+                                             5
+                                            ) [NumberDecl]
+                                          ) [CompositeTerm]
+                                        ) [FirstTerm]
+                                        Addition(
+                                        ) [Addition]
+                                        CompositeTerm(
+                                          SingleTermDecl(
+                                            NumberDecl(
+                                             5
+                                            ) [NumberDecl]
+                                          ) [SingleTermDecl]
+                                          Remaining(
+                                          ) [Remaining]
+                                          NumberDecl(
+                                           2
+                                          ) [NumberDecl]
+                                        ) [CompositeTerm]
+                                      ) [Terms]
+                                    ) [MinusExpr]
+                                  ) [SimpleExpr]
+                                ) [AssignStm]
+                              ) [AssignStatementSt]
+                            ) [DesStatement]
+                          ) [Statements]
+                          PrintFunctionCall(
+                            SimpleExpr(
+                              JustNoMinusExpr(
+                                SingleTermDecl(
+                                  SimpleDesignator(
+                                    DesignatorDecl(
+                                      DesignatorName(
+                                       a
+                                      ) [DesignatorName]
+                                      NoAdditional(
+                                      ) [NoAdditional]
+                                    ) [DesignatorDecl]
+                                  ) [SimpleDesignator]
+                                ) [SingleTermDecl]
+                              ) [JustNoMinusExpr]
+                            ) [SimpleExpr]
+                            NoSecondParam(
+                            ) [NoSecondParam]
+                          ) [PrintFunctionCall]
+                        ) [Statements]
+                        DesStatement(
+                          AssignStatementSt(
+                            DesignatorDecl(
+                              DesignatorName(
+                               a
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                            AssignStm(
+                              Assignop(
+                              ) [Assignop]
+                              SimpleExpr(
+                                NOMinusExpr(
+                                  SingleTermDecl(
+                                    NumberDecl(
+                                     2
+                                    ) [NumberDecl]
+                                  ) [SingleTermDecl]
+                                  Addition(
+                                  ) [Addition]
+                                  Terms(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         5
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                    Addition(
+                                    ) [Addition]
+                                    CompositeTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         4
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                      Multiplication(
+                                      ) [Multiplication]
+                                      NumberDecl(
+                                       5
+                                      ) [NumberDecl]
+                                    ) [CompositeTerm]
+                                  ) [Terms]
+                                ) [NOMinusExpr]
+                              ) [SimpleExpr]
+                            ) [AssignStm]
+                          ) [AssignStatementSt]
+                        ) [DesStatement]
+                      ) [Statements]
+                      PrintFunctionCall(
+                        SimpleExpr(
+                          JustNoMinusExpr(
+                            SingleTermDecl(
+                              SimpleDesignator(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   a
+                                  ) [DesignatorName]
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                              ) [SimpleDesignator]
+                            ) [SingleTermDecl]
+                          ) [JustNoMinusExpr]
+                        ) [SimpleExpr]
+                        NoSecondParam(
+                        ) [NoSecondParam]
+                      ) [PrintFunctionCall]
+                    ) [Statements]
+                    DesStatement(
+                      AssignStatementSt(
+                        DesignatorDecl(
+                          DesignatorName(
+                           a
+                          ) [DesignatorName]
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                        AssignStm(
+                          Assignop(
+                          ) [Assignop]
+                          SimpleExpr(
+                            MinusExpr(
+                              CompositeTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   2
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                                Multiplication(
+                                ) [Multiplication]
+                                NumberDecl(
+                                 3
+                                ) [NumberDecl]
+                              ) [CompositeTerm]
+                              Addition(
+                              ) [Addition]
+                              FirstTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   5
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [MinusExpr]
+                          ) [SimpleExpr]
+                        ) [AssignStm]
+                      ) [AssignStatementSt]
+                    ) [DesStatement]
+                  ) [Statements]
+                  PrintFunctionCall(
+                    SimpleExpr(
+                      JustNoMinusExpr(
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                              DesignatorName(
+                               a
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [JustNoMinusExpr]
+                    ) [SimpleExpr]
+                    NoSecondParam(
+                    ) [NoSecondParam]
+                  ) [PrintFunctionCall]
+                ) [Statements]
+                DesStatement(
+                  AssignStatementSt(
+                    DesignatorDecl(
+                      DesignatorName(
+                       a
+                      ) [DesignatorName]
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                    AssignStm(
+                      Assignop(
+                      ) [Assignop]
+                      SimpleExpr(
+                        JustMinusExpr(
+                          SingleTermDecl(
+                            NumberDecl(
+                             50
+                            ) [NumberDecl]
+                          ) [SingleTermDecl]
+                        ) [JustMinusExpr]
+                      ) [SimpleExpr]
+                    ) [AssignStm]
+                  ) [AssignStatementSt]
+                ) [DesStatement]
+              ) [Statements]
+              PrintFunctionCall(
+                SimpleExpr(
+                  JustNoMinusExpr(
+                    SingleTermDecl(
+                      SimpleDesignator(
+                        DesignatorDecl(
+                          DesignatorName(
+                           a
+                          ) [DesignatorName]
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                      ) [SimpleDesignator]
+                    ) [SingleTermDecl]
+                  ) [JustNoMinusExpr]
+                ) [SimpleExpr]
+                NoSecondParam(
+                ) [NoSecondParam]
+              ) [PrintFunctionCall]
+            ) [Statements]
+            DesStatement(
+              AssignStatementSt(
+                DesignatorDecl(
+                  DesignatorName(
+                   a
+                  ) [DesignatorName]
+                  NoAdditional(
+                  ) [NoAdditional]
+                ) [DesignatorDecl]
+                AssignStm(
+                  Assignop(
+                  ) [Assignop]
+                  SimpleExpr(
+                    JustNoMinusExpr(
+                      SingleTermDecl(
+                        NumberDecl(
+                         50
+                        ) [NumberDecl]
+                      ) [SingleTermDecl]
+                    ) [JustNoMinusExpr]
+                  ) [SimpleExpr]
+                ) [AssignStm]
+              ) [AssignStatementSt]
+            ) [DesStatement]
+          ) [Statements]
+          PrintFunctionCall(
+            SimpleExpr(
+              JustNoMinusExpr(
+                SingleTermDecl(
+                  SimpleDesignator(
+                    DesignatorDecl(
+                      DesignatorName(
+                       a
+                      ) [DesignatorName]
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                  ) [SimpleDesignator]
+                ) [SingleTermDecl]
+              ) [JustNoMinusExpr]
+            ) [SimpleExpr]
+            NoSecondParam(
+            ) [NoSecondParam]
+          ) [PrintFunctionCall]
+        ) [Statements]
+        ReturnStatement(
+          ExprAfterReturn(
+            SimpleExpr(
+              JustNoMinusExpr(
+                SingleTermDecl(
+                  NumberDecl(
+                   2
+                  ) [NumberDecl]
+                ) [SingleTermDecl]
+              ) [JustNoMinusExpr]
+            ) [SimpleExpr]
+          ) [ExprAfterReturn]
+        ) [ReturnStatement]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  11:53:01,336 - ===================================
+INFO  11:53:01,435 - Prisput simbolu:  Var a: int 0 0  na liniji 14
+INFO  11:53:01,436 - Prisput simbolu:  Var a: int 0 0  na liniji 15
+INFO  11:53:01,436 - Prisput simbolu:  Var a: int 0 0  na liniji 16
+INFO  11:53:01,438 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  11:53:01,438 - Prisput simbolu:  Var a: int 0 0  na liniji 18
+INFO  11:53:01,439 - Prisput simbolu:  Var a: int 0 0  na liniji 19
+INFO  11:53:01,439 - Prisput simbolu:  Var a: int 0 0  na liniji 20
+INFO  11:53:01,440 - Prisput simbolu:  Var a: int 0 0  na liniji 21
+INFO  11:53:01,440 - Prisput simbolu:  Var a: int 0 0  na liniji 22
+INFO  11:53:01,440 - Prisput simbolu:  Var a: int 0 0  na liniji 23
+INFO  11:55:39,157 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\switch.mj
+INFO  11:55:39,519 - Program(
+  ProgramName(
+   MJProgram
+  ) [ProgramName]
+  VarDeclarations(
+    NoVarDecl(
+    ) [NoVarDecl]
+    VariableDeclaration(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        FirstDeclaration(
+          SingleVarDecl(
+           a
+            NotArray(
+            ) [NotArray]
+          ) [SingleVarDecl]
+        ) [FirstDeclaration]
+      ) [VarDecl1]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         main
+        ) [MethodName]
+        NoParams(
+        ) [NoParams]
+      ) [MethodSign]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          Statements(
+                            Statements(
+                              NoStmt(
+                              ) [NoStmt]
+                              SwitchStatement(
+                                SwitchStart(
+                                  SimpleExpr(
+                                    JustNoMinusExpr(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         1
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [JustNoMinusExpr]
+                                  ) [SimpleExpr]
+                                ) [SwitchStart]
+                                CaseListDecl(
+                                  CaseListDecl(
+                                    CaseListDecl(
+                                      NoCaseList(
+                                      ) [NoCaseList]
+                                      CaseStatement(
+                                        CaseStart(
+                                         1
+                                        ) [CaseStart]
+                                        Statements(
+                                          NoStmt(
+                                          ) [NoStmt]
+                                          PrintFunctionCall(
+                                            SimpleExpr(
+                                              JustNoMinusExpr(
+                                                SingleTermDecl(
+                                                  NumberDecl(
+                                                   1
+                                                  ) [NumberDecl]
+                                                ) [SingleTermDecl]
+                                              ) [JustNoMinusExpr]
+                                            ) [SimpleExpr]
+                                            NoSecondParam(
+                                            ) [NoSecondParam]
+                                          ) [PrintFunctionCall]
+                                        ) [Statements]
+                                      ) [CaseStatement]
+                                    ) [CaseListDecl]
+                                    CaseStatement(
+                                      CaseStart(
+                                       2
+                                      ) [CaseStart]
+                                      Statements(
+                                        NoStmt(
+                                        ) [NoStmt]
+                                        PrintFunctionCall(
+                                          SimpleExpr(
+                                            JustNoMinusExpr(
+                                              SingleTermDecl(
+                                                NumberDecl(
+                                                 2
+                                                ) [NumberDecl]
+                                              ) [SingleTermDecl]
+                                            ) [JustNoMinusExpr]
+                                          ) [SimpleExpr]
+                                          NoSecondParam(
+                                          ) [NoSecondParam]
+                                        ) [PrintFunctionCall]
+                                      ) [Statements]
+                                    ) [CaseStatement]
+                                  ) [CaseListDecl]
+                                  CaseStatement(
+                                    CaseStart(
+                                     3
+                                    ) [CaseStart]
+                                    Statements(
+                                      NoStmt(
+                                      ) [NoStmt]
+                                      PrintFunctionCall(
+                                        SimpleExpr(
+                                          JustNoMinusExpr(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               3
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [JustNoMinusExpr]
+                                        ) [SimpleExpr]
+                                        NoSecondParam(
+                                        ) [NoSecondParam]
+                                      ) [PrintFunctionCall]
+                                    ) [Statements]
+                                  ) [CaseStatement]
+                                ) [CaseListDecl]
+                              ) [SwitchStatement]
+                            ) [Statements]
+                            DesStatement(
+                              AssignStatementSt(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   a
+                                  ) [DesignatorName]
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                                AssignStm(
+                                  Assignop(
+                                  ) [Assignop]
+                                  SimpleExpr(
+                                    MinusExpr(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         2
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                      Addition(
+                                      ) [Addition]
+                                      Terms(
+                                        FirstTerm(
+                                          CompositeTerm(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               2
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                            Multiplication(
+                                            ) [Multiplication]
+                                            NumberDecl(
+                                             5
+                                            ) [NumberDecl]
+                                          ) [CompositeTerm]
+                                        ) [FirstTerm]
+                                        Addition(
+                                        ) [Addition]
+                                        CompositeTerm(
+                                          SingleTermDecl(
+                                            NumberDecl(
+                                             5
+                                            ) [NumberDecl]
+                                          ) [SingleTermDecl]
+                                          Remaining(
+                                          ) [Remaining]
+                                          NumberDecl(
+                                           2
+                                          ) [NumberDecl]
+                                        ) [CompositeTerm]
+                                      ) [Terms]
+                                    ) [MinusExpr]
+                                  ) [SimpleExpr]
+                                ) [AssignStm]
+                              ) [AssignStatementSt]
+                            ) [DesStatement]
+                          ) [Statements]
+                          PrintFunctionCall(
+                            SimpleExpr(
+                              JustNoMinusExpr(
+                                SingleTermDecl(
+                                  SimpleDesignator(
+                                    DesignatorDecl(
+                                      DesignatorName(
+                                       a
+                                      ) [DesignatorName]
+                                      NoAdditional(
+                                      ) [NoAdditional]
+                                    ) [DesignatorDecl]
+                                  ) [SimpleDesignator]
+                                ) [SingleTermDecl]
+                              ) [JustNoMinusExpr]
+                            ) [SimpleExpr]
+                            NoSecondParam(
+                            ) [NoSecondParam]
+                          ) [PrintFunctionCall]
+                        ) [Statements]
+                        DesStatement(
+                          AssignStatementSt(
+                            DesignatorDecl(
+                              DesignatorName(
+                               a
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                            AssignStm(
+                              Assignop(
+                              ) [Assignop]
+                              SimpleExpr(
+                                NOMinusExpr(
+                                  SingleTermDecl(
+                                    NumberDecl(
+                                     2
+                                    ) [NumberDecl]
+                                  ) [SingleTermDecl]
+                                  Addition(
+                                  ) [Addition]
+                                  Terms(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         5
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                    Addition(
+                                    ) [Addition]
+                                    CompositeTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         4
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                      Multiplication(
+                                      ) [Multiplication]
+                                      NumberDecl(
+                                       5
+                                      ) [NumberDecl]
+                                    ) [CompositeTerm]
+                                  ) [Terms]
+                                ) [NOMinusExpr]
+                              ) [SimpleExpr]
+                            ) [AssignStm]
+                          ) [AssignStatementSt]
+                        ) [DesStatement]
+                      ) [Statements]
+                      PrintFunctionCall(
+                        SimpleExpr(
+                          JustNoMinusExpr(
+                            SingleTermDecl(
+                              SimpleDesignator(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   a
+                                  ) [DesignatorName]
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                              ) [SimpleDesignator]
+                            ) [SingleTermDecl]
+                          ) [JustNoMinusExpr]
+                        ) [SimpleExpr]
+                        NoSecondParam(
+                        ) [NoSecondParam]
+                      ) [PrintFunctionCall]
+                    ) [Statements]
+                    DesStatement(
+                      AssignStatementSt(
+                        DesignatorDecl(
+                          DesignatorName(
+                           a
+                          ) [DesignatorName]
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                        AssignStm(
+                          Assignop(
+                          ) [Assignop]
+                          SimpleExpr(
+                            MinusExpr(
+                              CompositeTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   2
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                                Multiplication(
+                                ) [Multiplication]
+                                NumberDecl(
+                                 3
+                                ) [NumberDecl]
+                              ) [CompositeTerm]
+                              Addition(
+                              ) [Addition]
+                              FirstTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   5
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [MinusExpr]
+                          ) [SimpleExpr]
+                        ) [AssignStm]
+                      ) [AssignStatementSt]
+                    ) [DesStatement]
+                  ) [Statements]
+                  PrintFunctionCall(
+                    SimpleExpr(
+                      JustNoMinusExpr(
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                              DesignatorName(
+                               a
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [JustNoMinusExpr]
+                    ) [SimpleExpr]
+                    NoSecondParam(
+                    ) [NoSecondParam]
+                  ) [PrintFunctionCall]
+                ) [Statements]
+                DesStatement(
+                  AssignStatementSt(
+                    DesignatorDecl(
+                      DesignatorName(
+                       a
+                      ) [DesignatorName]
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                    AssignStm(
+                      Assignop(
+                      ) [Assignop]
+                      SimpleExpr(
+                        JustMinusExpr(
+                          SingleTermDecl(
+                            NumberDecl(
+                             50
+                            ) [NumberDecl]
+                          ) [SingleTermDecl]
+                        ) [JustMinusExpr]
+                      ) [SimpleExpr]
+                    ) [AssignStm]
+                  ) [AssignStatementSt]
+                ) [DesStatement]
+              ) [Statements]
+              PrintFunctionCall(
+                SimpleExpr(
+                  JustNoMinusExpr(
+                    SingleTermDecl(
+                      SimpleDesignator(
+                        DesignatorDecl(
+                          DesignatorName(
+                           a
+                          ) [DesignatorName]
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                      ) [SimpleDesignator]
+                    ) [SingleTermDecl]
+                  ) [JustNoMinusExpr]
+                ) [SimpleExpr]
+                NoSecondParam(
+                ) [NoSecondParam]
+              ) [PrintFunctionCall]
+            ) [Statements]
+            DesStatement(
+              AssignStatementSt(
+                DesignatorDecl(
+                  DesignatorName(
+                   a
+                  ) [DesignatorName]
+                  NoAdditional(
+                  ) [NoAdditional]
+                ) [DesignatorDecl]
+                AssignStm(
+                  Assignop(
+                  ) [Assignop]
+                  SimpleExpr(
+                    JustNoMinusExpr(
+                      SingleTermDecl(
+                        NumberDecl(
+                         50
+                        ) [NumberDecl]
+                      ) [SingleTermDecl]
+                    ) [JustNoMinusExpr]
+                  ) [SimpleExpr]
+                ) [AssignStm]
+              ) [AssignStatementSt]
+            ) [DesStatement]
+          ) [Statements]
+          PrintFunctionCall(
+            SimpleExpr(
+              JustNoMinusExpr(
+                SingleTermDecl(
+                  SimpleDesignator(
+                    DesignatorDecl(
+                      DesignatorName(
+                       a
+                      ) [DesignatorName]
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                  ) [SimpleDesignator]
+                ) [SingleTermDecl]
+              ) [JustNoMinusExpr]
+            ) [SimpleExpr]
+            NoSecondParam(
+            ) [NoSecondParam]
+          ) [PrintFunctionCall]
+        ) [Statements]
+        ReturnStatement(
+          ExprAfterReturn(
+            SimpleExpr(
+              JustNoMinusExpr(
+                SingleTermDecl(
+                  NumberDecl(
+                   2
+                  ) [NumberDecl]
+                ) [SingleTermDecl]
+              ) [JustNoMinusExpr]
+            ) [SimpleExpr]
+          ) [ExprAfterReturn]
+        ) [ReturnStatement]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  11:55:39,889 - ===================================
+INFO  11:55:39,924 - Prisput simbolu:  Var a: int 0 0  na liniji 14
+INFO  11:55:39,924 - Prisput simbolu:  Var a: int 0 0  na liniji 15
+INFO  11:55:39,924 - Prisput simbolu:  Var a: int 0 0  na liniji 16
+INFO  11:55:39,925 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  11:55:39,925 - Prisput simbolu:  Var a: int 0 0  na liniji 18
+INFO  11:55:39,925 - Prisput simbolu:  Var a: int 0 0  na liniji 19
+INFO  11:55:39,925 - Prisput simbolu:  Var a: int 0 0  na liniji 20
+INFO  11:55:39,926 - Prisput simbolu:  Var a: int 0 0  na liniji 21
+INFO  11:55:39,926 - Prisput simbolu:  Var a: int 0 0  na liniji 22
+INFO  11:55:39,926 - Prisput simbolu:  Var a: int 0 0  na liniji 23

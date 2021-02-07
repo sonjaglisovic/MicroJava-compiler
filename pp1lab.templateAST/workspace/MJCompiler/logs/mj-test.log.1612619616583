@@ -1,0 +1,4 @@
+INFO  14:52:12,863 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\c_level_test.mj
+ERROR 14:52:13,148 - 
+Sintaksna greska na liniji 109
+ERROR 14:52:13,152 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 121

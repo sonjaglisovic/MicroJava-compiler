@@ -1,0 +1,147 @@
+INFO  16:45:50,611 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\c_level_test.mj
+INFO  16:45:50,864 - ===================================
+INFO  16:45:50,900 - Prisput simbolu:  Var b: int 0 1  na liniji 10
+INFO  16:45:50,901 - Prisput simbolu:  Var b: int 0 1  na liniji 10
+INFO  16:45:50,902 - Prisput simbolu:  Field field2: int 1 1  na liniji 13
+INFO  16:45:50,902 - Prisput simbolu:  Meth method: int 0 0  na liniji 16
+INFO  16:45:50,903 - Prisput simbolu:  Var c: int 0 1  na liniji 22
+INFO  16:45:50,903 - Prisput simbolu:  Var c: int 0 1  na liniji 22
+INFO  16:45:50,904 - Prisput simbolu:  Var c: int 0 1  na liniji 22
+INFO  16:45:50,904 - Prisput simbolu:  Var c: int 0 1  na liniji 23
+INFO  16:45:50,910 - Prisput simbolu:  Var this: B 0 1  na liniji 38
+INFO  16:45:50,911 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 38
+INFO  16:45:50,911 - Prisput simbolu:  Field field2: int 1 1  na liniji 39
+INFO  16:45:50,912 - Prisput simbolu:  Meth just_one: int 0 1  na liniji 42
+INFO  16:45:50,913 - Prisput simbolu:  Field objectArr: Array of A 0 1  na liniji 46
+INFO  16:45:50,913 - Prisput simbolu:  Var i: int 1 1  na liniji 47
+INFO  16:45:50,914 - Prisput simbolu:  Field objectArr: Array of A 0 1  na liniji 49
+INFO  16:45:50,914 - Prisput simbolu:  Var i: int 1 1  na liniji 49
+INFO  16:45:50,915 - Prisput simbolu:  Field objectArr: Array of A 0 1  na liniji 50
+INFO  16:45:50,915 - Prisput simbolu:  Var i: int 1 1  na liniji 50
+INFO  16:45:50,915 - Prisput njegovom polju:  Meth method1: int 0 0  na liniji 50
+INFO  16:45:50,917 - Prisput simbolu:  Field objectArr: Array of A 0 1  na liniji 51
+INFO  16:45:50,917 - Prisput simbolu:  Var i: int 1 1  na liniji 51
+INFO  16:45:50,918 - Prisput njegovom polju:  Meth meth: int 0 0  na liniji 51
+INFO  16:45:50,919 - Prisput simbolu:  Var this: B 0 1  na liniji 52
+INFO  16:45:50,920 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 52
+INFO  16:45:50,920 - Prisput simbolu:  Var i: int 1 1  na liniji 53
+INFO  16:45:50,920 - Prisput simbolu:  Var i: int 1 1  na liniji 54
+INFO  16:45:50,922 - Prisput simbolu:  Var a_object: A 1 0  na liniji 73
+INFO  16:45:50,924 - Prisput simbolu:  Var bObjectArr: Array of B 3 0  na liniji 74
+INFO  16:45:50,924 - Prisput simbolu:  Var bObjectArr: Array of B 3 0  na liniji 75
+INFO  16:45:50,926 - Prisput simbolu:  Var bObjectArr: Array of B 3 0  na liniji 76
+INFO  16:45:50,927 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 76
+INFO  16:45:50,928 - Prisput simbolu:  Var bObjectArr: Array of B 3 0  na liniji 77
+INFO  16:45:50,928 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 77
+INFO  16:45:50,928 - Prisput simbolu:  Var a_object: A 1 0  na liniji 78
+INFO  16:45:50,929 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 78
+INFO  16:45:50,930 - Prisput simbolu:  Var b_object: B 2 0  na liniji 79
+INFO  16:45:50,932 - Prisput simbolu:  Var b_object: B 2 0  na liniji 80
+INFO  16:45:50,932 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 80
+INFO  16:45:50,933 - Prisput simbolu:  Var b_object: B 2 0  na liniji 81
+INFO  16:45:50,934 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 81
+INFO  16:45:50,934 - Prisput simbolu:  Var b_object: B 2 0  na liniji 82
+INFO  16:45:50,935 - Prisput njegovom polju:  Field field4: int 2 1  na liniji 82
+INFO  16:45:50,939 - Prisput simbolu:  Var b_object: B 2 0  na liniji 83
+INFO  16:45:50,939 - Prisput njegovom polju:  Field field4: int 2 1  na liniji 83
+INFO  16:45:50,940 - Prisput simbolu:  Var a_object: A 1 0  na liniji 86
+INFO  16:45:50,941 - Prisput simbolu:  Var a_object: A 1 0  na liniji 87
+INFO  16:45:50,944 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 87
+INFO  16:45:50,945 - Prisput simbolu:  Var a_object: A 1 0  na liniji 88
+INFO  16:45:50,946 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 88
+INFO  16:45:50,948 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 90
+INFO  16:45:50,949 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 91
+INFO  16:45:50,950 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 92
+INFO  16:45:50,951 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 92
+INFO  16:45:50,951 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 93
+INFO  16:45:50,952 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 93
+INFO  16:45:50,953 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 94
+INFO  16:45:50,953 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 94
+INFO  16:45:50,954 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 95
+INFO  16:45:50,955 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 95
+INFO  16:45:50,955 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 96
+INFO  16:45:50,957 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 96
+INFO  16:45:50,960 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 96
+INFO  16:45:50,964 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 97
+INFO  16:45:50,965 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 97
+INFO  16:45:50,965 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 97
+INFO  16:45:50,966 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 98
+INFO  16:45:50,967 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 98
+INFO  16:45:50,968 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 98
+INFO  16:45:50,969 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 98
+INFO  16:45:50,970 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 98
+INFO  16:45:50,970 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 99
+INFO  16:45:50,970 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 100
+INFO  16:45:50,971 - Prisput simbolu:  Var arr: Array of A 4 0  na liniji 101
+INFO  16:45:50,971 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 101
+INFO  16:45:50,971 - Prisput simbolu:  Var b: A 0 1  na liniji 105
+INFO  16:45:50,971 - Prisput simbolu:  Var b: A 0 1  na liniji 106
+INFO  16:45:50,972 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 106
+INFO  16:45:50,972 - Prisput simbolu:  Var b: A 0 1  na liniji 107
+INFO  16:45:50,972 - Prisput njegovom polju:  Meth method1: int 0 0  na liniji 107
+INFO  16:45:50,973 - Prisput simbolu:  Var x: bool 0 0  na liniji 108
+INFO  16:45:50,975 - Prisput simbolu:  Var b: A 0 1  na liniji 109
+INFO  16:45:50,976 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 109
+INFO  16:45:50,976 - Prisput simbolu:  Var b: A 0 1  na liniji 110
+INFO  16:45:50,977 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 110
+INFO  16:45:50,977 - Prisput simbolu:  Var x: bool 0 0  na liniji 111
+INFO  16:45:50,978 - Prisput simbolu:  Var b: A 0 1  na liniji 111
+INFO  16:45:50,978 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 111
+INFO  16:45:50,978 - Prisput simbolu:  Var b: A 0 1  na liniji 111
+INFO  16:45:50,979 - Prisput njegovom polju:  Field parent_field: int 0 1  na liniji 111
+INFO  16:45:50,979 - Prisput simbolu:  Var b: A 0 1  na liniji 111
+INFO  16:45:50,979 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 111
+INFO  16:45:50,980 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 111
+INFO  16:45:50,981 - Prisput simbolu:  Var b: A 0 1  na liniji 114
+INFO  16:45:50,981 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 114
+INFO  16:45:50,981 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 114
+INFO  16:45:50,982 - Prisput simbolu:  Var b: A 0 1  na liniji 115
+INFO  16:45:50,982 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 115
+INFO  16:45:50,983 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 115
+INFO  16:45:50,983 - Prisput simbolu:  Var b: A 0 1  na liniji 116
+INFO  16:45:50,990 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 116
+INFO  16:45:50,991 - Prisput simbolu:  Var b: A 0 1  na liniji 116
+INFO  16:45:50,991 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 116
+INFO  16:45:50,993 - Prisput njegovom polju:  Meth just_zero: int 0 1  na liniji 116
+INFO  16:45:50,995 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 116
+INFO  16:45:50,996 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 116
+INFO  16:45:51,000 - Prisput simbolu:  Var b: A 0 1  na liniji 117
+INFO  16:45:51,001 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 117
+INFO  16:45:51,002 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 117
+INFO  16:45:51,002 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 117
+INFO  16:45:51,003 - Prisput simbolu:  Var b: A 0 1  na liniji 119
+INFO  16:45:51,003 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 119
+INFO  16:45:51,006 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 119
+INFO  16:45:51,008 - Prisput njegovom polju:  Field object: A 3 1  na liniji 119
+INFO  16:45:51,009 - Prisput simbolu:  Var b: A 0 1  na liniji 120
+INFO  16:45:51,010 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 120
+INFO  16:45:51,011 - Prisput simbolu:  Var b: A 0 1  na liniji 120
+INFO  16:45:51,013 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 120
+INFO  16:45:51,014 - Prisput njegovom polju:  Meth just_zero: int 0 1  na liniji 120
+INFO  16:45:51,014 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 120
+INFO  16:45:51,015 - Prisput simbolu:  Var b: A 0 1  na liniji 120
+INFO  16:45:51,015 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 120
+INFO  16:45:51,015 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 120
+INFO  16:45:51,017 - Prisput njegovom polju:  Meth meth: int 0 0  na liniji 120
+INFO  16:45:51,017 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 120
+INFO  16:45:51,018 - Prisput simbolu:  Var b: A 0 1  na liniji 121
+INFO  16:45:51,022 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 121
+INFO  16:45:51,024 - Prisput njegovom polju:  Field objectArr: Array of A 2 1  na liniji 121
+INFO  16:45:51,026 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 121
+INFO  16:45:51,027 - Prisput simbolu:  Var aa: int 5 0  na liniji 122
+INFO  16:45:51,028 - Prisput simbolu:  Var bb: int 6 0  na liniji 123
+INFO  16:45:51,028 - Prisput simbolu:  Var cc: int 7 0  na liniji 124
+INFO  16:45:51,029 - Prisput simbolu:  Var dd: int 8 0  na liniji 125
+INFO  16:45:51,030 - Prisput simbolu:  Var aa: int 5 0  na liniji 127
+INFO  16:45:51,030 - Prisput simbolu:  Var aa: int 5 0  na liniji 127
+INFO  16:45:51,031 - Prisput simbolu:  Var bb: int 6 0  na liniji 127
+INFO  16:45:51,031 - Prisput simbolu:  Var dd: int 8 0  na liniji 127
+INFO  16:45:51,039 - Prisput simbolu:  Var cc: int 7 0  na liniji 127
+INFO  16:45:51,040 - Prisput simbolu:  Var dd: int 8 0  na liniji 127
+INFO  16:45:51,040 - Prisput simbolu:  Var bb: int 6 0  na liniji 127
+INFO  16:45:51,040 - Prisput simbolu:  Var bb1: B 1 1  na liniji 128
+INFO  16:45:51,041 - Prisput simbolu:  Var bb1: B 1 1  na liniji 129
+INFO  16:45:51,042 - Prisput njegovom polju:  Meth fillArray: void 0 0  na liniji 129
+INFO  16:45:51,043 - Prisput simbolu:  Var bb1: B 1 1  na liniji 131
+INFO  16:45:51,044 - Prisput njegovom polju:  Field field2: int 1 1  na liniji 131
+INFO  16:45:51,044 - Prisput simbolu:  Var aa: int 5 0  na liniji 132

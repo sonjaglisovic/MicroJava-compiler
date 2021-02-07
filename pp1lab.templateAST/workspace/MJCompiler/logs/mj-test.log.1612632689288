@@ -1,0 +1,155 @@
+INFO  18:28:26,788 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\syntax_errors_and_recovery.mj
+ERROR 18:28:26,991 - 
+Sintaksna greska na liniji 4 prilikom obrade simbola b
+ERROR 18:28:26,995 - 
+Sintaksna greska na liniji 6 prilikom obrade simbola int
+ERROR 18:28:26,998 - 
+Sintaksna greska na liniji 15 prilikom obrade simbola int
+ERROR 18:28:27,001 - 
+Sintaksna greska na liniji 15 prilikom obrade simbola int
+ERROR 18:28:27,012 - 
+Sintaksna greska na liniji 17
+ERROR 18:28:27,020 - 
+Sintaksna greska na liniji 18
+ERROR 18:28:27,020 - Izvrsen oporavak do znaka ')' na liniji, 18
+INFO  18:28:27,028 - Program(
+  ProgramName(
+   MJprog
+  ) [ProgramName]
+  VarDeclarations(
+    VarDeclarations(
+      VarDeclarations(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VariableDeclaration(
+          VarDecl1(
+            Type(
+             int
+            ) [Type]
+            FirstDeclaration(
+              SingleVarDecl(
+               a
+                NotArray(
+                ) [NotArray]
+              ) [SingleVarDecl]
+            ) [FirstDeclaration]
+          ) [VarDecl1]
+        ) [VariableDeclaration]
+      ) [VarDeclarations]
+      VariableDeclaration(
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VariableList(
+            ErrorVarDcl(
+            ) [ErrorVarDcl]
+            SingleVarDecl(
+             c
+              NotArray(
+              ) [NotArray]
+            ) [SingleVarDecl]
+          ) [VariableList]
+        ) [VarDecl1]
+      ) [VariableDeclaration]
+    ) [VarDeclarations]
+    VariableDeclaration(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        VariableList(
+          ErrorVarDcl(
+          ) [ErrorVarDcl]
+          SingleVarDecl(
+           x
+            NotArray(
+            ) [NotArray]
+          ) [SingleVarDecl]
+        ) [VariableList]
+      ) [VarDecl1]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         func
+        ) [MethodName]
+        ParamLists(
+          ParamError(
+          ) [ParamError]
+        ) [ParamLists]
+      ) [MethodSign]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        Statements(
+          NoStmt(
+          ) [NoStmt]
+          DesStatement(
+            AssignStatementSt(
+              DesignatorDecl(
+                DesignatorName(
+                 a
+                ) [DesignatorName]
+                NoAdditional(
+                ) [NoAdditional]
+              ) [DesignatorDecl]
+              AssignError(
+              ) [AssignError]
+            ) [AssignStatementSt]
+          ) [DesStatement]
+        ) [Statements]
+        UnmatchedIf(
+          ErrorCondition(
+          ) [ErrorCondition]
+          MatchedListSt(
+            Statements(
+              NoStmt(
+              ) [NoStmt]
+              DesStatement(
+                AssignStatementSt(
+                  DesignatorDecl(
+                    DesignatorName(
+                     a
+                    ) [DesignatorName]
+                    NoAdditional(
+                    ) [NoAdditional]
+                  ) [DesignatorDecl]
+                  AssignStm(
+                    Assignop(
+                    ) [Assignop]
+                    SimpleExpr(
+                      FirstTerm(
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                              DesignatorName(
+                               b
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [FirstTerm]
+                    ) [SimpleExpr]
+                  ) [AssignStm]
+                ) [AssignStatementSt]
+              ) [DesStatement]
+            ) [Statements]
+          ) [MatchedListSt]
+        ) [UnmatchedIf]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  18:28:27,030 - ===================================

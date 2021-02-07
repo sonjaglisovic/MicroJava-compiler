@@ -1,5 +1,8 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 import org.apache.log4j.Logger;
@@ -19,6 +22,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     Logger log = Logger.getLogger(getClass());
     Stack<Obj> designator_stack = new Stack<>();
+    private Stack<Set<Integer>> case_nums = new Stack<>();
     
     private int nVars;
     
@@ -63,11 +67,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(ClassName className) {
+    	
 	if (SymbolTable.find(className.getClassName()) != SymbolTable.noObj) {
 	    report_error("Vec postoji definisan simbol imena: " + className.getClassName(), className);
 	}
+	
 	Struct newType = new MyStruct(MyStruct.Class, className.getOptionalParent().obj.getType());
 	ObjectFormatter.setDescription(newType, className.getClassName());
+	
 	className.obj = SymbolTable.insert(MyObject.Type, className.getClassName(), newType);
 	SemanticAnalysisHelper.setClassDeclStart(className.obj);
 	SymbolTable.openScope();
@@ -86,6 +93,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	System.out.println("Broj polja u klasi je: "+ numOfFields +"\n");
 	SemanticAnalysisHelper.classDeclarationEnd();
 	SymbolTable.chainLocalSymbols(classDecl.getClassName().obj.getType());
+	SemanticAnalysisHelper.insertClassOffset(classDecl.getClassName().obj);
 	SymbolTable.closeScope();
     }
 
@@ -232,20 +240,21 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		    if (SemanticAnalysisHelper.classDeclInProgress() && type.equals(SemanticAnalysisHelper.getCurrentClassType()))
     			members = SymbolTable.currentScope.getOuter().getLocals();
     		    else
-    			members = type.getMembers();
+    			members = type.getMembersTable();
 
     		    designator = members != null ? members.searchKey(accessField.getVarName()) : SymbolTable.noObj;
 
     		    while (designator == null && type.getElemType() != null && type.getElemType() != SymbolTable.noType) {
     		    type = type.getElemType();
-    		    members = type.getMembers();
+    		    members = type.getMembersTable();
     		    designator = members != null ? members.searchKey(accessField.getVarName()) : SymbolTable.noObj;
     		    }
     		    
-    		    if (designator == null || designator == SymbolTable.noObj) 
+    		    if (designator == null || designator == SymbolTable.noObj) {
     				report_error(" Semanticka Greska! Prisput polju " + accessField.getVarName()
     					+ " koje ne postoji u specificiranoj klasi niti u roditeljskim klasama", accessField);
-    		    else
+    				designator = SymbolTable.noObj;
+    		    }else
     		    	report_info("Prisput njegovom polju: " + ObjectFormatter.getObjectDescription(designator) + "", accessField);
     	}
     	
@@ -264,7 +273,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		report_error(" Semanticka greska! Indeksiran je simbol " + my_array.getName() + " koji nije nizovnog tipa ", accessElement);
 	else
 		designator = new MyObject(MyObject.Elem, "array_element", my_array.getType().getElemType());
-	 	
+	accessElement.obj = designator; 	
 	designator_stack.push(designator);
     }
 
@@ -277,7 +286,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	    while ((designator == SymbolTable.noObj || designator == null) && designator_type.getElemType() != null
     		    && designator_type.getElemType() != SymbolTable.noType) {
     		designator_type = designator_type.getElemType();
-    		class_members = designator_type.getMembers();
+    		class_members = designator_type.getMembersTable();
     		designator = class_members != null ? class_members.searchKey(firstVar) : SymbolTable.noObj;
     	    }
     	}
@@ -367,26 +376,20 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	firstTerm.struct = firstTerm.getTerm().struct;
     }
 
-    public void visit(Terms terms) {
-	if (terms.getTermList().struct != SymbolTable.intType || terms.getTerm().struct != SymbolTable.intType) {
-	    report_error("Semanticka greska! Operacije sabiranja i oduzivanja se mogu primeniti samo na tipu int ",
-		    terms);
-	    terms.struct = SymbolTable.noType;
-	} else
-	    terms.struct = SymbolTable.intType;
-
-    }
-
-    public void visit(MinusExpr minusExpr) {
-	if (minusExpr.getTermList().struct != SymbolTable.intType) {
-	    report_error("Operator - se moze primeniti samo na tip int ", minusExpr);
-	    minusExpr.struct = SymbolTable.noType;
-	} else
-	    minusExpr.struct = minusExpr.getTermList().struct;
-    }
-
     public void visit(NOMinusExpr noMinusExpr) {
-	noMinusExpr.struct = noMinusExpr.getTermList().struct;
+    	if (noMinusExpr.getTerm().struct != SymbolTable.intType || noMinusExpr.getExpr1().struct != SymbolTable.intType) {
+    	    report_error("Operacije sabiranja se mogu primeniti samo na tip int ", noMinusExpr);
+    	    noMinusExpr.struct = SymbolTable.noType;
+    	} else
+    	    noMinusExpr.struct = noMinusExpr.getExpr1().struct;
+    }
+    
+    public void visit(MinusExpr justMinus) {
+    	if (justMinus.getTerm().struct != SymbolTable.intType) {
+    	    report_error("Operacije sabiranja se mogu primeniti samo na tip int ", justMinus);
+    	    justMinus.struct = SymbolTable.noType;
+    	} else
+    	    justMinus.struct = justMinus.getTerm().struct;
     }
 
     public void visit(SimpleExpr simpleExpr) {
@@ -398,9 +401,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(OptionalOperator optComparisonOperator) {
-	if (!optComparisonOperator.getExpr1().struct.compatibleWith(optComparisonOperator.getExpr11().struct)
-		|| ((optComparisonOperator.getExpr1().struct.isRefType()
-			|| optComparisonOperator.getExpr11().struct.isRefType())
+	if (!optComparisonOperator.getExpr1().struct.compatibleWith(optComparisonOperator.getExpr().struct)
+		|| ((optComparisonOperator.getExpr().struct.isRefType()
+			|| optComparisonOperator.getExpr1().struct.isRefType())
 			&& !SemanticAnalysisHelper.canCompareClasses())) {
 	    report_error(
 		    "Semanticka Greska! tipovi operanada relacionog operatora moraju biti kompatibilni i za nizove i klase se smeju koristiti samo != i ==",
@@ -411,7 +414,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(LogicalExpr logicalExpr) {
-	logicalExpr.struct = logicalExpr.getExpr1().struct;
+	logicalExpr.struct = logicalExpr.getExpr().struct;
     }
 
     public void visit(ConditionTerm condTerm) {
@@ -509,13 +512,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(CondExpr condExpr) {
-	if (!condExpr.getExpr().struct.compatibleWith(condExpr.getExpr1().struct)) {
+	if (!condExpr.getExpr1().struct.compatibleWith(condExpr.getExpr11().struct)) {
 	    report_error("Semanticka Greska! Drugi i treci izraz kod ternarnog operatora moraju biti istog tipa ",
 		    condExpr);
 	    condExpr.struct = SymbolTable.noType;
 	} else
-	    condExpr.struct = condExpr.getExpr().struct == SymbolTable.nullType ? condExpr.getExpr1().struct
-		    : condExpr.getExpr().struct;
+	    condExpr.struct = condExpr.getExpr11().struct == SymbolTable.nullType ? condExpr.getExpr1().struct
+		    : condExpr.getExpr11().struct;
     }
 
     public void visit(DoWhileStart doWhileStart) {
@@ -523,7 +526,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(SwitchStart switchStart) {
+    if (switchStart.getExpr().struct != SymbolTable.intType)
+    	 report_error("Semanticka Greska! Izraz u okviru switch naredbe mora biti tipa int ", switchStart);
 	SemanticAnalysisHelper.enterSwitch();
+	case_nums.add(new HashSet<>());
     }
 
     public void visit(BreakStatement breakStmt) {
@@ -586,12 +592,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	    report_error("Semanticka Greska! Tip uslova kod do-while petlje mora biti bool", doWhile);
 	SemanticAnalysisHelper.exitDoWhile();
     }
-
-    public void visit(SwitchStatement switchStmt) {
-	if (switchStmt.getExpr().struct != SymbolTable.intType)
-	    report_error("Semanticka Greska! Izraz u okviru switch naredbe mora biti tipa int ", switchStmt);
+    
+   public void visit(SwitchStatement switchStmt) {
 	SemanticAnalysisHelper.exitSwitch();
-    }
+	case_nums.pop();
+   }
 
     public void visit(FuncCallSt funcCallStmt) {
 	if (funcCallStmt.getDesignator().obj.getKind() != Obj.Meth) {
@@ -611,6 +616,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
     }
 
+    public void visit(CaseStart caseStart) {
+    	Set<Integer> case_num_set = case_nums.peek();
+    	if(case_num_set.contains(caseStart.getValue()))
+    		report_error("Semanticka Greska! Ne mogu se naci dve iste numericke vrednosti u switch naredbi", caseStart);
+    	else
+    		case_num_set.add(caseStart.getValue());
+    }
+    
     public boolean passed() {
 	return !errorDetected;
     }

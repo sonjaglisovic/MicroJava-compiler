@@ -1,0 +1,193 @@
+INFO  18:32:29,968 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\syntax_errors_and_recovery.mj
+ERROR 18:32:30,217 - 
+Sintaksna greska na liniji 4 prilikom obrade simbola b
+ERROR 18:32:30,223 - 
+Sintaksna greska na liniji 6 prilikom obrade simbola int
+ERROR 18:32:30,224 - 
+Sintaksna greska na liniji 8 prilikom obrade simbola A
+ERROR 18:32:30,237 - 
+Sintaksna greska na liniji 16 prilikom obrade simbola int
+ERROR 18:32:30,239 - 
+Sintaksna greska na liniji 16 prilikom obrade simbola int
+ERROR 18:32:30,248 - 
+Sintaksna greska na liniji 18
+ERROR 18:32:30,256 - 
+Sintaksna greska na liniji 19
+ERROR 18:32:30,257 - Izvrsen oporavak do znaka ')' na liniji, 19
+INFO  18:32:30,267 - Program(
+  ProgramName(
+   MJprog
+  ) [ProgramName]
+  VarDeclarations(
+    VarDeclarations(
+      VarDeclarations(
+        VarDeclarations(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VariableDeclaration(
+            VarDecl1(
+              Type(
+               int
+              ) [Type]
+              FirstDeclaration(
+                SingleVarDecl(
+                 a
+                  NotArray(
+                  ) [NotArray]
+                ) [SingleVarDecl]
+              ) [FirstDeclaration]
+            ) [VarDecl1]
+          ) [VariableDeclaration]
+        ) [VarDeclarations]
+        VariableDeclaration(
+          VarDecl1(
+            Type(
+             int
+            ) [Type]
+            VariableList(
+              ErrorVarDcl(
+              ) [ErrorVarDcl]
+              SingleVarDecl(
+               c
+                NotArray(
+                ) [NotArray]
+              ) [SingleVarDecl]
+            ) [VariableList]
+          ) [VarDecl1]
+        ) [VariableDeclaration]
+      ) [VarDeclarations]
+      VariableDeclaration(
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VariableList(
+            ErrorVarDcl(
+            ) [ErrorVarDcl]
+            SingleVarDecl(
+             x
+              NotArray(
+              ) [NotArray]
+            ) [SingleVarDecl]
+          ) [VariableList]
+        ) [VarDecl1]
+      ) [VariableDeclaration]
+    ) [VarDeclarations]
+    ClassDeclaration(
+      ClassDecl(
+        ClassName(
+         B
+          ExtendError(
+          ) [ExtendError]
+        ) [ClassName]
+        JustVars(
+          NoVars(
+          ) [NoVars]
+          VarDecl1(
+            Type(
+             int
+            ) [Type]
+            VariableList(
+              FirstDeclaration(
+                SingleVarDecl(
+                 a
+                  NotArray(
+                  ) [NotArray]
+                ) [SingleVarDecl]
+              ) [FirstDeclaration]
+              SingleVarDecl(
+               b
+                NotArray(
+                ) [NotArray]
+              ) [SingleVarDecl]
+            ) [VariableList]
+          ) [VarDecl1]
+        ) [JustVars]
+        NoMethodInClass(
+        ) [NoMethodInClass]
+      ) [ClassDecl]
+    ) [ClassDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         func
+        ) [MethodName]
+        ParamLists(
+          ParamError(
+          ) [ParamError]
+        ) [ParamLists]
+      ) [MethodSign]
+      NoVars(
+      ) [NoVars]
+      Statements(
+        Statements(
+          NoStmt(
+          ) [NoStmt]
+          DesStatement(
+            AssignStatementSt(
+              DesignatorDecl(
+                DesignatorName(
+                 a
+                ) [DesignatorName]
+                NoAdditional(
+                ) [NoAdditional]
+              ) [DesignatorDecl]
+              AssignError(
+              ) [AssignError]
+            ) [AssignStatementSt]
+          ) [DesStatement]
+        ) [Statements]
+        UnmatchedIf(
+          ErrorCondition(
+          ) [ErrorCondition]
+          MatchedListSt(
+            Statements(
+              NoStmt(
+              ) [NoStmt]
+              DesStatement(
+                AssignStatementSt(
+                  DesignatorDecl(
+                    DesignatorName(
+                     a
+                    ) [DesignatorName]
+                    NoAdditional(
+                    ) [NoAdditional]
+                  ) [DesignatorDecl]
+                  AssignStm(
+                    Assignop(
+                    ) [Assignop]
+                    SimpleExpr(
+                      FirstTerm(
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                              DesignatorName(
+                               b
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [FirstTerm]
+                    ) [SimpleExpr]
+                  ) [AssignStm]
+                ) [AssignStatementSt]
+              ) [DesStatement]
+            ) [Statements]
+          ) [MatchedListSt]
+        ) [UnmatchedIf]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  18:32:30,273 - ===================================

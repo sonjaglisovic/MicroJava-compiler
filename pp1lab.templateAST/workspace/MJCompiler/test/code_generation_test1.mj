@@ -14,46 +14,31 @@ int arr2[];
 //lokalni podaci
 
 	int func1(){
+return 2;
 	}
 	int func(int a, int arr[], int b)int array1[];{
-
-		print(ord('a'));
 		arr[1] = 1500;
-		print(arr[1]);
 		array1 = new int[4];
-		print(array1[0]);
                 a = a*b;
 		return a+b;
 
 	}
 
-	void main(){		
-		//func1();
-		a = 4;
+	void main(){	
+  a = 2;	
+	 switch(1){ 
+	 case 1:{a = 4;
 		b = 8;
+                func1();
 		d = 2;
 		array = new int[3];
-		c = a%3 + b*d + 2 + b/a;
-		print(c);
-		a--;
-		print(a);
-		b--;
-		print(b);
-		e = 'a';
-		print(e, 2);
 		f = false;
-		print(f);
 		array[1] = 54;
-		print(array[1]);
 		array[2]++;
-		print(array[2]);
 		array[0]--;
-		print(array[0]);
 		array[0] = array[1];
-		print(array[0]);
 		f = false;
-		a = f  ? array[0] : 5; 
-		print(a);
+		a = f  ? array[0] : 5;
 		if(a > 0 && f){
 			if(a == 5){
 			print('i');
@@ -61,18 +46,18 @@ int arr2[];
 			}
 			else{
 				print('e');
-				print('e');
 			}
 		}else{ if(b > 2){
 			print('e');
-			print(1000);
+			//print(1000);
 			}
-			print('c');
+			
 		}
-		print('f');
 		i = 0;
 		do{
 			i++;
+			if(i == 5)
+			break;
 			if(i < 3)
 			continue;
 			do{
@@ -83,18 +68,88 @@ int arr2[];
 				break;
 			}while(a > 1);
 			print(a);
-			if(i == 3)
-			break;
+			
 			
 		}while(i < 5);
-		print(i);
-		func(2, array, 3);
 		arr2 = array;
 		//print(func(2, array, 5));
-		arr2[1] = array == arr2 ? 5 : 10;
-		print(arr2[1]);
+		arr2[1] = i ? 5 : 10;
+		if(f || b-a > 3 && f || array[2] != arr2[2] && arr2[0] == 54 && f==false && f != true){
+			print(i+54);
+		}else
+			print(i-54);
+			
+		print('c');
+		print(1);
+		}
+		case 2: {print('c'); print(2); 
+			switch(a){
+
+				case 1: print(1);
+				case 2: {print(2); break;}
+				case 3: print(3);	
+			}
+		
+		}
+		case 3: {	a = 4;
+		b = 8;
+		d = 2;
+		array = new int[3];
+		
+		print(f);
+		array[1] = 54;
+		array[2]++;
+		array[0]--;
+		array[0] = array[1];
+		f = false;
+		a = f  ? array[0] : 5; 
+		if(a > 0 && f){
+			if(a == 5){
+			print(a);
+			}
+			else{
+				//print('e');
+				print('e');
+			}
+		}else{ if(b > 2){
+			print('e');
+			print(1000);
+			}
+		
+		}
+		i = 0;
+		do{
+			i++;
+			if(i == 5)
+			break;
+			if(i < 3)
+			continue;
+			do{
+				a--;
+				if(a == 3)
+				continue;
+				if(a == 3)
+				break;
+			}while(a > 1);
+			print(a);
+			
+			
+		}while(i < 5);
+		arr2 = array;
+		a = func(2, array, 5);
+		arr2[1] = a ? 5 : 10;
+		if(f || b-a > 3 && f || array[2] != arr2[2] && arr2[0] == 54 && f==false && f != true){
+			print(i+54);
+		}else
+			print(i-54);
+			
+		print('c');
+		print(3);
+		}
 		
 	}
+     print('f');
 	
+}
 	
 }

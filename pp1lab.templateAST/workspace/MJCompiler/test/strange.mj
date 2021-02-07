@@ -1,0 +1,39 @@
+program MJ
+
+
+class A{
+ int parent_field;
+ int field2;
+ A objectArr[];
+ 
+}
+
+class B extends A{
+  //A objectArr[];
+  int field3;
+  int field4;
+  int field5;
+{
+	
+	
+}   
+
+}
+
+
+A arr[];
+int a;
+{
+int main(){
+		arr = new B[25];
+		arr[0] = new B;
+		arr[0].field2 = 5;
+		print(arr[0].field2);
+		//arr[0].field2 = 50;
+		arr[1] = new B;
+		arr[1].field2 = 60;
+		print(arr[1].field2);
+		print(arr[0].field2);
+		return 0;
+}
+}

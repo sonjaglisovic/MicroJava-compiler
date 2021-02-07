@@ -1,0 +1,145 @@
+INFO  00:06:31,507 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\test303.mj
+INFO  00:06:31,829 - ===================================
+INFO  00:06:31,872 - Prisput simbolu:  Var this: Predmet 1 1  na liniji 13
+INFO  00:06:31,872 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 13
+INFO  00:06:31,872 - Prisput simbolu:  Var tezina: int 0 1  na liniji 13
+INFO  00:06:31,873 - Prisput simbolu:  Field tezina: int 0 1  na liniji 14
+INFO  00:06:31,874 - Prisput simbolu:  Meth zapremina: int 0 0  na liniji 16
+INFO  00:06:31,875 - Prisput simbolu:  Field tezina: int 0 1  na liniji 16
+INFO  00:06:31,876 - Prisput simbolu:  Var this: Predmet 1 1  na liniji 17
+INFO  00:06:31,876 - Prisput njegovom polju:  Field vrsta: char 1 1  na liniji 17
+INFO  00:06:31,881 - Prisput simbolu:  Var vrsta: char 0 1  na liniji 17
+INFO  00:06:31,882 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 18
+INFO  00:06:31,882 - Prisput simbolu:  Field tezina: int 0 1  na liniji 19
+INFO  00:06:31,883 - Prisput simbolu:  Var this: Sfera 1 1  na liniji 27
+INFO  00:06:31,884 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 27
+INFO  00:06:31,884 - Prisput simbolu:  Var tezina: int 0 1  na liniji 27
+INFO  00:06:31,885 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 27
+INFO  00:06:31,885 - Prisput simbolu:  Var this: Sfera 1 1  na liniji 28
+INFO  00:06:31,886 - Prisput njegovom polju:  Field r: int 0 1  na liniji 28
+INFO  00:06:31,886 - Prisput simbolu:  Var r: int 0 1  na liniji 28
+INFO  00:06:31,886 - Prisput simbolu:  Meth postaviVrstu: void 0 1  na liniji 28
+INFO  00:06:31,887 - Prisput simbolu:  Var z: int 1 1  na liniji 32
+INFO  00:06:31,887 - Prisput simbolu:  Con cinilac: int 4 0  na liniji 32
+INFO  00:06:31,887 - Prisput simbolu:  Var z: int 1 1  na liniji 33
+INFO  00:06:31,888 - Prisput simbolu:  Field r: int 0 1  na liniji 33
+INFO  00:06:31,888 - Prisput simbolu:  Con delilac: int 3 0  na liniji 33
+INFO  00:06:31,889 - Prisput simbolu:  Var this: Kvadar 1 1  na liniji 42
+INFO  00:06:31,889 - Prisput njegovom polju:  Field tezina: int 0 1  na liniji 42
+INFO  00:06:31,889 - Prisput simbolu:  Var tezina: int 0 1  na liniji 42
+INFO  00:06:31,889 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 42
+INFO  00:06:31,890 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  00:06:31,890 - Prisput njegovom polju:  Field a: int 0 1  na liniji 43
+INFO  00:06:31,890 - Prisput simbolu:  Var a: int 0 1  na liniji 43
+INFO  00:06:31,891 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  00:06:31,891 - Prisput njegovom polju:  Field b: int 1 1  na liniji 43
+INFO  00:06:31,891 - Prisput simbolu:  Var b: int 1 1  na liniji 43
+INFO  00:06:31,892 - Prisput simbolu:  Var this: Kvadar 3 1  na liniji 43
+INFO  00:06:31,892 - Prisput njegovom polju:  Field c: int 2 1  na liniji 43
+INFO  00:06:31,892 - Prisput simbolu:  Var c: int 2 1  na liniji 43
+INFO  00:06:31,894 - Prisput simbolu:  Field vrsta: char 1 1  na liniji 43
+INFO  00:06:31,895 - Prisput simbolu:  Var z: int 1 1  na liniji 47
+INFO  00:06:31,896 - Prisput simbolu:  Field a: int 0 1  na liniji 47
+INFO  00:06:31,896 - Prisput simbolu:  Field b: int 1 1  na liniji 47
+INFO  00:06:31,896 - Prisput simbolu:  Field c: int 2 1  na liniji 47
+INFO  00:06:31,896 - Prisput simbolu:  Var z: int 1 1  na liniji 48
+INFO  00:06:31,897 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 59
+INFO  00:06:31,898 - Prisput njegovom polju:  Meth dohvVrstu: char 0 0  na liniji 59
+INFO  00:06:32,406 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 60
+INFO  00:06:32,406 - Prisput njegovom polju:  Meth dohvVrstu: char 0 0  na liniji 60
+INFO  00:06:32,407 - Prisput simbolu:  Con eol: char 10 0  na liniji 62
+INFO  00:06:32,408 - Prisput simbolu:  Var p: Predmet 0 1  na liniji 63
+INFO  00:06:32,408 - Prisput njegovom polju:  Meth dohvTezinu: int 0 0  na liniji 63
+INFO  00:06:32,409 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 68
+INFO  00:06:32,410 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 69
+INFO  00:06:32,411 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 70
+INFO  00:06:32,411 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 71
+INFO  00:06:32,412 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 73
+INFO  00:06:32,412 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 74
+INFO  00:06:32,412 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 75
+INFO  00:06:32,413 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 77
+INFO  00:06:32,414 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 77
+INFO  00:06:32,414 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 78
+INFO  00:06:32,414 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 78
+INFO  00:06:32,414 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 79
+INFO  00:06:32,415 - Prisput njegovom polju:  Meth postaviPoluprecnik: void 0 1  na liniji 79
+INFO  00:06:32,415 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 81
+INFO  00:06:32,416 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 81
+INFO  00:06:32,417 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 82
+INFO  00:06:32,417 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 82
+INFO  00:06:32,417 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 83
+INFO  00:06:32,417 - Prisput njegovom polju:  Meth postaviStranice: void 0 3  na liniji 83
+INFO  00:06:32,417 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 85
+INFO  00:06:32,418 - Prisput simbolu:  Var s1: Sfera 2 1  na liniji 85
+INFO  00:06:32,418 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 86
+INFO  00:06:32,418 - Prisput simbolu:  Var s2: Sfera 3 1  na liniji 86
+INFO  00:06:32,418 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 87
+INFO  00:06:32,419 - Prisput simbolu:  Var s3: Sfera 4 1  na liniji 87
+INFO  00:06:32,419 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 88
+INFO  00:06:32,419 - Prisput simbolu:  Var k1: Kvadar 5 1  na liniji 88
+INFO  00:06:32,419 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 89
+INFO  00:06:32,419 - Prisput simbolu:  Var k2: Kvadar 6 1  na liniji 89
+INFO  00:06:32,420 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 90
+INFO  00:06:32,420 - Prisput simbolu:  Var k3: Kvadar 7 1  na liniji 90
+INFO  00:06:32,420 - Prisput simbolu:  Var t: int 8 1  na liniji 93
+INFO  00:06:32,420 - Prisput simbolu:  Var i: int 1 1  na liniji 94
+INFO  00:06:32,420 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 96
+INFO  00:06:32,420 - Prisput simbolu:  Var i: int 1 1  na liniji 96
+INFO  00:06:32,421 - Prisput njegovom polju:  Meth postaviTezinu: void 0 1  na liniji 96
+INFO  00:06:32,421 - Prisput simbolu:  Var i: int 1 1  na liniji 97
+INFO  00:06:32,421 - Prisput simbolu:  Var i: int 1 1  na liniji 98
+INFO  00:06:32,421 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 100
+INFO  00:06:32,422 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 101
+INFO  00:06:32,422 - Prisput simbolu:  Var i: int 1 1  na liniji 102
+INFO  00:06:32,423 - Prisput simbolu:  Var i: int 1 1  na liniji 104
+INFO  00:06:32,424 - Prisput simbolu:  Var i: int 1 1  na liniji 105
+INFO  00:06:32,425 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 108
+INFO  00:06:32,425 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 108
+INFO  00:06:32,425 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 108
+INFO  00:06:32,425 - Prisput simbolu:  Var i: int 1 1  na liniji 108
+INFO  00:06:32,426 - Prisput njegovom polju:  Meth zapremina: int 0 0  na liniji 108
+INFO  00:06:32,426 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 109
+INFO  00:06:32,432 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 109
+INFO  00:06:32,433 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 109
+INFO  00:06:32,434 - Prisput simbolu:  Var i: int 1 1  na liniji 109
+INFO  00:06:32,434 - Prisput njegovom polju:  Meth Q: int 0 0  na liniji 109
+INFO  00:06:32,435 - Prisput simbolu:  Meth ispis: void 0 1  na liniji 110
+INFO  00:06:32,435 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 110
+INFO  00:06:32,435 - Prisput simbolu:  Var i: int 1 1  na liniji 110
+INFO  00:06:32,436 - Prisput simbolu:  Var i: int 1 1  na liniji 111
+INFO  00:06:32,436 - Prisput simbolu:  Var i: int 1 1  na liniji 112
+INFO  00:06:32,436 - Prisput simbolu:  Var zapreminaK: int 0 0  na liniji 115
+INFO  00:06:32,437 - Prisput simbolu:  Var tezinaK: int 2 0  na liniji 116
+INFO  00:06:32,437 - Prisput simbolu:  Var i: int 1 1  na liniji 117
+INFO  00:06:32,437 - Prisput simbolu:  Var i: int 1 1  na liniji 119
+INFO  00:06:32,438 - Prisput simbolu:  Var i: int 1 1  na liniji 120
+INFO  00:06:32,438 - Prisput simbolu:  Var zapreminaK: int 0 0  na liniji 123
+INFO  00:06:32,438 - Prisput simbolu:  Var zapreminaK: int 0 0  na liniji 123
+INFO  00:06:32,438 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 123
+INFO  00:06:32,439 - Prisput simbolu:  Var i: int 1 1  na liniji 123
+INFO  00:06:32,439 - Prisput njegovom polju:  Meth zapremina: int 0 0  na liniji 123
+INFO  00:06:32,439 - Prisput simbolu:  Var tezinaK: int 2 0  na liniji 124
+INFO  00:06:32,440 - Prisput simbolu:  Var tezinaK: int 2 0  na liniji 124
+INFO  00:06:32,440 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 124
+INFO  00:06:32,440 - Prisput simbolu:  Var i: int 1 1  na liniji 124
+INFO  00:06:32,440 - Prisput njegovom polju:  Meth Q: int 0 0  na liniji 124
+INFO  00:06:32,441 - Prisput simbolu:  Meth ispis: void 0 1  na liniji 125
+INFO  00:06:32,441 - Prisput simbolu:  Var predmeti: Array of Predmet 0 1  na liniji 125
+INFO  00:06:32,443 - Prisput simbolu:  Var i: int 1 1  na liniji 125
+INFO  00:06:32,444 - Prisput simbolu:  Var i: int 1 1  na liniji 126
+INFO  00:06:32,444 - Prisput simbolu:  Var i: int 1 1  na liniji 127
+INFO  00:06:32,444 - Prisput simbolu:  Var zapreminaS: int 1 0  na liniji 129
+INFO  00:06:32,445 - Prisput simbolu:  Con eol: char 10 0  na liniji 129
+INFO  00:06:32,445 - Prisput simbolu:  Var zapreminaK: int 0 0  na liniji 130
+INFO  00:06:32,445 - Prisput simbolu:  Con eol: char 10 0  na liniji 130
+INFO  00:06:32,445 - Prisput simbolu:  Var tezinaS: int 3 0  na liniji 131
+INFO  00:06:32,446 - Prisput simbolu:  Con eol: char 10 0  na liniji 131
+INFO  00:06:32,446 - Prisput simbolu:  Var tezinaK: int 2 0  na liniji 132
+INFO  00:06:32,446 - Prisput simbolu:  Con eol: char 10 0  na liniji 132
+INFO  00:06:32,446 - Prisput simbolu:  Var i: int 1 1  na liniji 134
+INFO  00:06:32,446 - Prisput simbolu:  Var i: int 1 1  na liniji 136
+INFO  00:06:32,447 - Prisput simbolu:  Var i: int 1 1  na liniji 147
+INFO  00:06:32,447 - Prisput simbolu:  Var i: int 1 1  na liniji 147
+INFO  00:06:32,447 - Prisput simbolu:  Con eol: char 10 0  na liniji 154
+INFO  00:06:32,448 - Prisput simbolu:  Var i: int 1 1  na liniji 155
+INFO  00:06:32,448 - Prisput simbolu:  Var i: int 1 1  na liniji 156

@@ -1,0 +1,15 @@
+INFO  18:26:07,968 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\syntax_errors_and_recovery.mj
+ERROR 18:26:08,506 - 
+Sintaksna greska na liniji 4 prilikom obrade simbola b
+ERROR 18:26:08,519 - 
+Sintaksna greska na liniji 6 prilikom obrade simbola int
+ERROR 18:26:08,529 - 
+Sintaksna greska na liniji 15 prilikom obrade simbola int
+ERROR 18:26:08,536 - 
+Sintaksna greska na liniji 15 prilikom obrade simbola int
+ERROR 18:26:08,553 - 
+Sintaksna greska na liniji 17
+ERROR 18:26:08,570 - 
+Sintaksna greska na liniji 18
+ERROR 18:26:08,571 - Izvrsen oporavak do znaka ')' na liniji, 18
+INFO  18:26:08,578 - ===================================

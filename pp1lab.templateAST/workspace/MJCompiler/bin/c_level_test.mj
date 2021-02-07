@@ -1,0 +1,166 @@
+program MJ
+
+class A{
+ int parent_field;
+ int field2;
+ A objectArr[];
+ A object;
+{
+	int just_zero(int b){
+		return b-b;
+	}
+	int method(){
+		return field2*2;
+	}
+	int method1(){
+		return method();
+	}
+	int meth(){
+	return 0;
+	}
+	int just_one(int c){
+	c = c - c + 1;
+	return c;
+	}
+	
+
+}
+ 
+}
+bool x;
+class B extends A{
+  A objectArr[];
+  int field3;
+  int field4;
+  int field5;
+{
+int method(){
+this.field2 = 25;
+return field2*5;
+}
+int meth(){
+return just_one(5);
+}	
+
+	void fillArray()int i;{
+	objectArr = new B[20];
+	i = 0;
+		do{
+			objectArr[i] = new B;
+			//print(objectArr[i].method1());
+			objectArr[i].meth();	
+			//print(this.field2);
+			i++;
+		}while(i < 10);
+	}
+	
+}   
+
+}
+
+A a_object;
+B b_object;
+B bObjectArr[];
+A arr[];
+int aa;
+int bb;
+int cc;
+int dd;
+{
+
+	int main() A b; B bb1; char chr1; bool boo1;{
+		//nasledjivanje
+		a_object = new A;
+		bObjectArr = new B[4];
+		bObjectArr[0] = new B;
+		bObjectArr[0].field2 = 55;
+		print(bObjectArr[0].field2);
+		a_object.field2 = -5 + 4*3;
+		b_object = new B;
+		b_object.field2 = 120;
+		print(b_object.field2);
+		b_object.field4 = 5;
+		print(b_object.field4);
+		
+		//supstitucija
+		a_object = new B;
+		a_object.field2 = 12;
+		print(a_object.field2);
+		
+		arr = new B[25];
+		arr[0] = new B;
+		arr[0].field2 = 5;
+		print(arr[0].field2);
+		arr[0].objectArr = new B[2];
+		arr[0].objectArr[0] = new B;
+		arr[0].objectArr[0].field2 = 5555;
+		print(arr[0].objectArr[0].field2);
+		print(arr[0].objectArr[0].field2 + arr[0].field2);
+		arr = new A[2];
+		arr[0] = new B;
+		arr[0].field2 = 220;
+		//print(arr[0].field2);
+		
+		//metode test
+		b = new B;
+		b.field2 = 15;
+		print(b.method1());
+		x = false;
+		b.objectArr = new B[3];
+		b.objectArr[0] = new B;
+		if(x ? b.field2 : b.parent_field > 3 && b.objectArr[0].field2 == 0){
+		print('s');		
+		}	
+		b.objectArr[0].objectArr = new B[3];
+		b.objectArr[0].objectArr[1] = new B;
+		b.objectArr[b.objectArr[0].just_zero(5)].objectArr[1].field2 = 500;
+		print(b.objectArr[0].objectArr[1].field2);	
+		//print(a_object.field2);
+		b.objectArr[0].objectArr[1].object = new B;
+		b.objectArr[b.objectArr[0].just_zero(5)].objectArr[b.objectArr[0].objectArr[1].meth()].field2 = 800;
+		print(b.objectArr[0].objectArr[1].field2);
+		aa = 100;
+		bb = 3;
+		cc = 55;
+		dd = 4;
+		
+		aa = -aa + bb*2%dd - cc/5*dd + bb;
+		bb1 = new B;
+		bb1.fillArray();
+		print('c');
+		print(bb1.field2);
+		print(aa);		
+			
+		switch(3){
+		case 1:
+		bb1.fillArray();
+		print('c');
+		print(1);
+		
+		case 2:
+		bb1.fillArray();
+		print('c');
+		print(2);
+		break;
+		
+		case 3:
+		print('c');
+		print(3);
+		
+	
+		
+		
+		
+		}	
+		read(aa);
+		//print(aa);
+		
+		print(aa+ 2);
+		read(boo1);
+		print(boo1);
+		read(chr1);
+		print(chr1);
+				
+		return 0;
+	}
+}
