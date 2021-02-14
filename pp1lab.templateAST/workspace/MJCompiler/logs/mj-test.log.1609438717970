@@ -1,7 +1,0 @@
-INFO  19:11:31,415 - Compiling source file: C:\Users\User\Downloads\pp1lab.templateAST\workspace\MJCompiler\test\statements.mj
-ERROR 19:11:31,752 - 
-Sintaksna greska na liniji 10
-ERROR 19:11:31,755 - Izvrsen oporavak do prvog narednog ; ili , na liniji, 8
-ERROR 19:11:31,759 - 
-Sintaksna greska na liniji 21
-ERROR 19:11:31,772 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 80
