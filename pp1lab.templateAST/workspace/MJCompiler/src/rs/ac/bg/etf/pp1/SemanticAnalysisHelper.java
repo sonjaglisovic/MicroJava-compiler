@@ -185,8 +185,11 @@ public class SemanticAnalysisHelper {
     }
     
     public static void insertParam(Struct paramType) {
-    	List<Struct> actualParam = actualParamList.peek();
-    	actualParam.add(paramType);
+    	List<Struct> actualParam;
+    	if( !actualParamList.empty() ) {
+    		actualParam = actualParamList.peek();
+    		actualParam.add(paramType);
+    	}
     }
 
     public static int DIFFERENT_PARAM_NUMBER = -1;

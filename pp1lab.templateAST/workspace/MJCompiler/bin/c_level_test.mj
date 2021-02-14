@@ -6,6 +6,10 @@ class A{
  A objectArr[];
  A object;
 {
+	A make_object()A a;{
+	     return a;
+	}
+	
 	int just_zero(int b){
 		return b-b;
 	}
@@ -18,6 +22,13 @@ class A{
 	int meth(){
 	return 0;
 	}
+	int function(A bbb){
+		print(eol);
+		print('t');
+		print(bbb.meth());
+		return this.meth();
+	}
+	
 	int just_one(int c){
 	c = c - c + 1;
 	return c;
@@ -30,6 +41,7 @@ class A{
 bool x;
 class B extends A{
   A objectArr[];
+  int arr_int[];
   int field3;
   int field4;
   int field5;
@@ -40,8 +52,27 @@ return field2*5;
 }
 int meth(){
 return just_one(5);
+}
+
+A make_object(){
+	return new A;
 }	
 
+void meth_test(int arr_[])int i;{
+	i = -1;
+	do{
+	i++;
+	if(i == 2)
+	break;
+	print(arr_[i]);
+	}while(i < 3);
+}
+
+int mm1(){
+arr_int[1]++;
+return 1;
+
+}
 	void fillArray()int i;{
 	objectArr = new B[20];
 	i = 0;
@@ -52,6 +83,7 @@ return just_one(5);
 			//print(this.field2);
 			i++;
 		}while(i < 10);
+		
 	}
 	
 }   
@@ -66,9 +98,10 @@ int aa;
 int bb;
 int cc;
 int dd;
+bool bool_var;
 {
 
-	int main() A b; B bb1; char chr1; bool boo1;{
+	int main() A b, obj; B bb1; char chr1; bool boo1;{
 		//nasledjivanje
 		a_object = new A;
 		bObjectArr = new B[4];
@@ -141,6 +174,7 @@ int dd;
 		bb1.fillArray();
 		print('c');
 		print(2);
+		print(bb1.field5);
 		break;
 		
 		case 3:
@@ -148,19 +182,58 @@ int dd;
 		print(3);
 		
 	
+		}
 		
+		b = new B;
+		b.method();
+		bb1.object = new B;
+		obj = bb1.make_object();
+		print(obj.field2);
+		print(false ? (true ?  1 : obj.method()) : (obj.field2 + 5 ? 2 : b.method()));
 		
+		bb1.object.objectArr = new B[5];
+		bb1.object.objectArr[0] = new B;
+		bb1.object.objectArr[0].object = new B;
+		print(bb1.function(obj));
+		print(bb1.function(bb1.object.objectArr[0].object));
+		bb1.field5++;
+		bb1.arr_int = new int[20];
+		bb1.arr_int[0] = 41;
+		bb1.arr_int[0]++;
 		
-		}	
-		read(aa);
-		//print(aa);
-		
-		print(aa+ 2);
-		read(boo1);
-		print(boo1);
-		read(chr1);
-		print(chr1);
-				
+		print(bb1.arr_int[0]);
+		bb1.arr_int[0]--;
+		bb1.mm1();
+		print(bb1.arr_int[1]);
+		read(bb1.field5);
+		bb1.field5--;	
+		if(bb1.field5 == 0){
+			print(eol);
+			print(0);
+		} else if(bb1.field5 == 1){
+			print(eol);
+			print(1);
+		} 
+			 	
+			 	
+			 			
+	 bb1.meth_test(bb1.arr_int);
+	 bb1 = new B;
+	 bb1.field5 = 4;
+	 bool_var = true;
+	 if( bb1.field5 ? 0 : 1  || bb1.field5 == 2 || bb1.parent_field || bool_var){
+	 	   print(bb1.field5);
+	 
+	 }else {
+	 if(bb1.field5 != 4)
+	 	print('e');
+	 
+	 else print('s');	
+	 
+	 }
 		return 0;
+			
 	}
+	
+	
 }

@@ -74,7 +74,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	Struct newType = new MyStruct(MyStruct.Class, className.getOptionalParent().obj.getType());
 	ObjectFormatter.setDescription(newType, className.getClassName());
-	
 	className.obj = SymbolTable.insert(MyObject.Type, className.getClassName(), newType);
 	SemanticAnalysisHelper.setClassDeclStart(className.obj);
 	SymbolTable.openScope();
@@ -94,6 +93,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	SemanticAnalysisHelper.classDeclarationEnd();
 	SymbolTable.chainLocalSymbols(classDecl.getClassName().obj.getType());
 	SemanticAnalysisHelper.insertClassOffset(classDecl.getClassName().obj);
+	
 	SymbolTable.closeScope();
     }
 

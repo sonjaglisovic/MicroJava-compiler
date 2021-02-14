@@ -1,0 +1,36 @@
+program MJTest
+
+
+const int a = 5;
+
+
+{
+		void main(){
+		
+		  switch(a){
+		  	case 5: print(5); switch(2){
+		  		case 1: print(1); break;
+		  		case 2: print(2); switch(3){
+		  					case 3: print(3); break;
+		  					case 4: print(4);
+		  				}
+		  		case 4: print(4);		
+		  			
+		  	}
+		  	case 1: print(1); switch(2) {
+		  			case 1: print(1);
+		  			case 2: print(2); switch(2){
+		  					case 2: print(2); break;
+		  					case 3: print(3);
+		  			}
+		  		}
+		  	case 3: print(3);
+		  	
+		  
+		  }
+		
+			return;
+			
+		}
+	
+}

@@ -1,31 +1,13 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/1/2021 8:21:20
+// 8/1/2021 15:36:29
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DoWhileConditionLoad implements SyntaxNode {
+public class DoWhileConditionLoad extends While {
 
-    private SyntaxNode parent;
-    private int line;
     public DoWhileConditionLoad () {
-    }
-
-    public SyntaxNode getParent() {
-        return parent;
-    }
-
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
-    }
-
-    public int getLine() {
-        return line;
-    }
-
-    public void setLine(int line) {
-        this.line=line;
     }
 
     public void accept(Visitor visitor) {

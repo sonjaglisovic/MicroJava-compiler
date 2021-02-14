@@ -92,7 +92,10 @@ nonterminal ExpressionType ExpressionType;
 nonterminal CaseList CaseList;
 nonterminal CaseDecl CaseDecl;
 nonterminal Else Else;
-nonterminal DoWhileConditionLoad DoWhileConditionLoad;
+nonterminal While While;
+nonterminal And And;
+nonterminal Or Or;
+nonterminal If If;
 nonterminal MatchedList MatchedList;
 nonterminal AdditionForCall AdditionForCall;
 nonterminal FormParDecl FormParDecl;
@@ -233,13 +236,13 @@ ConditionPart::= (RightCondition) LPAREN Condition:condType RPAREN {: RESULT=new
 			
 Statement ::= (DesStatement) DesignatorStatement:D1 {: RESULT=new DesStatement(D1); RESULT.setLine(D1left); :}
 		    |
-		    (MatchedStatement) IF ConditionPart:type Statement:S1 Else:E2 Statement:S3 {: RESULT=new MatchedStatement(type, S1, E2, S3); RESULT.setLine(typeleft); :}
+		    (MatchedStatement) If:I1 ConditionPart:type Statement:S2 Else:E3 Statement:S4 {: RESULT=new MatchedStatement(I1, type, S2, E3, S4); RESULT.setLine(I1left); :}
 		    |
-		    (UnmatchedIf) IF ConditionPart:type Statement:S1 {: RESULT=new UnmatchedIf(type, S1); RESULT.setLine(typeleft); :} 
+		    (UnmatchedIf) If:I1 ConditionPart:type Statement:S2 {: RESULT=new UnmatchedIf(I1, type, S2); RESULT.setLine(I1left); :} 
 		    |
 		    (ContinueStatement) CONTINUE SEMI {: RESULT=new ContinueStatement(); :}
 		    |
-		    (DoWhileLoop) Do:D1 Statement:S2 WHILE DoWhileConditionLoad:D3 Condition:C4 RPAREN SEMI {: RESULT=new DoWhileLoop(D1, S2, D3, C4); RESULT.setLine(D1left); :}
+		    (DoWhileLoop) Do:D1 Statement:S2 While:W3 LPAREN Condition:C4 RPAREN SEMI {: RESULT=new DoWhileLoop(D1, S2, W3, C4); RESULT.setLine(D1left); :}
 		    |
 		    (BreakStatement) BREAK SEMI {: RESULT=new BreakStatement(); :}
 		    |
@@ -254,11 +257,14 @@ Statement ::= (DesStatement) DesignatorStatement:D1 {: RESULT=new DesStatement(D
 		    (MatchedListSt) LBRACE StatementList:S1 RBRACE {: RESULT=new MatchedListSt(S1); RESULT.setLine(S1left); :}
 		    ;
 
-DoWhileConditionLoad ::= (DoWhileConditionLoad) LPAREN {: RESULT=new DoWhileConditionLoad(); :};
 
 Else ::= (Else) ELSE {: RESULT=new Else(); :};
 
+If ::= (If) IF {: RESULT=new If(); :};
+
 Do ::= (DoWhileStart) DO {: RESULT=new DoWhileStart(); :};
+
+While ::= (DoWhileConditionLoad) WHILE {: RESULT=new DoWhileConditionLoad(); :};
 
 Switch ::= (SwitchStart) SWITCH  LPAREN Expr:type RPAREN {: RESULT=new SwitchStart(type); RESULT.setLine(typeleft); :};
 	
@@ -308,14 +314,17 @@ AdditionalElement ::=(AccessField) POINT IDENT:varName {: RESULT=new AccessField
 					 |
 					 (AccessElement) LBRACKET Expr:exType RBRACKET {: RESULT=new AccessElement(exType); RESULT.setLine(exTypeleft); :};
 
-Condition ::= (ConditionExpr)  Condition:type1 OR CondTerm:type2 {: RESULT=new ConditionExpr(type1, type2); RESULT.setLine(type1left); :}
+Condition ::= (ConditionExpr)  Condition:type1 Or:O1 CondTerm:type2 {: RESULT=new ConditionExpr(type1, O1, type2); RESULT.setLine(type1left); :}
 			  |
 			  (SingleCondTerm) CondTerm:type2 {: RESULT=new SingleCondTerm(type2); RESULT.setLine(type2left); :};
 			  
-CondTerm ::= (ConditionTerm) CondTerm:type1 AND CondFact:type2 {: RESULT=new ConditionTerm(type1, type2); RESULT.setLine(type1left); :}
+CondTerm ::= (ConditionTerm) CondTerm:type1 And:A1 CondFact:type2 {: RESULT=new ConditionTerm(type1, A1, type2); RESULT.setLine(type1left); :}
 		     |
 		     (SingleFact) CondFact:type2 {: RESULT=new SingleFact(type2); RESULT.setLine(type2left); :};	
 
+
+And ::= (And) AND {: RESULT=new And(); :};
+Or ::= (Or) OR {: RESULT=new Or(); :};
 
 CondFact ::= (LogicalExpr) Expr:type {: RESULT=new LogicalExpr(type); RESULT.setLine(typeleft); :}
 			 |

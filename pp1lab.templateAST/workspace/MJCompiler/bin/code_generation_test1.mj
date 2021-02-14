@@ -26,7 +26,7 @@ return 2;
 
 	void main(){	
   a = 2;	
-	 switch(1){ 
+	 switch(2){ 
 	 case 1:{a = 4;
 		b = 8;
                 func1();
@@ -137,8 +137,10 @@ return 2;
 		}while(i < 5);
 		arr2 = array;
 		a = func(2, array, 5);
+		b = 20;
+		a = 4;
 		arr2[1] = a ? 5 : 10;
-		if(f || b-a > 3 && f || array[2] != arr2[2] && arr2[0] == 54 && f==false && f != true){
+		if( f || b-a > 3 && a - b +2*10 - 4 == -2500 - 8*1 || array[2] == arr2[2] && arr2[0] == 54 && f==false && f != true){
 			print(i+54);
 		}else
 			print(i-54);
@@ -149,6 +151,7 @@ return 2;
 		
 	}
      print('f');
+     print(-(25 + 2*10));
 	
 }
 	

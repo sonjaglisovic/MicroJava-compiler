@@ -1,0 +1,4 @@
+INFO  22:35:32,103 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\c_level_test.mj
+ERROR 22:35:32,405 - 
+Sintaksna greska na liniji 168 prilikom obrade simbola obj
+ERROR 22:35:32,409 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 177

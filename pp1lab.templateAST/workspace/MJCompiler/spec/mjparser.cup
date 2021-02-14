@@ -59,7 +59,7 @@ nonterminal ParamDecl, ParamList, OptionalArraySpec, StatementList, Statement, M
 nonterminal DesignatorStatement, DesignParam, AdditionalList;
 nonterminal ActPars, ActualParamList, SimpleRel, ClassRel, TernaryCondition, Col;
 nonterminal OptionalOp, OptionalMinus, Mulop, Addop, Assignop, Relop, SingleParameter;
-nonterminal OptionalSecondParam, ExpressionType, CaseList, CaseDecl, Else, DoWhileConditionLoad;
+nonterminal OptionalSecondParam, ExpressionType, CaseList, CaseDecl, Else, While, And, Or, If;
 nonterminal MatchedList, AdditionForCall, FormParDecl, MethodSign, Do, Switch, CaseStart, Case;
 nonterminal DesignatorList, ConditionPart, ClassFieldDecList, VarDecl, ClassDecl, SingleConstDecl, ConstDecl;
 
@@ -187,13 +187,13 @@ ConditionPart::= (RightCondition) LPAREN Condition:condType RPAREN
 			
 Statement ::= (DesStatement) DesignatorStatement
 		    |
-		    (MatchedStatement) IF ConditionPart:type Statement Else Statement
+		    (MatchedStatement) If ConditionPart:type Statement Else Statement
 		    |
-		    (UnmatchedIf) IF ConditionPart:type Statement 
+		    (UnmatchedIf) If ConditionPart:type Statement 
 		    |
 		    (ContinueStatement) CONTINUE SEMI
 		    |
-		    (DoWhileLoop) Do Statement WHILE DoWhileConditionLoad Condition RPAREN SEMI
+		    (DoWhileLoop) Do Statement While LPAREN Condition RPAREN SEMI
 		    |
 		    (BreakStatement) BREAK SEMI
 		    |
@@ -208,11 +208,14 @@ Statement ::= (DesStatement) DesignatorStatement
 		    (MatchedListSt) LBRACE StatementList RBRACE
 		    ;
 
-DoWhileConditionLoad ::= (DoWhileConditionLoad) LPAREN;
 
 Else ::= (Else) ELSE;
 
+If ::= (If) IF;
+
 Do ::= (DoWhileStart) DO;
+
+While ::= (DoWhileConditionLoad) WHILE;
 
 Switch ::= (SwitchStart) SWITCH  LPAREN Expr:type RPAREN;
 	
@@ -262,14 +265,17 @@ AdditionalElement ::=(AccessField) POINT IDENT:varName
 					 |
 					 (AccessElement) LBRACKET Expr:exType RBRACKET;
 
-Condition ::= (ConditionExpr)  Condition:type1 OR CondTerm:type2
+Condition ::= (ConditionExpr)  Condition:type1 Or CondTerm:type2
 			  |
 			  (SingleCondTerm) CondTerm:type2;
 			  
-CondTerm ::= (ConditionTerm) CondTerm:type1 AND CondFact:type2
+CondTerm ::= (ConditionTerm) CondTerm:type1 And CondFact:type2
 		     |
 		     (SingleFact) CondFact:type2;	
 
+
+And ::= (And) AND;
+Or ::= (Or) OR;
 
 CondFact ::= (LogicalExpr) Expr:type
 			 |

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/1/2021 8:21:21
+// 8/1/2021 15:36:29
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -63,6 +63,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ClassRel ClassRel) { }
     public void visit(RetType RetType) { }
     public void visit(Term Term) { }
+    public void visit(While While) { }
     public void visit(Switch Switch) { }
     public void visit(OptionalOp OptionalOp) { }
     public void visit(ComparisonLessEqual ComparisonLessEqual) { visit(); }
@@ -102,6 +103,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondExpr CondExpr) { visit(); }
     public void visit(OptionalOperator OptionalOperator) { visit(); }
     public void visit(LogicalExpr LogicalExpr) { visit(); }
+    public void visit(Or Or) { visit(); }
+    public void visit(And And) { visit(); }
     public void visit(SingleFact SingleFact) { visit(); }
     public void visit(ConditionTerm ConditionTerm) { visit(); }
     public void visit(SingleCondTerm SingleCondTerm) { visit(); }
@@ -130,9 +133,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NoCaseList NoCaseList) { visit(); }
     public void visit(CaseListDecl CaseListDecl) { visit(); }
     public void visit(SwitchStart SwitchStart) { visit(); }
-    public void visit(DoWhileStart DoWhileStart) { visit(); }
-    public void visit(Else Else) { visit(); }
     public void visit(DoWhileConditionLoad DoWhileConditionLoad) { visit(); }
+    public void visit(DoWhileStart DoWhileStart) { visit(); }
+    public void visit(If If) { visit(); }
+    public void visit(Else Else) { visit(); }
     public void visit(MatchedListSt MatchedListSt) { visit(); }
     public void visit(SwitchStatement SwitchStatement) { visit(); }
     public void visit(PrintFunctionCall PrintFunctionCall) { visit(); }

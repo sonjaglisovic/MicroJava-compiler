@@ -1,0 +1,1255 @@
+INFO  16:10:57,630 - Compiling source file: D:\Sonja etf\PP\pp1lab.templateAST\workspace\MJCompiler\test\jump_test.mj
+INFO  16:10:57,909 - Program(
+  ProgramName(
+   MJprogram
+  ) [ProgramName]
+  VarDeclarations(
+    VarDeclarations(
+      NoVarDecl(
+      ) [NoVarDecl]
+      VariableDeclaration(
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          FirstDeclaration(
+            SingleVarDecl(
+             a
+              NotArray(
+              ) [NotArray]
+            ) [SingleVarDecl]
+          ) [FirstDeclaration]
+        ) [VarDecl1]
+      ) [VariableDeclaration]
+    ) [VarDeclarations]
+    VariableDeclaration(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        FirstDeclaration(
+          SingleVarDecl(
+           b
+            NotArray(
+            ) [NotArray]
+          ) [SingleVarDecl]
+        ) [FirstDeclaration]
+      ) [VarDecl1]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  MethodDeclarationList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodSign(
+        MethodName(
+          RegularType(
+            Type(
+             int
+            ) [Type]
+          ) [RegularType]
+         main
+        ) [MethodName]
+        NoParams(
+        ) [NoParams]
+      ) [MethodSign]
+      JustVars(
+        NoVars(
+        ) [NoVars]
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          FirstDeclaration(
+            SingleVarDecl(
+             i
+              NotArray(
+              ) [NotArray]
+            ) [SingleVarDecl]
+          ) [FirstDeclaration]
+        ) [VarDecl1]
+      ) [JustVars]
+      Statements(
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    NoStmt(
+                    ) [NoStmt]
+                    DesStatement(
+                      AssignStatementSt(
+                        DesignatorDecl(
+                          DesignatorName(
+                           a
+                          ) [DesignatorName]
+                          NoAdditional(
+                          ) [NoAdditional]
+                        ) [DesignatorDecl]
+                        AssignStm(
+                          Assignop(
+                          ) [Assignop]
+                          SimpleExpr(
+                            FirstTerm(
+                              SingleTermDecl(
+                                NumberDecl(
+                                 3
+                                ) [NumberDecl]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                          ) [SimpleExpr]
+                        ) [AssignStm]
+                      ) [AssignStatementSt]
+                    ) [DesStatement]
+                  ) [Statements]
+                  DesStatement(
+                    AssignStatementSt(
+                      DesignatorDecl(
+                        DesignatorName(
+                         b
+                        ) [DesignatorName]
+                        NoAdditional(
+                        ) [NoAdditional]
+                      ) [DesignatorDecl]
+                      AssignStm(
+                        Assignop(
+                        ) [Assignop]
+                        SimpleExpr(
+                          FirstTerm(
+                            SingleTermDecl(
+                              NumberDecl(
+                               5
+                              ) [NumberDecl]
+                            ) [SingleTermDecl]
+                          ) [FirstTerm]
+                        ) [SimpleExpr]
+                      ) [AssignStm]
+                    ) [AssignStatementSt]
+                  ) [DesStatement]
+                ) [Statements]
+                MatchedStatement(
+                  If(
+                  ) [If]
+                  RightCondition(
+                    ConditionExpr(
+                      SingleCondTerm(
+                        ConditionTerm(
+                          ConditionTerm(
+                            ConditionTerm(
+                              SingleFact(
+                                OptionalOperator(
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         1
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                  SimpleComp(
+                                    ComparisonLess(
+                                    ) [ComparisonLess]
+                                  ) [SimpleComp]
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         5
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                ) [OptionalOperator]
+                              ) [SingleFact]
+                              And(
+                              ) [And]
+                              OptionalOperator(
+                                SimpleExpr(
+                                  FirstTerm(
+                                    SingleTermDecl(
+                                      SimpleDesignator(
+                                        DesignatorDecl(
+                                          DesignatorName(
+                                           a
+                                          ) [DesignatorName]
+                                          NoAdditional(
+                                          ) [NoAdditional]
+                                        ) [DesignatorDecl]
+                                      ) [SimpleDesignator]
+                                    ) [SingleTermDecl]
+                                  ) [FirstTerm]
+                                ) [SimpleExpr]
+                                ClassComp(
+                                  ComparisonEqual(
+                                  ) [ComparisonEqual]
+                                ) [ClassComp]
+                                SimpleExpr(
+                                  FirstTerm(
+                                    SingleTermDecl(
+                                      NumberDecl(
+                                       0
+                                      ) [NumberDecl]
+                                    ) [SingleTermDecl]
+                                  ) [FirstTerm]
+                                ) [SimpleExpr]
+                              ) [OptionalOperator]
+                            ) [ConditionTerm]
+                            And(
+                            ) [And]
+                            OptionalOperator(
+                              SimpleExpr(
+                                FirstTerm(
+                                  SingleTermDecl(
+                                    SimpleDesignator(
+                                      DesignatorDecl(
+                                        DesignatorName(
+                                         a
+                                        ) [DesignatorName]
+                                        NoAdditional(
+                                        ) [NoAdditional]
+                                      ) [DesignatorDecl]
+                                    ) [SimpleDesignator]
+                                  ) [SingleTermDecl]
+                                ) [FirstTerm]
+                              ) [SimpleExpr]
+                              SimpleComp(
+                                CompGraterEqual(
+                                ) [CompGraterEqual]
+                              ) [SimpleComp]
+                              SimpleExpr(
+                                FirstTerm(
+                                  SingleTermDecl(
+                                    NumberDecl(
+                                     0
+                                    ) [NumberDecl]
+                                  ) [SingleTermDecl]
+                                ) [FirstTerm]
+                              ) [SimpleExpr]
+                            ) [OptionalOperator]
+                          ) [ConditionTerm]
+                          And(
+                          ) [And]
+                          OptionalOperator(
+                            SimpleExpr(
+                              FirstTerm(
+                                SingleTermDecl(
+                                  SimpleDesignator(
+                                    DesignatorDecl(
+                                      DesignatorName(
+                                       a
+                                      ) [DesignatorName]
+                                      NoAdditional(
+                                      ) [NoAdditional]
+                                    ) [DesignatorDecl]
+                                  ) [SimpleDesignator]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [SimpleExpr]
+                            SimpleComp(
+                              ComparisonLess(
+                              ) [ComparisonLess]
+                            ) [SimpleComp]
+                            SimpleExpr(
+                              FirstTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   0
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [SimpleExpr]
+                          ) [OptionalOperator]
+                        ) [ConditionTerm]
+                      ) [SingleCondTerm]
+                      Or(
+                      ) [Or]
+                      ConditionTerm(
+                        SingleFact(
+                          LogicalExpr(
+                            SimpleExpr(
+                              FirstTerm(
+                                SingleTermDecl(
+                                  NumberDecl(
+                                   3
+                                  ) [NumberDecl]
+                                ) [SingleTermDecl]
+                              ) [FirstTerm]
+                            ) [SimpleExpr]
+                          ) [LogicalExpr]
+                        ) [SingleFact]
+                        And(
+                        ) [And]
+                        OptionalOperator(
+                          SimpleExpr(
+                            FirstTerm(
+                              SingleTermDecl(
+                                SimpleDesignator(
+                                  DesignatorDecl(
+                                    DesignatorName(
+                                     a
+                                    ) [DesignatorName]
+                                    NoAdditional(
+                                    ) [NoAdditional]
+                                  ) [DesignatorDecl]
+                                ) [SimpleDesignator]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                          ) [SimpleExpr]
+                          ClassComp(
+                            ComparisonEqual(
+                            ) [ComparisonEqual]
+                          ) [ClassComp]
+                          SimpleExpr(
+                            FirstTerm(
+                              SingleTermDecl(
+                                NumberDecl(
+                                 0
+                                ) [NumberDecl]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                          ) [SimpleExpr]
+                        ) [OptionalOperator]
+                      ) [ConditionTerm]
+                    ) [ConditionExpr]
+                  ) [RightCondition]
+                  MatchedListSt(
+                    Statements(
+                      Statements(
+                        NoStmt(
+                        ) [NoStmt]
+                        MatchedStatement(
+                          If(
+                          ) [If]
+                          RightCondition(
+                            ConditionExpr(
+                              ConditionExpr(
+                                ConditionExpr(
+                                  SingleCondTerm(
+                                    SingleFact(
+                                      OptionalOperator(
+                                        SimpleExpr(
+                                          FirstTerm(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               3
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [FirstTerm]
+                                        ) [SimpleExpr]
+                                        SimpleComp(
+                                          ComparisonGrater(
+                                          ) [ComparisonGrater]
+                                        ) [SimpleComp]
+                                        SimpleExpr(
+                                          FirstTerm(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               5
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [FirstTerm]
+                                        ) [SimpleExpr]
+                                      ) [OptionalOperator]
+                                    ) [SingleFact]
+                                  ) [SingleCondTerm]
+                                  Or(
+                                  ) [Or]
+                                  SingleFact(
+                                    OptionalOperator(
+                                      SimpleExpr(
+                                        FirstTerm(
+                                          SingleTermDecl(
+                                            SimpleDesignator(
+                                              DesignatorDecl(
+                                                DesignatorName(
+                                                 a
+                                                ) [DesignatorName]
+                                                NoAdditional(
+                                                ) [NoAdditional]
+                                              ) [DesignatorDecl]
+                                            ) [SimpleDesignator]
+                                          ) [SingleTermDecl]
+                                        ) [FirstTerm]
+                                      ) [SimpleExpr]
+                                      SimpleComp(
+                                        ComparisonGrater(
+                                        ) [ComparisonGrater]
+                                      ) [SimpleComp]
+                                      SimpleExpr(
+                                        FirstTerm(
+                                          SingleTermDecl(
+                                            SimpleDesignator(
+                                              DesignatorDecl(
+                                                DesignatorName(
+                                                 b
+                                                ) [DesignatorName]
+                                                NoAdditional(
+                                                ) [NoAdditional]
+                                              ) [DesignatorDecl]
+                                            ) [SimpleDesignator]
+                                          ) [SingleTermDecl]
+                                        ) [FirstTerm]
+                                      ) [SimpleExpr]
+                                    ) [OptionalOperator]
+                                  ) [SingleFact]
+                                ) [ConditionExpr]
+                                Or(
+                                ) [Or]
+                                SingleFact(
+                                  OptionalOperator(
+                                    SimpleExpr(
+                                      FirstTerm(
+                                        SingleTermDecl(
+                                          SimpleDesignator(
+                                            DesignatorDecl(
+                                              DesignatorName(
+                                               b
+                                              ) [DesignatorName]
+                                              NoAdditional(
+                                              ) [NoAdditional]
+                                            ) [DesignatorDecl]
+                                          ) [SimpleDesignator]
+                                        ) [SingleTermDecl]
+                                      ) [FirstTerm]
+                                    ) [SimpleExpr]
+                                    ClassComp(
+                                      ComparisonEqual(
+                                      ) [ComparisonEqual]
+                                    ) [ClassComp]
+                                    SimpleExpr(
+                                      FirstTerm(
+                                        SingleTermDecl(
+                                          SimpleDesignator(
+                                            DesignatorDecl(
+                                              DesignatorName(
+                                               a
+                                              ) [DesignatorName]
+                                              NoAdditional(
+                                              ) [NoAdditional]
+                                            ) [DesignatorDecl]
+                                          ) [SimpleDesignator]
+                                        ) [SingleTermDecl]
+                                      ) [FirstTerm]
+                                    ) [SimpleExpr]
+                                  ) [OptionalOperator]
+                                ) [SingleFact]
+                              ) [ConditionExpr]
+                              Or(
+                              ) [Or]
+                              SingleFact(
+                                OptionalOperator(
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        SimpleDesignator(
+                                          DesignatorDecl(
+                                            DesignatorName(
+                                             a
+                                            ) [DesignatorName]
+                                            NoAdditional(
+                                            ) [NoAdditional]
+                                          ) [DesignatorDecl]
+                                        ) [SimpleDesignator]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                  ClassComp(
+                                    ComparisonEqual(
+                                    ) [ComparisonEqual]
+                                  ) [ClassComp]
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        SimpleDesignator(
+                                          DesignatorDecl(
+                                            DesignatorName(
+                                             b
+                                            ) [DesignatorName]
+                                            NoAdditional(
+                                            ) [NoAdditional]
+                                          ) [DesignatorDecl]
+                                        ) [SimpleDesignator]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                ) [OptionalOperator]
+                              ) [SingleFact]
+                            ) [ConditionExpr]
+                          ) [RightCondition]
+                          MatchedListSt(
+                            Statements(
+                              NoStmt(
+                              ) [NoStmt]
+                              PrintFunctionCall(
+                                SimpleExpr(
+                                  FirstTerm(
+                                    SingleTermDecl(
+                                      Letter(
+                                       't'
+                                      ) [Letter]
+                                    ) [SingleTermDecl]
+                                  ) [FirstTerm]
+                                ) [SimpleExpr]
+                                NoSecondParam(
+                                ) [NoSecondParam]
+                              ) [PrintFunctionCall]
+                            ) [Statements]
+                          ) [MatchedListSt]
+                          Else(
+                          ) [Else]
+                          UnmatchedIf(
+                            If(
+                            ) [If]
+                            RightCondition(
+                              ConditionExpr(
+                                ConditionExpr(
+                                  SingleCondTerm(
+                                    ConditionTerm(
+                                      SingleFact(
+                                        OptionalOperator(
+                                          SimpleExpr(
+                                            FirstTerm(
+                                              SingleTermDecl(
+                                                SimpleDesignator(
+                                                  DesignatorDecl(
+                                                    DesignatorName(
+                                                     a
+                                                    ) [DesignatorName]
+                                                    NoAdditional(
+                                                    ) [NoAdditional]
+                                                  ) [DesignatorDecl]
+                                                ) [SimpleDesignator]
+                                              ) [SingleTermDecl]
+                                            ) [FirstTerm]
+                                          ) [SimpleExpr]
+                                          SimpleComp(
+                                            ComparisonGrater(
+                                            ) [ComparisonGrater]
+                                          ) [SimpleComp]
+                                          SimpleExpr(
+                                            FirstTerm(
+                                              SingleTermDecl(
+                                                NumberDecl(
+                                                 50
+                                                ) [NumberDecl]
+                                              ) [SingleTermDecl]
+                                            ) [FirstTerm]
+                                          ) [SimpleExpr]
+                                        ) [OptionalOperator]
+                                      ) [SingleFact]
+                                      And(
+                                      ) [And]
+                                      OptionalOperator(
+                                        SimpleExpr(
+                                          FirstTerm(
+                                            SingleTermDecl(
+                                              SimpleDesignator(
+                                                DesignatorDecl(
+                                                  DesignatorName(
+                                                   a
+                                                  ) [DesignatorName]
+                                                  NoAdditional(
+                                                  ) [NoAdditional]
+                                                ) [DesignatorDecl]
+                                              ) [SimpleDesignator]
+                                            ) [SingleTermDecl]
+                                          ) [FirstTerm]
+                                        ) [SimpleExpr]
+                                        ClassComp(
+                                          ComparionDiffernet(
+                                          ) [ComparionDiffernet]
+                                        ) [ClassComp]
+                                        SimpleExpr(
+                                          FirstTerm(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               0
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [FirstTerm]
+                                        ) [SimpleExpr]
+                                      ) [OptionalOperator]
+                                    ) [ConditionTerm]
+                                  ) [SingleCondTerm]
+                                  Or(
+                                  ) [Or]
+                                  ConditionTerm(
+                                    SingleFact(
+                                      OptionalOperator(
+                                        SimpleExpr(
+                                          FirstTerm(
+                                            SingleTermDecl(
+                                              SimpleDesignator(
+                                                DesignatorDecl(
+                                                  DesignatorName(
+                                                   a
+                                                  ) [DesignatorName]
+                                                  NoAdditional(
+                                                  ) [NoAdditional]
+                                                ) [DesignatorDecl]
+                                              ) [SimpleDesignator]
+                                            ) [SingleTermDecl]
+                                          ) [FirstTerm]
+                                        ) [SimpleExpr]
+                                        SimpleComp(
+                                          ComparisonGrater(
+                                          ) [ComparisonGrater]
+                                        ) [SimpleComp]
+                                        SimpleExpr(
+                                          FirstTerm(
+                                            SingleTermDecl(
+                                              NumberDecl(
+                                               10
+                                              ) [NumberDecl]
+                                            ) [SingleTermDecl]
+                                          ) [FirstTerm]
+                                        ) [SimpleExpr]
+                                      ) [OptionalOperator]
+                                    ) [SingleFact]
+                                    And(
+                                    ) [And]
+                                    OptionalOperator(
+                                      SimpleExpr(
+                                        FirstTerm(
+                                          SingleTermDecl(
+                                            SimpleDesignator(
+                                              DesignatorDecl(
+                                                DesignatorName(
+                                                 a
+                                                ) [DesignatorName]
+                                                NoAdditional(
+                                                ) [NoAdditional]
+                                              ) [DesignatorDecl]
+                                            ) [SimpleDesignator]
+                                          ) [SingleTermDecl]
+                                        ) [FirstTerm]
+                                      ) [SimpleExpr]
+                                      ClassComp(
+                                        ComparionDiffernet(
+                                        ) [ComparionDiffernet]
+                                      ) [ClassComp]
+                                      SimpleExpr(
+                                        FirstTerm(
+                                          SingleTermDecl(
+                                            NumberDecl(
+                                             0
+                                            ) [NumberDecl]
+                                          ) [SingleTermDecl]
+                                        ) [FirstTerm]
+                                      ) [SimpleExpr]
+                                    ) [OptionalOperator]
+                                  ) [ConditionTerm]
+                                ) [ConditionExpr]
+                                Or(
+                                ) [Or]
+                                ConditionTerm(
+                                  SingleFact(
+                                    OptionalOperator(
+                                      SimpleExpr(
+                                        FirstTerm(
+                                          SingleTermDecl(
+                                            SimpleDesignator(
+                                              DesignatorDecl(
+                                                DesignatorName(
+                                                 a
+                                                ) [DesignatorName]
+                                                NoAdditional(
+                                                ) [NoAdditional]
+                                              ) [DesignatorDecl]
+                                            ) [SimpleDesignator]
+                                          ) [SingleTermDecl]
+                                        ) [FirstTerm]
+                                      ) [SimpleExpr]
+                                      ClassComp(
+                                        ComparisonEqual(
+                                        ) [ComparisonEqual]
+                                      ) [ClassComp]
+                                      SimpleExpr(
+                                        FirstTerm(
+                                          SingleTermDecl(
+                                            NumberDecl(
+                                             0
+                                            ) [NumberDecl]
+                                          ) [SingleTermDecl]
+                                        ) [FirstTerm]
+                                      ) [SimpleExpr]
+                                    ) [OptionalOperator]
+                                  ) [SingleFact]
+                                  And(
+                                  ) [And]
+                                  OptionalOperator(
+                                    SimpleExpr(
+                                      FirstTerm(
+                                        SingleTermDecl(
+                                          SimpleDesignator(
+                                            DesignatorDecl(
+                                              DesignatorName(
+                                               b
+                                              ) [DesignatorName]
+                                              NoAdditional(
+                                              ) [NoAdditional]
+                                            ) [DesignatorDecl]
+                                          ) [SimpleDesignator]
+                                        ) [SingleTermDecl]
+                                      ) [FirstTerm]
+                                    ) [SimpleExpr]
+                                    SimpleComp(
+                                      ComparisonLess(
+                                      ) [ComparisonLess]
+                                    ) [SimpleComp]
+                                    SimpleExpr(
+                                      FirstTerm(
+                                        SingleTermDecl(
+                                          NumberDecl(
+                                           0
+                                          ) [NumberDecl]
+                                        ) [SingleTermDecl]
+                                      ) [FirstTerm]
+                                    ) [SimpleExpr]
+                                  ) [OptionalOperator]
+                                ) [ConditionTerm]
+                              ) [ConditionExpr]
+                            ) [RightCondition]
+                            MatchedListSt(
+                              Statements(
+                                NoStmt(
+                                ) [NoStmt]
+                                PrintFunctionCall(
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        Letter(
+                                         'e'
+                                        ) [Letter]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                  NoSecondParam(
+                                  ) [NoSecondParam]
+                                ) [PrintFunctionCall]
+                              ) [Statements]
+                            ) [MatchedListSt]
+                          ) [UnmatchedIf]
+                        ) [MatchedStatement]
+                      ) [Statements]
+                      PrintFunctionCall(
+                        SimpleExpr(
+                          FirstTerm(
+                            SingleTermDecl(
+                              SimpleDesignator(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   a
+                                  ) [DesignatorName]
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                              ) [SimpleDesignator]
+                            ) [SingleTermDecl]
+                          ) [FirstTerm]
+                        ) [SimpleExpr]
+                        NoSecondParam(
+                        ) [NoSecondParam]
+                      ) [PrintFunctionCall]
+                    ) [Statements]
+                  ) [MatchedListSt]
+                  Else(
+                  ) [Else]
+                  MatchedListSt(
+                    Statements(
+                      NoStmt(
+                      ) [NoStmt]
+                      MatchedStatement(
+                        If(
+                        ) [If]
+                        RightCondition(
+                          ConditionExpr(
+                            SingleCondTerm(
+                              SingleFact(
+                                OptionalOperator(
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        SimpleDesignator(
+                                          DesignatorDecl(
+                                            DesignatorName(
+                                             a
+                                            ) [DesignatorName]
+                                            NoAdditional(
+                                            ) [NoAdditional]
+                                          ) [DesignatorDecl]
+                                        ) [SimpleDesignator]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                  ClassComp(
+                                    ComparisonEqual(
+                                    ) [ComparisonEqual]
+                                  ) [ClassComp]
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        SimpleDesignator(
+                                          DesignatorDecl(
+                                            DesignatorName(
+                                             b
+                                            ) [DesignatorName]
+                                            NoAdditional(
+                                            ) [NoAdditional]
+                                          ) [DesignatorDecl]
+                                        ) [SimpleDesignator]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                ) [OptionalOperator]
+                              ) [SingleFact]
+                            ) [SingleCondTerm]
+                            Or(
+                            ) [Or]
+                            SingleFact(
+                              LogicalExpr(
+                                SimpleExpr(
+                                  FirstTerm(
+                                    SingleTermDecl(
+                                      SimpleDesignator(
+                                        DesignatorDecl(
+                                          DesignatorName(
+                                           b
+                                          ) [DesignatorName]
+                                          NoAdditional(
+                                          ) [NoAdditional]
+                                        ) [DesignatorDecl]
+                                      ) [SimpleDesignator]
+                                    ) [SingleTermDecl]
+                                  ) [FirstTerm]
+                                ) [SimpleExpr]
+                              ) [LogicalExpr]
+                            ) [SingleFact]
+                          ) [ConditionExpr]
+                        ) [RightCondition]
+                        PrintFunctionCall(
+                          SimpleExpr(
+                            FirstTerm(
+                              SingleTermDecl(
+                                NumberDecl(
+                                 15
+                                ) [NumberDecl]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                          ) [SimpleExpr]
+                          NoSecondParam(
+                          ) [NoSecondParam]
+                        ) [PrintFunctionCall]
+                        Else(
+                        ) [Else]
+                        PrintFunctionCall(
+                          SimpleExpr(
+                            FirstTerm(
+                              SingleTermDecl(
+                                NumberDecl(
+                                 12
+                                ) [NumberDecl]
+                              ) [SingleTermDecl]
+                            ) [FirstTerm]
+                          ) [SimpleExpr]
+                          NoSecondParam(
+                          ) [NoSecondParam]
+                        ) [PrintFunctionCall]
+                      ) [MatchedStatement]
+                    ) [Statements]
+                  ) [MatchedListSt]
+                ) [MatchedStatement]
+              ) [Statements]
+              DesStatement(
+                AssignStatementSt(
+                  DesignatorDecl(
+                    DesignatorName(
+                     i
+                    ) [DesignatorName]
+                    NoAdditional(
+                    ) [NoAdditional]
+                  ) [DesignatorDecl]
+                  AssignStm(
+                    Assignop(
+                    ) [Assignop]
+                    SimpleExpr(
+                      FirstTerm(
+                        SingleTermDecl(
+                          NumberDecl(
+                           0
+                          ) [NumberDecl]
+                        ) [SingleTermDecl]
+                      ) [FirstTerm]
+                    ) [SimpleExpr]
+                  ) [AssignStm]
+                ) [AssignStatementSt]
+              ) [DesStatement]
+            ) [Statements]
+            DoWhileLoop(
+              DoWhileStart(
+              ) [DoWhileStart]
+              MatchedListSt(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          NoStmt(
+                          ) [NoStmt]
+                          DesStatement(
+                            IncrementSt(
+                              DesignatorDecl(
+                                DesignatorName(
+                                 i
+                                ) [DesignatorName]
+                                NoAdditional(
+                                ) [NoAdditional]
+                              ) [DesignatorDecl]
+                             null
+                            ) [IncrementSt]
+                          ) [DesStatement]
+                        ) [Statements]
+                        UnmatchedIf(
+                          If(
+                          ) [If]
+                          RightCondition(
+                            SingleCondTerm(
+                              SingleFact(
+                                OptionalOperator(
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        SimpleDesignator(
+                                          DesignatorDecl(
+                                            DesignatorName(
+                                             i
+                                            ) [DesignatorName]
+                                            NoAdditional(
+                                            ) [NoAdditional]
+                                          ) [DesignatorDecl]
+                                        ) [SimpleDesignator]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                  ClassComp(
+                                    ComparisonEqual(
+                                    ) [ComparisonEqual]
+                                  ) [ClassComp]
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         10
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                ) [OptionalOperator]
+                              ) [SingleFact]
+                            ) [SingleCondTerm]
+                          ) [RightCondition]
+                          BreakStatement(
+                          ) [BreakStatement]
+                        ) [UnmatchedIf]
+                      ) [Statements]
+                      UnmatchedIf(
+                        If(
+                        ) [If]
+                        RightCondition(
+                          ConditionExpr(
+                            SingleCondTerm(
+                              SingleFact(
+                                OptionalOperator(
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        SimpleDesignator(
+                                          DesignatorDecl(
+                                            DesignatorName(
+                                             i
+                                            ) [DesignatorName]
+                                            NoAdditional(
+                                            ) [NoAdditional]
+                                          ) [DesignatorDecl]
+                                        ) [SimpleDesignator]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                  ClassComp(
+                                    ComparisonEqual(
+                                    ) [ComparisonEqual]
+                                  ) [ClassComp]
+                                  SimpleExpr(
+                                    FirstTerm(
+                                      SingleTermDecl(
+                                        NumberDecl(
+                                         9
+                                        ) [NumberDecl]
+                                      ) [SingleTermDecl]
+                                    ) [FirstTerm]
+                                  ) [SimpleExpr]
+                                ) [OptionalOperator]
+                              ) [SingleFact]
+                            ) [SingleCondTerm]
+                            Or(
+                            ) [Or]
+                            SingleFact(
+                              OptionalOperator(
+                                SimpleExpr(
+                                  FirstTerm(
+                                    SingleTermDecl(
+                                      SimpleDesignator(
+                                        DesignatorDecl(
+                                          DesignatorName(
+                                           i
+                                          ) [DesignatorName]
+                                          NoAdditional(
+                                          ) [NoAdditional]
+                                        ) [DesignatorDecl]
+                                      ) [SimpleDesignator]
+                                    ) [SingleTermDecl]
+                                  ) [FirstTerm]
+                                ) [SimpleExpr]
+                                ClassComp(
+                                  ComparisonEqual(
+                                  ) [ComparisonEqual]
+                                ) [ClassComp]
+                                SimpleExpr(
+                                  FirstTerm(
+                                    SingleTermDecl(
+                                      NumberDecl(
+                                       7
+                                      ) [NumberDecl]
+                                    ) [SingleTermDecl]
+                                  ) [FirstTerm]
+                                ) [SimpleExpr]
+                              ) [OptionalOperator]
+                            ) [SingleFact]
+                          ) [ConditionExpr]
+                        ) [RightCondition]
+                        ContinueStatement(
+                        ) [ContinueStatement]
+                      ) [UnmatchedIf]
+                    ) [Statements]
+                    PrintFunctionCall(
+                      SimpleExpr(
+                        FirstTerm(
+                          SingleTermDecl(
+                            SimpleDesignator(
+                              DesignatorDecl(
+                                DesignatorName(
+                                 i
+                                ) [DesignatorName]
+                                NoAdditional(
+                                ) [NoAdditional]
+                              ) [DesignatorDecl]
+                            ) [SimpleDesignator]
+                          ) [SingleTermDecl]
+                        ) [FirstTerm]
+                      ) [SimpleExpr]
+                      NoSecondParam(
+                      ) [NoSecondParam]
+                    ) [PrintFunctionCall]
+                  ) [Statements]
+                  PrintFunctionCall(
+                    SimpleExpr(
+                      FirstTerm(
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                              DesignatorName(
+                               eol
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [FirstTerm]
+                    ) [SimpleExpr]
+                    NoSecondParam(
+                    ) [NoSecondParam]
+                  ) [PrintFunctionCall]
+                ) [Statements]
+              ) [MatchedListSt]
+              DoWhileConditionLoad(
+              ) [DoWhileConditionLoad]
+              ConditionExpr(
+                SingleCondTerm(
+                  ConditionTerm(
+                    SingleFact(
+                      OptionalOperator(
+                        SimpleExpr(
+                          FirstTerm(
+                            SingleTermDecl(
+                              SimpleDesignator(
+                                DesignatorDecl(
+                                  DesignatorName(
+                                   i
+                                  ) [DesignatorName]
+                                  NoAdditional(
+                                  ) [NoAdditional]
+                                ) [DesignatorDecl]
+                              ) [SimpleDesignator]
+                            ) [SingleTermDecl]
+                          ) [FirstTerm]
+                        ) [SimpleExpr]
+                        SimpleComp(
+                          ComparisonLess(
+                          ) [ComparisonLess]
+                        ) [SimpleComp]
+                        SimpleExpr(
+                          FirstTerm(
+                            SingleTermDecl(
+                              NumberDecl(
+                               11
+                              ) [NumberDecl]
+                            ) [SingleTermDecl]
+                          ) [FirstTerm]
+                        ) [SimpleExpr]
+                      ) [OptionalOperator]
+                    ) [SingleFact]
+                    And(
+                    ) [And]
+                    OptionalOperator(
+                      SimpleExpr(
+                        FirstTerm(
+                          SingleTermDecl(
+                            SimpleDesignator(
+                              DesignatorDecl(
+                                DesignatorName(
+                                 i
+                                ) [DesignatorName]
+                                NoAdditional(
+                                ) [NoAdditional]
+                              ) [DesignatorDecl]
+                            ) [SimpleDesignator]
+                          ) [SingleTermDecl]
+                        ) [FirstTerm]
+                      ) [SimpleExpr]
+                      SimpleComp(
+                        ComparisonLess(
+                        ) [ComparisonLess]
+                      ) [SimpleComp]
+                      SimpleExpr(
+                        FirstTerm(
+                          SingleTermDecl(
+                            NumberDecl(
+                             50
+                            ) [NumberDecl]
+                          ) [SingleTermDecl]
+                        ) [FirstTerm]
+                      ) [SimpleExpr]
+                    ) [OptionalOperator]
+                  ) [ConditionTerm]
+                ) [SingleCondTerm]
+                Or(
+                ) [Or]
+                SingleFact(
+                  OptionalOperator(
+                    SimpleExpr(
+                      FirstTerm(
+                        SingleTermDecl(
+                          SimpleDesignator(
+                            DesignatorDecl(
+                              DesignatorName(
+                               i
+                              ) [DesignatorName]
+                              NoAdditional(
+                              ) [NoAdditional]
+                            ) [DesignatorDecl]
+                          ) [SimpleDesignator]
+                        ) [SingleTermDecl]
+                      ) [FirstTerm]
+                    ) [SimpleExpr]
+                    ClassComp(
+                      ComparisonEqual(
+                      ) [ComparisonEqual]
+                    ) [ClassComp]
+                    SimpleExpr(
+                      FirstTerm(
+                        SingleTermDecl(
+                          NumberDecl(
+                           11
+                          ) [NumberDecl]
+                        ) [SingleTermDecl]
+                      ) [FirstTerm]
+                    ) [SimpleExpr]
+                  ) [OptionalOperator]
+                ) [SingleFact]
+              ) [ConditionExpr]
+            ) [DoWhileLoop]
+          ) [Statements]
+          PrintFunctionCall(
+            SimpleExpr(
+              FirstTerm(
+                SingleTermDecl(
+                  SimpleDesignator(
+                    DesignatorDecl(
+                      DesignatorName(
+                       i
+                      ) [DesignatorName]
+                      NoAdditional(
+                      ) [NoAdditional]
+                    ) [DesignatorDecl]
+                  ) [SimpleDesignator]
+                ) [SingleTermDecl]
+              ) [FirstTerm]
+            ) [SimpleExpr]
+            NoSecondParam(
+            ) [NoSecondParam]
+          ) [PrintFunctionCall]
+        ) [Statements]
+        ReturnStatement(
+          ExprAfterReturn(
+            SimpleExpr(
+              FirstTerm(
+                SingleTermDecl(
+                  NumberDecl(
+                   0
+                  ) [NumberDecl]
+                ) [SingleTermDecl]
+              ) [FirstTerm]
+            ) [SimpleExpr]
+          ) [ExprAfterReturn]
+        ) [ReturnStatement]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarationList]
+) [Program]
+INFO  16:10:58,505 - ===================================
+INFO  16:10:58,545 - Prisput simbolu:  Var a: int 0 0  na liniji 11
+INFO  16:10:58,545 - Prisput simbolu:  Var b: int 1 0  na liniji 12
+INFO  16:10:58,546 - Prisput simbolu:  Var a: int 0 0  na liniji 13
+INFO  16:10:58,546 - Prisput simbolu:  Var a: int 0 0  na liniji 13
+INFO  16:10:58,547 - Prisput simbolu:  Var a: int 0 0  na liniji 13
+INFO  16:10:58,547 - Prisput simbolu:  Var a: int 0 0  na liniji 13
+INFO  16:10:58,547 - Prisput simbolu:  Var a: int 0 0  na liniji 14
+INFO  16:10:58,547 - Prisput simbolu:  Var b: int 1 0  na liniji 14
+INFO  16:10:58,548 - Prisput simbolu:  Var b: int 1 0  na liniji 14
+INFO  16:10:58,548 - Prisput simbolu:  Var a: int 0 0  na liniji 14
+INFO  16:10:58,548 - Prisput simbolu:  Var a: int 0 0  na liniji 14
+INFO  16:10:58,548 - Prisput simbolu:  Var b: int 1 0  na liniji 14
+INFO  16:10:58,549 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  16:10:58,549 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  16:10:58,549 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  16:10:58,550 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  16:10:58,550 - Prisput simbolu:  Var a: int 0 0  na liniji 17
+INFO  16:10:58,550 - Prisput simbolu:  Var b: int 1 0  na liniji 17
+INFO  16:10:58,552 - Prisput simbolu:  Var a: int 0 0  na liniji 22
+INFO  16:10:58,552 - Prisput simbolu:  Var a: int 0 0  na liniji 24
+INFO  16:10:58,552 - Prisput simbolu:  Var b: int 1 0  na liniji 24
+INFO  16:10:58,552 - Prisput simbolu:  Var b: int 1 0  na liniji 24
+INFO  16:10:58,553 - Prisput simbolu:  Var i: int 0 1  na liniji 30
+INFO  16:10:58,553 - Prisput simbolu:  Var i: int 0 1  na liniji 33
+INFO  16:10:58,553 - Prisput simbolu:  Var i: int 0 1  na liniji 34
+INFO  16:10:58,553 - Prisput simbolu:  Var i: int 0 1  na liniji 36
+INFO  16:10:58,554 - Prisput simbolu:  Var i: int 0 1  na liniji 36
+INFO  16:10:58,554 - Prisput simbolu:  Var i: int 0 1  na liniji 38
+INFO  16:10:58,554 - Prisput simbolu:  Con eol: char 10 0  na liniji 39
+INFO  16:10:58,554 - Prisput simbolu:  Var i: int 0 1  na liniji 41
+INFO  16:10:58,555 - Prisput simbolu:  Var i: int 0 1  na liniji 41
+INFO  16:10:58,555 - Prisput simbolu:  Var i: int 0 1  na liniji 41
+INFO  16:10:58,555 - Prisput simbolu:  Var i: int 0 1  na liniji 43
